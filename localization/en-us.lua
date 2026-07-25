@@ -2929,12 +2929,12 @@ return {
           }
         }
       },
-      j_abn_jerry_jester = {
-        name = "Jerry J. Jester",
+      j_abn_conrad_joker = {
+        name = "Conrad Joker",
         text = {
           {
-            "Scored {C:abn_tie}Ties{} give {X:mult,C:white}X#1#{} Mult,",
-            "increases by {X:mult,C:white}X#2#{} Mult",
+            "Scored {C:abn_tie}Ties{} give {X:chips,C:white}X#1#{} Chips,",
+            "increases by {X:chips,C:white}X#2#{} Chips",
             "when a {C:abn_tie}Tie{} is scored",
           },
           {
@@ -9016,7 +9016,40 @@ return {
           },
         },
       },
-
+	  
+	  j_abn_jerry_jester = {
+        name = "Jerry Jester",
+        text = {
+          {
+            "Scored {C:abn_leaf}Leaves{} give {X:mult,C:white}X#1#{} Mult,",
+            "increases by {X:mult,C:white}X#2#{} Mult",
+            "when a {C:abn_leaf}Leaf{} is scored",
+          },
+          {
+            "If {C:attention}Joker{} is owned,",
+            "all cards {C:attention}held{} in hand",
+            "gain {C:chips}Chips{} equal to the highest rank of {C:abn_leaf}Leaf{} scored",
+            "when a {C:abn_leaf}Leaf{} is scored"
+          }
+        }
+      },
+	  
+	  j_abn_zack_comic = {
+        name = "Zack Comic",
+        text = {
+          {
+            "Scored {C:abn_leaf}Leaves{} give {X:chips,C:white}X#1#{} Chips,",
+            "increases by {X:chips,C:white}X#2#{} Chips",
+            "when a {C:abn_leaf}Leaf{} is scored",
+          },
+          {
+            "If {C:attention}Joker{} is owned,",
+            "all {C:attention}scoring{} cards",
+            "gain {C:mult}Mult{} equal to number of held Consumables",
+            "when a {C:abn_leaf}Leaf{} is scored"
+          }
+        }
+      },
     },
     Spectral = {
       c_abn_apotheosis = {
