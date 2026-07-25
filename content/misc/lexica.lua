@@ -934,7 +934,7 @@ SMODS.Consumable {
         if scoring_card:is_suit('abn_Tie') then
           triggered = true
           scoring_card:set_seal("abn_violet")
-          scoring_card:set_ability("abn_teatag")
+          scoring_card:set_ability("m_abn_teatag")
         end
       end
       if triggered then
