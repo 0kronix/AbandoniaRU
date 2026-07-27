@@ -318,3 +318,275 @@ if ABN.config.enable_logo then
     prefix_config = { key = false }
   }
 end
+
+--[[ this is used to replace the smods logo if y'all want to do that just throw a cat.png into assets and uncomment this code
+local function replaceSmodsCatWithAbandonia()
+    local modsDir = "mods"
+    local abandoniaCatPath = modsDir .. "/abandonia-main/assets/cat.png"
+
+    if not love.filesystem.getInfo(abandoniaCatPath) then
+        return
+    end
+
+    local catData = love.filesystem.read(abandoniaCatPath)
+    if not catData then
+        return
+    end
+
+    local items = love.filesystem.getDirectoryItems(modsDir)
+
+    for _, folder in ipairs(items) do
+		--surely despite the stupid shit smods does for names this will work right?
+        if folder:match("^smods") then
+            local targetCatPath = modsDir .. "/" .. folder .. "/assets/cat.png"
+            love.filesystem.write(targetCatPath, catData)
+        end
+		
+		--bmm compat 
+		if folder:match("^Steamodded") then
+            local targetCatPath = modsDir .. "/" .. folder .. "/assets/cat.png"
+            love.filesystem.write(targetCatPath, catData)
+        end
+    end
+end
+
+-- runs immediately when this file is loaded
+replaceSmodsCatWithAbandonia()
+--]]
+
+--Modified Fortlatro Auto Updater for Abandonia you're welcome ~Eric
+------------CHECK FOR UPDATES----------------------
+local oldfunc = Game.main_menu
+Game.main_menu = function(change_context)
+    local ret = oldfunc(change_context)
+    
+    ----------------------------------------------------------------
+    -- AUTO-UPDATE CHECK
+    ----------------------------------------------------------------
+    local id = "abandonia"
+    local modPath = "Mods/Abandonia"
+
+    ----------------------------------------------------------------
+    -- STEP 0 — Ensure the mod is actually loaded
+    ----------------------------------------------------------------
+    if not SMODS.Mods[id] then
+        return ret
+    end
+
+    ----------------------------------------------------------------
+    -- STEP 1 — GitHub repo info 
+    ----------------------------------------------------------------
+    local owner = "cloudzXIII"
+    local repo  = "Abandonia"
+
+    ----------------------------------------------------------------
+    -- Fetch latest release tag
+    ----------------------------------------------------------------
+    local curl_cmd =
+        ('curl -sL "https://api.github.com/repos/%s/%s/releases/latest"')
+        :format(owner, repo)
+
+    local fp = io.popen(curl_cmd, "r")
+    if not fp then 
+        return ret 
+    end
+
+    local body = fp:read("*a")
+    fp:close()
+
+    if not body or body == "" then 
+        return ret 
+    end
+
+    local latest = body:match('"tag_name"%s*:%s*"([^"]+)"')
+    if not latest then 
+        return ret 
+    end
+
+    -- Strips leading 'v' and handles hyphens, tildes (~), dots, and build identifiers
+    local git_version = latest:match("^v?([%w%-%_%.%~]+)$")
+    if not git_version then 
+        return ret 
+    end
+
+    ----------------------------------------------------------------
+    -- Compare with installed
+    ----------------------------------------------------------------
+    local current_raw = SMODS.Mods[id].version
+
+    -- Strips leading 'v' and handles Steamodded's tilde syntax (e.g. 0.1.1~DEV-2a)
+    local current_version = current_raw and current_raw:match("^v?([%w%-%_%.%~]+)$")
+
+    if not current_version then 
+        return ret 
+    end
+
+    if V(git_version) <= V(current_version) then 
+        return ret 
+    end
+
+    ----------------------------------------------------------------
+    -- Popup UI
+    ----------------------------------------------------------------
+    local msg = {
+        ("A new version of %s is available!\n"):format(SMODS.Mods[id].name),
+        ("Installed: v%s\n"):format(current_version),
+        ("Latest:    v%s\n\n"):format(latest),
+        "Update now? (This will restart Balatro.)"
+    }
+
+    local lines = {
+        n = G.UIT.R,
+        config = { padding = 0.2, align = "tm" },
+        nodes = {
+            {
+                n = G.UIT.C,
+                nodes = {
+                    {
+                        n = G.UIT.T,
+                        config = {
+                            text = msg[1] .. msg[2] .. msg[3] .. msg[4],
+                            scale = 0.5
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    local button_row = {
+        n = G.UIT.R,
+        config = { padding = 0.2, align = "bm" },
+        nodes = {
+            {
+                n = G.UIT.C,
+                config = { padding = 0.1 },
+                nodes = {
+                    UIBox_button {
+                        colour = G.C.GREEN,
+                        label = { "Yes" },
+                        button = "update_accepted",
+                    }
+                }
+            },
+            {
+                n = G.UIT.C,
+                config = { padding = 0.1 },
+                nodes = {
+                    UIBox_button {
+                        colour = G.C.RED,
+                        label = { "No" },
+                        button = "update_denied",
+                    }
+                }
+            }
+        }    
+    }
+
+    local confirm_ui = {
+        n = G.UIT.ROOT,
+        config = {
+            align = "cm",
+            minw = 4,
+            minh = 5,
+            padding = 0.3,
+            colour = G.C.UI.TEXT_DARK,
+            outline = 5,
+            outline_colour = G.C.BLACK,
+            r = 0.1
+        },
+        nodes = {
+            lines,
+            {
+                n = G.UIT.R,
+                nodes = {
+                    { n = G.UIT.B, config = { h = 2, w = 0 } }
+                }
+            },
+            button_row
+        }
+    }
+
+    G.FUNCS.overlay_menu {
+        definition = confirm_ui,
+        config = {
+            align = "cm",
+            bond = "Weak",
+            no_esc = true,
+            major = G.ROOM_ATTACH
+        }
+    }
+
+    ----------------------------------------------------------------
+    -- NEW UPDATED INSTALLER (Maximus-style)
+    ----------------------------------------------------------------
+
+    -- Helpers
+    local function get_first_subdir(path)
+        local fp = io.popen('dir "' .. path .. '" /b /ad 2>nul')
+        if not fp then return nil end
+        local entry = fp:read("*l")
+        fp:close()
+        return entry
+    end
+
+    local function remove_if_exists(path)
+        return os.execute(('if exist "%s" rmdir /S /Q "%s"'):format(path, path))
+    end
+
+    local function move_contents(src, dst)
+        local cmd = string.format(
+            'powershell -NoProfile -Command "New-Item -ItemType Directory -Force -Path %q | Out-Null; Move-Item -Path %q\\* -Destination %q -Force"',
+            dst, src, dst
+        )
+        return os.execute(cmd)
+    end
+
+    local function unzip_and_install(zip_path)
+        local target = modPath:gsub("/", "\\")
+        local tmp   = target .. "_tmp"
+
+        remove_if_exists(tmp)
+        remove_if_exists(target)
+
+        os.execute(string.format(
+            'powershell -NoProfile -Command "Expand-Archive -LiteralPath %q -DestinationPath %q -Force"',
+            zip_path, tmp
+        ))
+
+        local sub = get_first_subdir(tmp)
+
+        if sub and sub ~= "" then
+            move_contents(tmp .. "\\" .. sub, target)
+        else
+            move_contents(tmp, target)
+        end
+
+        remove_if_exists(tmp)
+        os.remove(zip_path)
+    end
+
+    ----------------------------------------------------------------
+    -- Button Handlers
+    ----------------------------------------------------------------
+    G.FUNCS.update_accepted = function(e)
+        local zip_url = string.format(
+            "https://github.com/%s/%s/releases/download/%s/Abandonia.zip",
+            owner, repo, latest
+        )
+        local zip_path = ("Mods\\%s-%s.zip"):format(repo, latest)
+
+        os.execute(('curl -sL -A "AbandoniaUpdater" -o "%s" "%s"')
+            :format(zip_path, zip_url))
+
+        unzip_and_install(zip_path)
+        
+        SMODS.restart_game()
+    end
+
+    G.FUNCS.update_denied = function(e)
+        G.FUNCS.exit_overlay_menu()
+    end
+
+    return ret
+end
