@@ -10,6 +10,7 @@ if next(SMODS.find_mod("Cryptlib")) then
         abn_coder = "LasagnaFelidae",
         config = { extra = { xchips = 1.3, xmult = 1.2, xasc = 1.1, asc_abn = 2} },
         loc_vars = function(self, info_queue, card)
+            info_queue[#info_queue+1] = G.P_CENTERS["j_abn_abandonia"]
             return { vars = { card.ability.extra.xchips, card.ability.extra.xmult,card.ability.extra.xasc,card.ability.extra.asc_abn } }
         end,
 

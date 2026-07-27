@@ -7951,6 +7951,20 @@ return {
         }
 
       },
+      j_abn_ascended_joker = {
+        name = "Ascended Joker",
+        text = {
+
+          {
+            "{C:gold}+#1#{} Ascension Power",
+          },
+          {
+            "If {C:attention}Joker{} is owned,",
+            "scored cards give","{C:gold}+#2#{} Asc. Power",
+          }
+        }
+
+      },
       j_abn_scrapbook_joker = {
         name = "Scrapbook Joker",
         text = {
