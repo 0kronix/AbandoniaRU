@@ -4365,6 +4365,7 @@ return {
           },
         }
       },
+      
       j_abn_negative_suit = {
         name = "Negative Suit",
         text = {
@@ -7962,6 +7963,37 @@ return {
             "If {C:attention}Joker{} is owned,",
             "scored cards give","{C:gold}+#2#{} Asc. Power",
           }
+        }
+
+      },
+      j_abn_the_great_gig_in_the_sky = {
+        name = "The Great Gig In The Sky",
+        text = {
+
+          {
+            "If a {C:attention}Spectrum{} is played without",
+            "any {C:diamonds}Vanilla {C:spades}Suits{}, this {C:attention}Joker",
+            "gains {C:gold}+#2#{} Ascension Power",
+            "{C:inactive}(Currently {C:gold}+#1#{C:inactive} Asc. Power)",
+          },
+          {
+            "If this {C:attention}Joker{} is {C:dark_edition}editioned{},",
+            "scored cards gain","{C:gold}+#3#{} Asc. Power",
+          }
+        }
+
+      },
+      j_abn_tyches_keychain = {
+        name = "Tyche\'s Keychain",
+        text = {
+
+          {
+            "If a {C:attention}#1#{}",
+            "is played, scored cards gain",
+            "{V:1}#2#{} #3#",
+            "{C:inactive}(Cycles every hand){}"
+          },
+
         }
 
       },
