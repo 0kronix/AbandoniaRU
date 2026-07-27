@@ -9782,8 +9782,8 @@ return {
           "{C:inactive}(Must have room)",
         },
       },
-      abn_duality_seal = {
-        name = "Duality Seal",
+      abn_linguistic_seal = {
+        name = "Linguistic Seal",
         text = {
           "Creates a {C:lexica}Lexica{} card",
           "when {C:attention}discarded",
@@ -9797,8 +9797,8 @@ return {
           "{C:attention}held{} in hand"
         }
       },
-      abn_lime_seal = {
-        name = "Lime Seal",
+      abn_brine_seal = {
+        name = "Brine Seal",
         text = {
           "Gains {C:chips}+#2#{} chips",
           "when {C:attention}discarded",
@@ -9887,6 +9887,15 @@ return {
           "Earn {C:money}$#1#{}",
           "when {C:attention}discarded",
         }
+      },
+	  
+	  abn_rubicund_seal = {
+        name = "Rubicund Seal",
+        text = {
+          "Gains {C:mult}+#2#{} Mult",
+          "when {C:attention}discarded",
+          "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)"
+        },
       },
 
       p_abn_calamitybooster = {
@@ -12330,7 +12339,9 @@ return {
       abn_brass_seal = "Brass Seal",
       abn_copper_seal = "Copper Seal",
       abn_silver_seal = "Silver Seal",
-      abn_duality_seal = "Duality Seal"
+      abn_linguistic_seal = "Linguistic Seal",
+	  abn_rubicund_seal = "Rubicund Seal",
+	  abn_brine_seal = "Brine Seal",
     },
     ranks = {
       ["abn_11"] = "11",
