@@ -61,7 +61,7 @@ SMODS.Consumable {
   end,
   can_use = function(self, card)
     return G.hand and #G.hand.highlighted <= card.ability.max_highlighted and #G.hand.highlighted > 0 and
-        (not G.hand.highlighted[1].edition)
+    (not G.hand.highlighted[1].edition)
   end,
   abn_artist_credits = {
     artist = "L'"
@@ -147,7 +147,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
       delay = 0.1,
@@ -156,7 +156,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     delay(0.5)
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
@@ -191,7 +191,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
       delay = 0.1,
@@ -200,7 +200,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     delay(0.5)
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
@@ -235,7 +235,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
       delay = 0.1,
@@ -244,7 +244,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     delay(0.5)
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
@@ -279,7 +279,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
       delay = 0.1,
@@ -288,7 +288,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     delay(0.5)
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
@@ -323,7 +323,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
       delay = 0.1,
@@ -332,7 +332,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     delay(0.5)
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
@@ -367,7 +367,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
       delay = 0.1,
@@ -376,7 +376,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     delay(0.5)
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
@@ -411,7 +411,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
       delay = 0.1,
@@ -420,7 +420,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     delay(0.5)
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
@@ -455,7 +455,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
       delay = 0.1,
@@ -464,7 +464,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     delay(0.5)
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
@@ -499,7 +499,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
       delay = 0.1,
@@ -508,7 +508,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     delay(0.5)
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
@@ -543,7 +543,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
       delay = 0.1,
@@ -552,7 +552,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     delay(0.5)
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
@@ -587,7 +587,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
       delay = 0.1,
@@ -596,7 +596,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     delay(0.5)
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
@@ -631,7 +631,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
       delay = 0.1,
@@ -640,7 +640,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     delay(0.5)
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
@@ -675,7 +675,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
       delay = 0.1,
@@ -684,7 +684,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     delay(0.5)
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
@@ -719,7 +719,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
       delay = 0.1,
@@ -728,7 +728,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     delay(0.5)
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
@@ -763,7 +763,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
       delay = 0.1,
@@ -772,7 +772,7 @@ SMODS.Consumable {
         return true
       end
     }))
-
+    
     delay(0.5)
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
@@ -817,14 +817,14 @@ SMODS.Consumable {
   loc_vars = function(self, info_queue, card)
     local transform_c = G.GAME.abn_last_spectral and G.P_CENTERS[G.GAME.abn_last_spectral] or nil
     local abn_last_spectral = transform_c and
-        localize { type = 'name_text', key = transform_c.key, set = transform_c.set } or
-        localize('k_none')
+    localize { type = 'name_text', key = transform_c.key, set = transform_c.set } or
+    localize('k_none')
     local colour = (not transform_c or transform_c.key == "c_abn_transform") and G.C.RED or G.C.GREEN
-
+    
     if transform_c and transform_c.key ~= "c_abn_transform" then
       info_queue[#info_queue + 1] = transform_c
     end
-
+    
     local main_end = {
       {
         n = G.UIT.C,
@@ -840,7 +840,7 @@ SMODS.Consumable {
         }
       }
     }
-
+    
     return { vars = { abn_last_spectral }, main_end = main_end }
   end,
   use = function(self, card, area, copier)
@@ -860,8 +860,8 @@ SMODS.Consumable {
   end,
   can_use = function(self, card)
     return (#G.consumeables.cards < G.consumeables.config.card_limit or card.area == G.consumeables) and
-        G.GAME.abn_last_spectral and
-        G.GAME.abn_last_spectral ~= 'c_abn_transform'
+    G.GAME.abn_last_spectral and
+    G.GAME.abn_last_spectral ~= 'c_abn_transform'
   end
 }
 
@@ -893,6 +893,69 @@ SMODS.Consumable {
 }
 
 SMODS.Consumable {
+  key = 'chance',
+  set = 'Spectral',
+  atlas = "AbandoniaChance",
+  pos = { x = 0, y = 0 },
+  config = { extra = { odds = 16 , e_conv = "e_negative"}},
+  loc_vars = function(self, info_queue, card)
+    info_queue[#info_queue + 1] = G.P_CENTERS["e_negative"]
+    local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds)
+    return {
+      vars = {
+        numerator, denominator,
+      }
+    }
+  end,
+  can_use = function(self, card)
+    return G.jokers and G.jokers.cards and #G.jokers.cards >= 1
+  end,
+  use = function(self, card, area, copier)
+    if SMODS.pseudorandom_probability(card, "c_abn_chance", 1, card.ability.extra.odds) then
+      for i = 1, #G.jokers.cards do
+        local current = G.jokers.cards[i]
+        current:set_edition(card.ability.extra.e_conv)
+      end
+    else
+      G.E_MANAGER:add_event(Event({
+        trigger = 'after',
+        delay = 0.4,
+        func = function()
+          attention_text({
+            text = localize('k_nope_ex'),
+            scale = 1.3,
+            hold = 1.4,
+            major = card,
+            backdrop_colour = G.C.SECONDARY_SET.Tarot,
+            align = (G.STATE == G.STATES.TAROT_PACK or G.STATE == G.STATES.SPECTRAL_PACK or G.STATE == G.STATES.SMODS_BOOSTER_OPENED) and
+            'tm' or 'cm',
+            offset = { x = 0, y = (G.STATE == G.STATES.TAROT_PACK or G.STATE == G.STATES.SPECTRAL_PACK or G.STATE == G.STATES.SMODS_BOOSTER_OPENED) and -0.2 or 0 },
+            silent = true
+          })
+          G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.06 * G.SETTINGS.GAMESPEED,
+            blockable = false,
+            blocking = false,
+            func = function()
+              play_sound('tarot2', 0.76, 0.4)
+              return true
+            end
+          }))
+          play_sound('tarot2', 1, 0.4)
+          card:juice_up(0.3, 0.5)
+          return true
+        end
+      }))
+    end
+  end,
+  
+  abn_artist_credits = {
+    artist = "Shepcicle"
+  },
+}
+
+SMODS.Consumable {
   key = 'distortion',
   set = 'Spectral',
   atlas = "AbandoniaSpectrals",
@@ -910,7 +973,7 @@ SMODS.Consumable {
       func = function()
         local eligible_card = pseudorandom_element(editionless_jokers, 'vremade_hex')
         eligible_card:set_edition("e_abn_pearlescent")
-
+        
         local _first_dissolve = nil
         for _, joker in ipairs(G.jokers.cards) do
           if joker ~= eligible_card and not SMODS.is_eternal(joker, card) then
@@ -918,7 +981,7 @@ SMODS.Consumable {
             _first_dissolve = true
           end
         end
-
+        
         card:juice_up(0.3, 0.5)
         return true
       end
@@ -953,13 +1016,13 @@ SMODS.Consumable {
       delay = 0.4,
       func = function()
         local choices = { 'abn_gloss', 'abn_iridescent', 'abn_pearlescent' }
-
+        
         local chosen_edition = pseudorandom_element(choices, 'abn_ascend')
-
+        
         local ascend_card = G.hand.highlighted[1]
-
+        
         ascend_card:set_edition({ [chosen_edition] = true }, true)
-
+        
         card:juice_up(0.3, 0.5)
         return true
       end
@@ -977,10 +1040,10 @@ SMODS.Consumable {
   pos = { x = 5, y = 3 },
   hidden = true,
   soul_set = 'Planet',
-
+  
   use = function(self, card, area, copier)
     update_hand_text({ sound = 'button', volume = 0.7, pitch = 0.8, delay = 0.3 },
-      { handname = "All Ranks", chips = '...', mult = '...', level = '' })
+    { handname = "All Ranks", chips = '...', mult = '...', level = '' })
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
       delay = 0.2,
@@ -1020,7 +1083,7 @@ SMODS.Consumable {
       end
     end
     update_hand_text({ sound = 'button', volume = 0.7, pitch = 1.1, delay = 0 },
-      { mult = 0, chips = 0, handname = '', level = '' })
+    { mult = 0, chips = 0, handname = '', level = '' })
   end,
   can_use = function(self, card)
     return true

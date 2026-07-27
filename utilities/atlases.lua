@@ -108,6 +108,15 @@ SMODS.Atlas({
 })
 
 SMODS.Atlas({
+  key = "AbandoniaChance",
+  path = "chance.png",
+  px = 71,
+  py = 95,
+  atlas_table = 'ANIMATION_ATLAS',
+  frames = 4,
+})
+
+SMODS.Atlas({
   key = "AbandoniaPlanets",
   path = "planets.png",
   px = 71,

@@ -9222,6 +9222,13 @@ return {
           "card in your hand",
         },
       },
+      c_abn_chance = {
+        name = "Chance",
+        text = {
+          "{C:green}#1# in #2#{} chance to make",
+          "all jokers {C:dark_edition}Negative{}"
+        }
+      },
 
       c_abn_entendu = {
         name = "Entendu",
