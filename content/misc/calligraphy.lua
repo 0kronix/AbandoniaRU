@@ -17,26 +17,43 @@ ABN.CalligraphyCard = SMODS.Consumable:extend({
   },
 })
 
+ABN.AncientCalligraphyCard = SMODS.Consumable:extend({
+  set = 'calligraphy',
+  cost = 10,
+  hidden = true,
+  soul_set = 0.003,
+  atlas = "abn_AbandoniaAncientCalligraphy",
+  pos = { x = 0, y = 0 },
+  abn_artist_credits = {
+    artist = "0kronix"
+  },
+  set_card_type_badge = function(self, card, badges)
+    badges[#badges + 1] = create_badge(localize('k_ancient_calligraphy'),
+    get_type_colour(card.config.center or card.config, card), SMODS.ConsumableTypes.calligraphy.text_colour,
+    1.2)
+  end
+})
+
 ABN.CalligraphyCard {
   key = "azu",
   pos = { x = 0, y = 0 },
-
+  
   loc_vars = function(self, info_queue, card)
     info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.extra.mod_conv]
     return {
       vars = {
-
+        
         localize(card.ability.extra.suit_conv, 'suits_singular'),
         colours = { G.C.SUITS[card.ability.extra.suit_conv] }
       }
     }
   end,
-
+  
   config = { extra = { suit_conv = "abn_Sword", mod_conv = "m_abn_first_aid" } },
   can_use = function(self, card)
     return G.hand and #G.hand.cards > 0 and G.GAME.blind and not G.GAME.blind.in_blind
   end,
-
+  
   use = function(self, card, area, copier)
     local leftmost = G.hand.cards[1]
     G.E_MANAGER:add_event(Event({
@@ -77,30 +94,30 @@ ABN.CalligraphyCard {
     }))
     delay(0.5)
   end,
-
+  
 }
 
 
 ABN.CalligraphyCard {
   key = "buky",
   pos = { x = 1, y = 0 },
-
+  
   loc_vars = function(self, info_queue, card)
     info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.extra.mod_conv]
     return {
       vars = {
-
+        
         localize(card.ability.extra.suit_conv, 'suits_plural'),
         colours = { G.C.SUITS[card.ability.extra.suit_conv] }
       }
     }
   end,
-
+  
   config = { extra = { suit_conv = "abn_Coin", mod_conv = "m_gold", rank = "Ace" } },
   can_use = function(self, card)
     return G.hand and #G.hand.cards > 0 and G.GAME.blind and not G.GAME.blind.in_blind
   end,
-
+  
   use = function(self, card, area, copier)
     local rightmost = G.hand.cards[#G.hand.cards]
     G.E_MANAGER:add_event(Event({
@@ -141,30 +158,30 @@ ABN.CalligraphyCard {
     }))
     delay(0.5)
   end,
-
+  
 }
 
 
 ABN.CalligraphyCard {
   key = "vede",
   pos = { x = 2, y = 0 },
-
+  
   loc_vars = function(self, info_queue, card)
     info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.extra.mod_conv]
     return {
       vars = {
-
+        
         localize(card.ability.extra.suit_conv, 'suits_singular'),
         colours = { G.C.SUITS[card.ability.extra.suit_conv] }
       }
     }
   end,
-
+  
   config = { extra = { suit_conv = "abn_Baton", mod_conv = "m_abn_mountain", } },
   can_use = function(self, card)
     return G.hand and #G.hand.cards > 0 and G.GAME.blind and not G.GAME.blind.in_blind
   end,
-
+  
   use = function(self, card, area, copier)
     local rightmost = G.hand.cards[#G.hand.cards]
     G.E_MANAGER:add_event(Event({
@@ -205,13 +222,13 @@ ABN.CalligraphyCard {
     }))
     delay(0.5)
   end,
-
+  
 }
 
 ABN.CalligraphyCard {
   key = "ghe",
   pos = { x = 3, y = 0 },
-
+  
   loc_vars = function(self, info_queue, card)
     return {
       vars = {
@@ -219,12 +236,12 @@ ABN.CalligraphyCard {
       }
     }
   end,
-
+  
   config = { extra = { amount = 2 } },
   can_use = function(self, card)
     return G.hand and #G.hand.cards > 0 and G.GAME.blind and not G.GAME.blind.in_blind
   end,
-
+  
   use = function(self, card, area, copier)
     local leftmost = G.hand.cards[1]
     G.E_MANAGER:add_event(Event({
@@ -249,7 +266,7 @@ ABN.CalligraphyCard {
     G.E_MANAGER:add_event(Event({
       func = function()
         assert(SMODS.modify_rank(leftmost, -card.ability.extra.amount))
-
+        
         return true
       end
     }))
@@ -265,29 +282,29 @@ ABN.CalligraphyCard {
     }))
     delay(0.5)
   end,
-
+  
 }
 
 ABN.CalligraphyCard {
   key = "de",
   pos = { x = 4, y = 0 },
-
+  
   loc_vars = function(self, info_queue, card)
     info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.extra.mod_conv]
     return {
       vars = {
-
+        
         localize(card.ability.extra.suit_conv, 'suits_singular'),
         colours = { G.C.SUITS[card.ability.extra.suit_conv] }
       }
     }
   end,
-
+  
   config = { extra = { suit_conv = "abn_Goblet", mod_conv = "m_abn_ocean", } },
   can_use = function(self, card)
     return G.hand and #G.hand.cards > 0 and G.GAME.blind and not G.GAME.blind.in_blind
   end,
-
+  
   use = function(self, card, area, copier)
     local rightmost = G.hand.cards[#G.hand.cards]
     G.E_MANAGER:add_event(Event({
@@ -328,30 +345,30 @@ ABN.CalligraphyCard {
     }))
     delay(0.5)
   end,
-
+  
 }
 
 
 ABN.CalligraphyCard {
   key = "ye",
   pos = { x = 5, y = 0 },
-
+  
   loc_vars = function(self, info_queue, card)
     info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.extra.mod_conv]
     return {
       vars = {
-
+        
         localize(card.ability.extra.suit_conv, 'suits_plural'),
         colours = { G.C.SUITS[card.ability.extra.suit_conv] }
       }
     }
   end,
-
+  
   config = { extra = { suit_conv = "abn_Sword", mod_conv = "m_abn_kintsugi", rank = "4" } },
   can_use = function(self, card)
     return G.hand and #G.hand.cards > 0 and G.GAME.blind and not G.GAME.blind.in_blind
   end,
-
+  
   use = function(self, card, area, copier)
     local leftmost = G.hand.cards[1]
     G.E_MANAGER:add_event(Event({
@@ -392,29 +409,29 @@ ABN.CalligraphyCard {
     }))
     delay(0.5)
   end,
-
+  
 }
 
 ABN.CalligraphyCard {
   key = "yo",
   pos = { x = 0, y = 1 },
-
+  
   loc_vars = function(self, info_queue, card)
     info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.extra.mod_conv]
     return {
       vars = {
-
+        
         localize(card.ability.extra.suit_conv, 'suits_plural'),
         colours = { G.C.SUITS[card.ability.extra.suit_conv] }
       }
     }
   end,
-
+  
   config = { extra = { suit_conv = "Clubs", mod_conv = "m_glass", rank = "abn_13" } },
   can_use = function(self, card)
     return G.hand and #G.hand.cards > 0 and G.GAME.blind and not G.GAME.blind.in_blind
   end,
-
+  
   use = function(self, card, area, copier)
     local leftmost = G.hand.cards[1]
     G.E_MANAGER:add_event(Event({
@@ -455,13 +472,13 @@ ABN.CalligraphyCard {
     }))
     delay(0.5)
   end,
-
+  
 }
 
 ABN.CalligraphyCard {
   key = "zhe",
   pos = { x = 1, y = 1 },
-
+  
   loc_vars = function(self, info_queue, card)
     info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.extra.mod_conv]
     return {
@@ -471,12 +488,12 @@ ABN.CalligraphyCard {
       }
     }
   end,
-
+  
   config = { extra = { suit_conv = "abn_Rose", mod_conv = "m_abn_wallpaper", rank = "10" } },
   can_use = function(self, card)
     return G.hand and #G.hand.cards > 0 and G.GAME.blind and not G.GAME.blind.in_blind
   end,
-
+  
   use = function(self, card, area, copier)
     local rightmost = G.hand.cards[#G.hand.cards]
     G.E_MANAGER:add_event(Event({
@@ -517,30 +534,30 @@ ABN.CalligraphyCard {
     }))
     delay(0.5)
   end,
-
+  
 }
 
 
 ABN.CalligraphyCard {
   key = "ze",
   pos = { x = 2, y = 1 },
-
+  
   loc_vars = function(self, info_queue, card)
     info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.extra.mod_conv]
     return {
       vars = {
-
+        
         localize(card.ability.extra.suit_conv, 'suits_plural'),
         colours = { G.C.SUITS[card.ability.extra.suit_conv] }
       }
     }
   end,
-
+  
   config = { extra = { suit_conv = "abn_Baton", mod_conv = "m_abn_reinforcement", rank = "abn_12" } },
   can_use = function(self, card)
     return G.hand and #G.hand.cards > 0 and G.GAME.blind and not G.GAME.blind.in_blind
   end,
-
+  
   use = function(self, card, area, copier)
     local leftmost = G.hand.cards[1]
     G.E_MANAGER:add_event(Event({
@@ -581,26 +598,26 @@ ABN.CalligraphyCard {
     }))
     delay(0.5)
   end,
-
+  
 }
 
 ABN.CalligraphyCard {
   key = "i_cal",
   pos = { x = 3, y = 1 },
-
+  
   loc_vars = function(self, info_queue, card)
     return {
       vars = {
       }
     }
   end,
-
+  
   config = { extra = {} },
   can_use = function(self, card)
     return G.hand and #G.hand.cards > 0 and G.GAME.blind and not G.GAME.blind.in_blind and
-        not SMODS.has_no_suit(G.hand.cards[1])
+    not SMODS.has_no_suit(G.hand.cards[1])
   end,
-
+  
   use = function(self, card, area, copier)
     local leftmost = G.hand.cards[1]
     local to_convert = {}
@@ -665,13 +682,13 @@ ABN.CalligraphyCard {
     }))
     delay(0.5)
   end,
-
+  
 }
 
 ABN.CalligraphyCard {
   key = "kratkoye",
   pos = { x = 4, y = 1 },
-
+  
   loc_vars = function(self, info_queue, card)
     local unique = 0
     if G.hand and #G.hand.cards > 0 then
@@ -679,12 +696,12 @@ ABN.CalligraphyCard {
       for _, v in ipairs(G.hand.cards) do
         cards[v.base.suit] = true
       end
-
+      
       for _ in pairs(cards) do
         unique = unique + 1
       end
     end
-
+    
     return {
       vars = {
         card.ability.extra.mult_gain,
@@ -692,15 +709,15 @@ ABN.CalligraphyCard {
       }
     }
   end,
-
+  
   config = { extra = { mult_gain = 1 } },
   can_use = function(self, card)
     return G.hand and #G.hand.cards > 0 and G.GAME.blind and not G.GAME.blind.in_blind
   end,
-
+  
   use = function(self, card, area, copier)
     local rightmost = G.hand.cards[#G.hand.cards]
-
+    
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
       delay = 0.4,
@@ -710,17 +727,17 @@ ABN.CalligraphyCard {
         return true
       end
     }))
-
+    
     local unique = 0
     local cards = {}
     for _, v in ipairs(G.hand.cards) do
       cards[v.base.suit] = true
     end
-
+    
     for _ in pairs(cards) do
       unique = unique + 1
     end
-
+    
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
       delay = 0.15,
@@ -732,13 +749,13 @@ ABN.CalligraphyCard {
     }))
     delay(0.2)
   end,
-
+  
 }
 
 ABN.CalligraphyCard {
   key = "ka",
   pos = { x = 5, y = 1 },
-
+  
   loc_vars = function(self, info_queue, card)
     local count = 0
     if G.hand and #G.hand.cards > 0 and not SMODS.has_no_suit(G.hand.cards[1]) then
@@ -749,7 +766,7 @@ ABN.CalligraphyCard {
         end
       end
     end
-
+    
     return {
       vars = {
         card.ability.extra.chips_gain,
@@ -757,16 +774,16 @@ ABN.CalligraphyCard {
       }
     }
   end,
-
+  
   config = { extra = { chips_gain = 8 } },
   can_use = function(self, card)
     return G.hand and #G.hand.cards > 0 and G.GAME.blind and not G.GAME.blind.in_blind and
-        not SMODS.has_no_suit(G.hand.cards[1])
+    not SMODS.has_no_suit(G.hand.cards[1])
   end,
-
+  
   use = function(self, card, area, copier)
     local leftmost = G.hand.cards[1]
-
+    
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
       delay = 0.4,
@@ -776,7 +793,7 @@ ABN.CalligraphyCard {
         return true
       end
     }))
-
+    
     local count = 0
     for _, v in ipairs(G.hand.cards) do
       if v:is_suit(leftmost.base.suit) then
@@ -784,7 +801,7 @@ ABN.CalligraphyCard {
         v:juice_up(0.3, 0.3)
       end
     end
-
+    
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
       delay = 0.15,
@@ -796,30 +813,30 @@ ABN.CalligraphyCard {
     }))
     delay(0.2)
   end,
-
+  
 }
 
 
 ABN.CalligraphyCard {
   key = "el",
   pos = { x = 0, y = 2 },
-
+  
   loc_vars = function(self, info_queue, card)
     info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.extra.mod_conv]
     return {
       vars = {
-
+        
         localize(card.ability.extra.suit_conv, 'suits_singular'),
         colours = { G.C.SUITS[card.ability.extra.suit_conv] }
       }
     }
   end,
-
+  
   config = { extra = { suit_conv = "abn_Bell", mod_conv = "m_abn_hot_iron", } },
   can_use = function(self, card)
     return G.hand and #G.hand.cards > 0 and G.GAME.blind and not G.GAME.blind.in_blind
   end,
-
+  
   use = function(self, card, area, copier)
     local rightmost = G.hand.cards[#G.hand.cards]
     G.E_MANAGER:add_event(Event({
@@ -860,30 +877,30 @@ ABN.CalligraphyCard {
     }))
     delay(0.5)
   end,
-
+  
 }
 
 
 ABN.CalligraphyCard {
   key = "em",
   pos = { x = 1, y = 2 },
-
+  
   loc_vars = function(self, info_queue, card)
     info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.extra.mod_conv]
     return {
       vars = {
-
+        
         localize(card.ability.extra.suit_conv, 'suits_plural'),
         colours = { G.C.SUITS[card.ability.extra.suit_conv] }
       }
     }
   end,
-
+  
   config = { extra = { suit_conv = "abn_Leaf", mod_conv = "m_abn_zen", rank = "8" } },
   can_use = function(self, card)
     return G.hand and #G.hand.cards > 0 and G.GAME.blind and not G.GAME.blind.in_blind
   end,
-
+  
   use = function(self, card, area, copier)
     local leftmost = G.hand.cards[1]
     G.E_MANAGER:add_event(Event({
@@ -924,29 +941,29 @@ ABN.CalligraphyCard {
     }))
     delay(0.5)
   end,
-
+  
 }
 
 ABN.CalligraphyCard {
   key = "en",
   pos = { x = 2, y = 2 },
-
+  
   loc_vars = function(self, info_queue, card)
     info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.extra.mod_conv]
     return {
       vars = {
-
+        
         localize(card.ability.extra.suit_conv, 'suits_plural'),
         colours = { G.C.SUITS[card.ability.extra.suit_conv] }
       }
     }
   end,
-
+  
   config = { extra = { suit_conv = "abn_Florette", mod_conv = "m_abn_mountain", rank = "Ace" } },
   can_use = function(self, card)
     return G.hand and #G.hand.cards > 0 and G.GAME.blind and not G.GAME.blind.in_blind
   end,
-
+  
   use = function(self, card, area, copier)
     local rightmost = G.hand.cards[#G.hand.cards]
     G.E_MANAGER:add_event(Event({
@@ -987,25 +1004,25 @@ ABN.CalligraphyCard {
     }))
     delay(0.5)
   end,
-
+  
 }
 
 ABN.CalligraphyCard {
   key = "o_cal",
   pos = { x = 3, y = 2 },
-
+  
   loc_vars = function(self, info_queue, card)
     return {
       vars = {
       }
     }
   end,
-
+  
   config = { extra = { amount = 3 } },
   can_use = function(self, card)
     return G.hand and #G.hand.cards > 0 and G.GAME.blind and not G.GAME.blind.in_blind and G.hand.cards[1]:get_id() < 5
   end,
-
+  
   use = function(self, card, area, copier)
     local leftmost = G.hand.cards[1]
     G.E_MANAGER:add_event(Event({
@@ -1017,42 +1034,42 @@ ABN.CalligraphyCard {
         return true
       end
     }))
-
+    
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
       delay = 0.15,
       func = function()
         leftmost.ability.perma_bonus = (leftmost.ability.perma_bonus or 0) +
-            (leftmost.base.nominal * card.ability.extra.amount)
+        (leftmost.base.nominal * card.ability.extra.amount)
         SMODS.calculate_effect({ message = localize("k_upgrade_ex"), colour = G.C.CHIPS }, leftmost)
         return true
       end
     }))
     delay(0.2)
   end,
-
+  
 }
 
 ABN.CalligraphyCard {
   key = "pe",
   pos = { x = 5, y = 2 },
-
+  
   loc_vars = function(self, info_queue, card)
     info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.extra.mod_conv]
     return {
       vars = {
-
+        
         localize(card.ability.extra.suit_conv, 'suits_plural'),
         colours = { G.C.SUITS[card.ability.extra.suit_conv] }
       }
     }
   end,
-
+  
   config = { extra = { suit_conv = "abn_Acorn", mod_conv = "m_abn_kinship", rank = "Ace" } },
   can_use = function(self, card)
     return G.hand and #G.hand.cards > 0 and G.GAME.blind and not G.GAME.blind.in_blind
   end,
-
+  
   use = function(self, card, area, copier)
     local rightmost = G.hand.cards[#G.hand.cards]
     G.E_MANAGER:add_event(Event({
@@ -1093,5 +1110,204 @@ ABN.CalligraphyCard {
     }))
     delay(0.5)
   end,
-
+  
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- ANCIENT CALLIGRAPHY
+if next(SMODS.find_mod("Cryptlib")) then
+  
+  ABN.AncientCalligraphyCard {
+    key = "izhitsa",
+    pos = { x = 0, y = 2 },
+    atlas = "abn_AbandoniaAncientCalligraphy",
+    loc_vars = function(self, info_queue, card)
+      info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.extra.m_conv]
+      return {
+        vars = {
+          
+          (G.hand and #G.hand.cards > 0) and (card.ability.extra.asc_pow*#G.hand.cards) or 0
+          
+        }
+      }
+    end,
+    
+    config = { extra = { m_conv = "m_abn_kintsugi", asc_pow = 1} },
+    can_use = function(self, card)
+      return G.hand and #G.hand.cards > 0 and G.GAME.blind and not G.GAME.blind.in_blind
+    end,
+    
+    use = function(self, card, area, copier)
+      for i = 1, #G.hand.cards do
+        
+        if i == 1 then
+          G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.4,
+            func = function()
+              play_sound('tarot1')
+              card:juice_up(0.3, 0.5)
+              return true
+            end
+          }))
+          G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.15,
+            func = function()
+              G.hand.cards[i]:flip()
+              play_sound('card1', 1)
+              G.hand.cards[i]:juice_up(0.3, 0.3)
+              return true
+            end
+          }))
+          G.E_MANAGER:add_event(Event({
+            func = function()
+              G.hand.cards[i]:set_ability(card.ability.extra.m_conv)
+              return true
+            end
+          }))
+          G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.15,
+            func = function()
+              G.hand.cards[i]:flip()
+              play_sound('tarot2', 1, 0.6)
+              G.hand.cards[i]:juice_up(0.3, 0.3)
+              return true
+            end
+          }))
+          delay(0.5)
+        end
+        G.E_MANAGER:add_event(Event({
+        func = function()
+              G.hand.cards[i]:juice_up(0.3, 0.5)
+              play_sound('tarot1', 1, 0.6)
+              return true
+            end
+          }))
+          G.hand.cards[i].ability.slib_perma_plus_asc = (G.hand.cards[i].ability.slib_perma_plus_asc or 0) + #G.hand.cards
+          delay(0.5)
+        end
+    end,
+    abn_artist_credits = {
+      artist = "0kronix",
+    },
+  }
+
+  ABN.AncientCalligraphyCard {
+    key = "koppa",
+    pos = { x = 1, y = 2 },
+    atlas = "abn_AbandoniaAncientCalligraphy",
+    loc_vars = function(self, info_queue, card)
+      info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.extra.e_conv]
+      return {
+        vars = {
+          
+          card.ability.extra.asc_pow
+          
+        }
+      }
+    end,
+    
+    config = { extra = { e_conv = "e_abn_chromatic", asc_pow = 1} },
+    can_use = function(self, card)
+      return G.hand and #G.hand.cards > 0 and G.GAME.blind and not G.GAME.blind.in_blind
+    end,
+    
+    use = function(self, card, area, copier)
+      for i = 1, #G.hand.cards do
+        local current = G.hand.cards[i]
+        G.E_MANAGER:add_event(Event({
+          func = function()
+            current:juice_up(0.3, 0.5)
+            play_sound('tarot1', 1)
+            return true
+          end
+        }))
+        current.ability.slib_perma_plus_asc = (current.ability.slib_perma_plus_asc or 0) + card.ability.extra.asc_pow
+        delay(0.5)
+        
+        if i == #G.hand.cards then
+          G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.4,
+            func = function()
+              play_sound('tarot1')
+              card:juice_up(0.3, 0.5)
+              return true
+            end
+          }))
+          G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.15,
+            func = function()
+              current:flip()
+              play_sound('card1', 1)
+              current:juice_up(0.3, 0.3)
+              return true
+            end
+          }))
+          G.E_MANAGER:add_event(Event({
+            func = function()
+              current:set_edition(card.ability.extra.e_conv)
+              return true
+            end
+          }))
+          G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.15,
+            func = function()
+              current:flip()
+              play_sound('tarot2', 1, 0.6)
+              current:juice_up(0.3, 0.3)
+              return true
+            end
+          }))
+          delay(0.5)
+        end
+      end
+    end,
+  }
+
+end

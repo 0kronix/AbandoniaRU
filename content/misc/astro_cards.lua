@@ -958,6 +958,79 @@ SMODS.Consumable {
         artist = "Maw",
     },
 }
+if next(SMODS.find_mod("Cryptlib")) then
+    SMODS.Consumable{
+        key = "serpentarius",
+        set = "astro_cards",
+        atlas = "AbandoniaAstro",
+        pos = {x=1,y=2},
+        hidden = true,
+        soul_set = "astro_cards",
+        soul_rate = 0.003,
+        
+        loc_vars = function(self, q, card) 
+            local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds)
+            return {
+                vars = {
+                    numerator, denominator, number_format(card.ability.asc_power),
+                }
+            }
+        end,
+        config = {
+            asc_power = 4,
+            extra = {odds = 6}
+        },
+        use = function(self, card)
+            if SMODS.pseudorandom_probability(card, "c_abn_serpentarius", 1, card.ability.extra.odds) then
+                local hand = "High Card"
+                for i, v in pairs(G.GAME.hands) do
+                    if v.level > G.GAME.hands[hand].level then
+                        hand = i
+                    end
+                end
+                SMODS.upgrade_poker_hands({hands = hand, from = card, ascension_power = card.ability.asc_power})
+            else
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'after',
+                    delay = 0.4,
+                    func = function()
+                        attention_text({
+                            text = localize('k_nope_ex'),
+                            scale = 1.3,
+                            hold = 1.4,
+                            major = card,
+                            backdrop_colour = G.C.SECONDARY_SET.Tarot,
+                            align = (G.STATE == G.STATES.TAROT_PACK or G.STATE == G.STATES.SPECTRAL_PACK or G.STATE == G.STATES.SMODS_BOOSTER_OPENED) and
+                                'tm' or 'cm',
+                            offset = { x = 0, y = (G.STATE == G.STATES.TAROT_PACK or G.STATE == G.STATES.SPECTRAL_PACK or G.STATE == G.STATES.SMODS_BOOSTER_OPENED) and -0.2 or 0 },
+                            silent = true
+                        })
+                        G.E_MANAGER:add_event(Event({
+                            trigger = 'after',
+                            delay = 0.06 * G.SETTINGS.GAMESPEED,
+                            blockable = false,
+                            blocking = false,
+                            func = function()
+                                play_sound('tarot2', 0.76, 0.4)
+                                return true
+                            end
+                        }))
+                        play_sound('tarot2', 1, 0.4)
+                        card:juice_up(0.3, 0.5)
+                        return true
+                    end
+                }))
+            end
+        end,
+        can_use = function()
+            return true
+        end,
+        abn_artist_credits = {
+            artist = "comykel",
+        },
+    }
+end
+
 
 SMODS.Voucher({
     key = "chaos",

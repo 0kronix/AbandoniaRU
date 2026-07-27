@@ -1,4 +1,5 @@
 -- Taken from Vega's stuff, check their mod out! https://github.com/VegaTheAvali/Vega-s-Stuff (with permission, thanks Vega :>)
+--[[
 local function abn_cryptid_active()
     local cryptid_mod = SMODS and SMODS.Mods and SMODS.Mods["Cryptid"]
     return cryptid_mod and cryptid_mod.can_load and Cryptid and Cryptid.calculate_ascension_power
@@ -324,3 +325,9 @@ if not _G.abn_ascended_hand_info_hooked then
         return text, loc_disp_text, poker_hands, scoring_hand, disp_text
     end
 end
+]]
+
+-- This does not work, its way better to just use Cryptlib as a "dependency"
+-- I would wrap the cards using ascensions inside a [ if next(SMODS.find_mod("Cryptlib")) then ... end ] instead
+-- In order to not force people to install Cryptlib unless they want Ascensions
+-- Perhaps until someone copies the code from there properly

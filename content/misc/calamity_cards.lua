@@ -764,6 +764,70 @@ SMODS.Consumable {
     end
 }
 
+if next(SMODS.find_mod("Cryptlib")) then
+    SMODS.Consumable {
+        key = 'big_rip',
+        set = "calamity_cards",
+        pos = { x = 4, y = 3 },
+        hidden = true,
+        atlas = "AbandoniaCalamity",
+        config = {ascension_power = 2},
+        soul_set = "calamity_cards",
+        use = function(self, card, area, copier)
+            local c = copy_table(G.C.UI_CHIPS)
+            local m = copy_table(G.C.UI_MULT)
+            update_hand_text(
+                { sound = "button", volume = 0.7, pitch = 0.8, delay = 0.3 },
+                { handname = localize("k_all_hands"), chips = "...", mult = "...", level = "..." }
+            )
+            delay(1.0)
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.2,
+                func = function()
+                    play_sound("tarot1")
+                    ease_colour(G.C.UI_CHIPS, HEX("ffb400"), 0.1)
+                    ease_colour(G.C.UI_MULT, HEX("ffb400"), 0.1)
+                    if card.juice_up then card:juice_up(0.8, 0.5) end
+                    G.E_MANAGER:add_event(Event({
+                        trigger = "after",
+                        blockable = false,
+                        blocking = false,
+                        delay = 1.2,
+                        func = function()
+                        ease_colour(G.C.UI_CHIPS, c, 1)
+                        ease_colour(G.C.UI_MULT, m, 1)
+                        return true
+                        end,
+                    }))
+                    return true
+                end,
+            }))
+            update_hand_text({ sound = "button", volume = 0.7, pitch = 0.9, delay = 0 }, { level = "+"..card.ability.ascension_power })
+            delay(1.6)
+            update_hand_text(
+                { sound = "button", volume = 0.7, pitch = 1.1, delay = 0 },
+                { mult = 0, chips = 0, handname = "", level = "" }
+            )
+
+            for i, v in pairs(G.GAME.hands) do
+                SMODS.upgrade_poker_hands({instant = true, hands = i, from = card, ascension_power = card.ability.ascension_power})
+            end
+                
+
+            for _, v in ipairs(G.jokers.cards) do
+                v:add_sticker("abn_fragile", true)
+                v:add_sticker("rental", true)
+            end
+        end,
+        can_use = function(self, card)
+            return (G.jokers and #G.jokers.cards >= 1) and true or false
+        end,
+        abn_artist_credits = {
+            artist = "comykel",
+        },
+    }
+end
 
 local disabled = {
     --allow for disabling if needed

@@ -138,6 +138,39 @@ return {
           "{C:attention}Kinship{} {C:attention}Ace{} of {V:1}#1#{}"
         }
       },
+
+
+
+
+      --ANCIENT CALLIGRAPHY
+      c_abn_izhitsa = {
+        name = "Izhitsa",
+        text = {
+          {
+            "All cards held in hand gain",
+            "Ascension Power relative to hand size",
+            "{C:inactive}(Currently {C:gold}+#1#{C:inactive} A. Pow.)",
+          },
+          {
+            "Enhance the {C:attention}leftmost{}",
+            "card in hand to a",
+            "{C:enhance}Kintsugi Card{}"
+          }
+        }
+      },
+      c_abn_koppa = {
+        name = "Koppa",
+        text = {
+          {
+            "All cards held in hand gain",
+            "{C:gold}+#1#{} Ascension Power",
+          },
+          {
+          "Turn the {C:attention}rightmost{}",
+          "card in hand {C:dark_edition}Chromatic{}"
+          }
+        }
+      },
     },
     solid_state = {
       c_abn_digitization = {
@@ -7902,6 +7935,22 @@ return {
         }
 
       },
+      j_abn_newestia = {
+        name = "Newestia",
+        text = {
+
+          {
+            "Scored cards give",
+            "{X:chips,C:white}X#1#{} Chips, {X:mult,C:white}X#2#{} Mult",
+            "and {X:gold,C:white}X#3#{} Asc. Power",
+          },
+          {
+            "If {C:attention}Abandonia{} is owned,",
+            "scored cards give","{C:gold}+#4#{} Asc. Power",
+          }
+        }
+
+      },
       j_abn_scrapbook_joker = {
         name = "Scrapbook Joker",
         text = {
@@ -11136,6 +11185,19 @@ return {
           "and {C:abn_perishable}stickers{}",
         }
       },
+      c_abn_big_rip = {
+        name = "Big Rip",
+        text = {
+          {
+          "Upgrade every {E:2,C:purple}poker hand{}'s",
+          "Ascension Power by {C:gold}2{}",
+          },
+          {
+          "All Jokers become {C:attention}Fragile",
+          "and {C:attention}Rental",
+          },
+        }
+      },
       c_abn_heatdeath = {
         name = "Heat Death",
         text = {
@@ -11480,6 +11542,14 @@ return {
         text = {
           "{C:green}#1# in #2#{} chance to create",
           "a {C:dark_edition}Negative{} {C:attention}Black Hole{}",
+        }
+      },
+      c_abn_serpentarius = {
+        name = "Serpentarius",
+        text = {
+          "{C:green}#1# in #2#{} chance to add",
+          "{C:gold}+#3#{} Ascension Power",
+          "to your {C:attention}highest{} level poker hand",
         }
       },
     },
@@ -12088,8 +12158,6 @@ return {
       k_abn_tenalp = "Tenalp",
       k_abn_split = "Split Planet",
 
-
-
       -- Consumable Types
       b_weather_report_cards = "Weather Reports",
       k_weather_report = "Weather Report",
@@ -12121,7 +12189,8 @@ return {
       k_solid_state = "Solid State",
 
       b_calligraphy_cards = "Calligraphy Cards",
-      k_calligraphy = "Calligraphy"
+      k_calligraphy = "Calligraphy",
+      k_ancient_calligraphy = "Ancient Calligraphy",
     },
     labels = {
       -- Consumable Types

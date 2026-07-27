@@ -18,6 +18,12 @@ ABN.optional_features = {
   post_trigger = true,
 }
 
+
+ABN.spectrallib_features = {
+  "ascension_power" -- see bottom of ascended.lua
+}
+
+
 G.C.ABN_PLASMA = { 0.8, 0.45, 0.85, 1 }
 G.C.ABN_PLAGUED = HEX("cfeb2d")
 
