@@ -53,6 +53,14 @@ ABN.is_light = function(card)
   return false
 end
 
+ABN.is_vanilla_suit = function(card)
+  if SMODS.has_no_suit(card) then return false end
+  if card:is_suit("Spades") or card:is_suit("Clubs") or card:is_suit("Diamonds") or card:is_suit("Hearts") then
+    return true
+  end
+  return false
+end
+
 
 ABN.is_number = function(card)
   return not SMODS.has_no_rank(card) and not card:is_face() and card:get_id() ~= 14

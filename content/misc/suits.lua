@@ -279,7 +279,7 @@ SMODS.Suit {
   lc_ui_atlas = "AbandoniaSuitIcons",
   hc_ui_atlas = "AbandoniaSuitIcons",
   pos = { y = 0 },
-  ui_pos = { x = 3, y = 1 },
+  ui_pos = { x = 0, y = 3 },
   lc_colour = HEX("395c8b"),
   in_pool = function(self, args)
     if args and args.initial_deck then
@@ -307,7 +307,7 @@ SMODS.Suit {
   lc_ui_atlas = "AbandoniaSuitIcons",
   hc_ui_atlas = "AbandoniaSuitIcons",
   pos = { y = 1 },
-  ui_pos = { x = 3, y = 1 },
+  ui_pos = { x = 2, y = 3 },
   lc_colour = HEX("f2db51"),
   in_pool = function(self, args)
     if args and args.initial_deck then
@@ -335,7 +335,7 @@ SMODS.Suit {
   lc_ui_atlas = "AbandoniaSuitIcons",
   hc_ui_atlas = "AbandoniaSuitIcons",
   pos = { y = 3 },
-  ui_pos = { x = 3, y = 1 },
+  ui_pos = { x = 3, y = 3 },
   lc_colour = HEX("5edb61"),
   in_pool = function(self, args)
     if args and args.initial_deck then
