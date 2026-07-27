@@ -388,10 +388,10 @@ function SMODS.score_card(card, context)
 end
 
 SMODS.Seal {
-  key = "lime",
-  badge_colour = HEX("68de24"),
+  key = "brine",
+  badge_colour = HEX("2660de"),
   atlas = "AbandoniaSeals",
-  pos = { x = 3, y = 1 },
+  pos = { x = 1, y = 3 },
 
   loc_vars = function(self, info_queue, card)
     return {
@@ -615,10 +615,10 @@ SMODS.Seal {
 }
 
 SMODS.Seal {
-  key = "duality",
-  badge_colour = HEX("a56be6"),
+  key = "linguistic",
+  badge_colour = HEX("eded49"),
   atlas = "AbandoniaSeals",
-  pos = { x = 6, y = 1 },
+  pos = { x = 3, y = 3 },
 
   loc_vars = function(self, info_queue, card)
     return {
@@ -651,3 +651,44 @@ SMODS.Seal {
     artist = "Vega",
   },
 }
+
+SMODS.Seal {
+  key = "rubicund",
+  badge_colour = HEX("cd3440"),
+  atlas = "AbandoniaSeals",
+  pos = { x = 0, y = 3 },
+
+  loc_vars = function(self, info_queue, card)
+    return {
+      vars = {
+        self.config.extra.mult,
+        self.config.extra.mult_gain
+      }
+    }
+  end,
+
+  config = {
+    extra = {
+      mult = 0,
+      mult_gain = 4
+    }
+  },
+
+  calculate = function(self, card, context)
+    if context.discard and context.other_card == card then
+      SMODS.scale_card(card, {
+        ref_table = self.config.extra,
+        ref_value = "mult",
+        scalar_value = "mult_gain",
+        message_colour = G.C.MULT,
+      })
+    end
+    if context.main_scoring and context.cardarea == G.play then
+      return { mult = self.config.extra.mult }
+    end
+  end,
+  abn_artist_credits = {
+    artist = "Vega",
+  },
+}
+
