@@ -1,5 +1,240 @@
 return {
   descriptions = {
+    glyphs = {
+      c_abn_exile = {
+        name = "Exile",
+        text = {
+          "Add a {V:1}#2#{}",
+          "to {C:attention}#1#{} selected",
+          "card in your hand",
+        },
+      },
+
+      c_abn_impure = {
+        name = "Impure",
+        text = {
+          "Add a {V:1}#2#{}",
+          "to {C:attention}#1#{} selected",
+          "card in your hand",
+        },
+      },
+
+      c_abn_instrument = {
+        name = "Instrument",
+        text = {
+          "Add a {V:1}#2#{}",
+          "to {C:attention}#1#{} selected",
+          "card in your hand",
+        },
+      },
+
+      c_abn_ascend = {
+        name = "Ascend",
+        text = {
+          "Add a {V:1}#2#{}",
+          "to {C:attention}#1#{} selected",
+          "card in your hand",
+        },
+      },
+
+      c_abn_make = {
+        name = "Make",
+        text = {
+          "Add a {V:1}#2#{}",
+          "to {C:attention}#1#{} selected",
+          "card in your hand",
+        },
+      },
+
+      c_abn_door = {
+        name = "Door",
+        text = {
+          "Add a {V:1}#2#{}",
+          "to {C:attention}#1#{} selected",
+          "card in your hand",
+        },
+      },
+
+      c_abn_silver = {
+        name = "Silver",
+        text = {
+          "Add a {V:1}#2#{}",
+          "to {C:attention}#1#{} selected",
+          "card in your hand",
+        },
+      },
+
+      c_abn_copper = {
+        name = "Copper",
+        text = {
+          "Add a {V:1}#2#{}",
+          "to {C:attention}#1#{} selected",
+          "card in your hand",
+        },
+      },
+
+      c_abn_transform = {
+        name = "Transform",
+        text = {
+          "Add a {V:1}#2#{}",
+          "to {C:attention}#1#{} selected",
+          "card in your hand",
+        },
+      },
+
+      c_abn_revive_zero = {
+        name = "Revive Zero",
+        text = {
+          "Add a {V:1}#2#{}",
+          "to {C:attention}#1#{} selected",
+          "card in your hand",
+        },
+      },
+
+      c_abn_tower = {
+        name = "Tower",
+        text = {
+          "Add a {V:1}#2#{}",
+          "to {C:attention}#1#{} selected",
+          "card in your hand",
+        },
+      },
+
+      c_abn_i_seven = {
+        name = "I Seven",
+        text = {
+          "Add a {V:1}#2#{}",
+          "to {C:attention}#1#{} selected",
+          "card in your hand",
+        },
+      },
+
+      c_abn_balance = {
+        name = "Balance",
+        text = {
+          "Add a {V:1}#2#{}",
+          "to {C:attention}#1#{} selected",
+          "card in your hand",
+        },
+      },
+
+      c_abn_fear_four = {
+        name = "Fear Four",
+        text = {
+          "Add a {V:1}#2#{}",
+          "to {C:attention}#1#{} selected",
+          "card in your hand",
+        },
+      },
+
+      c_abn_c_formula = {
+        name = "C Formula",
+        text = {
+          "Add a {V:1}#2#{}",
+          "to {C:attention}#1#{} selected",
+          "card in your hand",
+        },
+      },
+
+      c_abn_treasure = {
+        name = "Treasure",
+        text = {
+          "Add a {V:1}#2#{}",
+          "to {C:attention}#1#{} selected",
+          "card in your hand",
+        },
+      },
+
+      c_abn_seek = {
+        name = "Seek",
+        text = {
+          "Add a {V:1}#2#{}",
+          "to {C:attention}#1#{} selected",
+          "card in your hand",
+        },
+      },
+
+      c_abn_free = {
+        name = "Free",
+        text = {
+          "Add a {V:1}#2#{}",
+          "to {C:attention}#1#{} selected",
+          "card in your hand",
+        },
+      },
+
+      c_abn_plural = {
+        name = "Plural",
+        text = {
+          "Add a {V:1}#2#{}",
+          "to {C:attention}#1#{} selected",
+          "card in your hand",
+        },
+      },
+
+      c_abn_revive = {
+        name = "Revive",
+        text = {
+          "Add a {V:1}#2#{}",
+          "to {C:attention}#1#{} selected",
+          "card in your hand",
+        },
+      },
+
+      c_abn_music = {
+        name = "Music",
+        text = {
+          "Add a {V:1}#2#{}",
+          "to {C:attention}#1#{} selected",
+          "card in your hand",
+        },
+      },
+
+      c_abn_scientist = {
+        name = "Scientist",
+        text = {
+          "Add a {V:1}#2#{}",
+          "to {C:attention}#1#{} selected",
+          "card in your hand",
+        },
+      },
+
+      c_abn_warrior = {
+        name = "Warrior",
+        text = {
+          "Add a {V:1}#2#{}",
+          "to {C:attention}#1#{} selected",
+          "card in your hand",
+        },
+      },
+
+      c_abn_fear_one = {
+        name = "Fear One",
+        text = {
+          "Add a {V:1}#2#{}",
+          "to {C:attention}#1#{} selected",
+          "card in your hand",
+        },
+      },
+
+      c_abn_gold_seven = {
+        name = "Gold Seven",
+        text = {
+          "Add a {V:1}#2#{}",
+          "to {C:attention}#1#{} selected",
+          "card in your hand",
+        },
+      },
+
+      c_abn_brother = {
+        name = "Brother",
+        text = {
+          "Add a {V:1}#2#{}",
+          "to {C:attention}#1#{} selected",
+          "card in your hand",
+        },
+      },
+    },
     calligraphy = {
       c_abn_azu = {
         name = "Azǔ",
@@ -166,8 +401,8 @@ return {
             "{C:gold}+#1#{} Ascension Power",
           },
           {
-          "Turn the {C:attention}rightmost{}",
-          "card in hand {C:dark_edition}Chromatic{}"
+            "Turn the {C:attention}rightmost{}",
+            "card in hand {C:dark_edition}Chromatic{}"
           }
         }
       },
@@ -4365,7 +4600,7 @@ return {
           },
         }
       },
-      
+
       j_abn_negative_suit = {
         name = "Negative Suit",
         text = {
@@ -7947,7 +8182,7 @@ return {
           },
           {
             "If {C:attention}Abandonia{} is owned,",
-            "scored cards give","{C:gold}+#4#{} Asc. Power",
+            "scored cards give", "{C:gold}+#4#{} Asc. Power",
           }
         }
 
@@ -7961,7 +8196,7 @@ return {
           },
           {
             "If {C:attention}Joker{} is owned,",
-            "scored cards give","{C:gold}+#2#{} Asc. Power",
+            "scored cards give", "{C:gold}+#2#{} Asc. Power",
           }
         }
 
@@ -7978,7 +8213,7 @@ return {
           },
           {
             "If this {C:attention}Joker{} is {C:dark_edition}editioned{},",
-            "scored cards gain","{C:gold}+#3#{} Asc. Power",
+            "scored cards gain", "{C:gold}+#3#{} Asc. Power",
           }
         }
 
@@ -9111,8 +9346,8 @@ return {
           },
         },
       },
-	  
-	  j_abn_jerry_jester = {
+
+      j_abn_jerry_jester = {
         name = "Jerry Jester",
         text = {
           {
@@ -9128,8 +9363,8 @@ return {
           }
         }
       },
-	  
-	  j_abn_zack_comic = {
+
+      j_abn_zack_comic = {
         name = "Zack Comic",
         text = {
           {
@@ -9163,8 +9398,8 @@ return {
           "{C:dark_edition}Editions{} and {C:attention}seals{}"
         }
       },
-      c_abn_ascend = {
-        name = "Ascend",
+      c_abn_super_id = {
+        name = "Super ID",
         text = {
           "Add {C:dark_edition}Gloss{}, {C:dark_edition}Iridescent{},",
           "or {C:dark_edition}Pearlescent{} effect to",
@@ -9179,69 +9414,21 @@ return {
           "all other Jokers",
         },
       },
-      c_abn_exile = {
-        name = "Exile",
+      c_abn_presque_vu = {
+        name = "Presque Vu",
         text = {
           "Add {C:dark_edition}Negative{} effect to",
           "{C:attention}#1#{} selected card in hand",
         },
       },
-      c_abn_make = {
-        name = "Make",
-        text = {
-          "Add a {C:abn_brass_seal}Brass Seal{}",
-          "to {C:attention}1{} selected",
-          "card in your hand",
-        },
-      },
-      c_abn_door = {
-        name = "Door",
-        text = {
-          "Add a {C:abn_skyblue_seal}Skyblue Seal{}",
-          "to {C:attention}1{} selected",
-          "card in your hand",
-        },
-      },
-      c_abn_silver = {
-        name = "Silver",
-        text = {
-          "Add a {C:abn_silver_seal}Silver Seal{}",
-          "to {C:attention}1{} selected",
-          "card in your hand",
-        },
-      },
-      c_abn_copper = {
-        name = "Copper",
-        text = {
-          "Add a {C:abn_copper_seal}Copper Seal{}",
-          "to {C:attention}1{} selected",
-          "card in your hand",
-        },
-      },
-      c_abn_transform = {
-        name = "Transform",
+      c_abn_deja_vecu = {
+        name = "Deja Vecu",
         text = {
           "Creates the last",
           "{C:spectral}Spectral{} card",
           "used during this run",
           "{s:0.8,C:spectral}Soul{s:0.8} excluded",
         },
-      },
-      c_abn_impure = {
-        name = "Impure",
-        text = {
-          "Add a {C:abn_oxidized_seal}Oxidised Seal{}",
-          "to {C:attention}1{} selected",
-          "card in your hand",
-        }
-      },
-      c_abn_instrument = {
-        name = "Instrument",
-        text = {
-          "Add a {C:abn_lime_seal}Lime Seal{}",
-          "to {C:attention}1{} selected",
-          "card in your hand",
-        }
       },
       c_abn_whitehole = {
         name = "White Hole",
@@ -9251,92 +9438,13 @@ return {
           "by {C:attention}1{} level",
         },
       },
-      c_abn_deja_vecu = {
-        name = "Deja Vecu",
-        text = {
-          "Add a {C:abn_pink_seal}Pink Seal{}",
-          "to {C:attention}1{} selected",
-          "card in your hand",
-        },
-      },
 
-      c_abn_deja_reve = {
-        name = "Deja Reve",
-        text = {
-          "Add an {C:abn_orange_seal}Orange Seal{}",
-          "to {C:attention}1{} selected",
-          "card in your hand",
-        },
-      },
       c_abn_chance = {
         name = "Chance",
         text = {
           "{C:green}#1# in #2#{} chance to make",
           "all jokers {C:dark_edition}Negative{}"
         }
-      },
-
-      c_abn_entendu = {
-        name = "Entendu",
-        text = {
-          "Add a {C:abn_grey_seal}Grey Seal{}",
-          "to {C:attention}1{} selected",
-          "card in your hand",
-        },
-      },
-
-      c_abn_paramenal = {
-        name = "Paramenal",
-        text = {
-          "Add a {C:abn_black_seal}Black Seal{}",
-          "to {C:attention}1{} selected",
-          "card in your hand",
-        },
-      },
-
-      c_abn_sapience = {
-        name = "Sapience",
-        text = {
-          "Add a {C:abn_teal_seal}Teal Seal{}",
-          "to {C:attention}1{} selected",
-          "card in your hand",
-        },
-      },
-
-      c_abn_jamais_vu = {
-        name = "Jamais Vu",
-        text = {
-          "Add a {C:abn_white_seal}White Seal{}",
-          "to {C:attention}1{} selected",
-          "card in your hand",
-        },
-      },
-
-      c_abn_presque_vu = {
-        name = "Presque Vu",
-        text = {
-          "Add a {C:abn_brown_seal}Brown Seal{}",
-          "to {C:attention}1{} selected",
-          "card in your hand",
-        },
-      },
-
-      c_abn_super_id = {
-        name = "Super ID",
-        text = {
-          "Add a {C:abn_violet_seal}Violet Seal{}",
-          "to {C:attention}1{} selected",
-          "card in your hand",
-        },
-      },
-
-      c_abn_spiral = {
-        name = "Spiral",
-        text = {
-          "Add a {C:abn_lavender_seal}Lavender Seal{}",
-          "to {C:attention}1{} selected",
-          "card in your hand",
-        },
       },
 
       c_abn_flipside = {
@@ -9747,6 +9855,15 @@ return {
           "learn what it does"
         }
       },
+      undiscovered_glyphs = {
+        name = "Not Discovered",
+        text = {
+          "Purchase or use",
+          "this card in an",
+          "unseeded run to",
+          "learn what it does"
+        }
+      },
       undiscovered_sigils = {
         name = "Not Discovered",
         text = {
@@ -9888,8 +10005,8 @@ return {
           "when {C:attention}discarded",
         }
       },
-	  
-	  abn_rubicund_seal = {
+
+      abn_rubicund_seal = {
         name = "Rubicund Seal",
         text = {
           "Gains {C:mult}+#2#{} Mult",
@@ -11251,12 +11368,12 @@ return {
         name = "Big Rip",
         text = {
           {
-          "Upgrade every {E:2,C:purple}poker hand{}'s",
-          "Ascension Power by {C:gold}2{}",
+            "Upgrade every {E:2,C:purple}poker hand{}'s",
+            "Ascension Power by {C:gold}2{}",
           },
           {
-          "All Jokers become {C:attention}Fragile",
-          "and {C:attention}Rental",
+            "All Jokers become {C:attention}Fragile",
+            "and {C:attention}Rental",
           },
         }
       },
@@ -12253,6 +12370,9 @@ return {
       b_calligraphy_cards = "Calligraphy Cards",
       k_calligraphy = "Calligraphy",
       k_ancient_calligraphy = "Ancient Calligraphy",
+
+      b_glyphs_cards = "Glyph Cards",
+      k_glyphs = "Glyph",
     },
     labels = {
       -- Consumable Types
@@ -12266,6 +12386,8 @@ return {
       continent = "Continent",
       solid_state = "Solid State",
       calligraphy = "Calligraphy",
+      glyphs = "Glyph",
+
       -- Editions
       abn_chthonian = "Chthonian",
       abn_iridescent = "Iridescent",
@@ -12334,14 +12456,13 @@ return {
       abn_violet_seal = "Violet Seal",
       abn_lavender_seal = "Lavender Seal",
       abn_skyblue_seal = "Skyblue Seal",
-      abn_lime_seal = "Lime Seal",
       abn_oxidized_seal = "Oxidised Seal",
       abn_brass_seal = "Brass Seal",
       abn_copper_seal = "Copper Seal",
       abn_silver_seal = "Silver Seal",
       abn_linguistic_seal = "Linguistic Seal",
-	  abn_rubicund_seal = "Rubicund Seal",
-	  abn_brine_seal = "Brine Seal",
+      abn_rubicund_seal = "Rubicund Seal",
+      abn_brine_seal = "Brine Seal",
     },
     ranks = {
       ["abn_11"] = "11",

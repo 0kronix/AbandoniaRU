@@ -61,7 +61,7 @@ SMODS.Consumable {
   end,
   can_use = function(self, card)
     return G.hand and #G.hand.highlighted <= card.ability.max_highlighted and #G.hand.highlighted > 0 and
-    (not G.hand.highlighted[1].edition)
+        (not G.hand.highlighted[1].edition)
   end,
   abn_artist_credits = {
     artist = "L'"
@@ -127,667 +127,6 @@ SMODS.Consumable {
   },
 }
 
--- Seal Spectrals
-SMODS.Consumable {
-  key = 'deja_vecu',
-  set = 'Spectral',
-  atlas = "AbandoniaSpectrals",
-  pos = { x = 0, y = 1 },
-  config = { extra = { seal = 'abn_pink' }, max_highlighted = 1 },
-  loc_vars = function(self, info_queue, card)
-    info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
-    return { vars = { card.ability.max_highlighted } }
-  end,
-  use = function(self, card, area, copier)
-    local conv_card = G.hand.highlighted[1]
-    G.E_MANAGER:add_event(Event({
-      func = function()
-        play_sound('tarot1')
-        card:juice_up(0.3, 0.5)
-        return true
-      end
-    }))
-    
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.1,
-      func = function()
-        conv_card:set_seal(card.ability.extra.seal, nil, true)
-        return true
-      end
-    }))
-    
-    delay(0.5)
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.2,
-      func = function()
-        G.hand:unhighlight_all()
-        return true
-      end
-    }))
-  end,
-  abn_artist_credits = {
-    artist = "Vega"
-  },
-}
-
-SMODS.Consumable {
-  key = 'deja_reve',
-  set = 'Spectral',
-  atlas = "AbandoniaSpectrals",
-  pos = { x = 1, y = 1 },
-  config = { extra = { seal = 'abn_orange' }, max_highlighted = 1 },
-  loc_vars = function(self, info_queue, card)
-    info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
-    return { vars = { card.ability.max_highlighted } }
-  end,
-  use = function(self, card, area, copier)
-    local conv_card = G.hand.highlighted[1]
-    G.E_MANAGER:add_event(Event({
-      func = function()
-        play_sound('tarot1')
-        card:juice_up(0.3, 0.5)
-        return true
-      end
-    }))
-    
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.1,
-      func = function()
-        conv_card:set_seal(card.ability.extra.seal, nil, true)
-        return true
-      end
-    }))
-    
-    delay(0.5)
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.2,
-      func = function()
-        G.hand:unhighlight_all()
-        return true
-      end
-    }))
-  end,
-  abn_artist_credits = {
-    artist = "Da Gorbage Rat"
-  },
-}
-
-SMODS.Consumable {
-  key = 'entendu',
-  set = 'Spectral',
-  atlas = "AbandoniaSpectrals",
-  pos = { x = 0, y = 2 },
-  config = { extra = { seal = 'abn_grey' }, max_highlighted = 1 },
-  loc_vars = function(self, info_queue, card)
-    info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
-    return { vars = { card.ability.max_highlighted } }
-  end,
-  use = function(self, card, area, copier)
-    local conv_card = G.hand.highlighted[1]
-    G.E_MANAGER:add_event(Event({
-      func = function()
-        play_sound('tarot1')
-        card:juice_up(0.3, 0.5)
-        return true
-      end
-    }))
-    
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.1,
-      func = function()
-        conv_card:set_seal(card.ability.extra.seal, nil, true)
-        return true
-      end
-    }))
-    
-    delay(0.5)
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.2,
-      func = function()
-        G.hand:unhighlight_all()
-        return true
-      end
-    }))
-  end,
-  abn_artist_credits = {
-    artist = "Da Gorbage Rat"
-  },
-}
-
-SMODS.Consumable {
-  key = 'paramenal',
-  set = 'Spectral',
-  atlas = "AbandoniaSpectrals",
-  pos = { x = 2, y = 1 },
-  config = { extra = { seal = 'abn_black' }, max_highlighted = 1 },
-  loc_vars = function(self, info_queue, card)
-    info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
-    return { vars = { card.ability.max_highlighted } }
-  end,
-  use = function(self, card, area, copier)
-    local conv_card = G.hand.highlighted[1]
-    G.E_MANAGER:add_event(Event({
-      func = function()
-        play_sound('tarot1')
-        card:juice_up(0.3, 0.5)
-        return true
-      end
-    }))
-    
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.1,
-      func = function()
-        conv_card:set_seal(card.ability.extra.seal, nil, true)
-        return true
-      end
-    }))
-    
-    delay(0.5)
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.2,
-      func = function()
-        G.hand:unhighlight_all()
-        return true
-      end
-    }))
-  end,
-  abn_artist_credits = {
-    artist = "Da Gorbage Rat"
-  },
-}
-
-SMODS.Consumable {
-  key = 'sapience',
-  set = 'Spectral',
-  atlas = "AbandoniaSpectrals",
-  pos = { x = 3, y = 1 },
-  config = { extra = { seal = 'abn_teal' }, max_highlighted = 1 },
-  loc_vars = function(self, info_queue, card)
-    info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
-    return { vars = { card.ability.max_highlighted } }
-  end,
-  use = function(self, card, area, copier)
-    local conv_card = G.hand.highlighted[1]
-    G.E_MANAGER:add_event(Event({
-      func = function()
-        play_sound('tarot1')
-        card:juice_up(0.3, 0.5)
-        return true
-      end
-    }))
-    
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.1,
-      func = function()
-        conv_card:set_seal(card.ability.extra.seal, nil, true)
-        return true
-      end
-    }))
-    
-    delay(0.5)
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.2,
-      func = function()
-        G.hand:unhighlight_all()
-        return true
-      end
-    }))
-  end,
-  abn_artist_credits = {
-    artist = "Da Gorbage Rat"
-  },
-}
-
-SMODS.Consumable {
-  key = 'jamais_vu',
-  set = 'Spectral',
-  atlas = "AbandoniaSpectrals",
-  pos = { x = 4, y = 1 },
-  config = { extra = { seal = 'abn_white' }, max_highlighted = 1 },
-  loc_vars = function(self, info_queue, card)
-    info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
-    return { vars = { card.ability.max_highlighted } }
-  end,
-  use = function(self, card, area, copier)
-    local conv_card = G.hand.highlighted[1]
-    G.E_MANAGER:add_event(Event({
-      func = function()
-        play_sound('tarot1')
-        card:juice_up(0.3, 0.5)
-        return true
-      end
-    }))
-    
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.1,
-      func = function()
-        conv_card:set_seal(card.ability.extra.seal, nil, true)
-        return true
-      end
-    }))
-    
-    delay(0.5)
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.2,
-      func = function()
-        G.hand:unhighlight_all()
-        return true
-      end
-    }))
-  end,
-  abn_artist_credits = {
-    artist = "Da Gorbage Rat"
-  },
-}
-
-SMODS.Consumable {
-  key = 'presque_vu',
-  set = 'Spectral',
-  atlas = "AbandoniaSpectrals",
-  pos = { x = 5, y = 1 },
-  config = { extra = { seal = 'abn_brown' }, max_highlighted = 1 },
-  loc_vars = function(self, info_queue, card)
-    info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
-    return { vars = { card.ability.max_highlighted } }
-  end,
-  use = function(self, card, area, copier)
-    local conv_card = G.hand.highlighted[1]
-    G.E_MANAGER:add_event(Event({
-      func = function()
-        play_sound('tarot1')
-        card:juice_up(0.3, 0.5)
-        return true
-      end
-    }))
-    
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.1,
-      func = function()
-        conv_card:set_seal(card.ability.extra.seal, nil, true)
-        return true
-      end
-    }))
-    
-    delay(0.5)
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.2,
-      func = function()
-        G.hand:unhighlight_all()
-        return true
-      end
-    }))
-  end,
-  abn_artist_credits = {
-    artist = "Da Gorbage Rat"
-  },
-}
-
-SMODS.Consumable {
-  key = 'super_id',
-  set = 'Spectral',
-  atlas = "AbandoniaSpectrals",
-  pos = { x = 6, y = 1 },
-  config = { extra = { seal = 'abn_violet' }, max_highlighted = 1 },
-  loc_vars = function(self, info_queue, card)
-    info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
-    return { vars = { card.ability.max_highlighted } }
-  end,
-  use = function(self, card, area, copier)
-    local conv_card = G.hand.highlighted[1]
-    G.E_MANAGER:add_event(Event({
-      func = function()
-        play_sound('tarot1')
-        card:juice_up(0.3, 0.5)
-        return true
-      end
-    }))
-    
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.1,
-      func = function()
-        conv_card:set_seal(card.ability.extra.seal, nil, true)
-        return true
-      end
-    }))
-    
-    delay(0.5)
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.2,
-      func = function()
-        G.hand:unhighlight_all()
-        return true
-      end
-    }))
-  end,
-  abn_artist_credits = {
-    artist = "Da Gorbage Rat"
-  },
-}
-
-SMODS.Consumable {
-  key = 'spiral',
-  set = 'Spectral',
-  atlas = "AbandoniaSpectrals",
-  pos = { x = 7, y = 1 },
-  config = { extra = { seal = 'abn_lavender' }, max_highlighted = 1 },
-  loc_vars = function(self, info_queue, card)
-    info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
-    return { vars = { card.ability.max_highlighted } }
-  end,
-  use = function(self, card, area, copier)
-    local conv_card = G.hand.highlighted[1]
-    G.E_MANAGER:add_event(Event({
-      func = function()
-        play_sound('tarot1')
-        card:juice_up(0.3, 0.5)
-        return true
-      end
-    }))
-    
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.1,
-      func = function()
-        conv_card:set_seal(card.ability.extra.seal, nil, true)
-        return true
-      end
-    }))
-    
-    delay(0.5)
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.2,
-      func = function()
-        G.hand:unhighlight_all()
-        return true
-      end
-    }))
-  end,
-  abn_artist_credits = {
-    artist = "Dogg-Fly"
-  },
-}
-
-SMODS.Consumable {
-  key = 'door',
-  set = 'Spectral',
-  atlas = "AbandoniaSpectrals",
-  pos = { x = 4, y = 2 },
-  config = { extra = { seal = 'abn_skyblue' }, max_highlighted = 1 },
-  loc_vars = function(self, info_queue, card)
-    info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
-    return { vars = { card.ability.max_highlighted } }
-  end,
-  use = function(self, card, area, copier)
-    local conv_card = G.hand.highlighted[1]
-    G.E_MANAGER:add_event(Event({
-      func = function()
-        play_sound('tarot1')
-        card:juice_up(0.3, 0.5)
-        return true
-      end
-    }))
-    
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.1,
-      func = function()
-        conv_card:set_seal(card.ability.extra.seal, nil, true)
-        return true
-      end
-    }))
-    
-    delay(0.5)
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.2,
-      func = function()
-        G.hand:unhighlight_all()
-        return true
-      end
-    }))
-  end,
-  abn_artist_credits = {
-    artist = "Flote"
-  },
-}
-
-SMODS.Consumable {
-  key = 'silver',
-  set = 'Spectral',
-  atlas = "AbandoniaSpectrals",
-  pos = { x = 5, y = 2 },
-  config = { extra = { seal = 'abn_silver' }, max_highlighted = 1 },
-  loc_vars = function(self, info_queue, card)
-    info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
-    return { vars = { card.ability.max_highlighted } }
-  end,
-  use = function(self, card, area, copier)
-    local conv_card = G.hand.highlighted[1]
-    G.E_MANAGER:add_event(Event({
-      func = function()
-        play_sound('tarot1')
-        card:juice_up(0.3, 0.5)
-        return true
-      end
-    }))
-    
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.1,
-      func = function()
-        conv_card:set_seal(card.ability.extra.seal, nil, true)
-        return true
-      end
-    }))
-    
-    delay(0.5)
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.2,
-      func = function()
-        G.hand:unhighlight_all()
-        return true
-      end
-    }))
-  end,
-  abn_artist_credits = {
-    artist = "Flote"
-  },
-}
-
-SMODS.Consumable {
-  key = 'copper',
-  set = 'Spectral',
-  atlas = "AbandoniaSpectrals",
-  pos = { x = 6, y = 2 },
-  config = { extra = { seal = 'abn_copper' }, max_highlighted = 1 },
-  loc_vars = function(self, info_queue, card)
-    info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
-    return { vars = { card.ability.max_highlighted } }
-  end,
-  use = function(self, card, area, copier)
-    local conv_card = G.hand.highlighted[1]
-    G.E_MANAGER:add_event(Event({
-      func = function()
-        play_sound('tarot1')
-        card:juice_up(0.3, 0.5)
-        return true
-      end
-    }))
-    
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.1,
-      func = function()
-        conv_card:set_seal(card.ability.extra.seal, nil, true)
-        return true
-      end
-    }))
-    
-    delay(0.5)
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.2,
-      func = function()
-        G.hand:unhighlight_all()
-        return true
-      end
-    }))
-  end,
-  abn_artist_credits = {
-    artist = "Flote"
-  },
-}
-
-SMODS.Consumable {
-  key = 'impure',
-  set = 'Spectral',
-  atlas = "AbandoniaSpectrals",
-  pos = { x = 1, y = 3 },
-  config = { extra = { seal = 'abn_oxidized' }, max_highlighted = 1 },
-  loc_vars = function(self, info_queue, card)
-    info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
-    return { vars = { card.ability.max_highlighted } }
-  end,
-  use = function(self, card, area, copier)
-    local conv_card = G.hand.highlighted[1]
-    G.E_MANAGER:add_event(Event({
-      func = function()
-        play_sound('tarot1')
-        card:juice_up(0.3, 0.5)
-        return true
-      end
-    }))
-    
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.1,
-      func = function()
-        conv_card:set_seal(card.ability.extra.seal, nil, true)
-        return true
-      end
-    }))
-    
-    delay(0.5)
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.2,
-      func = function()
-        G.hand:unhighlight_all()
-        return true
-      end
-    }))
-  end,
-  abn_artist_credits = {
-    artist = "Flote"
-  },
-}
-
-SMODS.Consumable {
-  key = 'instrument',
-  set = 'Spectral',
-  atlas = "AbandoniaSpectrals",
-  pos = { x = 2, y = 3 },
-  config = { extra = { seal = 'abn_lime' }, max_highlighted = 1 },
-  loc_vars = function(self, info_queue, card)
-    info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
-    return { vars = { card.ability.max_highlighted } }
-  end,
-  use = function(self, card, area, copier)
-    local conv_card = G.hand.highlighted[1]
-    G.E_MANAGER:add_event(Event({
-      func = function()
-        play_sound('tarot1')
-        card:juice_up(0.3, 0.5)
-        return true
-      end
-    }))
-    
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.1,
-      func = function()
-        conv_card:set_seal(card.ability.extra.seal, nil, true)
-        return true
-      end
-    }))
-    
-    delay(0.5)
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.2,
-      func = function()
-        G.hand:unhighlight_all()
-        return true
-      end
-    }))
-  end,
-  abn_artist_credits = {
-    artist = "Flote"
-  },
-}
-
-SMODS.Consumable {
-  key = 'make',
-  set = 'Spectral',
-  atlas = "AbandoniaSpectrals",
-  pos = { x = 4, y = 3 },
-  config = { extra = { seal = 'abn_brass' }, max_highlighted = 1 },
-  loc_vars = function(self, info_queue, card)
-    info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
-    return { vars = { card.ability.max_highlighted } }
-  end,
-  use = function(self, card, area, copier)
-    local conv_card = G.hand.highlighted[1]
-    G.E_MANAGER:add_event(Event({
-      func = function()
-        play_sound('tarot1')
-        card:juice_up(0.3, 0.5)
-        return true
-      end
-    }))
-    
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.1,
-      func = function()
-        conv_card:set_seal(card.ability.extra.seal, nil, true)
-        return true
-      end
-    }))
-    
-    delay(0.5)
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.2,
-      func = function()
-        G.hand:unhighlight_all()
-        return true
-      end
-    }))
-  end,
-  abn_artist_credits = {
-    artist = "Flote"
-  },
-}
-
 local scu = set_consumeable_usage
 function set_consumeable_usage(card)
   local ret = scu(card)
@@ -810,21 +149,21 @@ function set_consumeable_usage(card)
 end
 
 SMODS.Consumable {
-  key = 'transform',
+  key = 'deja_vecu',
   set = 'Spectral',
   atlas = "AbandoniaSpectrals",
-  pos = { x = 7, y = 2 },
+  pos = { x = 0, y = 1 },
   loc_vars = function(self, info_queue, card)
-    local transform_c = G.GAME.abn_last_spectral and G.P_CENTERS[G.GAME.abn_last_spectral] or nil
-    local abn_last_spectral = transform_c and
-    localize { type = 'name_text', key = transform_c.key, set = transform_c.set } or
-    localize('k_none')
-    local colour = (not transform_c or transform_c.key == "c_abn_transform") and G.C.RED or G.C.GREEN
-    
-    if transform_c and transform_c.key ~= "c_abn_transform" then
-      info_queue[#info_queue + 1] = transform_c
+    local dejavecu_c = G.GAME.abn_last_spectral and G.P_CENTERS[G.GAME.abn_last_spectral] or nil
+    local abn_last_spectral = dejavecu_c and
+        localize { type = 'name_text', key = dejavecu_c.key, set = dejavecu_c.set } or
+        localize('k_none')
+    local colour = (not dejavecu_c or dejavecu_c.key == "c_abn_deja_vecu") and G.C.RED or G.C.GREEN
+
+    if dejavecu_c and dejavecu_c.key ~= "c_abn_deja_vecu" then
+      info_queue[#info_queue + 1] = dejavecu_c
     end
-    
+
     local main_end = {
       {
         n = G.UIT.C,
@@ -840,7 +179,7 @@ SMODS.Consumable {
         }
       }
     }
-    
+
     return { vars = { abn_last_spectral }, main_end = main_end }
   end,
   use = function(self, card, area, copier)
@@ -860,16 +199,19 @@ SMODS.Consumable {
   end,
   can_use = function(self, card)
     return (#G.consumeables.cards < G.consumeables.config.card_limit or card.area == G.consumeables) and
-    G.GAME.abn_last_spectral and
-    G.GAME.abn_last_spectral ~= 'c_abn_transform'
-  end
+        G.GAME.abn_last_spectral and
+        G.GAME.abn_last_spectral ~= 'c_abn_deja_vecu'
+  end,
+  abn_artist_credits = {
+    artist = "Vega"
+  },
 }
 
 SMODS.Consumable {
-  key = 'exile',
+  key = 'presque_vu',
   set = 'Spectral',
   atlas = "AbandoniaSpectrals",
-  pos = { x = 0, y = 3 },
+  pos = { x = 5, y = 1 },
   config = { extra = {}, max_highlighted = 1 },
   loc_vars = function(self, info_queue, card)
     info_queue[#info_queue + 1] = G.P_CENTERS.e_negative
@@ -880,8 +222,8 @@ SMODS.Consumable {
       trigger = 'after',
       delay = 0.4,
       func = function()
-        local exile_card = G.hand.highlighted[1]
-        exile_card:set_edition("e_negative", true)
+        local presque_vu_card = G.hand.highlighted[1]
+        presque_vu_card:set_edition("e_negative", true)
         card:juice_up(0.3, 0.5)
         return true
       end
@@ -897,7 +239,7 @@ SMODS.Consumable {
   set = 'Spectral',
   atlas = "AbandoniaChance",
   pos = { x = 0, y = 0 },
-  config = { extra = { odds = 16 , e_conv = "e_negative"}},
+  config = { extra = { odds = 16, e_conv = "e_negative" } },
   loc_vars = function(self, info_queue, card)
     info_queue[#info_queue + 1] = G.P_CENTERS["e_negative"]
     local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds)
@@ -928,7 +270,7 @@ SMODS.Consumable {
             major = card,
             backdrop_colour = G.C.SECONDARY_SET.Tarot,
             align = (G.STATE == G.STATES.TAROT_PACK or G.STATE == G.STATES.SPECTRAL_PACK or G.STATE == G.STATES.SMODS_BOOSTER_OPENED) and
-            'tm' or 'cm',
+                'tm' or 'cm',
             offset = { x = 0, y = (G.STATE == G.STATES.TAROT_PACK or G.STATE == G.STATES.SPECTRAL_PACK or G.STATE == G.STATES.SMODS_BOOSTER_OPENED) and -0.2 or 0 },
             silent = true
           })
@@ -949,7 +291,7 @@ SMODS.Consumable {
       }))
     end
   end,
-  
+
   abn_artist_credits = {
     artist = "Shepcicle"
   },
@@ -973,7 +315,7 @@ SMODS.Consumable {
       func = function()
         local eligible_card = pseudorandom_element(editionless_jokers, 'vremade_hex')
         eligible_card:set_edition("e_abn_pearlescent")
-        
+
         local _first_dissolve = nil
         for _, joker in ipairs(G.jokers.cards) do
           if joker ~= eligible_card and not SMODS.is_eternal(joker, card) then
@@ -981,7 +323,7 @@ SMODS.Consumable {
             _first_dissolve = true
           end
         end
-        
+
         card:juice_up(0.3, 0.5)
         return true
       end
@@ -996,10 +338,10 @@ SMODS.Consumable {
 }
 
 SMODS.Consumable {
-  key = 'ascend',
+  key = 'super_id',
   set = 'Spectral',
   atlas = "AbandoniaSpectrals",
-  pos = { x = 3, y = 3 },
+  pos = { x = 6, y = 1 },
   config = { extra = {}, max_highlighted = 1 },
   loc_vars = function(self, info_queue, card)
     info_queue[#info_queue + 1] = G.P_CENTERS.e_abn_pearlescent
@@ -1016,20 +358,20 @@ SMODS.Consumable {
       delay = 0.4,
       func = function()
         local choices = { 'abn_gloss', 'abn_iridescent', 'abn_pearlescent' }
-        
+
         local chosen_edition = pseudorandom_element(choices, 'abn_ascend')
-        
+
         local ascend_card = G.hand.highlighted[1]
-        
+
         ascend_card:set_edition({ [chosen_edition] = true }, true)
-        
+
         card:juice_up(0.3, 0.5)
         return true
       end
     }))
   end,
   abn_artist_credits = {
-    artist = "Flote"
+    artist = "Da Gorbage Rat"
   },
 }
 
@@ -1040,10 +382,10 @@ SMODS.Consumable {
   pos = { x = 5, y = 3 },
   hidden = true,
   soul_set = 'Planet',
-  
+
   use = function(self, card, area, copier)
     update_hand_text({ sound = 'button', volume = 0.7, pitch = 0.8, delay = 0.3 },
-    { handname = "All Ranks", chips = '...', mult = '...', level = '' })
+      { handname = "All Ranks", chips = '...', mult = '...', level = '' })
     G.E_MANAGER:add_event(Event({
       trigger = 'after',
       delay = 0.2,
@@ -1083,7 +425,7 @@ SMODS.Consumable {
       end
     end
     update_hand_text({ sound = 'button', volume = 0.7, pitch = 1.1, delay = 0 },
-    { mult = 0, chips = 0, handname = '', level = '' })
+      { mult = 0, chips = 0, handname = '', level = '' })
   end,
   can_use = function(self, card)
     return true

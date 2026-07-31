@@ -171,6 +171,15 @@ SMODS.Atlas({
   px = 71,
   py = 95,
 })
+
+SMODS.Atlas({
+  key = "AbandoniaGlyphs",
+  path = "glyph.png",
+  px = 71,
+  py = 95,
+})
+
+
 SMODS.Atlas({
   key = "AbandoniaAncientCalligraphy",
   path = "ancient_calligraphy.png",
