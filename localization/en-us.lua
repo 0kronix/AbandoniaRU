@@ -9913,6 +9913,13 @@ return {
         }
       },
 
+      abn_rainbow_seal = {
+        name = "Rainbow Seal",
+        text = {
+          "{C:gold}+#1#{} Ascension Power",
+          "when scored"
+        }
+      },
       abn_silver_seal = {
         name = "Silver Seal",
         text = {
@@ -12493,6 +12500,7 @@ return {
       abn_linguistic_seal = "Linguistic Seal",
       abn_rubicund_seal = "Rubicund Seal",
       abn_brine_seal = "Brine Seal",
+      abn_rainbow_seal = "Rainbow Seal"
     },
     ranks = {
       ["abn_11"] = "11",

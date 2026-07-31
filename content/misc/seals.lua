@@ -692,3 +692,39 @@ SMODS.Seal {
   },
 }
 
+
+if next(SMODS.find_mod("Cryptlib")) then
+  SMODS.Seal {
+    key = "rainbow",
+    badge_colour = G.C.DARK_EDITION,
+    atlas = "AbandoniaSeals",
+    pos = { x = 3, y = 2 },
+
+    loc_vars = function(self, info_queue, card)
+      return {
+        vars = {
+          self.config.extra.asc_power
+        }
+      }
+    end,
+
+    config = {
+      extra = {
+        asc_power = 0.25
+      }
+    },
+
+    calculate = function(self, card, context)
+      if context.main_scoring and context.cardarea == G.play then
+        return {
+          plus_asc = self.config.extra.asc_power
+        }
+      end
+    end,
+    --[[
+    abn_artist_credits = {
+      artist = "???",
+    },
+    --]]
+  }
+end
