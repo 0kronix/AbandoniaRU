@@ -9789,6 +9789,30 @@ return {
           "be used immediately",
         },
       },
+      p_abn_glyph_normal = {
+        name = "Glyph Pack",
+        text = {
+          "Choose {C:attention}#1#{} of up to",
+          "{C:attention}#2# {C:glyphs}Glyph{} cards to",
+          "be used immediately",
+        },
+      },
+      p_abn_glyph_jumbo = {
+        name = "Jumbo Glyph Pack",
+        text = {
+          "Choose {C:attention}#1#{} of up to",
+          "{C:attention}#2# {C:glyphs}Glyph{} cards to",
+          "be used immediately",
+        },
+      },
+      p_abn_glyph_mega = {
+        name = "Mega Glyph Pack",
+        text = {
+          "Choose {C:attention}#1#{} of up to",
+          "{C:attention}#2# {C:glyphs}Glyph{} cards to",
+          "be used immediately",
+        },
+      },
       undiscovered_calligraphy = {
         name = "Not Discovered",
         text = {

@@ -2049,3 +2049,201 @@ SMODS.Booster({
     artist = "0kronix",
   },
 })
+
+-- Glyph Packs
+
+SMODS.Booster({
+  key = 'glyph_normal_1',
+  atlas = 'abn_AbandoniaGlyphs',
+  pos = { x = 2, y = 6 },
+  config = { extra = 3, choose = 1 },
+  weight = 1,
+  cost = 4,
+  group_key = 'abn_glyphbooster',
+  draw_hand = true,
+  unlocked = true,
+  discovered = false,
+  create_card = function(self, card)
+    return {
+      set = "glyphs",
+      area = G.pack_cards,
+      skip_materialize = true,
+      soulable = true,
+      key_append = "abn_glyph_cards"
+    }
+  end,
+
+  loc_vars = function(self, info_queue, card)
+    return { vars = { card.ability.choose, card.ability.extra }, key = self.key:sub(1, -3), }
+  end,
+
+  ease_background_colour = function(self)
+    local effects = {
+      { new_colour = G.C.L_BLACK, special_colour = G.C.JOKER_GREY, contrast = 2 },
+    }
+    local random_index = math.random(#effects)
+    local chosen_effect = effects[random_index]
+    ease_colour(G.C.DYN_UI.MAIN, G.C.SET.glyphs)
+    ease_background_colour(chosen_effect)
+  end,
+  abn_artist_credits = {
+    artist = "Flote",
+  },
+})
+
+SMODS.Booster({
+  key = 'glyph_normal_2',
+  atlas = 'abn_AbandoniaGlyphs',
+  pos = { x = 3, y = 6 },
+  config = { extra = 3, choose = 1 },
+  weight = 1,
+  cost = 4,
+  group_key = 'abn_glyphbooster',
+  draw_hand = true,
+  unlocked = true,
+  discovered = false,
+  create_card = function(self, card)
+    return {
+      set = "glyphs",
+      area = G.pack_cards,
+      skip_materialize = true,
+      soulable = true,
+      key_append = "abn_glyph_cards"
+    }
+  end,
+
+  loc_vars = function(self, info_queue, card)
+    return { vars = { card.ability.choose, card.ability.extra }, key = self.key:sub(1, -3), }
+  end,
+
+  ease_background_colour = function(self)
+    local effects = {
+      { new_colour = G.C.L_BLACK, special_colour = G.C.JOKER_GREY, contrast = 2 },
+    }
+    local random_index = math.random(#effects)
+    local chosen_effect = effects[random_index]
+    ease_colour(G.C.DYN_UI.MAIN, G.C.SET.glyphs)
+    ease_background_colour(chosen_effect)
+  end,
+  abn_artist_credits = {
+    artist = "Flote",
+  },
+})
+
+
+SMODS.Booster({
+  key = 'glyph_jumbo_1',
+  atlas = 'abn_AbandoniaGlyphs',
+  pos = { x = 2, y = 7 },
+  config = { extra = 5, choose = 1 },
+  weight = 1,
+  cost = 6,
+  group_key = 'abn_glyphbooster',
+  draw_hand = true,
+  unlocked = true,
+  discovered = false,
+  create_card = function(self, card)
+    return {
+      set = "glyphs",
+      area = G.pack_cards,
+      skip_materialize = true,
+      soulable = true,
+      key_append = "abn_glyph_cards"
+    }
+  end,
+
+  loc_vars = function(self, info_queue, card)
+    return { vars = { card.ability.choose, card.ability.extra }, key = self.key:sub(1, -3), }
+  end,
+
+  ease_background_colour = function(self)
+    local effects = {
+      { new_colour = G.C.L_BLACK, special_colour = G.C.JOKER_GREY, contrast = 2 },
+    }
+    local random_index = math.random(#effects)
+    local chosen_effect = effects[random_index]
+    ease_colour(G.C.DYN_UI.MAIN, G.C.SET.glyphs)
+    ease_background_colour(chosen_effect)
+  end,
+  abn_artist_credits = {
+    artist = "Flote",
+  },
+})
+
+SMODS.Booster({
+  key = 'glyph_jumbo_2',
+  atlas = 'abn_AbandoniaGlyphs',
+  pos = { x = 3, y = 7 },
+  config = { extra = 5, choose = 1 },
+  weight = 1,
+  cost = 6,
+  group_key = 'abn_glyphbooster',
+  draw_hand = true,
+  unlocked = true,
+  discovered = false,
+  create_card = function(self, card)
+    return {
+      set = "glyphs",
+      area = G.pack_cards,
+      skip_materialize = true,
+      soulable = true,
+      key_append = "abn_glyph_cards"
+    }
+  end,
+
+  loc_vars = function(self, info_queue, card)
+    return { vars = { card.ability.choose, card.ability.extra }, key = self.key:sub(1, -3), }
+  end,
+
+  ease_background_colour = function(self)
+    local effects = {
+      { new_colour = G.C.L_BLACK, special_colour = G.C.JOKER_GREY, contrast = 2 },
+    }
+    local random_index = math.random(#effects)
+    local chosen_effect = effects[random_index]
+    ease_colour(G.C.DYN_UI.MAIN, G.C.SET.glyphs)
+    ease_background_colour(chosen_effect)
+  end,
+  abn_artist_credits = {
+    artist = "Flote",
+  },
+})
+
+SMODS.Booster({
+  key = 'glyph_mega',
+  atlas = 'abn_AbandoniaGlyphs',
+  pos = { x = 0, y = 8 },
+  config = { extra = 5, choose = 2 },
+  weight = 0.25,
+  cost = 8,
+  group_key = 'abn_glyphbooster',
+  draw_hand = true,
+  unlocked = true,
+  discovered = false,
+  create_card = function(self, card)
+    return {
+      set = "glyphs",
+      area = G.pack_cards,
+      skip_materialize = true,
+      soulable = true,
+      key_append = "abn_glyph_cards"
+    }
+  end,
+
+  loc_vars = function(self, info_queue, card)
+    return { vars = { card.ability.choose, card.ability.extra }, }
+  end,
+
+  ease_background_colour = function(self)
+    local effects = {
+      { new_colour = G.C.L_BLACK, special_colour = G.C.JOKER_GREY, contrast = 2 },
+    }
+    local random_index = math.random(#effects)
+    local chosen_effect = effects[random_index]
+    ease_colour(G.C.DYN_UI.MAIN, G.C.SET.glyphs)
+    ease_background_colour(chosen_effect)
+  end,
+  abn_artist_credits = {
+    artist = "Flote",
+  },
+})
