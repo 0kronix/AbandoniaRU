@@ -728,6 +728,9 @@ SMODS.Seal {
       end
     end
   end,
+  abn_artist_credits = {
+    artist = "Scientist"
+  },
 }
 
 SMODS.Seal {
@@ -764,7 +767,7 @@ SMODS.Seal {
     end
   end,
   abn_artist_credits = {
-    artist = "Vega",
+    artist = "C. Formula",
   },
 }
 
@@ -796,10 +799,8 @@ if next(SMODS.find_mod("Cryptlib")) then
         }
       end
     end,
-    --[[
     abn_artist_credits = {
-      artist = "???",
+      artist = "Fairy One"
     },
-    --]]
   }
 end
