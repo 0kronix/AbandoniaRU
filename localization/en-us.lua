@@ -2856,11 +2856,11 @@ return {
           },
           {
             "If played hand is a",
-            "{C:attention,s:0.8}#4#{s:0.8} of {C:abn_chalice,s:0.8}Chalices{s:0.8}, all {C:attention,s:0.8}Jokers{s:0.8} gain {C:mult,s:0.8}+#3#{s:0.8} Mult",
-            "{C:attention,s:0.8}#4#{s:0.8} of {C:abn_coin,s:0.8}Coins{s:0.8}, all {C:attention,s:0.8}Jokers{s:0.8} gain {C:money,s:0.8}$#3#{s:0.8} of sell value",
-            "{C:attention,s:0.8}#4#{s:0.8} of {C:abn_baton,s:0.8}Batons{s:0.8}, {C:green,s:0.8}#6# in #7#{s:0.8} chance to",
+            "{C:attention,s:0.8}#4#{s:0.8} containing  a {C:abn_chalice,s:0.8}Chalice{s:0.8}, all {C:attention,s:0.8}Jokers{s:0.8} gain {C:mult,s:0.8}+#3#{s:0.8} Mult",
+            "{C:attention,s:0.8}#4#{s:0.8} containing a {C:abn_coin,s:0.8}Coin{s:0.8}, all {C:attention,s:0.8}Jokers{s:0.8} gain {C:money,s:0.8}$#3#{s:0.8} of sell value",
+            "{C:attention,s:0.8}#4#{s:0.8} containing a {C:abn_baton,s:0.8}Baton{s:0.8}, {C:green,s:0.8}#6# in #7#{s:0.8} chance to",
             "{s:0.8}create a random {C:attention,s:0.8}consumable{}",
-            "{C:attention,s:0.8}#4#{s:0.8} of {C:abn_sword,s:0.8}Swords{s:0.8}, all {C:attention,s:0.8}Jokers{s:0.8} gain {C:chips,s:0.8}+#5#{s:0.8} Chips",
+            "{C:attention,s:0.8}#4#{s:0.8} containing a {C:abn_sword,s:0.8}Sword{s:0.8}, all {C:attention,s:0.8}Jokers{s:0.8} gain {C:chips,s:0.8}+#5#{s:0.8} Chips",
           }
         }
       },

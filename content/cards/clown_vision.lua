@@ -34,46 +34,46 @@ SMODS.Joker {
       })
 
       if card.edition then
-        local all_chalices = true
+        local contains_chalices = false
         for i, v in ipairs(context.scoring_hand) do
-          if not v:is_suit("abn_Chalice") then
-            all_chalices = false
+          if v:is_suit("abn_Chalice") then
+            contains_chalices = true
             break
           end
         end
 
-        local all_coins = true
+        local contains_coins = false
         for i, v in ipairs(context.scoring_hand) do
-          if not v:is_suit("abn_Coin") then
-            all_coins = false
+          if v:is_suit("abn_Coin") then
+            contains_coins = true
             break
           end
         end
 
-        local all_batons = true
+        local contains_batons = false
         for i, v in ipairs(context.scoring_hand) do
-          if not v:is_suit("abn_Baton") then
-            all_batons = false
+          if v:is_suit("abn_Baton") then
+            contains_batons = true
             break
           end
         end
 
-        local all_swords = true
+        local contains_swords = false
         for i, v in ipairs(context.scoring_hand) do
-          if not v:is_suit("abn_Sword") then
-            all_swords = false
+          if v:is_suit("abn_Sword") then
+            contains_swords = true
             break
           end
         end
 
-        if all_chalices then
+        if contains_chalices then
           card:juice_up()
           for _, joker in ipairs(G.jokers.cards) do
             joker.ability.abn_perma_mult = (joker.ability.abn_perma_mult or 0) + card.ability.extra.p_gain
             SMODS.calculate_effect({ message = localize("k_upgrade_ex"), colour = G.C.MULT }, joker)
           end
         end
-        if all_coins then
+        if contains_coins then
           card:juice_up()
           for _, other_card in ipairs(G.jokers.cards) do
             if other_card.set_cost then
@@ -84,13 +84,13 @@ SMODS.Joker {
           end
           SMODS.calculate_effect({ message = localize('k_val_up'), colour = G.C.MONEY }, card)
         end
-        if all_batons then
+        if contains_batons then
           card:juice_up()
           if SMODS.pseudorandom_probability(card, 'abn_clown_vision', card.ability.extra.base, card.ability.extra.odds) then
             SMODS.add_card { set = "Consumeables" }
           end
         end
-        if all_swords then
+        if contains_swords then
           card:juice_up()
           for _, joker in ipairs(G.jokers.cards) do
             joker.ability.abn_perma_bonus = (joker.ability.abn_perma_bonus or 0) + card.ability.extra.chips
