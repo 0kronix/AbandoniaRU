@@ -9916,7 +9916,14 @@ return {
           "learn what it does"
         }
       },
-
+      abn_duality_seal = {
+        name = "Duality Seal",
+        text = {
+          "This card permanently gains",
+          "{C:chips}+#1#{} Chips and {C:mult}+#2#{} Mult",
+          "per {C:abn_duality_seal}Duality Seal{} held"
+        }
+      },
       abn_rainbow_seal = {
         name = "Rainbow Seal",
         text = {
@@ -10035,6 +10042,14 @@ return {
         name = "Pink Seal",
         text = {
           "Creates a {C:astro_cards}Astro{} card",
+          "when {C:attention}discarded",
+          "{C:inactive}(Must have room)",
+        },
+      },
+      abn_lime_seal = {
+        name = "Lime Seal",
+        text = {
+          "Creates a {C:calligraphy}Calligraphy{} card",
           "when {C:attention}discarded",
           "{C:inactive}(Must have room)",
         },
@@ -12358,6 +12373,8 @@ return {
       k_abn_plus_program = "+1 Program",
       k_abn_plus_lexica = "+1 Lexica",
       k_abn_plus_continent = "+1 Continent",
+      k_abn_plus_calligraphy = "+1 Calligraphy",
+      k_abn_plus_glyph = "+1 Glyph",
       k_plus_tag = "+1 Tag!",
       k_abn_plus_solid_state = "+1 Solid State",
       k_abn_activated_ex = "Activated!",
@@ -12504,7 +12521,9 @@ return {
       abn_linguistic_seal = "Linguistic Seal",
       abn_rubicund_seal = "Rubicund Seal",
       abn_brine_seal = "Brine Seal",
-      abn_rainbow_seal = "Rainbow Seal"
+      abn_rainbow_seal = "Rainbow Seal",
+      abn_duality_seal = "Duality Seal",
+      abn_lime_seal = "Lime Seal"
     },
     ranks = {
       ["abn_11"] = "11",

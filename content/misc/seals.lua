@@ -691,7 +691,82 @@ SMODS.Seal {
     artist = "Vega",
   },
 }
+SMODS.Seal {
+  key = "duality",
+  badge_colour = HEX("a56be6"),
+  atlas = "AbandoniaSeals",
+  pos = { x = 6, y = 1 },
 
+  loc_vars = function(self, info_queue, card)
+    return {
+      vars = {
+        self.config.extra.chips,
+        self.config.extra.mult
+      }
+    }
+  end,
+
+  config = {
+    extra = {
+      chips = 2,
+      mult = 1,
+    }
+  },
+
+  calculate = function(self, card, context)
+    if context.main_scoring and context.cardarea == G.play then
+      local count = 0
+      for _, v in ipairs(G.hand.cards) do
+        if v.seal and v.seal == "abn_duality" then
+          count = count + 1
+        end
+      end
+      if count > 0 then
+        card.ability.perma_bonus = (card.ability.perma_bonus or 0) + (self.config.extra.chips * count)
+        card.ability.perma_mult = (card.ability.perma_mult or 0) + (self.config.extra.mult * count)
+        SMODS.calculate_effect({ message = localize("k_upgrade_ex"), colour = HEX("a56be6") }, card)
+      end
+    end
+  end,
+}
+
+SMODS.Seal {
+  key = "lime",
+  badge_colour = HEX("68de24"),
+  atlas = "AbandoniaSeals",
+  pos = { x = 3, y = 1 },
+
+  loc_vars = function(self, info_queue, card)
+    return {
+      vars = {
+      }
+    }
+  end,
+
+  config = {
+    extra = {
+    }
+  },
+
+  calculate = function(self, card, context)
+    if context.discard and context.other_card == card and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
+      G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
+      G.E_MANAGER:add_event(Event({
+        trigger = 'before',
+        delay = 0.0,
+        func = function()
+          SMODS.add_card({ set = 'calligraphy' })
+          G.GAME.consumeable_buffer = 0
+          return true
+        end
+      }))
+      return { message = localize('k_abn_plus_calligraphy'), colour = G.C.SECONDARY_SET.calligraphy }
+    end
+  end,
+  abn_artist_credits = {
+    artist = "Vega",
+  },
+}
 
 if next(SMODS.find_mod("Cryptlib")) then
   SMODS.Seal {
