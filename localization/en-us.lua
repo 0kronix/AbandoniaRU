@@ -5212,8 +5212,8 @@ return {
       j_abn_gimbo = {
         name = "Gimbo",
         text = {
-          "This Joker gains {C:mult}+#2#{} Mult when",
-          "each played {C:attention}2{}, {C:attention}3{},",
+          "This Joker gains {C:mult}+#2#{} Mult",
+          "when a {C:attention}2{}, {C:attention}3{},",
           "{C:attention}5{} or {C:attention}7{} is scored",
           "{C:inactive}(Currently{} {C:mult}+#1#{} {C:inactive}Mult)"
         }
@@ -5620,8 +5620,8 @@ return {
         name = "Prime Paul",
         text = {
           "Each played {C:attention}#1#{}, {C:attention}#2#{}, {C:attention}#3#{},",
-          "{C:attention}#4#{}, {C:attention}#5#{}, or {C:attention}#6#{}",
-          "gives {X:mult,C:white}X#6#{} Mult when scored"
+          "{C:attention}#4#{}, {C:attention}#5#{}, or {C:attention}#6#{} gives",
+          "{X:mult,C:white}X#7#{} Mult when scored"
         }
       },
       j_abn_composite_charles = {
@@ -9049,8 +9049,14 @@ return {
       j_abn_narcoleptic_joker = {
         name = "Narcoleptic Joker",
         text = {
-          "{X:chips,C:white}X#1#{} Chips if played hand contains only {C:spades}Spades{} and {C:clubs}Clubs{}",
-          "{X:mult,C:white}X#2#{} Mult if played hand contains only {C:spades}Spades{} and {C:abn_bow}Bows{}",
+          {
+            "{X:chips,C:white}X#1#{} Chips if played hand",
+            "contains only {C:spades}Spades{} and {C:clubs}Clubs{}",
+          },
+          {
+            "{X:mult,C:white}X#2#{} Mult if played hand",
+            "contains only {C:spades}Spades{} and {C:abn_bow}Bows{}",
+          }
         }
       },
       j_abn_spectrum_hell = {
@@ -9064,10 +9070,10 @@ return {
       j_abn_nova_red_eyes_joker = {
         name = "Nova Red Eyes Joker",
         text = {
-          "If {C:attention}first hand{} of round",
-          "has only {C:spades}dark suits{},",
-          "all scoring cards permanently gain",
-          "{C:attention}+#1#{} Retrigger and {C:dark_edition}Chthonian{} edition",
+          "If {C:attention}first hand{} of round contains",
+          "only {C:spades}dark suits{}, all scoring cards",
+          "permanently gain {C:attention}+#1#{} Retrigger",
+          "and {C:dark_edition}Chthonian{} edition",
         }
       },
       j_abn_genocide_route = {
@@ -9129,7 +9135,7 @@ return {
           },
           {
             "This Joker gains {C:chips}+#2#{} Chips",
-            "per Scoring {C:abn_snow}Snow{} {C:attention}Ice{} card",
+            "per scoring {C:abn_snow}Snow{} {C:attention}Ice{} card",
             "{C:inactive}(Currently {C:chips}+#1#{} {C:inactive}Chips){}"
           }
         }
