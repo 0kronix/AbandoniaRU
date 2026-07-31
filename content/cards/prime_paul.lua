@@ -1,4 +1,4 @@
-if ((SMODS.Mods["allinjest"] or {}).can_load) then
+if next(SMODS.find_mod("allinjest")) then
   -- Prime Paul
   -- Coded by J8-Bit
   -- Each played 2, 3, 5, or 7 gives X1.17 Mult when scored

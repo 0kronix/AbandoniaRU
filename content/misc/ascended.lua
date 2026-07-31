@@ -331,3 +331,6 @@ end
 -- I would wrap the cards using ascensions inside a [ if next(SMODS.find_mod("Cryptlib")) then ... end ] instead
 -- In order to not force people to install Cryptlib unless they want Ascensions
 -- Perhaps until someone copies the code from there properly
+
+-- "In order to not force people to install Cryptlib unless they want Ascensions"
+-- Sounds good, I agree - cloudz

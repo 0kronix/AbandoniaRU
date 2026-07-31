@@ -1,4 +1,4 @@
-if ((SMODS.Mods["allinjest"] or {}).can_load) then
+if next(SMODS.find_mod("allinjest")) then
   SMODS.Joker {
     key = 'gimbo',
 

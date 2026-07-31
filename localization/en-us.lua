@@ -1467,13 +1467,13 @@ return {
         name = "Dark Nebula Deck",
         text = {
           "{C:planet}Planet{} Packs don't appear in the shop",
-          "{C:abn_astro}Astro{} Cards appear {C:attention}2X{} more often",
+          "{C:astro_cards}Astro{} Cards appear {C:attention}2X{} more often",
         }
       },
       b_abn_PoltergiestDeck = {
         name = "Poltergiest Deck",
         text = {
-          "{C:abn_nightshift}Nightshift{} cards appear more often",
+          "{C:nightshift_cards}Nightshift{} cards appear more often",
           "Each used {C:attention}consumable{} increases",
           "{C:attention}blind requirements{} by {X:attention,C:white}x0.02{}",
         }
@@ -1857,21 +1857,21 @@ return {
         name = "Sigil Hazard",
         text = {
           "Gives {C:attention}2{} free",
-          "{C:abn_sigil}Mega Sigil Packs{}",
+          "{C:sigils}Mega Sigil Packs{}",
         }
       },
       tag_abn_hazard_astro = {
         name = "Astro Hazard",
         text = {
           "Gives {C:attention}2{} free",
-          "{C:abn_astro}Mega Astro Packs{}",
+          "{C:astro_cards}Mega Astro Packs{}",
         }
       },
       tag_abn_hazard_nightshift = {
         name = "Nightshift Hazard",
         text = {
           "Shop has a free",
-          "{C:abn_nightshift}Nightshift{} card",
+          "{C:nightshift_cards}Nightshift{} card",
         }
       },
       tag_abn_hazard_program = {
@@ -2033,7 +2033,7 @@ return {
         name = "Nightshift Tag",
         text = {
           "Shop has a free",
-          "{C:abn_nightshift}Nightshift{} card",
+          "{C:nightshift_cards}Nightshift{} card",
         }
       },
       tag_abn_hazard = {
@@ -3566,7 +3566,7 @@ return {
       j_abn_calendar = {
         name = "Calendar",
         text = {
-          "{C:abn_Astro}Astro{} cards always",
+          "{C:astro_cards}Astro{} cards always",
           "{C:green}succeed{} during round"
         }
       },
@@ -5248,10 +5248,10 @@ return {
       j_abn_bitcoin_joker = {
         name = "Bitcoin Joker",
         text = {
-          "When an {C:abn_Astro}Astro{} card {C:red}fails{},",
+          "When an {C:astro_cards}Astro{} card {C:red}fails{},",
           "this Joker gains {C:chips}+#4#{} Chips",
           "and {C:money}$#2#{} of {C:attention}sell value{},",
-          "When an {C:abn_Astro}Astro{} card {C:green}succeeds{},",
+          "When an {C:astro_cards}Astro{} card {C:green}succeeds{},",
           "this Joker gains {C:mult}+#3#{} Mult",
           "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips, {C:mult}+#5#{C:inactive} Mult)",
         },
@@ -5277,9 +5277,9 @@ return {
           "Gains {C:chips}+#1#{} Chips when a {C:dark_edition}Foil{} card scores",
           "Gains {C:mult}+#2#{} Mult when a {C:dark_edition}Gloss{} card scores",
           "{C:green}#3# in {C:green}#4#{} chance to convert 1 random non edition card",
-          "in the deck into a {C:dark_edition}Foil{} card when {C:abn_sigil}Sigil card{} is used",
+          "in the deck into a {C:dark_edition}Foil{} card when {C:sigils}Sigil card{} is used",
           "{C:green}#5# in {C:green}#6#{} chance to convert 1 random non edition card",
-          "in the deck into a {C:dark_edition}Gloss{} card when {C:abn_sigil}Sigil card{} is used",
+          "in the deck into a {C:dark_edition}Gloss{} card when {C:sigils}Sigil card{} is used",
           "{C:inactive}(Currently {C:chips}+#7#{C:inactive} Chips, {C:mult}+#8#{C:inactive} Mult)"
         },
       },
@@ -5667,7 +5667,7 @@ return {
       j_abn_astro_joker = {
         name = "Astro Joker",
         text = {
-          "{C:abn_Astro}Astro{} cards always {C:green}succeed",
+          "{C:astro_cards}Astro{} cards always {C:green}succeed",
           "{C:green}#1# in #2# chance{} this {C:attention}Joker{} is",
           "{C:red}destroyed{} at end of round.",
         }
@@ -5810,7 +5810,7 @@ return {
         name = "Feste",
         text = {
           "Create a {C:dark_edition}Negative{}",
-          "{C:abn_nightshift}Nightshift{} card when",
+          "{C:nightshift_cards}Nightshift{} card when",
           "{C:attention}Blind{} is selected",
         }
       },
@@ -6247,10 +6247,10 @@ return {
           "Held {C:tarot}Tarots{} give the {C:attention}rightmost{} Joker {C:chips}+#1#{} Chips",
           "Held {C:planet}Planets{} give the {C:attention}rightmost{} Joker {C:mult}+#2#{} Mult",
           "Held {C:spectral}Spectrals{} give the {C:attention}rightmost{} Joker {X:mult,C:white}+X#3#{} Mult",
-          "Held {C:abn_sigil}Sigils{} give the {C:attention}rightmost{} Joker {X:chips,C:white}+X#4#{} Chips",
-          "Held {C:abn_astro}Astros{} give the {C:attention}rightmost{} Joker {C:money}$#5#{}",
+          "Held {C:sigils}Sigils{} give the {C:attention}rightmost{} Joker {X:chips,C:white}+X#4#{} Chips",
+          "Held {C:astro_cards}Astros{} give the {C:attention}rightmost{} Joker {C:money}$#5#{}",
           "Held {C:abn_calamity}Calamitys{} double all values on this Joker",
-          "Held {C:abn_nightshift}Nightshifts{} give a {C:attention}random{} card in hand {C:attention}+#6#{} Retriggers",
+          "Held {C:nightshift_cards}Nightshifts{} give a {C:attention}random{} card in hand {C:attention}+#6#{} Retriggers",
         }
       },
       j_abn_parkateo = {
@@ -6319,8 +6319,8 @@ return {
         text = {
           "{C:attention}+2{} Consumable Slots",
           "When a {C:attention}Boss Blind{} is defeated,",
-          "Gains {X:mult,C:white}X#5#{} Mult if a {C:abn_sigil}Sigil{} Card is {C:attention}held{}",
-          "Gains {C:mult}+#6#{} Mult if an {C:abn_astro}Astro{} Card is {C:attention}held{}",
+          "Gains {X:mult,C:white}X#5#{} Mult if a {C:sigils}Sigil{} Card is {C:attention}held{}",
+          "Gains {C:mult}+#6#{} Mult if an {C:astro_cards}Astro{} Card is {C:attention}held{}",
           "Gains {C:chips}+#8#{} Chips if a {C:tarot}Tarot{} Card is {C:attention}held{}",
           "Gains {X:chips,C:white}X#7#{} Mult if a {C:spectral}Spectral{} Card is {C:attention}held{}",
           "{C:inactive}(Currently {X:mult,C:white}X#1#{} {C:inactive}Mult,{} {C:mult}+#2#{} {C:inactive}Mult,{} {X:chips,C:white}X#3#{} {C:inactive}Chips,{} {C:chips}+#4#{} {C:inactive}Chips){}"
@@ -6329,7 +6329,7 @@ return {
       j_abn_contract_from_below = {
         name = "Contract From Below",
         text = {
-          "{C:abn_nightshift}Nightshift{} cards always appear in {C:spectral}Spectral{} packs",
+          "{C:nightshift_cards}Nightshift{} cards always appear in {C:spectral}Spectral{} packs",
           "When {C:attention}Blind{} is selected,",
           "Apply {C:purple}Vessel{}, {C:abn_perishable}Perishable{} and {C:dark_edition}Chthonian{}",
           "to the {C:attention}leftmost{} Joker",
@@ -6928,8 +6928,8 @@ return {
           "{C:spectral}Spectral{} all Jokers gain {C:chips}+#3#{} Chips and you lose {C:money}$#4#",
           "{C:abn_calamity}Calamity{} all Jokers Chips values are multiplied by {X:chips,C:white}^#5#{} and you lose {C:money}$#6#",
           "{C:abn_snow}Weather Report{} all Jokers gain {C:mult}+#7#{} Mult and you lose {C:money}$#8#",
-          "{C:abn_astro}Astro{} all Jokers gain {C:mult}+#9#{} Mult and you lose {C:money}$#10#",
-          "{C:abn_nightshift}Nightshift{} all Jokers Mult values are multiplied by {X:mult,C:white}^#11#{}",
+          "{C:astro_cards}Astro{} all Jokers gain {C:mult}+#9#{} Mult and you lose {C:money}$#10#",
+          "{C:nightshift_cards}Nightshift{} all Jokers Mult values are multiplied by {X:mult,C:white}^#11#{}",
         }
       },
       j_abn_monitor_joker = {
@@ -7440,7 +7440,7 @@ return {
       j_abn_example_joker = {
         name = "Example Joker",
         text = {
-          "Creates the {C:abn_sigil}Sigil{} card for",
+          "Creates the {C:sigils}Sigil{} card for",
           "final played {C:attention}poker hand{}",
           "of round",
         }
@@ -7927,13 +7927,13 @@ return {
           },
           {
             "{C:attention}Petroleum Cards{} have a {C:green}#3# in #4#{} chance",
-            "to create an {C:abn_astro}Astro Card{} when triggered",
+            "to create an {C:astro_cards}Astro Card{} when triggered",
             "{C:inactive}(Must have room)",
           },
           {
             "Playing at least {C:attention}2{} odd {C:attention}Stone Cards{} and",
             "{C:attention}2{} even {C:attention}Petroleum Cards{} guarantees",
-            "{C:abn_astro}Astro Card{} creation until the next {C:attention}Blind",
+            "{C:astro_cards}Astro Card{} creation until the next {C:attention}Blind",
 
           },
         },
@@ -9270,11 +9270,11 @@ return {
         text = {
           {
             "When {C:attention}Boss Blind{} is selected,",
-            "create a {C:abn_sigil}Sigil{} for",
+            "create a {C:sigils}Sigil{} for",
             "the {C:attention}last played{} hand",
           },
           {
-            "{C:abn_sigil}Sigil Packs{} can be skipped",
+            "{C:sigils}Sigil Packs{} can be skipped",
           }
         }
       },
@@ -9483,7 +9483,7 @@ return {
       c_abn_baphomet = {
         name = "Baphomet",
         text = {
-          "Create a {C:abn_sigil}Sigil{} for",
+          "Create a {C:sigils}Sigil{} for",
           "your {C:attention}most played{} hand",
         }
       },
@@ -9925,7 +9925,7 @@ return {
       abn_oxidized_seal = {
         name = "Oxidised Seal",
         text = {
-          "Creates a {C:abn_nightshift}Nightshift{} card",
+          "Creates a {C:nightshift_cards}Nightshift{} card",
           "when {C:red}destroyed",
           "{C:inactive}(Must have room)",
         }
@@ -9975,7 +9975,7 @@ return {
       abn_black_seal = {
         name = "Black Seal",
         text = {
-          "Creates a {C:abn_sigil}Sigil{} card",
+          "Creates a {C:sigils}Sigil{} card",
           "when {C:attention}discarded",
           "{C:inactive}(Must have room)",
         },
@@ -9993,7 +9993,7 @@ return {
       abn_pink_seal = {
         name = "Pink Seal",
         text = {
-          "Creates a {C:abn_astro}Astro{} card",
+          "Creates a {C:astro_cards}Astro{} card",
           "when {C:attention}discarded",
           "{C:inactive}(Must have room)",
         },
@@ -10051,7 +10051,7 @@ return {
         name = 'Sigil Pack',
         text = {
           'Select {C:attention}#1#{} of',
-          '{C:attention}#2#{} {C:abn_sigil}Sigil{} cards to',
+          '{C:attention}#2#{} {C:sigils}Sigil{} cards to',
           'be used immediately',
           '{C:inactive}(cannot be skipped)'
         }
@@ -10060,7 +10060,7 @@ return {
         name = 'Jumbo Sigil Pack',
         text = {
           'Select {C:attention}#1#{} of',
-          '{C:attention}#2#{} {C:abn_sigil}Sigil{} cards to',
+          '{C:attention}#2#{} {C:sigils}Sigil{} cards to',
           'be used immediately',
           '{C:inactive}(cannot be skipped)'
         }
@@ -10069,7 +10069,7 @@ return {
         name = 'Mega Sigil Pack',
         text = {
           'Select {C:attention}#1#{} of',
-          '{C:attention}#2#{} {C:abn_sigil}Sigil{} cards to',
+          '{C:attention}#2#{} {C:sigils}Sigil{} cards to',
           'be used immediately',
           '{C:inactive}(cannot be skipped)'
         }
@@ -10078,7 +10078,7 @@ return {
         name = 'Astro Pack',
         text = {
           'Choose {C:attention}#1#{} of up to',
-          '{C:attention}#2#{} {C:abn_astro}Astro{} cards to',
+          '{C:attention}#2#{} {C:astro_cards}Astro{} cards to',
           'be used immediately'
         }
       },
@@ -10086,7 +10086,7 @@ return {
         name = 'Jumbo Astro Pack',
         text = {
           'Choose {C:attention}#1#{} of up to',
-          '{C:attention}#2#{} {C:abn_astro}Astro{} cards to',
+          '{C:attention}#2#{} {C:astro_cards}Astro{} cards to',
           'be used immediately'
         }
       },
@@ -10094,7 +10094,7 @@ return {
         name = 'Mega Astro Pack',
         text = {
           'Choose {C:attention}#1#{} of up to',
-          '{C:attention}#2#{} {C:abn_astro}Astro{} cards to',
+          '{C:attention}#2#{} {C:astro_cards}Astro{} cards to',
           'be used immediately'
         }
       },

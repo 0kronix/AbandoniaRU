@@ -33,20 +33,14 @@ function loc_colour(_c, _default)
     abn()
   end
 
-  G.ARGS.LOC_COLOURS.abn_snow = HEX("5dc6e2")
-  G.ARGS.LOC_COLOURS.abn_penumbra = HEX("8570c7")
-  G.ARGS.LOC_COLOURS.abn_tie = HEX("82e888")
-  G.ARGS.LOC_COLOURS.abn_bow = HEX("3f2c6d")
   G.ARGS.LOC_COLOURS.abn_hazard = HEX("831717")
   G.ARGS.LOC_COLOURS.abn_calamity = HEX("c3a37a")
   G.ARGS.LOC_COLOURS.abn_perishable = HEX("687ee7")
   G.ARGS.LOC_COLOURS.abn_eternal = HEX("c65984")
-  G.ARGS.LOC_COLOURS.abn_sigil = HEX("fd5f55")
-  G.ARGS.LOC_COLOURS.abn_nightshift = HEX("1a6a5f")
-  G.ARGS.LOC_COLOURS.abn_astro = HEX("5204ff")
   G.ARGS.LOC_COLOURS.abn_superrare = HEX("d59fcd")
   G.ARGS.LOC_COLOURS.abn_parallelrare = HEX("b26cbb")
   G.ARGS.LOC_COLOURS.abn_plasma = { 0.8, 0.45, 0.85, 1 }
+  G.ARGS.LOC_COLOURS.abn_plagued = HEX("cfeb2d")
 
   -- Seal colours
   G.ARGS.LOC_COLOURS.abn_pink_seal = HEX("ec7de7")
@@ -65,8 +59,6 @@ function loc_colour(_c, _default)
   G.ARGS.LOC_COLOURS.abn_copper_seal = HEX("d97c42")
   G.ARGS.LOC_COLOURS.abn_silver_seal = HEX("bec7d4")
   G.ARGS.LOC_COLOURS.abn_duality_seal = HEX("a56be6")
-
-  G.ARGS.LOC_COLOURS.abn_plagued = HEX("cfeb2d")
 
   return abn(_c, _default)
 end
