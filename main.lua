@@ -121,11 +121,29 @@ for _, filename in pairs(cards) do
   assert(SMODS.load_file(subdir .. "/" .. filename))()
 end
 
+-- Misc additions
 local subdir = "content/misc"
 local cards = NFS.getDirectoryItems(SMODS.current_mod.path .. subdir)
 for _, filename in pairs(cards) do
   assert(SMODS.load_file(subdir .. "/" .. filename))()
 end
+
+--#region Crossmod Stuff
+local function abn_load_crossmod(mod_id)
+  if next(SMODS.find_mod(mod_id)) then
+    local subdir = "content/crossmod/" .. string.lower(mod_id)
+    local cards = NFS.getDirectoryItems(SMODS.current_mod.path .. subdir)
+    for _, filename in pairs(cards) do
+      assert(SMODS.load_file(subdir .. "/" .. filename))()
+    end
+  end
+end
+abn_load_crossmod("allinjest")
+abn_load_crossmod("Cryptlib")
+abn_load_crossmod("Fortlatro")
+abn_load_crossmod("ortalab")
+--#endregion
+
 ABN.calculate = function(self, context)
   -- Shadowy Joker
   if #SMODS.find_card("j_abn_shadowy_joker", true) > 0 then

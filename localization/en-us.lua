@@ -6619,9 +6619,13 @@ return {
       j_abn_recursive_joker = {
         name = "Recursive Joker",
         text = {
-          "Jokers may appear multiple times",
-          "Each Joker gives {X:chips,C:white}X#1#{} Chips",
-          "for every copy of that Joker",
+          {
+            "Jokers may appear multiple times",
+          },
+          {
+            "Each Joker gives {X:chips,C:white}X#1#{} Chips",
+            "per copy of that Joker",
+          }
         }
       },
       j_abn_joker_jester = {
