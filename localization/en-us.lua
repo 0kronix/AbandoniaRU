@@ -389,7 +389,7 @@ return {
           {
             "Enhance the {C:attention}leftmost{}",
             "card in hand to a",
-            "{C:enhance}Kintsugi Card{}"
+            "{C:attention}Kintsugi Card{}"
           }
         }
       },
@@ -403,6 +403,108 @@ return {
           {
             "Turn the {C:attention}rightmost{}",
             "card in hand {C:dark_edition}Chromatic{}"
+          }
+        }
+      },
+
+      c_abn_dzelo = {
+        name = "Dzelo",
+        text = {
+          {
+            "Converts all cards in hand",
+            "into the {C:attention}leftmost{} card's",
+            "{C:attention}suit{} and {C:dark_edition}Edition{}",
+          },
+          {
+            "Enhances all cards",
+            "in hand into {C:attention}Kinship{} cards",
+          }
+        }
+      },
+      c_abn_ize = {
+        name = "Ize",
+        text = {
+          {
+            "Enhances all cards",
+            "in hand into {C:attention}Wallpaper{} cards",
+          },
+          {
+            "If the {C:attention}rightmost{} card",
+            "has a {C:attention}seal{}, copy that",
+            "{C:attention}seal{} to all cards in hand"
+          }
+        }
+      },
+      c_abn_oy = {
+        name = "Oy",
+        text = {
+          {
+            "Converts all cards",
+            "in hand into {C:dark_edition}Gloss{}",
+            "{C:attention}Gold{} {C:attention}13{} of {V:1}#1#{}",
+          },
+          {
+            "Destroy {C:attention}leftmost{} Joker"
+          }
+        }
+      },
+      c_abn_ot = {
+        name = "Ot",
+        text = {
+          {
+            "Converts all cards in hand",
+            "into {C:attention}Reinforcement{}",
+            "{V:1}#1#{} cards"
+          },
+          {
+            "Copy all {C:attention}Stickers{} of",
+            "the {C:attention}rightmost{} Joker",
+            "to all other Jokers"
+          }
+        }
+      },
+      c_abn_yat = {
+        name = "Yat",
+        text = {
+          {
+            "Enhances all cards",
+            "in hand into {C:attention}Ocean{} cards",
+          },
+          {
+            "All cards in hand permanently",
+            "gain {C:mult}Mult{} equal to the",
+            "{C:attention}rank{} of the {C:attention}leftmost{} card",
+            "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)"
+          }
+        }
+      },
+      c_abn_iya = {
+        name = "Iya",
+        text = {
+          {
+            "Enhances all cards",
+            "in hand into {C:attention}Mountain{} cards",
+          },
+          {
+            "All cards in hand permanently",
+            "gain {C:attention}double{} the {C:attention}rank{} of",
+            "the {C:attention}rightmost{} card as {C:chips}Chips{}",
+            "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)"
+          }
+        }
+      },
+      c_abn_iye = {
+        name = "Iye",
+        text = {
+          {
+            "Enhances all cards",
+            "in hand into {C:attention}Zen{} cards",
+          },
+          {
+            "All cards in hand permanently",
+            "gain {C:mult}Mult{} equal to the",
+            "{C:attention}rank{} of the {C:attention}rightmost{} card",
+            "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)"
           }
         }
       },
@@ -1128,9 +1230,17 @@ return {
       c_abn_lua = {
         name = ".LUA",
         text = {
-          "Enhances all {C:attention}11s{}, {C:attention}12s{}, {C:attention}13s{}",
-          "and {C:attention}14s{} in hand into",
-          "{C:dark_edition}Collodion{} {C:attention}Tea Tag{} cards "
+          {
+            "{s:0.8}Convert held {C:hearts,s:0.8}Hearts{s:0.8} into {C:abn_florette,s:0.8}Florettes{}",
+            "{s:0.8}Convert held {C:diamonds,s:0.8}Diamonds{s:0.8} into {C:abn_bell,s:0.8}Bells{}",
+            "{s:0.8}Convert held {C:clubs,s:0.8}Clubs{s:0.8} into {C:abn_leaf,s:0.8}Leaves{}",
+            "{s:0.8}Convert held {C:spades,s:0.8}Spades{s:0.8} into {C:abn_acorn,s:0.8}Acorns{}",
+          },
+          {
+            "Enhance all cards that",
+            "have {C:attention}changed suit{} into",
+            "{C:dark_edition}Vintage{} {C:attention}Bonus{} cards"
+          }
         }
       },
       c_abn_pdf = {
@@ -8303,7 +8413,7 @@ return {
         name = "Aesthetic Joker",
         text = {
           {
-            "{C:chips}+#1#{} for each {C:attention}unique{}",
+            "{C:chips}+#1#{} Chips for every {C:attention}unique{}",
             "{C:attention}enhancement{} scored this run",
             "{C:inactive}(Currently{} {C:chips}+#2#{} {C:inactive}Chips){}",
           },

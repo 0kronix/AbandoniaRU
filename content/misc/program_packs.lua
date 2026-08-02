@@ -4,7 +4,7 @@ SMODS.ConsumableType {
   key = "program_pack",
   primary_colour = HEX("25a289"),
   secondary_colour = HEX("25a289"),
-  collection_rows = { 3, 3 },
+  collection_rows = { 5, 5 },
   shop_rate = 1,
 }
 
@@ -515,8 +515,8 @@ SMODS.Consumable {
   },
 
   loc_vars = function(self, info_queue, card)
-    info_queue[#info_queue + 1] = G.P_CENTERS.m_abn_teatag
-    info_queue[#info_queue + 1] = G.P_CENTERS.e_abn_collodion
+    info_queue[#info_queue + 1] = G.P_CENTERS.m_bonus
+    info_queue[#info_queue + 1] = G.P_CENTERS.e_abn_vintage
     return {
       vars = {}
     }
@@ -545,17 +545,74 @@ SMODS.Consumable {
       end
     }))
 
-    local target_ranks = { abn_11 = true, abn_12 = true, abn_13 = true, abn_14 = true }
+    local suit_mapping = {
+      Hearts = 'abn_Florette',
+      Diamonds = 'abn_Bell',
+      Clubs = 'abn_Leaf',
+      Spades = 'abn_Acorn'
+    }
 
+    local to_enhance = {}
+
+    -- convert to suit
     for _, hand_card in ipairs(G.hand.cards) do
-      if target_ranks[hand_card.base.value] then
-        hand_card:set_ability("m_abn_teatag")
-        hand_card:set_edition("e_abn_collodion", true)
+      local changed = false
 
+      for base_suit, target_suit in pairs(suit_mapping) do
+        if hand_card:is_suit(base_suit) then
+          hand_card:change_suit(target_suit)
+          to_enhance[#to_enhance + 1] = hand_card
+          changed = true
+          break
+        end
+      end
+
+      if changed then
         hand_card:juice_up(0.3, 0.3)
       end
     end
+
+    delay(0.5)
+
+    -- enhancing
+    for i, c in ipairs(to_enhance) do
+      local percent = 1.15 - (i - 0.999) / (#to_enhance - 0.998) * 0.3
+      G.E_MANAGER:add_event(Event({
+        trigger = 'after',
+        delay = 0.15,
+        func = function()
+          c:flip()
+          play_sound('card1', percent)
+          c:juice_up(0.3, 0.3)
+          return true
+        end
+      }))
+    end
+    for _, c in ipairs(to_enhance) do
+      G.E_MANAGER:add_event(Event({
+        func = function()
+          c:set_ability("m_bonus")
+          c:set_edition("e_abn_vintage", true)
+          return true
+        end
+      }))
+    end
+    for i, c in ipairs(to_enhance) do
+      local percent = 0.85 + (i - 0.999) / (#to_enhance - 0.998) * 0.3
+      G.E_MANAGER:add_event(Event({
+        trigger = 'after',
+        delay = 0.15,
+        func = function()
+          c:flip()
+          play_sound('tarot2', percent, 0.6)
+          c:juice_up(0.3, 0.3)
+          return true
+        end
+      }))
+    end
+    delay(0.5)
   end,
+
 
   abn_artist_credits = {
     artist = "Comykel",
