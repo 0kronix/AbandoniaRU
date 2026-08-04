@@ -24,6 +24,21 @@ ABN.spectrallib_features = {
 }
 
 
+-- G.GAME variables
+local init_game_object_ref = Game.init_game_object
+function Game:init_game_object(...)
+  local ret = init_game_object_ref(self, ...)
+  ret.abn = {
+    legendary_pool = { in_shop = false, rate = 1.00 },
+    cthonian = false,
+    used_sigils = {},
+    rank_planet_rate = 0.7,
+    total_jacks_discarded = {},
+    suits_played_this_blind = {},
+  }
+  return ret
+end
+
 G.C.ABN_PLASMA = { 0.8, 0.45, 0.85, 1 }
 G.C.ABN_PLAGUED = HEX("cfeb2d")
 

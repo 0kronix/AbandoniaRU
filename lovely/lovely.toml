@@ -63,24 +63,6 @@ if (not force) and card and (card.ability.abn_forced_selection or card.ability.a
 '''
 match_indent = true
 
-# G.GAME Variables
-[[patches]]
-[patches.pattern]
-target = 'game.lua'
-pattern = '''unused_discards = 0,'''
-position = "after"
-payload = '''
-abn = {
-    legendary_pool = {in_shop = false, rate = 1.00},
-    cthonian = false,
-    used_sigils = {},
-    rank_planet_rate = 0.7,
-    total_jacks_discarded = {},
-    suits_played_this_blind = {},
-},
-'''
-match_indent = true
-
 # borrowed from All in Jest, ty
 [[patches]]
 [patches.pattern]

@@ -16,7 +16,9 @@ SMODS.Edition {
   end,
   on_apply = function(card)
     ABN.mod_card_values(card, { multiplier = 2 })
-    G.GAME.abn.cthonian = true
+    if G.GAME.abn then
+      G.GAME.abn.cthonian = true
+    end
   end,
   on_remove = function(card)
     ABN.mod_card_values(card, { multiplier = 0.5 })
