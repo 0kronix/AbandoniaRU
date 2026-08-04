@@ -24,6 +24,10 @@ SMODS.Rank {
     abn_Sword = 10,
     abn_Coin = 11,
     abn_Baton = 12,
+    abn_Florette = 13,
+    abn_Acorn = 14,
+    abn_Bell = 15,
+    abn_Leaf = 16
   },
 
   in_pool = function(self, args)
@@ -61,6 +65,10 @@ SMODS.Rank {
     abn_Sword = 10,
     abn_Coin = 11,
     abn_Baton = 12,
+    abn_Florette = 13,
+    abn_Acorn = 14,
+    abn_Bell = 15,
+    abn_Leaf = 16
   },
 
   in_pool = function(self, args)
@@ -98,6 +106,10 @@ SMODS.Rank {
     abn_Sword = 10,
     abn_Coin = 11,
     abn_Baton = 12,
+    abn_Florette = 13,
+    abn_Acorn = 14,
+    abn_Bell = 15,
+    abn_Leaf = 16
   },
 
   in_pool = function(self, args)
@@ -136,6 +148,10 @@ SMODS.Rank {
     abn_Sword = 10,
     abn_Coin = 11,
     abn_Baton = 12,
+    abn_Florette = 13,
+    abn_Acorn = 14,
+    abn_Bell = 15,
+    abn_Leaf = 16
   },
 
 
