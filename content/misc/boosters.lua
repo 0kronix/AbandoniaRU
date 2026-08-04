@@ -2054,8 +2054,8 @@ SMODS.Booster({
 
 SMODS.Booster({
   key = 'glyph_normal_1',
-  atlas = 'abn_AbandoniaGlyphs',
-  pos = { x = 2, y = 6 },
+  atlas = 'abn_AbandoniaGlyphPack',
+  pos = { x = 0, y = 0 },
   config = { extra = 3, choose = 1 },
   weight = 1,
   cost = 4,
@@ -2093,8 +2093,8 @@ SMODS.Booster({
 
 SMODS.Booster({
   key = 'glyph_normal_2',
-  atlas = 'abn_AbandoniaGlyphs',
-  pos = { x = 3, y = 6 },
+  atlas = 'abn_AbandoniaGlyphPack',
+  pos = { x = 1, y = 0 },
   config = { extra = 3, choose = 1 },
   weight = 1,
   cost = 4,
@@ -2133,8 +2133,8 @@ SMODS.Booster({
 
 SMODS.Booster({
   key = 'glyph_jumbo_1',
-  atlas = 'abn_AbandoniaGlyphs',
-  pos = { x = 2, y = 7 },
+  atlas = 'abn_AbandoniaGlyphPack',
+  pos = { x = 0, y = 1 },
   config = { extra = 5, choose = 1 },
   weight = 1,
   cost = 6,
@@ -2172,8 +2172,8 @@ SMODS.Booster({
 
 SMODS.Booster({
   key = 'glyph_jumbo_2',
-  atlas = 'abn_AbandoniaGlyphs',
-  pos = { x = 3, y = 7 },
+  atlas = 'abn_AbandoniaGlyphPack',
+  pos = { x = 1, y = 1 },
   config = { extra = 5, choose = 1 },
   weight = 1,
   cost = 6,
@@ -2211,8 +2211,8 @@ SMODS.Booster({
 
 SMODS.Booster({
   key = 'glyph_mega',
-  atlas = 'abn_AbandoniaGlyphs',
-  pos = { x = 0, y = 8 },
+  atlas = 'abn_AbandoniaGlyphPack',
+  pos = { x = 3, y = 1 },
   config = { extra = 5, choose = 2 },
   weight = 0.25,
   cost = 8,

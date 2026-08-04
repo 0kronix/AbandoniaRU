@@ -71,7 +71,7 @@ ABN.GlyphCard {
 
   config = { extra = { seal = 'abn_black' }, max_highlighted = 1 },
 }
---
+
 ABN.GlyphCard {
   key = "impure",
   pos = { x = 1, y = 0 },
