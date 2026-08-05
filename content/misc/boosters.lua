@@ -2247,3 +2247,157 @@ SMODS.Booster({
     artist = "Flote",
   },
 })
+
+-- Calamity Packs
+
+SMODS.Booster({
+  key = 'calamity_normal_1',
+  atlas = 'AbandoniaCalamity',
+  pos = { x = 0, y = 3 },
+  config = { extra = 3, choose = 1 },
+  weight = 0.2,
+  cost = 4,
+  group_key = 'abn_calamitybooster',
+  draw_hand = true,
+  unlocked = true,
+  discovered = false,
+  create_card = function(self, card)
+    return {
+      set = "calamity_cards",
+      area = G.pack_cards,
+      skip_materialize = true,
+      soulable = true,
+      key_append = "abn_calamity_cards"
+    }
+  end,
+
+  loc_vars = function(self, info_queue, card)
+    return { vars = { card.ability.choose, card.ability.extra }, key = self.key:sub(1, -3), }
+  end,
+  ease_background_colour = function(self)
+    local effects = {
+      { new_colour = G.C.GREEN, special_colour = G.C.PURPLE, contrast = 2 },
+    }
+    local random_index = math.random(#effects)
+    local chosen_effect = effects[random_index]
+    ease_colour(G.C.DYN_UI.MAIN, G.C.SET.calamity_cards)
+    ease_background_colour(chosen_effect)
+  end,
+  abn_artist_credits = {
+    artist = "Flote",
+  },
+})
+
+SMODS.Booster({
+  key = 'calamity_normal_2',
+  atlas = 'AbandoniaCalamity',
+  pos = { x = 1, y = 3 },
+  config = { extra = 3, choose = 1 },
+  weight = 0.2,
+  cost = 4,
+  group_key = 'abn_calamitybooster',
+  draw_hand = true,
+  unlocked = true,
+  discovered = false,
+  create_card = function(self, card)
+    return {
+      set = "calamity_cards",
+      area = G.pack_cards,
+      skip_materialize = true,
+      soulable = true,
+      key_append = "abn_calamity_cards"
+    }
+  end,
+
+  loc_vars = function(self, info_queue, card)
+    return { vars = { card.ability.choose, card.ability.extra }, key = self.key:sub(1, -3), }
+  end,
+  ease_background_colour = function(self)
+    local effects = {
+      { new_colour = G.C.GREEN, special_colour = G.C.PURPLE, contrast = 2 },
+    }
+    local random_index = math.random(#effects)
+    local chosen_effect = effects[random_index]
+    ease_colour(G.C.DYN_UI.MAIN, G.C.SET.calamity_cards)
+    ease_background_colour(chosen_effect)
+  end,
+  abn_artist_credits = {
+    artist = "Flote",
+  },
+})
+
+SMODS.Booster({
+  key = 'calamity_jumbo',
+  atlas = 'AbandoniaCalamity',
+  pos = { x = 2, y = 3 },
+  config = { extra = 5, choose = 1 },
+  weight = 0.2,
+  cost = 6,
+  group_key = 'abn_calamitybooster',
+  draw_hand = true,
+  unlocked = true,
+  discovered = false,
+  create_card = function(self, card)
+    return {
+      set = "calamity_cards",
+      area = G.pack_cards,
+      skip_materialize = true,
+      soulable = true,
+      key_append = "abn_calamity_cards"
+    }
+  end,
+
+  loc_vars = function(self, info_queue, card)
+    return { vars = { card.ability.choose, card.ability.extra }, }
+  end,
+  ease_background_colour = function(self)
+    local effects = {
+      { new_colour = G.C.GREEN, special_colour = G.C.PURPLE, contrast = 2 },
+    }
+    local random_index = math.random(#effects)
+    local chosen_effect = effects[random_index]
+    ease_colour(G.C.DYN_UI.MAIN, G.C.SET.calamity_cards)
+    ease_background_colour(chosen_effect)
+  end,
+  abn_artist_credits = {
+    artist = "Flote",
+  },
+})
+
+SMODS.Booster({
+  key = 'calamity_mega',
+  atlas = 'AbandoniaCalamity',
+  pos = { x = 3, y = 3 },
+  config = { extra = 5, choose = 2 },
+  weight = 0.06,
+  cost = 8,
+  group_key = 'abn_calamitybooster',
+  draw_hand = true,
+  unlocked = true,
+  discovered = false,
+  create_card = function(self, card)
+    return {
+      set = "calamity_cards",
+      area = G.pack_cards,
+      skip_materialize = true,
+      soulable = true,
+      key_append = "abn_calamity_cards"
+    }
+  end,
+
+  loc_vars = function(self, info_queue, card)
+    return { vars = { card.ability.choose, card.ability.extra }, }
+  end,
+  ease_background_colour = function(self)
+    local effects = {
+      { new_colour = G.C.GREEN, special_colour = G.C.PURPLE, contrast = 2 },
+    }
+    local random_index = math.random(#effects)
+    local chosen_effect = effects[random_index]
+    ease_colour(G.C.DYN_UI.MAIN, G.C.SET.calamity_cards)
+    ease_background_colour(chosen_effect)
+  end,
+  abn_artist_credits = {
+    artist = "Flote",
+  },
+})

@@ -737,45 +737,31 @@ SMODS.Consumable {
   },
 }
 
+
 SMODS.Consumable {
   key = "jpg",
-  set = 'program_pack',
-  cost = 4,
-  atlas = "abn_AbandoniaProgramPack",
+  set = "program_pack",
+  config = { extra = { chips = 15, mult = 10 } },
   pos = { x = 3, y = 1 },
-
-  config = {
-    extra = {}
-  },
+  atlas = "AbandoniaProgramPack",
+  cost = 4,
+  discovered = false,
 
   loc_vars = function(self, info_queue, card)
-    info_queue[#info_queue + 1] = G.P_CENTERS.e_abn_vintage
-    return {
-      vars = {}
-    }
+    return { vars = { card.ability.extra.chips, card.ability.extra.mult } }
   end,
 
   can_use = function(self, card)
-    if G.hand and #G.hand.cards > 0 then
-      return true
-    end
-    return false
+    return true
   end,
 
   use = function(self, card, area, copier)
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.4,
-      func = function()
-        play_sound('tarot1')
-        card:juice_up(0.3, 0.5)
-        return true
-      end
-    }))
-
-    for _, deck_card in ipairs(G.hand.cards) do
-      if (deck_card:is_suit('Spades') or deck_card:is_suit('abn_Bow')) and ABN.is_even(deck_card) then
-        deck_card:set_edition({ abn_vintage = true }, true)
+    for _, v in ipairs(G.playing_cards) do
+      if v:is_suit("Diamonds") or v:is_suit("Hearts") or v:is_suit("abn_suitless") then
+        v.permadebuff = true
+      elseif v:is_suit("Spades") or v:is_suit("Clubs") or v:is_suit("abn_Snow") or v:is_suit("abn_Tie") or v:is_suit("abn_Bow") or v:is_suit("abn_Penumbra") then
+        v.ability.perma_bonus = (v.ability.perma_bonus or 0) + card.ability.extra.chips
+        v.ability.perma_mult = (v.ability.perma_mult or 0) + card.ability.extra.mult
       end
     end
   end,
@@ -787,48 +773,33 @@ SMODS.Consumable {
 
 SMODS.Consumable {
   key = "gif",
-  set = 'program_pack',
-  cost = 4,
-  atlas = "abn_AbandoniaProgramPack",
+  set = "program_pack",
+  config = { extra = { chips = 15, mult = 10 } },
   pos = { x = 4, y = 1 },
-
-  config = {
-    extra = {}
-  },
+  atlas = "AbandoniaProgramPack",
+  cost = 4,
+  discovered = false,
 
   loc_vars = function(self, info_queue, card)
-    info_queue[#info_queue + 1] = G.P_CENTERS.e_abn_reversal
-    return {
-      vars = {}
-    }
+    return { vars = { card.ability.extra.chips, card.ability.extra.mult } }
   end,
 
   can_use = function(self, card)
-    if G.hand and #G.hand.cards > 0 then
-      return true
-    end
-    return false
+    return true
   end,
 
   use = function(self, card, area, copier)
-    G.E_MANAGER:add_event(Event({
-      trigger = 'after',
-      delay = 0.4,
-      func = function()
-        play_sound('tarot1')
-        card:juice_up(0.3, 0.5)
-        return true
-      end
-    }))
-
-    for _, deck_card in ipairs(G.hand.cards) do
-      if (deck_card:is_suit('Clubs') or deck_card:is_suit('abn_Tie')) and ABN.is_odd(deck_card) then
-        deck_card:set_edition({ abn_reversal = true }, true)
+    for _, v in ipairs(G.playing_cards) do
+      if v:is_suit("Spades") or v:is_suit("Clubs") or v:is_suit("abn_Snow") or v:is_suit("abn_Tie") or v:is_suit("abn_Bow") or v:is_suit("abn_Penumbra") then
+        v.permadebuff = true
+      elseif v:is_suit("Diamonds") or v:is_suit("Hearts") or v:is_suit("abn_suitless") then
+        v.ability.perma_bonus = (v.ability.perma_bonus or 0) + card.ability.extra.chips
+        v.ability.perma_mult = (v.ability.perma_mult or 0) + card.ability.extra.mult
       end
     end
   end,
 
   abn_artist_credits = {
-    artist = "Comykel",
+    artist = "Grass",
   },
 }

@@ -434,3 +434,208 @@ SMODS.Consumable {
     artist = "shepcicle"
   },
 }
+
+SMODS.Consumable {
+  key = "ultra_ego",
+  set = "Spectral",
+  config = { extra = { tags = 1 } },
+  pos = { x = 3, y = 2 },
+  atlas = "AbandoniaSpectrals",
+  cost = 4,
+  discovered = false,
+  loc_vars = function(self, info_queue, card)
+    info_queue[#info_queue + 1] = { key = "abn_flipped_card", set = "Other" }
+    info_queue[#info_queue + 1] = { key = "abn_ultra_ego_info", set = "Other", vars = { G.GAME.abn_ultra_egos_used or 0 } }
+    return { vars = {} }
+  end,
+  can_use = function(self, card)
+    return G.playing_cards and #G.playing_cards > 0 and
+        (G.GAME.abn_ultra_egos_used or 0) < 4
+  end,
+  in_pool = function(self, args)
+    return (G.GAME.abn_ultra_egos_used or 0) < 4
+  end,
+  use = function(self, card, area, copier)
+    local used_tarot = copier or card
+
+    SMODS.change_booster_limit(1)
+    G.GAME.abn_ultra_egos_used = (G.GAME.abn_ultra_egos_used or 0) + 1
+
+    for _, joker in ipairs(G.jokers.cards) do
+      if not joker.ability.abn_perma_flipped then
+        if joker.facing == 'front' then
+          joker:flip()
+        end
+        joker.ability.abn_perma_flipped = true
+      end
+    end
+
+    G.E_MANAGER:add_event(Event({
+      trigger = 'after',
+      delay = 0.4,
+      func = function()
+        play_sound('tarot1')
+        used_tarot:juice_up(0.3, 0.5)
+
+        for i = 1, #G.playing_cards do
+          local v = G.playing_cards[i]
+
+          v:juice_up(0.3, 0.3)
+
+          if not v.ability.abn_perma_flipped then
+            if v.facing == 'front' then
+              v:flip()
+            end
+            v.ability.abn_perma_flipped = true
+          end
+        end
+
+        return true
+      end
+    }))
+  end,
+  abn_artist_credits = {
+    artist = "Grass",
+  },
+}
+
+SMODS.Consumable {
+  key = "brand",
+  set = "Spectral",
+  config = { extra = {} },
+  pos = { x = 2, y = 0 },
+  atlas = "AbandoniaSpectrals",
+  cost = 4,
+  discovered = false,
+  loc_vars = function(self, info_queue, card)
+    info_queue[#info_queue + 1] = { key = 'e_negative_consumable', set = 'Edition', config = { extra = 1 } }
+    return { vars = {} }
+  end,
+  can_use = function(self, card)
+    return G.jokers and ABN.count_stickers() > 0
+  end,
+  use = function(self, card)
+    for key, _ in pairs(SMODS.Sticker.obj_table) do
+      for _, joker in pairs(G.jokers.cards) do
+        if joker.ability and joker.ability[key] then
+          SMODS.destroy_cards(joker, { bypass_eternal = true })
+        end
+      end
+    end
+    for i = 1, 2 do
+      G.E_MANAGER:add_event(Event({
+        trigger = 'after',
+        delay = 0.4,
+        func = function()
+          play_sound('timpani')
+          SMODS.add_card({ set = 'Tarot', key_append = "abn_brand", edition = "e_negative" })
+          card:juice_up(0.3, 0.5)
+          return true
+        end
+      }))
+    end
+    for i = 1, 2 do
+      local voucher_pool = get_current_pool('Voucher')
+      local selected_voucher = pseudorandom_element(voucher_pool, 'abn_brand')
+      local it = 1
+      while selected_voucher == 'UNAVAILABLE' do
+        it = it + 1
+        selected_voucher = pseudorandom_element(voucher_pool, 'abn_brand' .. it)
+      end
+      local voucher_card = SMODS.create_card({ area = G.play, key = selected_voucher }) -- Ignore the previous code and just use a key for a prefined voucher
+      local prev_state = G.STATE
+      voucher_card:start_materialize()
+      voucher_card.cost = 0
+
+      G.play:emplace(voucher_card)
+
+      if i > 1 then
+        voucher_card.T.x = voucher_card.T.x + 2
+      end
+
+      voucher_card:redeem()
+
+      G.E_MANAGER:add_event(Event({
+        trigger = 'after',
+        delay = 0.5,
+        func = function()
+          voucher_card:start_dissolve()
+          return true
+        end
+      }))
+    end
+    delay(0.6)
+  end,
+  abn_artist_credits = {
+    artist = "Grass",
+  },
+}
+
+SMODS.Consumable {
+  key = "deja_reve",
+  set = "Spectral",
+  config = { extra = { tags = 2 } },
+  pos = { x = 1, y = 1 },
+  atlas = "AbandoniaSpectrals",
+  cost = 4,
+  discovered = false,
+
+  loc_vars = function(self, info_queue, card)
+    return { vars = { card.ability.extra.tags } }
+  end,
+
+  can_use = function(self, card)
+    return true
+  end,
+
+  use = function(self, card, area, copier)
+    --Add the Tags
+    for i = 1, card.ability.extra.tags do
+      G.E_MANAGER:add_event(Event({
+        func = function()
+          local tag_key = get_next_tag_key('abn_guaranteed_hazard_tag')
+          add_tag(Tag(tag_key))
+          play_sound('generic1', 0.9 + math.random() * 0.1, 0.8)
+          play_sound('holo1', 1.2 + math.random() * 0.1, 0.4)
+          return true
+        end
+      }))
+    end
+
+    --Double the Deck
+    G.E_MANAGER:add_event(Event({
+      trigger = 'after',
+      delay = 0.4,
+      func = function()
+        play_sound('tarot1')
+        card:juice_up(0.3, 0.5)
+
+        local new_cards = {}
+        local cards_to_copy = {}
+        for _, v in ipairs(G.deck.cards) do
+          table.insert(cards_to_copy, v)
+        end
+
+        for i, source_card in ipairs(cards_to_copy) do
+          local _card = copy_card(source_card)
+
+          _card:add_to_deck()
+          table.insert(G.playing_cards, _card)
+
+          G.deck:emplace(_card)
+
+          _card:start_materialize(nil, i == 1)
+          table.insert(new_cards, _card)
+        end
+
+        playing_card_joker_effects(new_cards)
+
+        return true
+      end
+    }))
+  end,
+
+  abn_artist_credits = {
+    artist = "Grass",
+  },
+}

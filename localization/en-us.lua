@@ -1262,15 +1262,28 @@ return {
       c_abn_jpg = {
         name = ".JPG",
         text = {
-          "Add {C:dark_edition}Vintage{} edition to all",
-          "{C:attention}even{} {C:abn_bow}Bows{} and {C:spades}Spades{} in hand",
+          {
+            "{C:mult}Debuff{} all {C:diamonds}Diamonds{}, {C:hearts}Hearts{} and {C:inactive}Nulls{}",
+          },
+          {
+            "{C:spades}Spades{}, {C:clubs}Clubs{}, {C:abn_snow}Snows{},",
+            "{C:abn_tie}Ties{}, {C:abn_bow}Bows{} and {C:abn_penumbra}Penumbras{} gain",
+            "{C:chips}+#1#{} Chips and {C:mult}+#2#{} Mult",
+          },
         }
       },
       c_abn_gif = {
         name = ".GIF",
         text = {
-          "Add {C:dark_edition}Vintage{} edition to all",
-          "{C:attention}odd{} {C:abn_tie}Ties{} and {C:clubs}Clubs{} in hand",
+          {
+            "{C:mult}Debuff{} all {C:spades}Spades{}, {C:clubs}Clubs{},",
+            "{C:abn_snow}Snows{}, {C:abn_tie}Ties{},",
+            "{C:abn_bow}Bows{}, and {C:abn_penumbra}Penumbras",
+          },
+          {
+            "{C:diamonds}Diamonds{}, {C:hearts}Hearts{} and {C:inactive}Nulls{} gain",
+            "{C:chips}+#1#{} Chips and {C:mult}+#2#{} Mult",
+          },
         }
       },
     },
@@ -9502,7 +9515,25 @@ return {
       },
     },
     Spectral = {
-      c_abn_apotheosis = {
+      c_abn_promotion = { -- TO CODE
+        name = "Promotion",
+        text = {
+          "Convert held {C:attention}Jacks{} to {C:attention}11s{},",
+          "held {C:attention}Queens{} to {C:attention}12s{},",
+          "held {C:attention}Kings{} to {C:attention}13s{},",
+          "held {C:attention}Aces{} to {C:attention}14s{},",
+        }
+      },
+      c_abn_brand = {
+        name = "Brand",
+        text = {
+          "{C:red}Destroy{} all {C:attention}Jokers{} with {C:attention}stickers{},",
+          "redeem {C:attention}2{} random {C:attention}Vouchers{}",
+          "and create {C:attention}2{} random",
+          "{C:dark_edition}Negative{} {C:tarot}Tarot{} cards"
+        }
+      },
+      c_abn_apotheosis = { -- TO CODE
         name = "Apotheosis",
         text = {
           "{C:red}Sacrifice{} {C:attention}1{} {C:dark_edition}Negative{} Joker",
@@ -9510,7 +9541,7 @@ return {
           "{C:dark_edition}Editions{} and {C:attention}seals{}"
         }
       },
-      c_abn_paradigm = {
+      c_abn_paradigm = { -- TO CODE
         name = "Paradigm",
         text = {
           "{C:red}Sacrifice{} {C:attention}1{} {C:dark_edition}Polychrome{} Joker",
@@ -9548,6 +9579,13 @@ return {
           "{C:spectral}Spectral{} card",
           "used during this run",
           "{s:0.8,C:spectral}Soul{s:0.8} excluded",
+        },
+      },
+      c_abn_deja_reve = {
+        name = "Deja Reve",
+        text = {
+          "{C:attention}Copy{} all cards in your {C:attention}full deck{}",
+          "Gain {C:attention}#1#{} random {C:abn_hazard}Hazard Tags{}",
         },
       },
       c_abn_whitehole = {
@@ -9605,6 +9643,16 @@ return {
         text = {
           "Create a {C:sigils}Sigil{} for",
           "your {C:attention}most played{} hand",
+        }
+      },
+
+      c_abn_ultra_ego = {
+        name = "Ultra Ego",
+        text = {
+          "{C:attention}+1{} Booster Pack slot,",
+          "All {C:attention}Jokers{} and cards in",
+          "your {C:attention}full deck{}",
+          "become {C:attention}flipped{}",
         }
       },
     },
@@ -9766,11 +9814,12 @@ return {
           "during a {C:attention}Blind{}"
         }
       },
-      abn_tsunami_info = {
-        name = "Tsunami",
+      abn_ultra_ego_info = {
+        name = "Ultra Ego",
         text = {
           "Can only be used up to",
-          "{C:attention}4{} times in a run"
+          "{C:attention}4{} times in a run",
+          "{C:inactive}(Currently {C:attention}#1#{C:inactive}/4)"
         }
       },
       abn_beneficial_sticker_info = {
@@ -10181,7 +10230,7 @@ return {
         },
       },
 
-      p_abn_calamitybooster = {
+      p_abn_calamity_normal = {
         name = 'Calamity Pack',
         text = {
           'Choose {C:attention}#1#{} of up to',
@@ -10189,15 +10238,7 @@ return {
           'be used immediately'
         }
       },
-      p_abn_calamitybooster2 = {
-        name = 'Calamity Pack',
-        text = {
-          'Choose {C:attention}#1#{} of up to',
-          '{C:attention}#2#{} {C:abn_calamity}Calamity{} cards to',
-          'be used immediately'
-        }
-      },
-      p_abn_calamitybooster_j = {
+      p_abn_calamity_jumbo = {
         name = 'Jumbo Calamity Pack',
         text = {
           'Choose {C:attention}#1#{} of up to',
@@ -10205,7 +10246,7 @@ return {
           'be used immediately'
         }
       },
-      p_abn_calamitybooster_m = {
+      p_abn_calamity_mega = {
         name = 'Mega Calamity Pack',
         text = {
           'Choose {C:attention}#1#{} of up to',
@@ -11428,106 +11469,165 @@ return {
       },
     },
     calamity_cards = {
-      c_abn_cyclone = {
-        name = "Cyclone",
-        text = {
-          "{C:red}Destroy{} all {C:attention}Jokers{} with {C:attention}stickers{},",
-          "redeem {C:attention}2{} random {C:attention}Vouchers{}",
-          "and create {C:attention}2{} random",
-          "{C:dark_edition}Negative{} {C:tarot}Tarot{} cards"
-        }
-      },
       c_abn_eruption = {
         name = "Eruption",
         text = {
-          "{C:red}Destroy{} all cards in your {C:attention}full deck{},",
-          "Add {C:attention}#1#{} {C:attention}numbered{} {C:attention}Fossil Cards{}",
-          "with {C:dark_edition}Sunscourge{} edition to your hand",
-        }
-      },
-      c_abn_avalanche = {
-        name = "Avalanche",
-        text = {
-          "{C:red}Destroy{} all {C:attention}held{} consumables,",
-          "Add {C:attention}#1#{} {C:abn_snow}Snow{} cards with",
-          "random {C:dark_edition}Editions{} to your deck",
-        }
-      },
-      c_abn_flood = {
-        name = "Flood",
-        text = {
-          "{C:attention}Copy{} all cards in your {C:attention}full deck{}",
-          "Gain {C:attention}#1#{} random {C:abn_hazard}Hazard Tags{}",
+          {
+            "Remove {C:attention}Stone{} and {C:attention}Steel{}",
+            "enhancements from {C:attention}all cards{}",
+          },
+          {
+            "Affected cards each gain",
+            "{C:chips}+#1#{} Chips"
+          }
         }
       },
       c_abn_tsunami = {
         name = "Tsunami",
         text = {
-          "{C:attention}+1{} Booster Pack slot,",
-          "All {C:attention}Jokers{} and cards in",
-          "your {C:attention}full deck{}",
-          "become {C:attention}flipped{}",
-        }
-      },
-      c_abn_drought = {
-        name = "Drought",
-        text = {
-          "Apply {C:attention}Fragile{} to all Jokers,",
-          "sets money to {C:money}$0{}",
-          "Create {C:attention}#1#{} {C:abn_superrare}Super Rare{} {C:attention}Joker",
-          "and {C:attention}#1#{} {C:abn_parallelrare}Parallel Rare{} {C:attention}Joker",
-          "{C:inactive}(Must have room)",
-        }
-      },
-      c_abn_heatwave = {
-        name = "Heatwave",
-        text = {
           {
-            "{C:mult}Debuff{} all {C:spades}Spades{}, {C:clubs}Clubs{},",
-            "{C:abn_snow}Snows{}, {C:abn_tie}Ties{},",
-            "{C:abn_bow}Bows{}, and {C:abn_penumbra}Penumbras",
+            "Remove {C:attention}Oilfire{} and {C:attention}Petroleum{}",
+            "enhancements from {C:attention}all cards{}",
           },
           {
-            "{C:diamonds}Diamonds{}, {C:hearts}Hearts{} and {C:inactive}Nulls{} gain",
-            "{C:chips}+#1#{} Chips and {C:mult}+#2#{} Mult",
+            "Affected cards each gain",
+            "{C:white,X:mult}X#1#{} Mult"
+          }
+        }
+      },
+      c_abn_cyclone = {
+        name = "Cyclone",
+        text = {
+          {
+            "Remove {C:attention}Glass{} and {C:attention}Mercurial{}",
+            "enhancements from {C:attention}all cards{}",
           },
+          {
+            "Affected cards each gain",
+            "{C:white,X:chips}X#1#{} Chips"
+          }
+        }
+      },
+      c_abn_flood = {
+        name = "Flood",
+        text = {
+          {
+            "Remove {C:attention}Hot Iron{} and {C:attention}Wild{}",
+            "enhancements from {C:attention}all cards{}",
+          },
+          {
+            "Affected cards each gain",
+            "{C:money}$#1#{} and {C:mult}+#2#{} Mult"
+          }
+        }
+      },
+      c_abn_tornado = {
+        name = "Tornado",
+        text = {
+          {
+            "Remove {C:attention}Mult{} and {C:attention}Bonus{}",
+            "enhancements from {C:attention}all cards{}",
+          },
+          {
+            "Affected cards each gain",
+            "{C:mult}+#1#{} Mult and {C:chips}+#2#{} Chips"
+          }
+        }
+      },
+      c_abn_tremor = {
+        name = "Tremor",
+        text = {
+          {
+            "Remove {C:attention}Gold{} and {C:attention}Tea{}",
+            "enhancements from {C:attention}all cards{}",
+          },
+          {
+            "Affected cards each gain",
+            "{C:money}$#1#{} and {C:mult}+#2#{} Mult"
+          }
+        }
+      },
+      c_abn_wildfire = {
+        name = "Wildfire",
+        text = {
+          {
+            "Remove {C:attention}Lucky{} and {C:attention}Ocean{}",
+            "enhancements from {C:attention}all cards{}",
+          },
+          {
+            "Affected cards each gain",
+            "{C:money}+#1#{} Ascension Power"
+          }
+        }
+      },
+      c_abn_avalanche = {
+        name = "Avalanche",
+        text = {
+          {
+            "Destroy all held {C:attention}consumables{}",
+            "{C:inactive}(Max of 40)"
+          },
+          {
+            "All cards in your {C:attention}full deck{}",
+            "each gain {C:money}$#1#{}, {C:mult}+#2#{} Mult, and",
+            "{C:chips}+#3#{} Chips per {C:attention}consumable{} destroyed",
+            "{C:inactive}(Will gain {C:money}$#4#{C:inactive}, {C:mult}+#5#{C:inactive}, {C:chips}+#6#{C:inactive})"
+          }
         }
       },
       c_abn_blizzard = {
         name = "Blizzard",
         text = {
           {
-            "{C:mult}Debuff{} all {C:diamonds}Diamonds{}, {C:hearts}Hearts{} and {C:inactive}Nulls{}",
+            "Destroy all {C:attention}face{} cards",
+            "in your {C:attention}full deck{}"
           },
           {
-            "{C:spades}Spades{}, {C:clubs}Clubs{}, {C:abn_snow}Snows{},",
-            "{C:abn_tie}Ties{}, {C:abn_bow}Bows{} and {C:abn_penumbra}Penumbras{} gain",
-            "{C:chips}+#1#{} Chips and {C:mult}+#2#{} Mult",
-          },
+            "All Jokers each gain {C:mult}+#1#{} Mult",
+            "and {C:chips}+#2#{} Chips per {C:attention}face{} card destroyed",
+            "{C:inactive}(Will gain {C:mult}+#3#{C:inactive}, {C:chips}+#4#{C:inactive})"
+          }
         }
       },
+
       c_abn_plague = {
         name = "Plague",
         text = {
-          "Add {C:abn_perishable}Perishable{} to all Jokers,",
-          "Summon {C:attention}#1#{} {C:abn_superrare}Super Rare{} {C:attention}Joker{}",
-          "with a random {C:dark_edition}Edition{}",
-          "{C:inactive}(Must have room)",
+          {
+            "Destroy all {C:attention}Aces{}",
+            "in your {C:attention}full deck{}"
+          },
+          {
+            "All Jokers each gain {C:mult}+#1#{} Mult",
+            "and {C:chips}+#2#{} Chips per {C:attention}Ace{} destroyed",
+            "{C:inactive}(Will gain {C:mult}+#3#{C:inactive}, {C:chips}+#4#{C:inactive})"
+          }
         }
       },
-      c_abn_humans = {
-        name = "Humans",
+      c_abn_drought = {
+        name = "Drought",
         text = {
-          "{C:red}Destroy{} all Jokers,",
-          "sets money to {C:money}$-20{}",
-          "{C:attention}#1#{} Joker Slot",
+          {
+            "Remove {C:dark_edition}Editions{} from {C:attention}all cards{}",
+          },
+          {
+            "All cards in your {C:attention}full deck{}",
+            "each gain {C:mult}+#1#{} Mult and {C:chips}+#2#{} Chips",
+          }
         }
       },
-      c_abn_rapture = {
-        name = "Rapture",
+      c_abn_heatwave = {
+        name = "Heatwave",
         text = {
-          "All Jokers gain random {C:dark_edition}Editions{}",
-          "and {C:abn_perishable}stickers{}",
+          {
+            "Destroy all cards with the",
+            "same {C:attention}suit{} as selected card",
+            "{C:attention,s:0.8}Wild Card{s:0.8} excluded",
+          },
+          {
+            "All cards in your {C:attention}full deck{}",
+            "each gain {C:mult}+#1#{} Mult and {C:chips}+#2#{} Chips",
+          }
         }
       },
       c_abn_big_rip = {
@@ -11541,22 +11641,6 @@ return {
             "All Jokers become {C:attention}Fragile",
             "and {C:attention}Rental",
           },
-        }
-      },
-      c_abn_heatdeath = {
-        name = "Heat Death",
-        text = {
-          "Reduce all hands levels to {C:attention}1{}",
-          "All cards in your {C:attention}full deck{}",
-          "gain {C:mult}+#1#{} Mult and double {C:chips}Chips{}",
-        }
-      },
-      c_abn_tremor = {
-        name = "Tremor",
-        text = {
-          "{C:mult}Destroy{} all {C:common}Common{} and {C:uncommon}Uncommon{} Jokers,",
-          "{C:rare}Rare{} Jokers gain {C:mult}+#1#{} Mult",
-          "for each destroyed Joker",
         }
       },
     },
