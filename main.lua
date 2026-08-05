@@ -155,7 +155,7 @@ local function abn_load_crossmod(mod_id)
   end
 end
 abn_load_crossmod("allinjest")
-abn_load_crossmod("Cryptlib")
+abn_load_crossmod("Spectrallib")
 abn_load_crossmod("Fortlatro")
 abn_load_crossmod("ortalab")
 --#endregion
