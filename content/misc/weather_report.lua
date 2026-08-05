@@ -193,17 +193,11 @@ ABN.WeatherReport {
       delay = 0.4,
       func = function()
         card:juice_up(0.3, 0.5)
-        local cen_pool = {}
-        for _, v in pairs(G.P_CENTER_POOLS["Enhanced"]) do
-          if not v.overrides_base_rank then
-            cen_pool[#cen_pool + 1] = v.key
-          end
-        end
         for i = 1, #G.hand.highlighted do
           local enhancement = SMODS.poll_enhancement({
             guaranteed = true,
-            options = cen_pool,
-            key = "abn_storm_enhancement"
+            key = "abn_storm_enhancement",
+            no_replace = true
           })
           local edition = SMODS.poll_edition({ guaranteed = true, no_negative = true, key = "abn_storm_edition" })
           local seal = SMODS.poll_seal({ guaranteed = true, key = "abn_storm_seal" })
