@@ -1,0 +1,50 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 2
+
+# Injects G.ruinous_powers into SMODS calculation loops
+[[patches]]
+[patches.pattern]
+target = '''=[SMODS _ "src/utils.lua"]'''
+pattern = '''
+-- TARGET: add your own CardAreas for joker evaluation
+'''
+position = "after"
+payload = '''
+if G.ruinous_powers then table.insert(t, G.ruinous_powers) end
+'''
+match_indent = true
+times = 1
+
+# Prevents card rendering texture bugs inside custom CardAreas
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''
+((self.area ~= G.jokers and self.area ~= G.consumeables and self.area) or not self.area) then
+'''
+position = "at"
+payload = '''
+((self.area ~= G.jokers and self.area ~= G.consumeables and self.area ~= G.ruinous_powers and self.area) or not self.area) then
+'''
+match_indent = true
+times = 1
+
+# Removes USE and SELL buttons while sitting inside G.ruinous_powers
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = '''
+end
+if card.ability.consumeable then
+'''
+position = "after"
+payload = '''
+    if card.area == G.ruinous_powers then
+        return {
+            n=G.UIT.ROOT, config = {padding = 0, colour = G.C.CLEAR}, nodes={}
+        }
+    end
+'''
+match_indent = true
