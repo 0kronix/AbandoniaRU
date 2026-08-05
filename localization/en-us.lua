@@ -11991,6 +11991,7 @@ return {
           "to your {C:attention}highest{} level poker hand",
         }
       },
+	},
 	ruinous_power = {
       c_abn_elder_sign = {
         name = "Elder Sign",
