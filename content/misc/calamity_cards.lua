@@ -549,7 +549,6 @@ ABN.CalamityCard {
 }
 
 if next(SMODS.find_mod("Spectrallib")) then
-    --[[
     ABN.CalamityCard {
         key = "sinkhole",
         pos = { x = 1, y = 4 },
@@ -622,7 +621,7 @@ if next(SMODS.find_mod("Spectrallib")) then
         end,
 
     }
-    --]]
+
     ABN.CalamityCard {
         key = "cas_crater",
         pos = { x = 3, y = 4 },
