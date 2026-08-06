@@ -537,7 +537,7 @@ ABN.CalamityCard {
                     if not upgrade[rank] then
                         upgrade[rank] = true
                         if G.GAME.abn_rank_upgrades[rank] then
-                            ABN.level_up_rank(card, rank, 1, true)
+                            ABN.level_up_rank(card, rank, card.ability.extra.planet_rank, true)
                         end
                     end
                 end

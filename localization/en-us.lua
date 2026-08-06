@@ -11697,7 +11697,7 @@ return {
           },
           {
             "Level up the {C:planet}planet{} {C:attention}rank{} of all",
-            "{C:attention}ranks{} in your {C:attention}full deck{} by {C:attention}1{}",
+            "{C:attention}ranks{} in your {C:attention}full deck{} by {C:attention}#1#{}",
             --"of all {C:attention}ranks{} in your",
             --"{C:attention}full deck{} by {C:attention}1{}",
             --"{C:attention}full deck{} once per card destroyed", decided against this cause this'll pretty much max out all the levels
