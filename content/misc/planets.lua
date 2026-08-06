@@ -33,22 +33,22 @@ function Game:init_game_object(...)
 end
 
 local rank_planets = {
-  { key = "lauto", rank = "2", pos = { x = 2, y = 0 }, artist = "Bunnet" },
-  { key = "urcurme", rank = "3", pos = { x = 3, y = 0 }, artist = "Bunnet" },
-  { key = "nevus", rank = "4", pos = { x = 4, y = 0 }, artist = "Bunnet" },
-  { key = "aerth", rank = "5", pos = { x = 5, y = 0 }, artist = "Bunnet" },
-  { key = "sarh", rank = "6", pos = { x = 0, y = 1 }, artist = "Bunnet" },
-  { key = "unpter", rank = "7", pos = { x = 1, y = 1 }, artist = "Bunnet" },
-  { key = "urno", rank = "8", pos = { x = 2, y = 1 }, artist = "Bunnet" },
-  { key = "ranu", rank = "9", pos = { x = 3, y = 1 }, artist = "Bunnet" },
-  { key = "etnup", rank = "10", pos = { x = 4, y = 1 }, artist = "Bunnet" },
-  { key = "zabures", rank = "Jack", pos = { x = 5, y = 1 }, artist = "Bunnet" },
-  { key = "pergus", rank = "Queen", pos = { x = 0, y = 2 }, artist = "Bunnet" },
-  { key = "vugmado", rank = "King", pos = { x = 1, y = 2 }, artist = "Bunnet" },
-  { key = "abandia", rank = "Ace", pos = { x = 2, y = 2 }, artist = "Bunnet" },
-  { key = "clun_va", rank = "abn_11", pos = { x = 3, y = 2 }, artist = "Astellar" },
-  { key = "reart", rank = "abn_12", pos = { x = 0, y = 0 }, artist = "Astellar" },
-  { key = "oshprue", rank = "abn_13", pos = { x = 4, y = 2 }, artist = "Astellar" },
+  { key = "lauto",    rank = "2",      pos = { x = 2, y = 0 }, artist = "Bunnet" },
+  { key = "urcurme",  rank = "3",      pos = { x = 3, y = 0 }, artist = "Bunnet" },
+  { key = "nevus",    rank = "4",      pos = { x = 4, y = 0 }, artist = "Bunnet" },
+  { key = "aerth",    rank = "5",      pos = { x = 5, y = 0 }, artist = "Bunnet" },
+  { key = "sarh",     rank = "6",      pos = { x = 0, y = 1 }, artist = "Bunnet" },
+  { key = "unpter",   rank = "7",      pos = { x = 1, y = 1 }, artist = "Bunnet" },
+  { key = "urno",     rank = "8",      pos = { x = 2, y = 1 }, artist = "Bunnet" },
+  { key = "ranu",     rank = "9",      pos = { x = 3, y = 1 }, artist = "Bunnet" },
+  { key = "etnup",    rank = "10",     pos = { x = 4, y = 1 }, artist = "Bunnet" },
+  { key = "zabures",  rank = "Jack",   pos = { x = 5, y = 1 }, artist = "Bunnet" },
+  { key = "pergus",   rank = "Queen",  pos = { x = 0, y = 2 }, artist = "Bunnet" },
+  { key = "vugmado",  rank = "King",   pos = { x = 1, y = 2 }, artist = "Bunnet" },
+  { key = "abandia",  rank = "Ace",    pos = { x = 2, y = 2 }, artist = "Bunnet" },
+  { key = "clun_va",  rank = "abn_11", pos = { x = 3, y = 2 }, artist = "Astellar" },
+  { key = "reart",    rank = "abn_12", pos = { x = 0, y = 0 }, artist = "Astellar" },
+  { key = "oshprue",  rank = "abn_13", pos = { x = 4, y = 2 }, artist = "Astellar" },
   { key = "meisness", rank = "abn_14", pos = { x = 1, y = 0 }, artist = "Astellar" },
 }
 SMODS.Attribute { key = "rank_planet" }
@@ -120,12 +120,6 @@ function ABN.level_up_rank(card, rank, amount, instant)
     over_limit = true
   end
 
-  -- e
-  update_hand_text(
-    { sound = "button", volume = 0.7, pitch = 0.8, delay = 0.3 },
-    { handname = _rank.name .. "s", chips = _rank.chips, mult = _rank.mult, level = _rank.level }
-  )
-
   G.GAME.abn_rank_upgrades[rank].level = math.max(0, G.GAME.abn_rank_upgrades[rank].level + amount)
   G.GAME.abn_rank_upgrades[rank].mult = math.max(
     G.GAME.abn_rank_upgrades[rank].s_mult +
@@ -135,6 +129,10 @@ function ABN.level_up_rank(card, rank, amount, instant)
     G.GAME.abn_rank_upgrades[rank].l_chips * (G.GAME.abn_rank_upgrades[rank].level - 1),
     0)
   if not instant then
+    update_hand_text(
+      { sound = "button", volume = 0.7, pitch = 0.8, delay = 0.3 },
+      { handname = _rank.name .. "s", chips = _rank.chips, mult = _rank.mult, level = _rank.level }
+    )
     G.E_MANAGER:add_event(Event({
       trigger = "after",
       delay = 0.2,
@@ -169,14 +167,14 @@ function ABN.level_up_rank(card, rank, amount, instant)
     update_hand_text({ sound = "button", volume = 0.7, pitch = 0.9, delay = 0 },
       { level = G.GAME.abn_rank_upgrades[rank].level })
     delay(1.3)
-  end
-  -- e
-  update_hand_text(
-    { sound = "button", volume = 0.7, pitch = 1.1, delay = 0 },
-    { mult = 0, chips = 0, handname = "", level = "" }
-  )
-  if over_limit then
-    SMODS.calculate_effect({ message = localize("k_abn_limit_reached"), colour = G.C.RED }, card)
+    -- e
+    update_hand_text(
+      { sound = "button", volume = 0.7, pitch = 1.1, delay = 0 },
+      { mult = 0, chips = 0, handname = "", level = "" }
+    )
+    if over_limit then
+      SMODS.calculate_effect({ message = localize("k_abn_limit_reached"), colour = G.C.RED }, card)
+    end
   end
 end
 

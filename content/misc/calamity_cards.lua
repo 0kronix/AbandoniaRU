@@ -477,7 +477,78 @@ ABN.CalamityCard {
         }
     end,
 }
-if next(SMODS.find_mod("Cryptlib")) then
+
+
+ABN.CalamityCard {
+    key = "mudslide",
+    pos = { x = 2, y = 4 },
+
+    config = { extra = { planet_rank = 1 } },
+    loc_vars = function(self, info_queue, card)
+        local count = 0
+        if G.playing_cards and #G.playing_cards > 0 then
+            local cards_to_destroy = {}
+            for _, v in ipairs(G.playing_cards) do
+                if v:get_id() and v:get_id() > 9 and not SMODS.has_no_rank(v) then
+                    cards_to_destroy[#cards_to_destroy + 1] = v
+                end
+            end
+
+            --count = #cards_to_destroy
+        end
+        return {
+            vars = {
+                card.ability.extra.planet_rank,
+                --card.ability.extra.planet_rank * count,
+            }
+        }
+    end,
+    can_use = function(self, card)
+        return G.playing_cards and #G.playing_cards > 0
+    end,
+
+    use = function(self, card, area, copier)
+        G.E_MANAGER:add_event(Event({
+            func = function()
+                play_sound('tarot1')
+                card:juice_up(0.3, 0.5)
+                return true
+            end
+        }))
+
+        local cards_to_destroy = {}
+        for _, v in ipairs(G.playing_cards) do
+            if v:get_id() and v:get_id() > 9 and not SMODS.has_no_rank(v) then
+                cards_to_destroy[#cards_to_destroy + 1] = v
+            end
+        end
+
+        --local count = #cards_to_destroy
+
+        SMODS.destroy_cards(cards_to_destroy, nil, true)
+
+        G.E_MANAGER:add_event(Event({
+            trigger = "after",
+            delay = 0.2,
+            func = function()
+                local upgrade = {}
+                for _, v in ipairs(G.playing_cards) do
+                    local rank = v.base.value
+                    if not upgrade[rank] then
+                        upgrade[rank] = true
+                        if G.GAME.abn_rank_upgrades[rank] then
+                            ABN.level_up_rank(card, rank, 1, true)
+                        end
+                    end
+                end
+                return true
+            end,
+        }))
+    end,
+
+}
+
+if next(SMODS.find_mod("Spectrallib")) then
     ABN.CalamityCard {
         key = "cas_crater",
         pos = { x = 3, y = 4 },

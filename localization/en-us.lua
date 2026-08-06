@@ -11688,6 +11688,22 @@ return {
           }
         }
       },
+      c_abn_mudslide = {
+        name = "Mudslide",
+        text = {
+          {
+            "Destroy all cards above rank {C:attention}9{}",
+            "in your {C:attention}full deck{}"
+          },
+          {
+            "Level up the {C:planet}planet{} {C:attention}rank{} of all",
+            "{C:attention}ranks{} in your {C:attention}full deck{} by {C:attention}1{}",
+            --"of all {C:attention}ranks{} in your",
+            --"{C:attention}full deck{} by {C:attention}1{}",
+            --"{C:attention}full deck{} once per card destroyed", decided against this cause this'll pretty much max out all the levels
+          }
+        }
+      },
       c_abn_big_rip = {
         name = "Big Rip",
         text = {
