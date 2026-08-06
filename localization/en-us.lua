@@ -9513,16 +9513,16 @@ return {
           }
         }
       },
-	  
-	  j_abn_ruinous_joker = {
+
+      j_abn_ruinous_joker = {
         name = "Ruinous Joker",
         text = {
           "{C:attention}+#1#{} Ruinous Power slot",
-		  "If you would {C:mult}lose a Run{} because a {C:abn_black_seal}Ruinous Card",
-		  "{C:mult}Destroy{} this Joker instead",
+          "If you would {C:mult}lose a Run{} because a {C:abn_black_seal}Ruinous Card",
+          "{C:mult}Destroy{} this Joker instead",
         }
       },
-	  
+
     },
     Spectral = {
       c_abn_promotion = { -- TO CODE
@@ -9987,6 +9987,15 @@ return {
         },
       },
       undiscovered_calligraphy = {
+        name = "Not Discovered",
+        text = {
+          "Purchase or use",
+          "this card in an",
+          "unseeded run to",
+          "learn what it does"
+        }
+      },
+      undiscovered_ruinous_power = {
         name = "Not Discovered",
         text = {
           "Purchase or use",
@@ -11640,6 +11649,45 @@ return {
           }
         }
       },
+      c_abn_fire_swirl = {
+        name = "Fire Swirl",
+        text = {
+          {
+            "Remove {C:attention}Polkadot{} and {C:attention}Infra{}",
+            "enhancements from {C:attention}all cards{}",
+          },
+          {
+            "Affected cards each gain",
+            "their {C:attention}ranks{} as {C:mult}Mult{}"
+          }
+        }
+      },
+      c_abn_cas_crater = {
+        name = "Cas Crater",
+        text = {
+          {
+            "Remove {C:attention}Sew{} and {C:attention}Cotton{}",
+            "enhancements from {C:attention}all cards{}",
+          },
+          {
+            "Affected cards each gain",
+            "{C:mult}+#2#{} Mult and {C:money}+#1#{} Ascension Power"
+          }
+        }
+      },
+      c_abn_minefire = {
+        name = "Mine fire",
+        text = {
+          {
+            "Remove {C:attention}Zen{} and {C:attention}Kintsugi{}",
+            "enhancements from {C:attention}all cards{}",
+          },
+          {
+            "Affected cards each gain",
+            "{C:mult}+#1#{} Mult and {C:attention}+#2#{} Retrigger"
+          }
+        }
+      },
       c_abn_big_rip = {
         name = "Big Rip",
         text = {
@@ -11991,56 +12039,56 @@ return {
           "to your {C:attention}highest{} level poker hand",
         }
       },
-	},
-	ruinous_power = {
+    },
+    ruinous_power = {
       c_abn_elder_sign = {
         name = "Elder Sign",
         text = {
           "Scoring Cards give {X:mult,C:white}^#1#{} Mult",
-		  "{C:mult}Destroy{} cards after scoring",
-		  "If the Deck contains less than {C:attention}#2#{} Cards {C:mult}Self-destruct",
+          "{C:mult}Destroy{} cards after scoring",
+          "If the Deck contains less than {C:attention}#2#{} Cards {C:mult}Self-destruct",
         }
       },
-	  c_abn_yellow_sign = {
+      c_abn_yellow_sign = {
         name = "Yellow Sign",
         text = {
           "Reduce {C:attention}blind requirement{} by {C:attention}#1#%{} per scoring card",
-		  "{C:mult}Destroy{} cards in deck {C:attention}equal{} to the number of scored cards",
-		  "If the Deck contains less than {C:attention}#2#{} Cards {C:mult}Self-destruct",
+          "{C:mult}Destroy{} cards in deck {C:attention}equal{} to the number of scored cards",
+          "If the Deck contains less than {C:attention}#2#{} Cards {C:mult}Self-destruct",
         }
       },
-	  c_abn_sacrifice_brand = {
+      c_abn_sacrifice_brand = {
         name = "Sacrifice Brand",
         text = {
           "When {C:attention}Blind selected{} {C:mult}destroy{} {C:attention}2{} random Jokers",
-		  "Create a {C:attention}Joker{} and a {C:legendary}Legendary{} Joker",
-		  "All Jokers give {X:chips,C:white}^#1#{} Chips and {X:mult,C:white}^#2#{} Mult",
-		  "If you have less than {C:attention}5{} Jokers at end of {C:attention}Boss Blind{} {C:mult}self-destruct{}",
+          "Create a {C:attention}Joker{} and a {C:legendary}Legendary{} Joker",
+          "All Jokers give {X:chips,C:white}^#1#{} Chips and {X:mult,C:white}^#2#{} Mult",
+          "If you have less than {C:attention}5{} Jokers at end of {C:attention}Boss Blind{} {C:mult}self-destruct{}",
         }
       },
-	  c_abn_hunter_rune = {
+      c_abn_hunter_rune = {
         name = "Hunter Rune",
         text = {
           "All {C:attention}Consumables{} give {X:mult,C:white}^#1#{} Mult but are {C:mult}destroyed{} at the {C:attention}end of round",
-		  "If {C:attention}Blind is selected{} without {C:attention}Consumables{} {C:mult}lose the run",
+          "If {C:attention}Blind is selected{} without {C:attention}Consumables{} {C:mult}lose the run",
         }
       },
-	  c_abn_curse_mark = {
+      c_abn_curse_mark = {
         name = "Curse Mark",
         text = {
           "Scoring Cards give their {C:attention}Rank{} as {C:money}Ascension Power{}",
-		  "After scoring they become {C:inactive}Stone Cards{}",
-		  "If a {C:attention}Rankless{} card scores",
-		  "{C:mult}self-destruct{} and {C:mult}destroy{} all {C:attention}Rankless{} cards",
+          "After scoring they become {C:inactive}Stone Cards{}",
+          "If a {C:attention}Rankless{} card scores",
+          "{C:mult}self-destruct{} and {C:mult}destroy{} all {C:attention}Rankless{} cards",
         }
       },
-	  c_abn_geas_mark = {
+      c_abn_geas_mark = {
         name = "Geas Mark",
         text = {
           "When {C:attention}Blind is Selected{} chose a random {C:attention}Suit{}",
-		  "Hands with chosen {C:attention}Suit{} give {X:mult,C:white}^#2#{} Mult and {X:chips,C:white}^#3#{} Chips",
-		  "If none of the chosen {C:attention}Suit{} scores {C:mult}lose this Run{}",
-		  "{C:inactive}Suit: {C:attention}#1#{}",
+          "Hands with chosen {C:attention}Suit{} give {X:mult,C:white}^#2#{} Mult and {X:chips,C:white}^#3#{} Chips",
+          "If none of the chosen {C:attention}Suit{} scores {C:mult}lose this Run{}",
+          "{C:inactive}Suit: {C:attention}#1#{}",
         }
       },
     },
@@ -12688,8 +12736,8 @@ return {
 
       b_glyphs_cards = "Glyph Cards",
       k_glyphs = "Glyph",
-	  
-	  b_ruinous_power_cards = "Ruinous Power",
+
+      b_ruinous_power_cards = "Ruinous Power",
       k_ruinous_power = "Ruinous Power",
     },
     labels = {
@@ -12705,7 +12753,7 @@ return {
       solid_state = "Solid State",
       calligraphy = "Calligraphy",
       glyphs = "Glyph",
-	  ruinous_power = "Ruinous Power",
+      ruinous_power = "Ruinous Power",
 
       -- Editions
       abn_chthonian = "Chthonian",

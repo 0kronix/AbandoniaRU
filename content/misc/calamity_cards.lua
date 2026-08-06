@@ -423,8 +423,78 @@ ABN.CalamityCard {
     end,
 }
 
+ABN.CalamityCard {
+    key = "fire_swirl",
+    pos = { x = 0, y = 4 },
 
+    config = { extra = { remove_enh = { 'm_abn_polkadot', 'm_abn_infra' }, bonus = { "perma_mult" } } },
+    loc_vars = function(self, info_queue, card)
+        for i = 1, #card.ability.extra.remove_enh do
+            info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.extra.remove_enh[i]]
+        end
+        return {
+            vars = {
+            }
+        }
+    end,
+
+    use = function(self, card, area, copier)
+        G.E_MANAGER:add_event(Event({
+            func = function()
+                play_sound('tarot1')
+                card:juice_up(0.3, 0.5)
+                return true
+            end
+        }))
+        for _, v in ipairs(G.playing_cards) do
+            for i = 1, #card.ability.extra.remove_enh do
+                local current = card.ability.extra.remove_enh[i]
+                if SMODS.has_enhancement(v, current) then
+                    v:set_ability('c_base')
+                    for _, bonus in ipairs(card.ability.extra.bonus) do
+                        v.ability[bonus] = (v.ability[bonus] or 0) + v.base.nominal
+                    end
+                end
+            end
+        end
+    end,
+}
+
+ABN.CalamityCard {
+    key = "minefire",
+    pos = { x = 4, y = 4 },
+
+    config = { extra = { remove_enh = { 'm_abn_kintsugi', 'm_abn_zen' }, bonus = { "perma_mult", "perma_repetitions" }, perma_mult = 15, perma_repetitions = 1 } },
+    loc_vars = function(self, info_queue, card)
+        for i = 1, #card.ability.extra.remove_enh do
+            info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.extra.remove_enh[i]]
+        end
+        return {
+            vars = {
+                card.ability.extra.perma_mult,
+                card.ability.extra.perma_repetitions,
+            }
+        }
+    end,
+}
 if next(SMODS.find_mod("Cryptlib")) then
+    ABN.CalamityCard {
+        key = "cas_crater",
+        pos = { x = 3, y = 4 },
+
+        config = { extra = { remove_enh = { 'm_abn_sew', 'm_abn_cotton', }, bonus = { "slib_perma_plus_asc", "perma_mult" }, slib_perma_plus_asc = 1, perma_mult = 10 } },
+        loc_vars = function(self, info_queue, card)
+            for i = 1, #card.ability.extra.remove_enh do
+                info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.extra.remove_enh[i]]
+            end
+            return {
+                vars = {
+                    card.ability.extra.slib_perma_plus_asc,
+                    card.ability.extra.perma_mult,
+                }
+            }
+        end,
+    }
     ABN.CalamityCard {
         key = "wildfire",
         pos = { x = 0, y = 1 },
