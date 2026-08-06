@@ -550,6 +550,79 @@ ABN.CalamityCard {
 
 if next(SMODS.find_mod("Spectrallib")) then
     ABN.CalamityCard {
+        key = "sinkhole",
+        pos = { x = 1, y = 4 },
+
+        config = { extra = { planet_rank = 1, bonus = { "perma_p_dollars", "slib_perma_plus_asc" }, slib_perma_plus_asc = 0.25, perma_p_dollars = 2 } },
+        loc_vars = function(self, info_queue, card)
+            local affected_cards = {}
+            for _, v in ipairs(G.playing_cards or {}) do
+                local rank = v.base.value
+                if G.GAME.abn_rank_upgrades[rank] and G.GAME.abn_rank_upgrades[rank].level > 1 then
+                    affected_cards[#affected_cards + 1] = v
+                end
+            end
+
+            local upgrade = {}
+            local levels_lost = 0
+            for _, v in ipairs(affected_cards) do
+                local rank = v.base.value
+                if not upgrade[rank] then
+                    upgrade[rank] = true
+                    levels_lost = levels_lost + 1
+                end
+            end
+            return {
+                vars = {
+                    card.ability.extra.perma_p_dollars,
+                    card.ability.extra.slib_perma_plus_asc,
+                    card.ability.extra.perma_p_dollars * levels_lost,
+                    card.ability.extra.slib_perma_plus_asc * levels_lost,
+                }
+            }
+        end,
+        can_use = function(self, card)
+            return G.playing_cards and #G.playing_cards > 0
+        end,
+
+        use = function(self, card, area, copier)
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    play_sound('tarot1')
+                    card:juice_up(0.3, 0.5)
+                    return true
+                end
+            }))
+
+            local affected_cards = {}
+            for _, v in ipairs(G.playing_cards) do
+                local rank = v.base.value
+                if G.GAME.abn_rank_upgrades[rank] and G.GAME.abn_rank_upgrades[rank].level > 1 then
+                    affected_cards[#affected_cards + 1] = v
+                end
+            end
+
+            local upgrade = {}
+            local levels_lost = 0
+            for _, v in ipairs(affected_cards) do
+                local rank = v.base.value
+                if not upgrade[rank] then
+                    upgrade[rank] = true
+                    ABN.level_up_rank(card, rank, -1, true)
+                    levels_lost = levels_lost + 1
+                end
+            end
+
+            for _, v in ipairs(affected_cards) do
+                for _, bonus in ipairs(card.ability.extra.bonus) do
+                    v.ability[bonus] = (v.ability[bonus] or 0) + (card.ability.extra[bonus] * levels_lost)
+                end
+            end
+        end,
+
+    }
+
+    ABN.CalamityCard {
         key = "cas_crater",
         pos = { x = 3, y = 4 },
 

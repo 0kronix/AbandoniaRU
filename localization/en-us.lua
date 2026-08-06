@@ -11704,6 +11704,20 @@ return {
           }
         }
       },
+      c_abn_sinkhole = {
+        name = "Sinkhole",
+        text = {
+          {
+            "Level {C:red}down{} the {C:planet}planet{} {C:attention}rank{} of all",
+            "{C:attention}ranks{} in your {C:attention}full deck{} by {C:attention}#5#{}",
+          },
+          {
+            "Affected cards each gain {C:money}$#1#{} and",
+            "{C:gold}+#2#{} Ascension Power per {C:attention}level{} lost",
+            "{C:inactive}(Will gain {C:money}$#3#{C:inactive}, {C:gold}+#4#{C:inactive})"
+          }
+        }
+      },
       c_abn_big_rip = {
         name = "Big Rip",
         text = {
