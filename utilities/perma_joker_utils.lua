@@ -87,7 +87,7 @@ function ABN.add_extra_multiboxes(_c, info_queue, card, desc_nodes, specific_var
 
     local text = {}
     for _, perma_bonus in ipairs(joker_bonuses) do
-      if ability[perma_bonus] and ability[perma_bonus] > 0 then
+      if ability and ability[perma_bonus] and ability[perma_bonus] > 0 then
         text[#text + 1] = G.localization.misc.dictionary[perma_bonus]
       end
     end
