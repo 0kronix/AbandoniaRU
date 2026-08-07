@@ -37,7 +37,7 @@ SMODS.Joker {
                     for _, sigil in pairs(hand_to_sigil) do
                         table.insert(all_sigils, sigil)
                     end
-                    chosen_sigil = pseudorandom_element(all_sigils, pseudorandom_seed('sigil_joker_fallback'))
+                    chosen_sigil = pseudorandom_element(all_sigils, pseudoseed('sigil_joker_fallback'))
                 end
 
                 if #G.consumeables.cards < G.consumeables.config.card_limit then
