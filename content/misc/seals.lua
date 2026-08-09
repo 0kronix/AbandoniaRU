@@ -771,7 +771,7 @@ SMODS.Seal {
   },
 }
 
-if next(SMODS.find_mod("Cryptlib")) then
+if next(SMODS.find_mod("Spectrallib")) then
   SMODS.Seal {
     key = "rainbow",
     badge_colour = G.C.DARK_EDITION,

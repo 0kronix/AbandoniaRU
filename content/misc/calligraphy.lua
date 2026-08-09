@@ -1651,7 +1651,7 @@ ABN.AncientCalligraphyCard {
 }
 
 -- Ascension Power Ancient Calligraphy cards (coded by LasagneFelidae)
-if next(SMODS.find_mod("Cryptlib")) then
+if next(SMODS.find_mod("Spectrallib")) then
   ABN.AncientCalligraphyCard {
     key = "izhitsa",
     pos = { x = 0, y = 2 },

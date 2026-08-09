@@ -958,17 +958,17 @@ SMODS.Consumable {
         artist = "Maw",
     },
 }
-if next(SMODS.find_mod("Cryptlib")) then
-    SMODS.Consumable{
+if next(SMODS.find_mod("Spectrallib")) then
+    SMODS.Consumable {
         key = "serpentarius",
         set = "astro_cards",
         atlas = "AbandoniaAstro",
-        pos = {x=1,y=2},
+        pos = { x = 1, y = 2 },
         hidden = true,
         soul_set = "astro_cards",
         soul_rate = 0.003,
-        
-        loc_vars = function(self, q, card) 
+
+        loc_vars = function(self, q, card)
             local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds)
             return {
                 vars = {
@@ -978,7 +978,7 @@ if next(SMODS.find_mod("Cryptlib")) then
         end,
         config = {
             asc_power = 4,
-            extra = {odds = 6}
+            extra = { odds = 6 }
         },
         use = function(self, card)
             if SMODS.pseudorandom_probability(card, "c_abn_serpentarius", 1, card.ability.extra.odds) then
@@ -988,7 +988,7 @@ if next(SMODS.find_mod("Cryptlib")) then
                         hand = i
                     end
                 end
-                SMODS.upgrade_poker_hands({hands = hand, from = card, ascension_power = card.ability.asc_power})
+                SMODS.upgrade_poker_hands({ hands = hand, from = card, ascension_power = card.ability.asc_power })
             else
                 G.E_MANAGER:add_event(Event({
                     trigger = 'after',
