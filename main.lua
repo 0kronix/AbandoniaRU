@@ -201,7 +201,7 @@ ABN.calculate = function(self, context)
     if not G.GAME.abn_13_played_this_run and context.other_card:get_id() == SMODS.Ranks.abn_13.id then
       G.GAME.abn_13_played_this_run = true
     end
-    if context.other_card.base.suit and not SMODS.has_no_suit(context.other_card) then
+    if context.other_card.base.suit and not SMODS.has_no_suit(context.other_card) and G.GAME.abn.suits_played_this_blind then
       G.GAME.abn.suits_played_this_blind[context.other_card.base.suit] = (G.GAME.abn.suits_played_this_blind[context.other_card.base.suit] or 0) +
           1
     end
