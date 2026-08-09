@@ -31,20 +31,39 @@ payload = '''
 match_indent = true
 times = 1
 
-# Removes USE and SELL buttons while sitting inside G.ruinous_powers
 [[patches]]
 [patches.pattern]
-target = "functions/UI_definitions.lua"
-pattern = '''
-end
-if card.ability.consumeable then
-'''
-position = "after"
-payload = '''
-    if card.area == G.ruinous_powers then
-        return {
-            n=G.UIT.ROOT, config = {padding = 0, colour = G.C.CLEAR}, nodes={}
-        }
-    end
-'''
+target = "cardarea.lua"
+pattern = '''self.children.area_uibox = UIBox{'''
+position = "before"
 match_indent = true
+payload = '''
+if (self == G.consumeables) or (self == G.ruinous_powers ) then
+  local text = localize((self == G.consumeables) and 'abn_toggle_to_ruinous' or 'abn_toggle_to_consumables')
+  if (not self.children.abn_toggle_uibox) then
+    self.children.abn_toggle_uibox = UIBox{
+      definition = 
+        {n=G.UIT.ROOT, config = {align = 'br', colour = G.C.CLEAR}, nodes={
+          {n=G.UIT.R, config={align = "cr", minh = 0.1, minw = 0.9, padding = 0.1, r = 0.1, no_fill = true}, nodes={}},
+          {n=G.UIT.R, config={align = "cr", minh = 0.4, minw = 0.9, padding = 0.1, r = 0.1, hover = true, colour = G.C.SECONDARY_SET.ruinous_power, button = "toggle_consumeables_ruinous", func = "abn_can_toggle_consumeables_ruinous", shadow = true, no_fill = true}, nodes={
+          {n=G.UIT.T, config={text = text, scale = 0.2, colour = G.C.UI.TEXT_LIGHT}}
+        }}
+        }},
+        config = { align = 'br', offset = {x=-self.T.w,y=0}, major = self, parent = self}
+    }
+  end
+end
+'''
+
+[[patches]]
+[patches.pattern]
+target = "cardarea.lua"
+pattern = '''self.children.area_uibox:draw()'''
+position = "after"
+match_indent = true
+payload = '''
+if self.children.abn_toggle_uibox and G.GAME.abn_ruinous then
+  self.children.abn_toggle_uibox:draw()
+end
+'''
+

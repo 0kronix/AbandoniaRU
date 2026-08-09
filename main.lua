@@ -220,6 +220,7 @@ ABN.calculate = function(self, context)
     G.GAME.pool_flags.abn_cavendish_extinct = true
   end
 
+  -- Perma Bonuses on Jokers
   if context.other_joker then
     local ability = context.other_joker.ability
     local has_chips = ability.abn_perma_bonus and ability.abn_perma_bonus ~= 0
@@ -242,6 +243,7 @@ ABN.calculate = function(self, context)
     end
   end
 
+  -- Perma Repetitions on Jokers
   if context.retrigger_joker_check and context.other_card then
     local ability = context.other_card.ability
     if ability then
@@ -256,6 +258,7 @@ ABN.calculate = function(self, context)
     end
   end
 
+  -- Used by Possibility sticker to double probabilities for the first hand of round
   if context.mod_probability and not context.blueprint and G.GAME.abn_possibility_sticker then
     return {
       numerator = context.numerator * 2,
@@ -265,10 +268,12 @@ ABN.calculate = function(self, context)
     G.GAME.abn_possibility_sticker = false
   end
 
+  -- Used by Elementalist Joker, only in pool if a six card hand has been played this run
   if context.before and #context.full_hand == 6 and not G.GAME.abn_has_played_six_hand then
     G.GAME.abn_has_played_six_hand = true
   end
 
+  -- Used by Regalia Joker, only in pool if a royal flush has been played this run
   if context.evaluate_poker_hand then
     G.GAME.abn_is_royal_flush = context.display_name == localize("Royal Flush", "poker_hands")
   end
@@ -276,8 +281,14 @@ ABN.calculate = function(self, context)
     G.GAME.abn_has_played_royal_flush = true
   end
 
+  -- Used by Jack of All Trades to track the number of unique-suited Jacks
   if G.GAME.abn.total_jacks_discarded and context.discard and context.other_card:get_id() == 11 and not SMODS.has_no_rank(context.other_card) and not G.GAME.abn.total_jacks_discarded[context.other_card.base.suit] then
     G.GAME.abn.total_jacks_discarded[context.other_card.base.suit] = true
+  end
+
+  -- Only show the option to switch between ruinous and consumable area after a ruinous power card has been used
+  if context.using_consumeable and context.consumeable.ability.set == "ruinous_power" and not G.GAME.abn_ruinous then
+    G.GAME.abn_ruinous = true
   end
 end
 
@@ -402,8 +413,8 @@ Game.main_menu = function(change_context)
   ----------------------------------------------------------------
   -- STEP 1 — GitHub repo info
   ----------------------------------------------------------------
-  local owner    = "cloudzXIII"
-  local repo     = "Abandonia"
+  local owner = "cloudzXIII"
+  local repo = "Abandonia"
 
   ----------------------------------------------------------------
   -- Fetch latest release tag
@@ -412,7 +423,7 @@ Game.main_menu = function(change_context)
       ('curl -sL "https://api.github.com/repos/%s/%s/releases/latest"')
       :format(owner, repo)
 
-  local fp       = io.popen(curl_cmd, "r")
+  local fp = io.popen(curl_cmd, "r")
   if not fp then
     return ret
   end
@@ -570,7 +581,7 @@ Game.main_menu = function(change_context)
 
   local function unzip_and_install(zip_path)
     local target = modPath:gsub("/", "\\")
-    local tmp    = target .. "_tmp"
+    local tmp = target .. "_tmp"
 
     remove_if_exists(tmp)
     remove_if_exists(target)
