@@ -12127,28 +12127,39 @@ return {
             "but are {C:mult}destroyed{} at end of round",
           },
           {
-            "If {C:attention}Blind{} is selected",
-            "without {C:attention}Consumables{},",
-            "{C:mult,E:1,s:1.2}lose the run",
+            "If {C:attention}Blind{} is selected without",
+            "{C:attention}consumables{}, {C:mult,E:1}lose the run",
           }
         }
       },
       c_abn_curse_mark = {
         name = "Curse Mark",
         text = {
-          "Scoring Cards give their {C:attention}Rank{} as {C:money}Ascension Power{}",
-          "After scoring they become {C:inactive}Stone Cards{}",
-          "If a {C:attention}Rankless{} card scores",
-          "{C:mult}self-destruct{} and {C:mult}destroy{} all {C:attention}Rankless{} cards",
+          {
+            "Scoring cards give their {C:attention}rank{}",
+            "as {C:gold}Ascension Power{}, and become",
+            "{C:attention}Stone{} cards after scoring",
+          },
+          {
+            "If a {C:attention}Rankless{} card scores,",
+            "{C:mult}self-destruct{} and destroy all",
+            "{C:attention}Rankless{} cards in your {C:attention}full deck",
+          }
         }
       },
       c_abn_geas_mark = {
         name = "Geas Mark",
         text = {
-          "When {C:attention}Blind is Selected{} chose a random {C:attention}Suit{}",
-          "Hands with chosen {C:attention}Suit{} give {X:mult,C:white}^#2#{} Mult and {X:chips,C:white}^#3#{} Chips",
-          "If none of the chosen {C:attention}Suit{} scores {C:mult}lose this Run{}",
-          "{C:inactive}Suit: {C:attention}#1#{}",
+          {
+            "If played hand contains a {V:1}#1#{},",
+            "scoring cards each give",
+            "{X:mult,C:white}^#2#{} Mult and {X:chips,C:white}^#3#{} Chips",
+          },
+          {
+            "If played hand does {C:attention}not{}",
+            "contain a {V:1}#1#{}, {C:mult,E:1}lose the run",
+            "{s:0.8}Suit changes on blind selection"
+          }
         }
       },
     },
@@ -12924,6 +12935,7 @@ return {
       abn_Acorn = "Acorn",
       abn_Bell = "Bell",
       abn_Leaf = "Leaf",
+      abn_Megido = "Megido",
     },
 
     suits_plural = {
@@ -12944,6 +12956,7 @@ return {
       abn_Acorn = "Acorns",
       abn_Bell = "Bells",
       abn_Leaf = "Leaves",
+      abn_Megido = "Megidos",
     },
     poker_hands = {
       ['abn_Spectrum'] = "Spectrum",

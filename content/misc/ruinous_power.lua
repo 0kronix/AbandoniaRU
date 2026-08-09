@@ -599,8 +599,8 @@ SMODS.Consumable {
     soul_rate = 0.035,
 
     loc_vars = function(self, info_queue, card)
-        local chosen_suit = card.ability.extra.suit and card.ability.extra.suit or "None"
-        return { vars = { chosen_suit, card.ability.extra.e_mult, card.ability.extra.e_chips } }
+        local chosen_suit = card.ability.extra.suit and localize(card.ability.extra.suit, 'suits_singular') or "[suit]"
+        return { vars = { chosen_suit, card.ability.extra.e_mult, card.ability.extra.e_chips, colours = { G.C.SUITS[card.ability.extra.suit] or G.C.UI.TEXT_INACTIVE } } }
     end,
 
     can_use = function(self, card)
@@ -643,7 +643,7 @@ SMODS.Consumable {
                 card.ability.extra.suit = pseudorandom_element(available_suits, pseudoseed('geas_mark'))
                 return {
                     message = localize(card.ability.extra.suit, 'suits_singular'),
-                    colour = G.C.SUITS[card.ability.extra.suit] or G.C.IMPORTANT,
+                    colour = G.C.SUITS[card.ability.extra.suit] or G.C.FILTER,
                     card = card
                 }
             end
