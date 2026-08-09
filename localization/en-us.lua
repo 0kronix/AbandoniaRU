@@ -12074,33 +12074,63 @@ return {
       c_abn_elder_sign = {
         name = "Elder Sign",
         text = {
-          "Scoring Cards give {X:mult,C:white}^#1#{} Mult",
-          "{C:mult}Destroy{} cards after scoring",
-          "If the Deck contains less than {C:attention}#2#{} Cards {C:mult}Self-destruct",
+          {
+            "Scoring cards give {X:mult,C:white}^#1#{} Mult,",
+            "{C:mult}destroy{} them after scoring",
+          },
+          {
+            "If your {C:attention}full deck{} contains less",
+            "than {C:attention}#2#{} cards, {C:mult}self-destructs{}",
+          }
         }
       },
       c_abn_yellow_sign = {
         name = "Yellow Sign",
         text = {
-          "Reduce {C:attention}blind requirement{} by {C:attention}#1#%{} per scoring card",
-          "{C:mult}Destroy{} cards in deck {C:attention}equal{} to the number of scored cards",
-          "If the Deck contains less than {C:attention}#2#{} Cards {C:mult}Self-destruct",
+          {
+            "Reduce {C:attention}blind requirements{}",
+            "by {C:attention}#1#%{} per scoring card",
+          },
+          {
+            "{C:mult}Destroy{} cards in deck equal",
+            "to the number of scored cards",
+          },
+          {
+            "If your {C:attention}full deck{} contains less",
+            "than {C:attention}#2#{} cards, {C:mult}self-destructs{}",
+          }
         }
       },
       c_abn_sacrifice_brand = {
         name = "Sacrifice Brand",
         text = {
-          "When {C:attention}Blind selected{} {C:mult}destroy{} {C:attention}2{} random Jokers",
-          "Create a {C:attention}Joker{} and a {C:legendary}Legendary{} Joker",
-          "All Jokers give {X:chips,C:white}^#1#{} Chips and {X:mult,C:white}^#2#{} Mult",
-          "If you have less than {C:attention}5{} Jokers at end of {C:attention}Boss Blind{} {C:mult}self-destruct{}",
+          {
+            "When {C:attention}Blind{} is selected, {C:mult}destroy{}",
+            "{C:attention}2{} random {C:attention}Jokers{} and create",
+            "{C:attention}Joker{} and a {C:legendary}Legendary{} Joker",
+          },
+          {
+            "All {C:attention}Jokers{} each give",
+            "{X:chips,C:white}^#1#{} Chips and {X:mult,C:white}^#2#{} Mult",
+          },
+          {
+            "If you have less than {C:attention}5{} Jokers",
+            "at end of {C:attention}Boss Blind{}, {C:mult}self-destructs{}",
+          },
         }
       },
       c_abn_hunter_rune = {
         name = "Hunter Rune",
         text = {
-          "All {C:attention}Consumables{} give {X:mult,C:white}^#1#{} Mult but are {C:mult}destroyed{} at the {C:attention}end of round",
-          "If {C:attention}Blind is selected{} without {C:attention}Consumables{} {C:mult}lose the run",
+          {
+            "Held {C:attention}consumables{} give {X:mult,C:white}^#1#{} Mult",
+            "but are {C:mult}destroyed{} at end of round",
+          },
+          {
+            "If {C:attention}Blind{} is selected",
+            "without {C:attention}Consumables{},",
+            "{C:mult,E:1,s:1.2}lose the run",
+          }
         }
       },
       c_abn_curse_mark = {
@@ -12635,6 +12665,10 @@ return {
     challenge_names = {
     },
     dictionary = {
+      abn_toggle_to_ruinous = "Show Ruinous",
+      abn_toggle_to_consumables = "Show Consumables",
+
+
       -- Joker Perma Bonuses
       abn_perma_bonus = "{C:chips}+#1#{} extra Chips",
       abn_perma_mult = "{C:mult}+#2#{} extra Mult",
@@ -12884,7 +12918,7 @@ return {
       abn_Baton = "Baton",
       abn_Shield = "Shield",
       abn_Rose = "Rose",
-      abn_Goblet = "Goblet",
+      abn_Anchor = "Anchor",
       abn_Florette = "Florette",
       abn_Acorn = "Acorn",
       abn_Bell = "Bell",
@@ -12903,7 +12937,7 @@ return {
       abn_Baton = "Batons",
       abn_Shield = "Shields",
       abn_Rose = "Roses",
-      abn_Goblet = "Goblets",
+      abn_Anchor = "Anchors",
       abn_Florette = "Florettes",
       abn_Acorn = "Acorns",
       abn_Bell = "Bells",

@@ -47,7 +47,7 @@ end
 
 ABN.is_light = function(card)
   if SMODS.has_no_suit(card) then return false end
-  if (Card.is_suit_shade and card:is_suit_shade("light")) or card:is_suit("Diamonds") or card:is_suit("Hearts") or card:is_suit('bunc_Fleurons') or card:is_suit('paperback_Stars') or card:is_suit("abn_Snow") or card:is_suit("abn_Tie") or card:is_suit("abn_Coin") or card:is_suit("abn_Baton") or card:is_suit("abn_Rose") or card:is_suit("abn_Goblet") then
+  if (Card.is_suit_shade and card:is_suit_shade("light")) or card:is_suit("Diamonds") or card:is_suit("Hearts") or card:is_suit('bunc_Fleurons') or card:is_suit('paperback_Stars') or card:is_suit("abn_Snow") or card:is_suit("abn_Tie") or card:is_suit("abn_Coin") or card:is_suit("abn_Baton") or card:is_suit("abn_Rose") or card:is_suit("abn_Anchor") then
     return true
   end
   return false

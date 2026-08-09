@@ -301,7 +301,7 @@ ABN.CalligraphyCard {
     }
   end,
 
-  config = { extra = { suit_conv = "abn_Goblet", mod_conv = "m_abn_ocean", } },
+  config = { extra = { suit_conv = "abn_Anchor", mod_conv = "m_abn_ocean", } },
   can_use = function(self, card)
     return G.hand and #G.hand.cards > 0 and G.GAME.blind and not G.GAME.blind.in_blind
   end,
