@@ -9517,9 +9517,14 @@ return {
       j_abn_ruinous_joker = {
         name = "Ruinous Joker",
         text = {
-          "{C:attention}+#1#{} Ruinous Power slot",
-          "If you would {C:mult}lose a Run{} because a {C:abn_black_seal}Ruinous Card",
-          "{C:mult}Destroy{} this Joker instead",
+          {
+            "{C:attention}+#1#{} Ruinous Power slot",
+          },
+          {
+            "If a {C:ruinous_power}Ruinous Power{}",
+            "causes you to {C:red}lose a run{},",
+            "{C:mult}Destroy{} this Joker instead",
+          }
         }
       },
 
