@@ -8882,7 +8882,7 @@ return {
           "create a Joker based on its {C:attention}rarity{}",
         }
       },
-      j_abn_balatro_the_movie = { -- to relocalise
+      j_abn_balatro_the_movie = {
         name = "Balatro: The Movie",
         text = {
           {
@@ -8893,13 +8893,12 @@ return {
             "Gains {X:mult,C:white}X#6#{} Mult per unique {C:attention}poker hand{} played,",
             "Gains {X:chips,C:white}X#7#{} Chips per {C:attention}repeating{} hand,",
             "Gains {C:mult}+#8#{} Mult and {C:chips}+#9#{} Chips per",
-            "unique {C:attention}enhancement{} in scored hand",
+            "unique {C:attention}enhancement{} in scoring hand",
             "{C:inactive}(Currently {X:attention,C:white}X#5#{}{C:inactive}, {X:mult,C:white}X#1#{}{C:inactive}, {X:chips,C:white}X#2#{}{C:inactive}, {C:mult}+#3#{C:inactive}, {C:chips}+#4#{C:inactive})"
           },
           {
-            "If played hand contains a {C:clubs}Club{},",
-            "{C:diamonds}Diamond{}, {C:hearts}Heart{}, and {C:spades}Spade{} card,",
-            "level up the {C:planet}planet{} {C:attention}rank{}",
+            "If played hand contains at least one of",
+            "each {C:attention}Vanilla{} suit, level up the {C:planet}planet{} {C:attention}rank{}",
             "of all cards scored by {C:attention}4{}",
           }
         }
@@ -12111,8 +12110,8 @@ return {
         name = "Serpentarius",
         text = {
           "{C:green}#1# in #2#{} chance to add",
-          "{C:gold}+#3#{} Ascension Power",
-          "to your {C:attention}highest{} level poker hand",
+          "{C:gold}+#3#{} Ascension Power to",
+          "your {C:attention}highest{} level poker hand",
         }
       },
     },
