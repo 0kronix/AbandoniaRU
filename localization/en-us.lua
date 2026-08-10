@@ -2884,6 +2884,14 @@ return {
       },
     },
     Joker = {
+      j_abn_aviator = {
+        name = 'Aviator',
+        text = {
+          "This Joker gains {X:mult,C:white}X#2#{} Mult",
+          "if played {C:planet}hand level{} is {C:attention}#3#{} or over",
+          "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult)"
+        },
+      },
       j_abn_jenga_joker = {
         name = "Jenga Joker",
         text = {

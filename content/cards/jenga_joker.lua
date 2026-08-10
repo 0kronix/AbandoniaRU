@@ -48,7 +48,7 @@ SMODS.Joker {
     end
   end,
   abn_artist_credits = {
-    artist = "0kronix",
+    artist = "Pitissaria 2",
   },
 
 }
