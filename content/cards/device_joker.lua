@@ -13,7 +13,7 @@ SMODS.Joker {
   },
   rarity = 2,
   atlas = 'ABNJokerSheet17',
-  pos = { x = 3, y = 5 }, 
+  pos = { x = 3, y = 5 },
   cost = 6,
   discovered = false,
   blueprint_compat = false,
@@ -39,21 +39,21 @@ SMODS.Joker {
 
     if card and card.ability and card.ability.extra then
       if card.ability.extra.mode == 'dark' then
-        info_queue[#info_queue+1] = G.P_CENTERS.m_abn_darkner
-        info_queue[#info_queue+1] = G.P_CENTERS.e_abn_opaque
+        info_queue[#info_queue + 1] = G.P_CENTERS.m_abn_darkner
+        info_queue[#info_queue + 1] = G.P_CENTERS.e_abn_opaque
       else
-        info_queue[#info_queue+1] = G.P_CENTERS.m_abn_lightner
-        info_queue[#info_queue+1] = G.P_CENTERS.e_abn_bright
+        info_queue[#info_queue + 1] = G.P_CENTERS.m_abn_lightner
+        info_queue[#info_queue + 1] = G.P_CENTERS.e_abn_bright
       end
     end
 
-    return { 
-      vars = { 
-        dynamic_name,     -- #1#
-        enhancement_txt,  -- #2#
-        suit_txt,         -- #3#
-        edition_txt       -- #4#
-      } 
+    return {
+      vars = {
+        dynamic_name,    -- #1#
+        enhancement_txt, -- #2#
+        suit_txt,        -- #3#
+        edition_txt      -- #4#
+      }
     }
   end,
 
@@ -69,7 +69,6 @@ SMODS.Joker {
 
   calculate = function(self, card, context)
     if context.before and context.cardarea == G.jokers and G.GAME.current_round.hands_played == 0 then
-
       if card.ability.extra.mode == 'dark' then
         local only_dark = true
         for i = 1, #context.scoring_hand do
@@ -79,8 +78,8 @@ SMODS.Joker {
           end
         end
 
-        if not only_dark then 
-          return 
+        if not only_dark then
+          return
         end
 
         local already_all_darkner = true
@@ -112,10 +111,10 @@ SMODS.Joker {
             func = function()
               for i = 1, #context.scoring_hand do
                 local target_card = context.scoring_hand[i]
-                target_card:set_edition({ abn_dark = true }, true)
+                target_card:set_edition({ abn_opaque = true }, true)
                 target_card:juice_up(0.6, 0.6)
               end
-              
+
               card:flip()
               card.ability.extra.mode = 'light'
               card:flip()
@@ -125,7 +124,6 @@ SMODS.Joker {
             end
           }))
         end
-
       elseif card.ability.extra.mode == 'light' then
         local only_light = true
         for i = 1, #context.scoring_hand do
@@ -135,8 +133,8 @@ SMODS.Joker {
           end
         end
 
-        if not only_light then 
-          return 
+        if not only_light then
+          return
         end
 
         local already_all_lightner = true
@@ -171,7 +169,7 @@ SMODS.Joker {
                 target_card:set_edition({ abn_bright = true }, true)
                 target_card:juice_up(0.6, 0.6)
               end
-              
+
               card:flip()
               card.ability.extra.mode = 'dark'
               card:flip()
@@ -181,7 +179,6 @@ SMODS.Joker {
             end
           }))
         end
-
       end
     end
   end,

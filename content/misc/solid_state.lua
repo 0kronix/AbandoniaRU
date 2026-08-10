@@ -689,7 +689,7 @@ ABN.SolidState {
   loc_vars = function(self, info_queue, card)
     info_queue[#info_queue + 1] = { key = "abn_light_suit", set = "Other" }
     info_queue[#info_queue + 1] = { key = "abn_dark_suit", set = "Other" }
-    info_queue[#info_queue + 1] = G.P_CENTERS.e_abn_dark
+    info_queue[#info_queue + 1] = G.P_CENTERS.e_abn_opaque
     return { vars = {} }
   end,
 
@@ -718,7 +718,7 @@ ABN.SolidState {
           local target_card = G.hand.cards[i]
 
           if ABN.is_dark(target_card) then
-            target_card:set_edition({ abn_dark = true }, true)
+            target_card:set_edition({ abn_opaque = true }, true)
             target_card:juice_up(0.3, 0.3)
           end
           if ABN.is_light(target_card) then
@@ -1273,7 +1273,7 @@ ABN.SolidState {
 
   can_use = function(self, card)
     return G.jokers and #G.jokers.cards >= 2 and G.jokers.cards[1] and G.jokers.cards[#G.jokers.cards] and
-    G.GAME.round_resets.hands > 1 and #G.consumeables.cards + 1 < G.consumeables.config.card_limit + 1
+        G.GAME.round_resets.hands > 1 and #G.consumeables.cards + 1 < G.consumeables.config.card_limit + 1
   end,
 
   use = function(self, card, area, copier)

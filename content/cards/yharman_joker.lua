@@ -3,12 +3,20 @@ SMODS.Joker {
 
   loc_vars = function(self, info_queue, card)
     local chosen_suit_text = "Light"
+    local chosen_suit_colour = G.C.SUITS["Diamonds"]
+    local chosen_suit_edition = localize({ type = 'name_text', key = "e_abn_bright", set = "Edition" })
     if card.ability.extra.chosen_suit == 'dark' then
+      info_queue[#info_queue + 1] = G.P_CENTERS.e_abn_opaque
       chosen_suit_text = "Dark"
+      chosen_suit_colour = G.C.SUITS["Spades"]
+      chosen_suit_edition = localize({ type = 'name_text', key = "e_abn_opaque", set = "Edition" })
     elseif card.ability.extra.chosen_suit == 'light' then
+      info_queue[#info_queue + 1] = G.P_CENTERS.e_abn_bright
       chosen_suit_text = "Light"
+      chosen_suit_colour = G.C.SUITS["Diamonds"]
+      chosen_suit_edition = localize({ type = 'name_text', key = "e_abn_bright", set = "Edition" })
     end
-    return { vars = { chosen_suit_text } }
+    return { vars = { chosen_suit_text, chosen_suit_edition, colours = { chosen_suit_colour } } }
   end,
 
   rarity = 3,
@@ -22,7 +30,12 @@ SMODS.Joker {
 
   calculate = function(self, card, context)
     if context.setting_blind and not card.getting_sliced then
-      card.ability.extra.chosen_suit = pseudorandom('yharman') < 0.5 and 'dark' or 'light'
+      if card.ability.extra.chosen_suit == 'dark' then
+        card.ability.extra.chosen_suit = 'light'
+      elseif card.ability.extra.chosen_suit == 'light' then
+        card.ability.extra.chosen_suit = 'dark'
+      end
+
       local chosen = card.ability.extra.chosen_suit
 
       for _, c in ipairs(G.playing_cards) do
@@ -69,7 +82,7 @@ SMODS.Joker {
                 if ABN.is_light(c) then
                   c:set_edition({ abn_bright = true }, true)
                 elseif ABN.is_dark(c) then
-                  c:set_edition({ abn_dark = true }, true)
+                  c:set_edition({ abn_opaque = true }, true)
                 end
               end
             end

@@ -393,7 +393,7 @@ SMODS.Shader {
   path = 'balablack.fs',
 }
 SMODS.Edition {
-  key = 'abn_dark',
+  key = 'abn_opaque',
   shader = "balablack",
   discovered = true,
   config = { chips = 20, mult = 8 },

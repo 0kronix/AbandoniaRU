@@ -19,7 +19,7 @@ SMODS.Joker {
   loc_vars = function(self, info_queue, card)
     info_queue[#info_queue + 1] = G.P_CENTERS.m_abn_darkner
     info_queue[#info_queue + 1] = G.P_CENTERS.e_abn_chthonian
-    info_queue[#info_queue + 1] = G.P_CENTERS.e_abn_dark
+    info_queue[#info_queue + 1] = G.P_CENTERS.e_abn_opaque
     return {
       vars = {
         card.ability.extra.mult,
@@ -58,7 +58,7 @@ SMODS.Joker {
             if target_suit == 'abn_Bow' then
               target_edition = { abn_chthonian = true }
             elseif target_suit == 'Spades' then
-              target_edition = { abn_dark = true }
+              target_edition = { abn_opaque = true }
             elseif target_suit == 'Clubs' then
               target_edition = { abn_chthonian = true }
             end
@@ -77,7 +77,7 @@ SMODS.Joker {
     -- Scaling
     if context.individual and context.cardarea == G.play then
       local target_card = context.other_card
-      if target_card.edition and target_card.edition.abn_dark then
+      if target_card.edition and target_card.edition.abn_opaque then
         card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.chipsadd
         return {
           message = localize('k_upgrade_ex'),

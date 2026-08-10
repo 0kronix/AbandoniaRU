@@ -4751,17 +4751,17 @@ return {
           "{C:attention}flipped{} cards in hand",
         }
       },
-      j_abn_yharman_joker = { -- to relocalise (its *fine*, but could be made clearer)
+      j_abn_yharman_joker = {
         name = "Yharman Joker",
         text = {
           {
-            "{C:attention}#1# Suits{} are drawn {C:attention}face down{}",
-            "{C:inactive,s:0.8}Could change when Blind is selected",
+            "{V:1}#1# Suits{} are drawn {C:attention}face down{}",
+            "{C:inactive,s:0.8}Suit changes on Blind selection",
           },
           {
-            "Level up {C:planet}planet{} {C:attention}rank{} of scored {C:attention}face up{} cards",
-            "equal to the number of scoring {C:attention}Flipped{} cards,",
-            "cards leveled above {C:attention}5{} gain {C:dark_edition}Opaque{}/{C:dark_edition}Bright{}",
+            "Level up {C:planet}planet{} {C:attention}rank{} of scoring {C:attention}face up{}",
+            "cards once per scoring {C:attention}Flipped{} card, add",
+            "{C:dark_edition}#2#{} edition to cards levelled above {C:attention}5{} ",
           },
         }
       },
@@ -6100,20 +6100,18 @@ return {
           }
         }
       },
-      j_abn_night_comedian = { -- to relocalise, made it meh for now
+      j_abn_night_comedian = {
         name = "Night Comedian",
         text = {
           {
-            "Scoring {C:attention}Enhanced{} cards gain {C:chips}+#5#{} Chips",
-            "and {C:mult}+#6#{} Mult for each matching {C:attention}Enhancement{}",
-            "Scoring {C:dark_edition}Editioned{} cards gain {C:chips}+#6#{} Chips",
-            "and {C:mult}+#5#{} Mult for each matching {C:dark_edition}Edition{}",
+            "Scoring {C:attention}Enhanced{} cards gain {C:chips}+#5#{} Chips and",
+            "{C:mult}+#6#{} Mult per card with the same {C:attention}Enhancement{}",
+            "Scoring {C:dark_edition}Editioned{} cards gain {C:chips}+#6#{} Chips and",
+            "{C:mult}+#5#{} Mult per card with the same {C:dark_edition}Edition{}",
           },
           {
-            "This Joker gains {C:chips}+#4#{} Chips",
-            "per scoring {C:attention}Enhanced{} card",
-            "This Joker gains {X:mult,C:white}X#3#{} Mult",
-            "per scoring {C:dark_edition}Edition{}",
+            "This Joker gains {C:chips}+#4#{} Chips per scoring",
+            "{C:attention}Enhanced{} card, {X:mult,C:white}X#3#{} Mult per scoring {C:dark_edition}Edition{}",
             "{C:inactive}(Currently{} {X:mult,C:white}X#2#{} {C:inactive}Mult, {C:chips}+#1# {C:inactive}Chips)",
           }
         }
@@ -8814,7 +8812,7 @@ return {
           },
         },
       },
-      j_abn_clown_funk = { -- to relocalise
+      j_abn_clown_funk = {
         name = "Clown Funk",
         text = {
           {
@@ -9008,7 +9006,7 @@ return {
           "All Scoring {C:attention}Odd{} cards gain {C:money}Based Aura",
         }
       },
-      j_abn_pirate_server = { -- to relocalise
+      j_abn_pirate_server = {
         name = "Pirate Server",
         text = {
           "Scoring {C:money}Medium Ammo{} cards gain {C:abn_brown_seal}Brown Seal{}",
@@ -9016,25 +9014,38 @@ return {
           "If this Joker has {C:tarot}Shockwaved{} retrigger all Jokers {C:attention}without{} {C:dark_edition}Editions{}",
         }
       },
-      j_abn_the_big_cheese = { -- to relocalise
+      j_abn_the_big_cheese = {
         name = "The Big Cheese",
         text = {
           "All {C:uncommon}Uncommon{} and {C:rare}Rare{} Jokers are {C:attention}free{}",
           "But they gain {C:money}Mythic Edition{} upon {C:attention}purchase{}",
         }
       },
-      j_abn_the_drink = { -- to relocalise
+      j_abn_the_drink = {
         name = "The Drink",
         text = {
-          "If your {C:attention}First hand{} is {C:attention}5{} Scoring cards they all gain {C:tarot}Shockwaved{}",
-          "If your {C:attention}Final hand{} is {C:attention}High Card{} all {C:attention}unscoring{} cards gain {C:purple}Glitched Seal{}",
+          {
+            "If {C:attention}first hand{} of round",
+            "has only {C:attention}5{} scoring cards,",
+            "they all gain {C:tarot}Shockwaved{}",
+          },
+          {
+            "If {C:attention}final hand{} of round is",
+            "a {C:attention}High Card{}, add a {C:purple}Glitched Seal{}",
+            "to all C:attention}unscoring{} cards",
+          }
         }
       },
-      j_abn_certified_brainrot = { -- to relocalise
+      j_abn_certified_brainrot = {
         name = "Certified Brainrot",
         text = {
-          "All {C:attention}Brainrot{} Jokers give {X:chips,C:white}^#2#{} Chips and {X:mult,C:white}^#1#{} Mult",
-          "Debuff all {C:attention}non-Brainrot{} Jokers",
+          {
+            "{C:attention}Brainrot{} Jokers each give",
+            "{X:chips,C:white}^#2#{} Chips and {X:mult,C:white}^#1#{} Mult",
+          },
+          {
+            "Debuff all {C:attention}non-Brainrot{} Jokers",
+          }
         }
       },
       j_abn_mini_balala = {
@@ -9046,7 +9057,7 @@ return {
           "{C:green}#1# in #4#{} chance to create a {C:money}FTC Lawsuit",
         }
       },
-      j_abn_mango = { -- to relocalise (well not relocalise just colour descriptions better)
+      j_abn_mango = {
         name = "Mango",
         text = {
           "#1#",
@@ -9125,14 +9136,17 @@ return {
           "{C:inactive}(Currently{} {X:mult,C:white}X#1#{} {C:inactive}Mult)",
         }
       },
-      j_abn_reversecard_joker = { -- to relocalise
+      j_abn_reversecard_joker = {
         name = "Reversecard Joker",
         text = {
           {
-            "If played hand contains both {C:attention}Flipped{} and {C:attention}face up{} cards,",
-            "Flip all {C:attention}Flipped{} cards {C:attention}face up{}, flip all {C:attention}face up{} cards {C:attention}face down{}",
-            "Gains {C:chips}chips{} {C:attention}equal{} to the rank of cards {C:attention}flipped up{},",
-            "if cards flipped were {C:attention}face down{}, gain {C:mult}Mult{} instead",
+            "If played hand contains both",
+            "{C:attention}flipped{} and {C:attention}face up{} cards,",
+            "flip all scoring cards,",
+          },
+          {
+            "Gains the {C:attention}rank{} of cards {C:attention}flipped up{} as {C:chips}Chips{},",
+            "gain {C:mult}Mult{} instead for cards {C:attention}flipped over{}",
             "{C:inactive}(Currently{} {C:mult}+#2#{} {C:inactive}Mult,{} {C:chips}+#1#{} {C:inactive}Chips){}",
           },
           {
@@ -11053,7 +11067,7 @@ return {
           "in scoring {C:diamonds}Light Suits{}"
         }
       },
-      e_abn_dark = {
+      e_abn_opaque = {
         name = "Opaque",
         text = {
           "{C:chips}+#1#{} Chips and {C:mult}+#2#{} Mult",
@@ -12889,7 +12903,7 @@ return {
       abn_collodion = "Collodion",
       abn_vintage = "Vintage",
       abn_bright = "Bright",
-      abn_dark = "Opaque",
+      abn_opaque = "Opaque",
 
       -- STICKERS
       abn_pump_up = "Pump Up",
