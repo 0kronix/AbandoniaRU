@@ -2885,6 +2885,34 @@ return {
       },
     },
     Joker = {
+      j_abn_random_encounter = {
+        name = "Random Encounter",
+        text = {
+          {
+            "Gives {C:mult}+#1#{} Mult when",
+            "a {C:chips}+Chips{} effect from",
+            "another {C:attention}Joker{} scores"
+          },
+          {
+            "Mult increases by {C:mult}+#2#{}",
+            "when {C:attention}Blind{} is defeated"
+          }
+        }
+      },
+      j_abn_force_encounter = {
+        name = "Forced Encounter",
+        text = {
+          {
+            "Gives {C:chips}+#1#{} Chips when",
+            "a {C:mult}+Mult{} effect from",
+            "another {C:attention}Joker{} scores"
+          },
+          {
+            "Chips increases by {C:chips}+#2#{}",
+            "when {C:attention}Blind{} is defeated"
+          }
+        }
+      },
       j_abn_yorick_deluxe = {
         name = "Yorick {C:attention}Deluxe",
         text = {
