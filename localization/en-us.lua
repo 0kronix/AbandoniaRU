@@ -655,10 +655,10 @@ return {
         name = "Chip",
         text = {
           {
-            "Add {C:enhanced}Eternal{} and {C:dark_edition}Holographic{} to",
-            "the leftmost Joker",
-            "Add {C:enhanced}Eternal{} and {C:dark_edition}Foil{} to",
-            "the rightmost Joker",
+            "Add {C:abn_eternal}Eternal{} and {C:dark_edition}Holographic{} to",
+            "the {C:attention}leftmost{} Joker",
+            "Add {C:abn_eternal}Eternal{} and {C:dark_edition}Foil{} to",
+            "the {C:attention}rightmost{} Joker",
             "move them both into the",
             "{C:attention}consumable area{}",
           },
@@ -1138,7 +1138,7 @@ return {
         name = "YOGH",
         text = {
           "Next time you play a hand containing",
-          "{C:abn_penumbra}Penumbras{}, add {C:dark_edition}Reversal{}",
+          "{C:abn_penumbra}Penumbras{}, add {C:dark_edition}Reversal{} edition",
           "to played {C:abn_penumbra}Penumbras",
         }
       },
@@ -1146,7 +1146,7 @@ return {
         name = "ETH",
         text = {
           "Next time you play a hand containing",
-          "{C:abn_snow}Snows{}, add {C:dark_edition}Collodion{}",
+          "{C:abn_snow}Snows{}, add {C:dark_edition}Collodion{} edition",
           "to played {C:abn_snow}Snows{}",
         }
       },
@@ -1155,8 +1155,7 @@ return {
         text = {
           "Next time you play a hand",
           "containing {C:abn_tie}Ties{}, add a {C:abn_violet_seal}#2#{}",
-          "and enhance played {C:abn_tie}Ties{}",
-          "to {C:enhanced}#1#s"
+          "and enhance played {C:abn_tie}Ties{} to {C:attention}#1#s"
         }
       },
       c_abn_vend = {
@@ -1165,7 +1164,7 @@ return {
           "Next time you play a hand",
           "containing {C:abn_bow}Bows{}, add a {C:abn_brown_seal}#2#{}",
           "and enhance played {C:abn_bow}Bows{}",
-          "to {C:enhanced}#1#s"
+          "to {C:attention}#1#s"
         }
       },
     },
@@ -7996,13 +7995,13 @@ return {
         text = {
           {
             "If the {C:attention}first hand{} is composed of",
-            "only {C:attention}numbered {C:enhanced}Null{} cards",
+            "only {C:attention}numbered {C:abn_suitless}Null{} cards",
             "{C:attention}retrigger{} all cards",
             "and {C:attention}level up{} the hand"
           },
           {
             "If the {C:attention}second hand{} is composed of",
-            "only {C:attention}numbered{} {C:enhanced}non-Null{} cards",
+            "only {C:attention}numbered{} {C:attention}non-Null{} cards",
             "{C:attention}retrigger{} all cards",
             "and {C:attention}level up{} the hand"
           },
