@@ -14,7 +14,7 @@ SMODS.Joker {
   discovered = false,
   blueprint_compat = true,
 
-  config = { extra = { chips = 1, chips_gain = 1 } },
+  config = { extra = { chips = 2, chips_gain = 1 } },
   calculate = function(self, card, context)
     if context.before then
       card.ability.extra.active = true
