@@ -1409,7 +1409,7 @@ ABN.AncientCalligraphyCard {
     end
 
     local rightmost_stickers = ABN.listStickers(rightmost_joker)
-    if #rightmost_stickers > 0 then
+    if rightmost_stickers and #rightmost_stickers > 0 then
       for _, v in ipairs(G.jokers.cards) do
         if v ~= card then
           for _, sticker in ipairs(rightmost_stickers) do
