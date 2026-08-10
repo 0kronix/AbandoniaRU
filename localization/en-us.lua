@@ -2885,6 +2885,20 @@ return {
       },
     },
     Joker = {
+      j_abn_jenga_joker = {
+        name = "Jenga Joker",
+        text = {
+          {
+            "When this Joker is {C:red}destroyed{}, create",
+            "a copy with an additional {X:mult,C:white}X#2#{} Mult",
+            "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult)"
+          },
+          {
+            "{C:red}Self destructs{} if hand scores over",
+            "{C:attention}twice{} the blind requirement"
+          }
+        }
+      },
       j_abn_random_encounter = {
         name = "Random Encounter",
         text = {
