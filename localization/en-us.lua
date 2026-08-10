@@ -5371,7 +5371,7 @@ return {
           "{C:chips}+#5#{} Chips and {C:money}+$#6#{} when",
           "a {C:attention}Comedian{} Joker is triggered",
           "{s:0.8,C:attention}Bubbly Comedian{s:0.8} excluded",
-          "{C:inactive}(Currently {C:mult}+#1#{}{C:inactive}, {C:chips}+#2#{} {C:inactive}, {C:money}$#3#{}{C:inactive})"
+          "{C:inactive}(Currently {C:mult}+#1#{}{C:inactive}, {C:chips}+#2#{}{C:inactive}, {C:money}$#3#{}{C:inactive})"
         }
       },
       j_abn_gimbo = {
@@ -8887,20 +8887,19 @@ return {
         text = {
           {
             "Increase {C:attention}blind requirement{} by {X:attention,C:white}X#10#{}",
-            "for every {C:attention}Blind{} defeated this run",
+            "per {C:attention}Blind{} defeated this run",
           },
           {
-            "Gains {X:mult,C:white}X#6#{} Mult for each {C:attention}unique{} hand played,",
+            "Gains {X:mult,C:white}X#6#{} Mult per unique {C:attention}poker hand{} played,",
             "Gains {X:chips,C:white}X#7#{} Chips per {C:attention}repeating{} hand,",
-            "Gains {C:mult}+#8#{} Mult and {C:chips}+#9#{} Chips",
-            "per unique {C:attention}enhancement{} in scored hand",
-            "{C:inactive,s:0.8}(Currently {X:mult,C:white,s:0.8}X#1#{} {C:inactive,s:0.8}Mult, {X:chips,C:white,s:0.8}X#2#{} {C:inactive,s:0.8}Chips, {C:mult,s:0.8}+#3# {C:inactive,s:0.8}Mult, {C:chips,s:0.8}+#4# {C:inactive,s:0.8}Chips, {X:attention,C:white,s:0.8}X#5#{} {C:inactive,s:0.8}Blind requirement)"
+            "Gains {C:mult}+#8#{} Mult and {C:chips}+#9#{} Chips per",
+            "unique {C:attention}enhancement{} in scored hand",
+            "{C:inactive}(Currently {X:attention,C:white}X#5#{}{C:inactive}, {X:mult,C:white}X#1#{}{C:inactive}, {X:chips,C:white}X#2#{}{C:inactive}, {C:mult}+#3#{C:inactive}, {C:chips}+#4#{C:inactive})"
           },
           {
-            "If played hand contains a",
-            "{C:diamonds}Diamond{} card, {C:clubs}Club{} card,",
-            "{C:hearts}Heart{} card, and {C:spades}Spade{} card,",
-            "level up {C:planet}planet{} {C:attention}rank{}",
+            "If played hand contains a {C:clubs}Club{},",
+            "{C:diamonds}Diamond{}, {C:hearts}Heart{}, and {C:spades}Spade{} card,",
+            "level up the {C:planet}planet{} {C:attention}rank{}",
             "of all cards scored by {C:attention}4{}",
           }
         }
