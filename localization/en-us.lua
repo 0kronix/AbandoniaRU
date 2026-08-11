@@ -2884,6 +2884,15 @@ return {
       },
     },
     Joker = {
+      j_abn_omaha_joker = {
+        name = "Omaha Joker",
+        text = {
+          "This Joker gains {C:mult}+#2#{} Mult",
+          "for {C:attention}every{} poker hand in a",
+          "hand containing {C:attention}5{} scoring cards",
+          "{C:inactive}(Currently {C:mult}+#1#{} {C:inactive}Mult)"
+        },
+      },
       j_abn_intergalactic_joker = {
         name = "Intergalactic Joker",
         text = {
