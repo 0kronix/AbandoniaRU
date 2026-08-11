@@ -2885,7 +2885,7 @@ return {
     },
     Joker = {
       j_abn_omaha_joker = {
-        name = "Omaha Joker",
+        name = "Omaha Poker",
         text = {
           "This Joker gains {C:mult}+#2#{} Mult",
           "for {C:attention}every{} poker hand in a",
