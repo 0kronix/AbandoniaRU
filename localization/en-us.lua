@@ -2884,6 +2884,30 @@ return {
       },
     },
     Joker = {
+      j_abn_intergalactic_joker = {
+        name = "Intergalactic Joker",
+        text = {
+          "Upgrade {C:attention}every{} poker hand in",
+          "played hand's Asc. Power by {C:gold}+#1#{}",
+          "when holding their",
+          "{C:attention}respective{} {C:planet}Planet{} card"
+        },
+      },
+      j_abn_improved_joker = {
+        name = "Improved Joker",
+        text = {
+          {
+            "{X:mult,C:white}X#1#{} Mult {C:attention}before{} scoring",
+            "if {C:attention}scoring hand{} contains",
+            "exactly {C:attention}5{} cards"
+          },
+          {
+            "If {C:attention}Joker{} is owned,",
+            "scored cards give",
+            "{C:gold}+#2#{} Asc. Power",
+          }
+        }
+      },
       j_abn_aviator = {
         name = 'Aviator',
         text = {
@@ -7538,7 +7562,7 @@ return {
           "#7#"
         }
       },
-      j_abn_dreamstalker_joker = {
+      j_abn_dreamstalker_joker = { -- to relocalise
         name = "Dreamstalker Joker",
         text = {
           "If you have an {C:attention}Even{} number of {C:mult}Discards{}",
@@ -9579,59 +9603,59 @@ return {
         name = "Ruinous Joker",
         text = {
           "{C:attention}+#1#{} Ruinous Power slot",
-		  "If you would {C:mult}lose a Run{} because a {C:abn_black_seal}Ruinous Card",
-		  "{C:mult}Destroy{} this Joker instead",
+          "If you would {C:mult}lose a Run{} because a {C:abn_black_seal}Ruinous Card",
+          "{C:mult}Destroy{} this Joker instead",
         }
       },
-	  
-	  j_abn_king_of_games = {
+
+      j_abn_king_of_games = {
         name = "King Of Games",
         text = {
           "Once per {C:attention}ante{} create a card",
-		  "with chosen {C:attention}rank{} {C:attention}suit{} and {C:dark_edition}enhancement{}",
-		  "Add it to your hand",
+          "with chosen {C:attention}rank{} {C:attention}suit{} and {C:dark_edition}enhancement{}",
+          "Add it to your hand",
         }
       },
-	  
-	  j_abn_from_pixel_to_dust = {
+
+      j_abn_from_pixel_to_dust = {
         name = "From Pixel to Dust",
         text = {
           "Played {C:attention}unscored{} cards each",
-		  "Add {C:attention}double{} their {C:attention}rank{} as {C:mult}Mult{}",
-		  "Then {C:mult}self-destruct{}",
+          "Add {C:attention}double{} their {C:attention}rank{} as {C:mult}Mult{}",
+          "Then {C:mult}self-destruct{}",
         }
       },
-	  
-	  j_abn_paywall_joker = {
+
+      j_abn_paywall_joker = {
         name = "Paywall Joker",
         text = {
           "{C:attention}Retrigger{} a {C:attention}random{} Joker and lose {C:money}${} {C:attention}equal{} to its {C:money}sale value{}",
-		  "If balance reaches {C:money}$0{} or less {C:mult}self-destruct{}",
+          "If balance reaches {C:money}$0{} or less {C:mult}self-destruct{}",
         }
       },
-	  
-	  j_abn_test_crash_dummy = {
+
+      j_abn_test_crash_dummy = {
         name = "Test Crash Dummy",
         text = {
           "The first scoring {C:attention}Pair{} each round cards gain {C:abn_hazard}Hazard{}",
-		  "When a {C:abn_hazard}Hazard{} card scores {C:mult}destroy{} it and gain its {C:attention}rank{} as {C:chips}chips{}",
-		  "{C:inactive}Currently: {C:chips}+#1#{} {C:inactive}Chips{}",
+          "When a {C:abn_hazard}Hazard{} card scores {C:mult}destroy{} it and gain its {C:attention}rank{} as {C:chips}chips{}",
+          "{C:inactive}Currently: {C:chips}+#1#{} {C:inactive}Chips{}",
         }
       },
-	  
-	  j_abn_joker_tile = {
+
+      j_abn_joker_tile = {
         name = "Joker Tile",
         text = {
           "Gains {X:chips,C:white}X#2#{} Chips per {C:attention}consecutive{} hand",
-		  "with {C:attention}equal{} scoring cards and held Jokers",
-		  "{C:inactive}Currently:{} {X:chips,C:white}X#1#{} {C:inactive}Chips",
+          "with {C:attention}equal{} scoring cards and held Jokers",
+          "{C:inactive}Currently:{} {X:chips,C:white}X#1#{} {C:inactive}Chips",
         }
       },
-	  
-	  j_abn_double_king = {
+
+      j_abn_double_king = {
         name = "Double King",
         text = {
-		  {
+          {
             "No {C:chips}chip{} gain on {C:attention}Kings{}",
             "When a {C:attention}King{} scores {C:mult}destroy{} it and gains {C:attention}double{} it's {C:attention}rank{} as {C:chips}chips{}",
           },
@@ -9639,7 +9663,7 @@ return {
             "If you own a Mister Bones",
             "It becomes {C:dark_edition}Negative{} at {C:attention}end of round{}",
             "and gives {C:mult}+#2#{} Mult per scoring card",
-			"{C:inactive}Currently: {C:chips}+#1#{} {C:inactive}Chips",
+            "{C:inactive}Currently: {C:chips}+#1#{} {C:inactive}Chips",
           },
         }
       },
@@ -12284,128 +12308,128 @@ return {
         }
       },
     },
-	
-	artistry_cards = {
+
+    artistry_cards = {
       c_abn_marquee = {
         name = "Marquee",
         text = {
           "Select a card and a Joker",
-		  "{C:mult}Destroy{} the Joker",
-		  "All cards that share suits with the selected card",
-		  "Gain {C:chips}Chips{} based on the destroyed Joker rarity",
-		  "{C:common}Common{}: {C:chips}+#1#{} Chips",
-		  "{C:uncommon}Uncommon{}: {C:chips}+#2#{} Chips",
-		  "{C:rare}Rare{}: {C:chips}+#3#{} Chips",
-		  "{C:abn_superrare}Super Rare{}: {C:chips}+#4#{} Chips",
-		  "{C:legendary}Legendary{}: {C:chips}+#5#{} Chips",
-		  "{C:abn_parallelrare}Parallel Rare{}: {C:chips}+#6#{} Chips",
+          "{C:mult}Destroy{} the Joker",
+          "All cards that share suits with the selected card",
+          "Gain {C:chips}Chips{} based on the destroyed Joker rarity",
+          "{C:common}Common{}: {C:chips}+#1#{} Chips",
+          "{C:uncommon}Uncommon{}: {C:chips}+#2#{} Chips",
+          "{C:rare}Rare{}: {C:chips}+#3#{} Chips",
+          "{C:abn_superrare}Super Rare{}: {C:chips}+#4#{} Chips",
+          "{C:legendary}Legendary{}: {C:chips}+#5#{} Chips",
+          "{C:abn_parallelrare}Parallel Rare{}: {C:chips}+#6#{} Chips",
         }
-	  },
-	  c_abn_pencil = {
+      },
+      c_abn_pencil = {
         name = "Pencil",
         text = {
           "Select a card and a Joker",
-		  "{C:mult}Destroy{} the Joker",
-		  "All cards that share suits with the selected card",
-		  "Gain {C:mult}Mult{} based on the destroyed Joker rarity",
-		  "{C:common}Common{}: {C:mult}+#1#{} Mult",
-		  "{C:uncommon}Uncommon{}: {C:mult}+#2#{} Mult",
-		  "{C:rare}Rare{}: {C:mult}+#3#{} Mult",
-		  "{C:abn_superrare}Super Rare{}: {C:mult}+#4#{} Mult",
-		  "{C:legendary}Legendary{}: {C:mult}+#5#{} Mult",
-		  "{C:abn_parallelrare}Parallel Rare{}: {C:mult}+#6#{} Mult",
+          "{C:mult}Destroy{} the Joker",
+          "All cards that share suits with the selected card",
+          "Gain {C:mult}Mult{} based on the destroyed Joker rarity",
+          "{C:common}Common{}: {C:mult}+#1#{} Mult",
+          "{C:uncommon}Uncommon{}: {C:mult}+#2#{} Mult",
+          "{C:rare}Rare{}: {C:mult}+#3#{} Mult",
+          "{C:abn_superrare}Super Rare{}: {C:mult}+#4#{} Mult",
+          "{C:legendary}Legendary{}: {C:mult}+#5#{} Mult",
+          "{C:abn_parallelrare}Parallel Rare{}: {C:mult}+#6#{} Mult",
         }
-	  },
-	  c_abn_eraser = {
-		name = "Eraser",
-		text = {
-			"Select a {C:attention}Rankless{} card and a Joker",
-			"{C:mult}Destroy{} the Joker",
-			"All {C:attention}Rankless{} cards gain {C:chips}Chips{} and {C:mult}Mult{}",
-			"based on the destroyed Joker rarity",
-			"{C:common}Common{}: {C:chips}+#1#{} Chips {C:mult}+#2#{} Mult",
-			"{C:uncommon}Uncommon{}: {C:chips}+#3#{} Chips {C:mult}+#4#{} Mult",
-			"{C:rare}Rare{}: {C:chips}+#5#{} Chips {C:mult}+#6#{} Mult",
-			"{C:abn_superrare}Super Rare{}: {C:chips}+#7#{} Chips {C:mult}+#8#{} Mult",
-			"{C:legendary}Legendary{}: {C:chips}+#9#{} Chips {C:mult}+#10#{} Mult",
-			"{C:abn_parallelrare}Parallel Rare{}: {C:chips}+#11#{} Chips {C:mult}+#12#{} Mult",
-		}	
-	  },
-	  c_abn_eyedropper = {
-		name = "Eyedropper",
-		text = {
-			"Select a card and a Joker",
-			"{C:mult}Destroy{} the Joker",
-			"All cards that share suits with the selected card",
-			"gain permanent {C:money}Dollars{} based on the destroyed Joker rarity",
-			"{C:common}Common{}: {C:money}+$#1#{}",
-			"{C:uncommon}Uncommon{}: {C:money}+$#2#{}",
-			"{C:rare}Rare{}: {C:money}+$#3#{}",
-			"{C:abn_superrare}Super Rare{}: {C:money}+$#4#{}",
-			"{C:legendary}Legendary{}: {C:money}+$#5#{}",
-			"{C:abn_parallelrare}Parallel Rare{}: {C:money}+$#6#{}",
-		}
-	  },
-	  c_abn_hand = {
-		name = "Hand",
-		text = {
-			"Select a card and a Joker",
-			"{C:mult}Destroy{} the Joker",
-			"All cards that share suits with the selected card",
-			"gain {C:chips}Chips{} based on the destroyed Joker rarity",
-			"{C:common}Common{}: {X:chips,C:white}X#1#{} Chips",
-			"{C:uncommon}Uncommon{}: {X:chips,C:white}X#2#{} Chips",
-			"{C:rare}Rare{}: {X:chips,C:white}X#3#{} Chips",
-			"{C:abn_superrare}Super Rare{}: {X:chips,C:white}X#4#{} Chips",
-			"{C:legendary}Legendary{}: {X:chips,C:white}X#5#{} Chips",
-			"{C:abn_parallelrare}Parallel Rare{}: {X:chips,C:white}X#6#{} Chips",
-		}
-	  },
-	  c_abn_move = {
-		name = "Move",
-		text = {
-			"Select a card and a Joker",
-			"{C:mult}Destroy{} the Joker",
-			"All cards that share suits with the selected card",
-			"gain {C:mult}Mult{} based on the destroyed Joker rarity",
-			"{C:common}Common{}: {X:mult,C:white}X#1#{} Mult",
-			"{C:uncommon}Uncommon{}: {X:mult,C:white}X#2#{} Mult",
-			"{C:rare}Rare{}: {X:mult,C:white}X#3#{} Mult",
-			"{C:abn_superrare}Super Rare{}: {X:mult,C:white}X#4#{} Mult",
-			"{C:legendary}Legendary{}: {X:mult,C:white}X#5#{} Mult",
-			"{C:abn_parallelrare}Parallel Rare{}: {X:mult,C:white}X#6#{} Mult",
-		}
-	  },
-	  c_abn_paint = {
-		name = "Paint",
-		text = {
-			"Select a card and a Joker",
-			"{C:mult}Destroy{} the Joker",
-			"Upgrade the {C:planet}Planet{} {C:attention}Rank{} of the selected card's suit",
-			"based on the destroyed Joker rarity",
-			"{C:common}Common{}: {C:attention}+#1#{} planet rank",
-			"{C:uncommon}Uncommon{}: {C:attention}+#2#{} planet rank",
-			"{C:rare}Rare{}: {C:attention}+#3#{} planet rank",
-			"{C:abn_superrare}Super Rare{}: {C:attention}+#4#{} planet rank",
-			"{C:legendary}Legendary{}: {C:attention}+#5#{} planet rank",
-			"{C:abn_parallelrare}Parallel Rare{}: {C:attention}+#6#{} planet rank",
-		}
-	  },
-	  c_abn_line = {
-		name = "Line",
-		text = {
-			"Select a card and a Joker",
-			"{C:mult}Destroy{} the Joker",
-			"All cards that share suits with the selected card",
-			"gain {C:attention}Retriggers{} based on the destroyed Joker rarity",
-			"{C:common}Common{}: {C:attention}+#1#{} Retrigger",
-			"{C:uncommon}Uncommon{}: {C:attention}+#2#{} Retriggers",
-			"{C:rare}Rare{}: {C:attention}+#3#{} Retriggers",
-			"{C:abn_superrare}Super Rare{}: {C:attention}+#4#{} Retriggers",
-			"{C:legendary}Legendary{}: {C:attention}+#5#{} Retriggers",
-			"{C:abn_parallelrare}Parallel Rare{}: {C:attention}+#6#{} Retriggers",
-		}
-	  },
+      },
+      c_abn_eraser = {
+        name = "Eraser",
+        text = {
+          "Select a {C:attention}Rankless{} card and a Joker",
+          "{C:mult}Destroy{} the Joker",
+          "All {C:attention}Rankless{} cards gain {C:chips}Chips{} and {C:mult}Mult{}",
+          "based on the destroyed Joker rarity",
+          "{C:common}Common{}: {C:chips}+#1#{} Chips {C:mult}+#2#{} Mult",
+          "{C:uncommon}Uncommon{}: {C:chips}+#3#{} Chips {C:mult}+#4#{} Mult",
+          "{C:rare}Rare{}: {C:chips}+#5#{} Chips {C:mult}+#6#{} Mult",
+          "{C:abn_superrare}Super Rare{}: {C:chips}+#7#{} Chips {C:mult}+#8#{} Mult",
+          "{C:legendary}Legendary{}: {C:chips}+#9#{} Chips {C:mult}+#10#{} Mult",
+          "{C:abn_parallelrare}Parallel Rare{}: {C:chips}+#11#{} Chips {C:mult}+#12#{} Mult",
+        }
+      },
+      c_abn_eyedropper = {
+        name = "Eyedropper",
+        text = {
+          "Select a card and a Joker",
+          "{C:mult}Destroy{} the Joker",
+          "All cards that share suits with the selected card",
+          "gain permanent {C:money}Dollars{} based on the destroyed Joker rarity",
+          "{C:common}Common{}: {C:money}+$#1#{}",
+          "{C:uncommon}Uncommon{}: {C:money}+$#2#{}",
+          "{C:rare}Rare{}: {C:money}+$#3#{}",
+          "{C:abn_superrare}Super Rare{}: {C:money}+$#4#{}",
+          "{C:legendary}Legendary{}: {C:money}+$#5#{}",
+          "{C:abn_parallelrare}Parallel Rare{}: {C:money}+$#6#{}",
+        }
+      },
+      c_abn_hand = {
+        name = "Hand",
+        text = {
+          "Select a card and a Joker",
+          "{C:mult}Destroy{} the Joker",
+          "All cards that share suits with the selected card",
+          "gain {C:chips}Chips{} based on the destroyed Joker rarity",
+          "{C:common}Common{}: {X:chips,C:white}X#1#{} Chips",
+          "{C:uncommon}Uncommon{}: {X:chips,C:white}X#2#{} Chips",
+          "{C:rare}Rare{}: {X:chips,C:white}X#3#{} Chips",
+          "{C:abn_superrare}Super Rare{}: {X:chips,C:white}X#4#{} Chips",
+          "{C:legendary}Legendary{}: {X:chips,C:white}X#5#{} Chips",
+          "{C:abn_parallelrare}Parallel Rare{}: {X:chips,C:white}X#6#{} Chips",
+        }
+      },
+      c_abn_move = {
+        name = "Move",
+        text = {
+          "Select a card and a Joker",
+          "{C:mult}Destroy{} the Joker",
+          "All cards that share suits with the selected card",
+          "gain {C:mult}Mult{} based on the destroyed Joker rarity",
+          "{C:common}Common{}: {X:mult,C:white}X#1#{} Mult",
+          "{C:uncommon}Uncommon{}: {X:mult,C:white}X#2#{} Mult",
+          "{C:rare}Rare{}: {X:mult,C:white}X#3#{} Mult",
+          "{C:abn_superrare}Super Rare{}: {X:mult,C:white}X#4#{} Mult",
+          "{C:legendary}Legendary{}: {X:mult,C:white}X#5#{} Mult",
+          "{C:abn_parallelrare}Parallel Rare{}: {X:mult,C:white}X#6#{} Mult",
+        }
+      },
+      c_abn_paint = {
+        name = "Paint",
+        text = {
+          "Select a card and a Joker",
+          "{C:mult}Destroy{} the Joker",
+          "Upgrade the {C:planet}Planet{} {C:attention}Rank{} of the selected card's suit",
+          "based on the destroyed Joker rarity",
+          "{C:common}Common{}: {C:attention}+#1#{} planet rank",
+          "{C:uncommon}Uncommon{}: {C:attention}+#2#{} planet rank",
+          "{C:rare}Rare{}: {C:attention}+#3#{} planet rank",
+          "{C:abn_superrare}Super Rare{}: {C:attention}+#4#{} planet rank",
+          "{C:legendary}Legendary{}: {C:attention}+#5#{} planet rank",
+          "{C:abn_parallelrare}Parallel Rare{}: {C:attention}+#6#{} planet rank",
+        }
+      },
+      c_abn_line = {
+        name = "Line",
+        text = {
+          "Select a card and a Joker",
+          "{C:mult}Destroy{} the Joker",
+          "All cards that share suits with the selected card",
+          "gain {C:attention}Retriggers{} based on the destroyed Joker rarity",
+          "{C:common}Common{}: {C:attention}+#1#{} Retrigger",
+          "{C:uncommon}Uncommon{}: {C:attention}+#2#{} Retriggers",
+          "{C:rare}Rare{}: {C:attention}+#3#{} Retriggers",
+          "{C:abn_superrare}Super Rare{}: {C:attention}+#4#{} Retriggers",
+          "{C:legendary}Legendary{}: {C:attention}+#5#{} Retriggers",
+          "{C:abn_parallelrare}Parallel Rare{}: {C:attention}+#6#{} Retriggers",
+        }
+      },
     },
     Enhanced = {
       m_abn_wallpaper = {
@@ -13058,8 +13082,8 @@ return {
 
       b_ruinous_power_cards = "Ruinous Power",
       k_ruinous_power = "Ruinous Power",
-	  
-	  b_artistry_cards_cards = "Artistry Cards",
+
+      b_artistry_cards_cards = "Artistry Cards",
       k_artistry_cards = "Artistry Cards",
     },
     labels = {
@@ -13075,8 +13099,8 @@ return {
       solid_state = "Solid State",
       calligraphy = "Calligraphy",
       glyphs = "Glyph",
-	  ruinous_power = "Ruinous Power",
-	  artistry_cards = "Artistry Cards",
+      ruinous_power = "Ruinous Power",
+      artistry_cards = "Artistry Cards",
 
       -- Editions
       abn_chthonian = "Chthonian",
