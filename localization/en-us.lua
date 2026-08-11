@@ -9609,6 +9609,40 @@ return {
 		  "If balance reaches {C:money}$0{} or less {C:mult}self-destruct{}",
         }
       },
+	  
+	  j_abn_test_crash_dummy = {
+        name = "Test Crash Dummy",
+        text = {
+          "The first scoring {C:attention}Pair{} each round cards gain {C:abn_hazard}Hazard{}",
+		  "When a {C:abn_hazard}Hazard{} card scores {C:mult}destroy{} it and gain its {C:attention}rank{} as {C:chips}chips{}",
+		  "{C:inactive}Currently: {C:chips}+#1#{} {C:inactive}Chips{}",
+        }
+      },
+	  
+	  j_abn_joker_tile = {
+        name = "Joker Tile",
+        text = {
+          "Gains {X:chips,C:white}X#2#{} Chips per {C:attention}consecutive{} hand",
+		  "with {C:attention}equal{} scoring cards and held Jokers",
+		  "{C:inactive}Currently:{} {X:chips,C:white}X#1#{} {C:inactive}Chips",
+        }
+      },
+	  
+	  j_abn_double_king = {
+        name = "Double King",
+        text = {
+		  {
+            "No {C:chips}chip{} gain on {C:attention}Kings{}",
+            "When a {C:attention}King{} scores {C:mult}destroy{} it and gains {C:attention}double{} it's {C:attention}rank{} as {C:chips}chips{}",
+          },
+          {
+            "If you own a Mister Bones",
+            "It becomes {C:dark_edition}Negative{} at {C:attention}end of round{}",
+            "and gives {C:mult}+#2#{} Mult per scoring card",
+			"{C:inactive}Currently: {C:chips}+#1#{} {C:inactive}Chips",
+          },
+        }
+      },
 
     },
     Spectral = {
