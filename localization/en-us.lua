@@ -9637,9 +9637,16 @@ return {
       j_abn_test_crash_dummy = {
         name = "Test Crash Dummy",
         text = {
-          "The first scoring {C:attention}Pair{} each round cards gain {C:abn_hazard}Hazard{}",
-          "When a {C:abn_hazard}Hazard{} card scores {C:mult}destroy{} it and gain its {C:attention}rank{} as {C:chips}chips{}",
-          "{C:inactive}(Currently {C:chips}+#1#{} {C:inactive}Chips){}",
+          {
+            "Enhance all scoring cards in",
+            "first {C:attention}Pair{} of round",
+            "into {C:attention}Hazard{} cards"
+          },
+          {
+            "When a {C:attention}Hazard{} card scores,",
+            "{C:mult}destroy{} it and gain it's {C:attention}rank{} as {C:chips}Chips{}",
+            "{C:inactive}(Currently {C:chips}+#1#{} {C:inactive}Chips){}",
+          }
         }
       },
 
