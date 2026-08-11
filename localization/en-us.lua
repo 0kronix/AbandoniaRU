@@ -2884,6 +2884,20 @@ return {
       },
     },
     Joker = {
+      j_abn_worldwind_joker = {
+        name = "Worldwind Joker",
+        text = {
+          {
+            "{C:attention}Jokers{} are shuffled",
+            "when hand is played",
+          },
+          {
+            "Retrigger {C:attention}leftmost{} Joker,",
+            "{C:white,X:mult}X#1#{} Mult instead if",
+            "leftmost is {C:attention}Worldwind Joker{}",
+          },
+        },
+      },
       j_abn_omaha_joker = {
         name = "Omaha Poker",
         text = {
