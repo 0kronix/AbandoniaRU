@@ -9602,18 +9602,24 @@ return {
       j_abn_ruinous_joker = {
         name = "Ruinous Joker",
         text = {
-          "{C:attention}+#1#{} Ruinous Power slot",
-          "If you would {C:mult}lose a Run{} because a {C:abn_black_seal}Ruinous Card",
-          "{C:mult}Destroy{} this Joker instead",
+          {
+            "{C:attention}+#1#{} Ruinous Power slot",
+          },
+          {
+            "If a {C:ruinous_power}Ruinous Power{} would",
+            "cause you to {C:red}lose a run{},",
+            "{C:mult}Destroy{} this Joker instead",
+          }
         }
       },
 
       j_abn_king_of_games = {
         name = "King Of Games",
         text = {
-          "Once per {C:attention}ante{} create a card",
-          "with chosen {C:attention}rank{} {C:attention}suit{} and {C:dark_edition}enhancement{}",
-          "Add it to your hand",
+          "Once per {C:attention}ante{}, create",
+          "a card with chosen {C:attention}rank{},",
+          "{C:attention}suit{}, and {C:dark_edition}enhancement{}",
+          "and add it to your hand",
         }
       },
 
@@ -9621,16 +9627,18 @@ return {
         name = "From Pixel to Dust",
         text = {
           "Played {C:attention}unscored{} cards each",
-          "Add {C:attention}double{} their {C:attention}rank{} as {C:mult}Mult{}",
-          "Then {C:mult}self-destruct{}",
+          "give {C:attention}double{} their {C:attention}rank{} as {C:mult}Mult{}",
+          "then {C:mult}self-destruct{}",
         }
       },
 
       j_abn_paywall_joker = {
         name = "Paywall Joker",
         text = {
-          "{C:attention}Retrigger{} a {C:attention}random{} Joker and lose {C:money}${} {C:attention}equal{} to its {C:money}sale value{}",
-          "If balance reaches {C:money}$0{} or less {C:mult}self-destruct{}",
+          "{C:attention}Retrigger{} a random {C:attention}Joker{} and",
+          "lose {C:money}${} equal to its {C:attention}sell value{},",
+          "{C:mult}self-destructs{} if money",
+          "reaches {C:money}$0{} or less",
         }
       },
 
@@ -9653,8 +9661,9 @@ return {
       j_abn_joker_tile = {
         name = "Joker Tile",
         text = {
-          "Gains {X:chips,C:white}X#2#{} Chips per {C:attention}consecutive{} hand",
-          "with {C:attention}equal{} scoring cards and held Jokers",
+          "This Joker gains {X:chips,C:white}X#2#{} Chips",
+          "per {C:attention}consecutive{} hand with",
+          "{C:attention}equal{} scoring cards and held Jokers",
           "{C:inactive}(Currently{} {X:chips,C:white}X#1#{} {C:inactive}Chips)",
         }
       },
