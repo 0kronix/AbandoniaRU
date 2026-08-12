@@ -31,7 +31,7 @@ SMODS.Joker {
         end
       end
 
-      local pairs = math.floor(evens / 2) + math.floor(odds / 2)
+      local pairs = math.floor((evens + odds) / 2)
 
       if pairs > 0 then
         SMODS.scale_card(card, {
