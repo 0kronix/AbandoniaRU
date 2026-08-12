@@ -21,7 +21,7 @@ SMODS.Joker {
     if context.before and not context.blueprint then
       local evens = 0
       local odds = 0
-      for _, scoring_card in ipairs(context.scoring_hand) do
+      for _, scoring_card in ipairs(context.full_hand) do
         if scoring_card.base.suit == "abn_suitless" then
           if ABN.is_even(scoring_card) then
             evens = evens + 1
@@ -33,7 +33,7 @@ SMODS.Joker {
 
       local pairs = math.floor(evens / 2) + math.floor(odds / 2)
 
-      if evens > 0 and odds > 0 and pairs > 0 then
+      if pairs > 0 then
         SMODS.scale_card(card, {
           ref_table = card.ability.extra,
           ref_value = "mult",
