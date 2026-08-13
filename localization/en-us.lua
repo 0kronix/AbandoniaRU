@@ -5228,8 +5228,8 @@ return {
         name = "Sailor Joker",
         text = {
           {
-            "Played {C:attention}odd{} cards",
-            "give {C:chips}+#1#{} Chips when",
+            "{C:attention}Odd{} cards give",
+            "{C:chips}+#1#{} Chips when",
             "played and unscored"
           },
           {
