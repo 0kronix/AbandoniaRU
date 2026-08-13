@@ -5089,7 +5089,7 @@ return {
         }
       },
       j_abn_dark_magokert = {
-        name = "Dark Magokert",
+        name = "Dark Magoker", -- note for localisers: this is Magician + Joker or something
         text = {
           "Cards with a {C:spades}dark suit{}",
           "are moved to the top of",
