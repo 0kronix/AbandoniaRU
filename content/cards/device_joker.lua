@@ -1,16 +1,6 @@
 SMODS.Joker {
   key = 'device_joker',
-  loc_txt = {
-    ['en-us'] = {
-      name = "#1#",
-      text = {
-        "{C:attention}#2#{} cards are not destroyed by their own Effect",
-        "If {C:attention}first hand{} is only {C:attention}#3#{} Suits",
-        "they each gain {C:dark_edition}#2# Enhancement{}",
-        "If they all have {C:dark_edition}#2# Enhancement{} they all gain {C:dark_edition}#4#{} and {C:attention}flip{} this Joker",
-      }
-    }
-  },
+
   rarity = 2,
   atlas = 'ABNJokerSheet17',
   pos = { x = 3, y = 5 },
@@ -26,33 +16,36 @@ SMODS.Joker {
 
   loc_vars = function(self, info_queue, card)
     local dynamic_name = "DEVICE Joker"
-    local enhancement_txt = "Darkner"
-    local suit_txt = "Dark"
-    local edition_txt = "Opaque"
+    local chosen_suit_text = localize("k_abn_dark")
+    local chosen_suit_colour = G.C.SUITS["Spades"]
+    local chosen_suit_enh = localize("k_abn_darkner")
+    local chosen_suit_edition = localize({ type = 'name_text', key = "e_abn_opaque", set = "Edition" })
 
-    if card and card.ability and card.ability.extra and card.ability.extra.mode == 'light' then
-      dynamic_name = "ECIVED Joker"
-      enhancement_txt = "Lightner"
-      suit_txt = "Light"
-      edition_txt = "Bright"
-    end
-
-    if card and card.ability and card.ability.extra then
-      if card.ability.extra.mode == 'dark' then
-        info_queue[#info_queue + 1] = G.P_CENTERS.m_abn_darkner
-        info_queue[#info_queue + 1] = G.P_CENTERS.e_abn_opaque
-      else
-        info_queue[#info_queue + 1] = G.P_CENTERS.m_abn_lightner
-        info_queue[#info_queue + 1] = G.P_CENTERS.e_abn_bright
-      end
+    if card.ability.extra.mode == 'dark' then
+      info_queue[#info_queue + 1] = G.P_CENTERS.m_abn_darkner
+      info_queue[#info_queue + 1] = G.P_CENTERS.e_abn_opaque
+      dynamic_name = localize("k_abn_device_dark")
+      chosen_suit_text = localize("k_abn_dark")
+      chosen_suit_colour = G.C.SUITS["Spades"]
+      chosen_suit_enh = localize("k_abn_darkner")
+      chosen_suit_edition = localize({ type = 'name_text', key = "e_abn_opaque", set = "Edition" })
+    elseif card.ability.extra.mode == 'light' then
+      info_queue[#info_queue + 1] = G.P_CENTERS.m_abn_lightner
+      info_queue[#info_queue + 1] = G.P_CENTERS.e_abn_bright
+      dynamic_name = localize("k_abn_device_light")
+      chosen_suit_text = localize("k_abn_light")
+      chosen_suit_colour = G.C.SUITS["Diamonds"]
+      chosen_suit_enh = localize("k_abn_lightner")
+      chosen_suit_edition = localize({ type = 'name_text', key = "e_abn_bright", set = "Edition" })
     end
 
     return {
       vars = {
-        dynamic_name,    -- #1#
-        enhancement_txt, -- #2#
-        suit_txt,        -- #3#
-        edition_txt      -- #4#
+        dynamic_name,        -- #1#
+        chosen_suit_enh,     -- #2#
+        chosen_suit_text,    -- #3#
+        chosen_suit_edition, -- #4##
+        colours = { chosen_suit_colour }
       }
     }
   end,

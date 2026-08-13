@@ -9709,6 +9709,26 @@ return {
         }
       },
 
+      j_abn_device_joker = {
+        name = "#1#",
+        text = {
+          {
+            "{C:attention}#2#{} cards are not",
+            "destroyed by their own {C:attention}effect{}",
+          },
+          {
+            "If {C:attention}first hand{} of round",
+            "has only {V:1}#3# Suits{}, enhance",
+            "then into {C:attention}#2#{} cards",
+          },
+          {
+            "If they all are {C:attention}#2#{} cards,",
+            "add {C:dark_edition}#4#{} edition to them",
+            "and {C:attention}flip{} this Joker",
+          }
+        }
+      },
+
     },
     Spectral = {
       c_abn_promotion = { -- TO CODE
@@ -13075,6 +13095,12 @@ return {
       k_abn_brewed_ex = "Brewed!",
       k_abn_reduced_ex = "Reduced!",
       k_tag = "Tag",
+      k_abn_light = "Light",
+      k_abn_dark = "Dark",
+      k_abn_device_dark = "DEVICE Joker",
+      k_abn_device_light = "ECIVED Joker", -- i think this is DEVICE just backwards
+      k_abn_darkner = "Darkner",
+      k_abn_lightner = "Lightner",
 
       abn_hidden_side = "Hidden Scoundral",
       abn_king_side = "King of Jesters",
