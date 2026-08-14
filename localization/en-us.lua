@@ -13051,11 +13051,6 @@ return {
       k_abn_config_disable_flipped_stakes = "Disable Flipped Jokers in shop?",
       abn_disable_flipped_stakes = "Flipped Jokers no longer spawn in Jimbo Stakes",
 
-      -- Auto Updater stuff
-      k_dont_show_again = "Don't show again",
-      k_abn_yes = "Yes",
-      k_abn_no = "No",
-      k_abn_update_question = "Update now? (This will restart Balatro.)",
       -- Mod badges for credits
       k_abn_artist = "Artist",
       k_abn_founder = "Founder",

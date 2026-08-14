@@ -469,8 +469,8 @@ Game.main_menu = function(change_context)
     local msg = {
       ("A new version of %s is available!\n"):format(SMODS.Mods[id].name),
       ("Installed: v%s\n"):format(current_version),
-      ("Latest: v%s\n\n"):format(latest),
-      localize("k_abn_update_question")
+      ("Latest:    v%s\n\n"):format(latest),
+      "Update now? (This will restart Balatro.)"
     }
 
     local lines = {
@@ -502,7 +502,7 @@ Game.main_menu = function(change_context)
           nodes = {
             UIBox_button {
               colour = G.C.GREEN,
-              label = { localize("k_abn_yes") },
+              label = { "Yes" },
               button = "update_accepted",
             }
           }
@@ -513,7 +513,7 @@ Game.main_menu = function(change_context)
           nodes = {
             UIBox_button {
               colour = G.C.RED,
-              label = { localize("k_abn_no") },
+              label = { "No" },
               button = "update_denied",
             }
           }
@@ -541,18 +541,7 @@ Game.main_menu = function(change_context)
             { n = G.UIT.B, config = { h = 2, w = 0 } }
           }
         },
-        button_row,
-        {
-          n = G.UIT.R,
-          config = { padding = 0.1, align = "cm" },
-          nodes = {
-            UIBox_button {
-              colour = G.C.PURPLE,
-              label = { localize("k_dont_show_again") },
-              button = "abn_i_hate_you",
-            }
-          }
-        },
+        button_row
       }
     }
 
@@ -634,11 +623,6 @@ Game.main_menu = function(change_context)
     end
 
     G.FUNCS.update_denied = function(e)
-      G.FUNCS.exit_overlay_menu()
-    end
-
-    G.FUNCS.abn_i_hate_you = function(e)
-      ABN.config.enable_update_popup = false
       G.FUNCS.exit_overlay_menu()
     end
   end
