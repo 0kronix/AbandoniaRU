@@ -115,7 +115,12 @@ ABN.config_tab = function()
                         info = {
                           G.localization.misc.dictionary.abn_enable_logo,
                         },
-                      }),
+                      }), create_toggle({
+                      id = "enable_update_popup",
+                      ref_table = ABN.config,
+                      ref_value = "enable_update_popup",
+                      label = localize("k_abn_config_enable_update_popup"),
+                    }),
                       create_toggle({
                         id = "disable_flipped_stakes",
                         ref_table = ABN.config,

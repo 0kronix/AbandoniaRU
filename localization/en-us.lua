@@ -13045,6 +13045,7 @@ return {
 
       k_abn_config_enable_logo = "Enable Custom Title Screen",
       abn_enable_logo = "(Requires Restart)",
+      k_abn_config_enable_update_popup = "Enable Update checking",
 
 
       k_abn_config_disable_flipped_stakes = "Disable Flipped Jokers in shop?",
