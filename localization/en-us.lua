@@ -13043,12 +13043,12 @@ return {
       k_abn_config_toggle_music = "Toggle Music",
       abn_toggle_music = "Uses custom title screen music when enabled",
 
-      k_abn_config_enable_logo = "Enable Custom Title Screen",
-      abn_enable_logo = "(Requires Restart)",
-      k_abn_config_enable_update_popup = "Enable Update checking",
+      k_abn_config_enable_logo = "Enable Custom Title Screen*",
+      abn_requires_restart = "(* = Requires Restart)",
+      k_abn_config_enable_update_popup = "Enable Update popup*",
 
 
-      k_abn_config_disable_flipped_stakes = "Disable Flipped Jokers in shop?",
+      k_abn_config_disable_flipped_stakes = "Disable Flipped Jokers in shop?*",
       abn_disable_flipped_stakes = "Flipped Jokers no longer spawn in Jimbo Stakes",
 
       -- Auto Updater stuff
@@ -13056,6 +13056,17 @@ return {
       k_abn_yes = "Yes",
       k_abn_no = "No",
       k_abn_update_question = "Update now? (This will restart Balatro.)",
+
+      -- Crossmod tab
+      k_abn_crossmod = "Crossmod",
+      k_abn_crossmod_aij = "All in Jest",
+      k_abn_crossmod_aij_info = "Adds 8 new Jokers!",
+      k_abn_crossmod_ortalab = "Ortalab",
+      k_abn_crossmod_ortalab_info = "Adds 6 new Jokers!",
+      k_abn_crossmod_fortlatro = "Fortlatro",
+      k_abn_crossmod_fortlatro_info = "Adds 9 new Jokers!",
+      k_abn_crossmod_spectrallib = "Spectrallib",
+      k_abn_crossmod_spectrallib_info = "Adds new Content related to Ascension Power!",
       -- Mod badges for credits
       k_abn_artist = "Artist",
       k_abn_founder = "Founder",
