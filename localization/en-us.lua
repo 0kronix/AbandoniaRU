@@ -8035,6 +8035,34 @@ return {
         }
 
       },
+      j_abn_bloke_joker = {
+        name = "Bloke Joker",
+        text = {
+          {
+            "Retrigger {C:enhanced}#1#",
+            "and {C:enhanced}#2#",
+            "{C:attention}#3# additional times"
+          },
+        }
+
+      },
+      j_abn_planetarian_joker = {
+        name = "Planetarian Joker",
+        text = {
+          {
+            "When using a {C:planet}Planet{} Card,",
+            "gain its Chips and Mult value",
+            "{C:inactive}(Currently {C:blue}+#1#{C:inactive} and {C:red}+#2#{C:inactive})",
+          },
+          {
+            "After using {C:attention}#3# {C:inactive}[#4#]{} unique",
+            "{C:abn_tie}Rank Planet{} Cards,",
+            "create a {C:spectral}Black Hole{}",
+            "{C:inactive}(Must have room)",
+          }
+        }
+
+      },
       j_abn_wet_joker = {
         name = "Wet Joker",
         text = {
