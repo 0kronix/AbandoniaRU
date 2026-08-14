@@ -9695,19 +9695,87 @@ return {
       j_abn_double_king = {
         name = "Double King",
         text = {
-          {
-            "{C:attention}Kings{} no longer give their base {C:chips}chips{},",
-            "When a {C:attention}King{} is scored, {C:mult}destroy{} it",
-            "and gain {C:attention}double{} it's {C:attention}rank{} as {C:chips}Chips{}",
-            "{C:inactive}(Currently {C:chips}+#1#{} {C:inactive}Chips)",
+		  {
+            "No {C:chips}chip{} gain on {C:attention}Kings{}",
+            "When a {C:attention}King{} scores {C:mult}destroy{} it and gains {C:attention}double{} it's {C:attention}rank{} as {C:chips}chips{}",
           },
           {
-            "If {C:attention}Mr. Bones{} is owned, it becomes",
-            "{C:dark_edition}Negative{} at end of round and",
-            "gives {C:mult}+#2#{} Mult per scoring card",
+            "If you own a Mister Bones",
+            "It becomes {C:dark_edition}Negative{} at {C:attention}end of round{}",
+            "and gives {C:mult}+#2#{} Mult per scoring card",
+			"{C:inactive}Currently: {C:chips}+#1#{} {C:inactive}Chips",
           },
         }
       },
+	  
+	  j_abn_bellman_joker = {
+        name = "Bellman Joker",
+        text = {
+          "{C:chips}+#1#{} Chips {C:mult}+#2#{} Mult if {C:attention}Consumable{} slots are full",
+		  "When {C:attention}Boss Blind{} is defeated with full {C:attention}Consumable{} slots",
+		  "gain {C:chips}+#3#{} Chips {C:mult}+#4#{} Mult",
+        }
+      },
+	  
+	  j_abn_plank_joker = {
+        name = "Plank Joker",
+        text = {
+          "Scoring {C:abn_brown_seal}Plank{} cards gain {C:gold}+#1#{} Ascension Power",
+        }
+      },
+	  
+	  j_abn_bark_joker = {
+        name = "Bark Joker",
+        text = {
+          "Gain {X:mult,C:white}X#2#{} Mult and {C:gold}+#4#{} Ascension Power when a {C:abn_brown_seal}Plank{} card scores",
+		  "{C:inactive}Currently:{} {X:mult,C:white}X#1#{} {C:inactive}Mult{} {C:gold}+#3#{} {C:inactive}Ascension Power{}",
+        }
+      },
+	  
+	  j_abn_old_growth_joker = {
+        name = "Old Growth Joker",
+        text = {
+          "Gain {C:mult}Mult{} equal to {C:attention}triple{} of the {C:attention}Rank{}",
+		  "of Scoring {C:attention}Numbered{} {C:abn_brown_seal}Plank{} cards and {C:gold}+#3#{} Ascension Power",
+		  "{C:inactive}Currently:{} {C:mult}+#1#{} {C:inactive}Mult{} {C:gold}+#2#{} {C:inactive}Ascension Power{}",
+        }
+      },
+	  
+	  j_abn_plug_in_joker = {
+        name = "Plug In Joker",
+        text = {
+          "Gain {C:mult}+#4#{} Mult when a {C:mult}Mult{} card scores",
+		  "Gain {C:chips}+#5#{} Chips when a {C:chips}Bonus{} card scores",
+		  "Gain {C:gold}+#6#{} Ascension Power when a {C:abn_brown_seal}Plank{} card scores",
+		  "{C:inactive}Currently:{} {C:mult}+#1#{} {C:inactive}Mult{} {C:chips}+#2#{} {C:inactive}Chips{} {C:gold}+#3#{} {C:inactive}Ascension Power{}",
+        }
+      },
+	  
+	  j_abn_geiger_joker = {
+        name = "Geiger Joker",
+        text = {
+          "Each scored {C:attention}numbered{} {C:abn_hazard}Hazard{} card gives",
+		  "{C:gold}+#1#{} Ascension Power for each time its {C:attention}rank{} has scored this hand",
+        }
+      },
+	  
+	  j_abn_bouba_joker = {
+        name = "Bouba Joker",
+        text = {
+          "Gain {C:chips}+#2#{} Chips per scoring {C:attention}Odd{} card",
+		  "Increase this by {C:chips}+#3#{} Chips per {C:lexica}Lexica{} card held when {C:attention}Boss Blind{} is beaten",
+		  "{C:inactive}Currently:{} {C:chips}+#1#{} {C:inactive}Chips",
+        }
+      },
+	  
+	  j_abn_kiki_joker = {
+		name = "Kiki Joker",
+		text = {
+			"Gain {C:mult}+#2#{} Mult per scoring {C:attention}Even{} card",
+			"Increase this by {C:mult}+#3#{} Mult per {C:lexica}Lexica{} card held when {C:attention}Boss Blind{} is beaten",
+			"{C:inactive}Currently:{} {C:mult}+#1#{} {C:inactive}Mult",
+		}
+	  },
 
       j_abn_device_joker = {
         name = "#1#",
@@ -12727,6 +12795,13 @@ return {
           "If a card is {C:mult}destroyed{} gain {C:chips}+#3#{} Chips",
           "{C:inactive}(Currently{} {C:mult}+#2#{} {C:inactive}Mult,{} {C:chips}+#1#{} {C:inactive}Chips){}",
         },
+      },
+	  
+	  m_abn_plank = {
+        name = "Plank",
+        text = {
+          "Gives {C:gold}+#1#{} Ascension Power{}",
+        }
       },
     },
     Voucher = {
