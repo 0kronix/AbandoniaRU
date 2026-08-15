@@ -9468,19 +9468,6 @@ return {
           "decreases {C:attention}blind requirements{} by {C:attention}#1#%",
         }
       },
-      j_abn_joker_in_a_nutshell = {
-        name = "Joker In A Nutshell",
-        text = {
-          {
-            "{C:common}Common{} Jokers without {C:dark_edition}Editions{}",
-            "cannot be {C:red}debuffed{} or {C:red}destroyed{}",
-          },
-          {
-            "{C:rare}Rare{} and {C:uncommon}Uncommon{} Jokers",
-            " cannot appear in the {C:green}shop",
-          },
-        }
-      },
       j_abn_runedelta = {
         name = "Runedelta",
         text = {
@@ -9800,6 +9787,20 @@ return {
             "per {C:lexica}Lexica{} card held",
             "when {C:attention}Boss Blind{} is defeated",
             "{C:inactive}(Currently{} {C:mult}+#1#{} {C:inactive}Mult)",
+          }
+        }
+      },
+
+      j_abn_hd_joker = {
+        name = "HD Joker",
+        text = {
+          {
+            "{C:common}Common{} Jokers without {C:dark_edition}Editions{}",
+            "cannot be {C:red}debuffed{} or {C:red}destroyed{}",
+          },
+          {
+            "{C:uncommon}Uncommon{} and {C:rare}Rare{} Jokers",
+            "no longer appear in the {C:green}shop{}"
           }
         }
       },
