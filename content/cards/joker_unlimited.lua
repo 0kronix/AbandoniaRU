@@ -8,7 +8,7 @@ SMODS.Joker {
     abn_coder = "LasagnaFelidae",
     config = {
         extra = {
-            xmult_gain = 2, xmult = 0
+            xmult_gain = 2, xmult = 1
         },
     },
     loc_vars = function(self, info_queue, card)
