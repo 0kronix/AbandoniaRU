@@ -11,7 +11,7 @@ SMODS.Enhancement({
     local cae = card.ability.extra
     return { vars = { cae.ascension } }
   end,
-  
+
   calculate = function(self, card, context)
     local cae = card.ability.extra
     if context.main_scoring and context.cardarea == G.play then
@@ -20,7 +20,7 @@ SMODS.Enhancement({
       }
     end
   end,
-  
+
   abn_artist_credits = {
     artist = "Super Thing",
   },
@@ -41,29 +41,29 @@ SMODS.Joker {
   },
 
   loc_vars = function(self, info_queue, card)
+    info_queue[#info_queue + 1] = G.P_CENTERS.m_abn_plank
     return {
       vars = {
         card.ability.extra.asc_mod
       }
     }
   end,
-  
-  in_pool = function(self)
-	if not G.playing_cards then return false end
 
-		for _, card in ipairs(G.playing_cards) do
-			if card and card.config and card.config.center then
-				if card.config.center == G.P_CENTERS.m_abn_plank then
-					return true
-				end
-			end
-		end
-		return false
-	end,
+  in_pool = function(self)
+    if not G.playing_cards then return false end
+
+    for _, card in ipairs(G.playing_cards) do
+      if card and card.config and card.config.center then
+        if card.config.center == G.P_CENTERS.m_abn_plank then
+          return true
+        end
+      end
+    end
+    return false
+  end,
 
   calculate = function(self, card, context)
     if context.before and context.scoring_hand then
-
       for _, scoring_card in ipairs(context.scoring_hand) do
         if scoring_card.config.center == G.P_CENTERS.m_abn_plank then
           if scoring_card.ability and scoring_card.ability.extra and scoring_card.ability.extra.ascension then
@@ -73,7 +73,6 @@ SMODS.Joker {
               message = localize('k_upgrade_ex'),
               colour = G.C.GOLD
             })
-			
           end
         end
       end
@@ -103,6 +102,7 @@ SMODS.Joker {
   },
 
   loc_vars = function(self, info_queue, card)
+    info_queue[#info_queue + 1] = G.P_CENTERS.m_abn_plank
     return {
       vars = {
         card.ability.extra.xmult,
@@ -112,7 +112,7 @@ SMODS.Joker {
       }
     }
   end,
-  
+
   in_pool = function(self, args)
     if G.playing_cards then
       for _, c in ipairs(G.playing_cards) do
@@ -134,17 +134,17 @@ SMODS.Joker {
 
         return {
           message = localize('k_upgrade_ex'),
-		  colour = G.C.GOLD,
+          colour = G.C.GOLD,
           card = card
         }
       end
     end
 
     if context.joker_main then
-		return {
-			xmult = card.ability.extra.xmult,
-			asc = card.ability.extra.ascension
-		}
+      return {
+        xmult = card.ability.extra.xmult,
+        asc = card.ability.extra.ascension
+      }
     end
   end,
 
@@ -170,6 +170,7 @@ SMODS.Joker {
   },
 
   loc_vars = function(self, info_queue, card)
+    info_queue[#info_queue + 1] = G.P_CENTERS.m_abn_plank
     return {
       vars = {
         card.ability.extra.mult,
@@ -178,7 +179,7 @@ SMODS.Joker {
       }
     }
   end,
-  
+
   in_pool = function(self, args)
     if G.playing_cards then
       for _, c in ipairs(G.playing_cards) do
@@ -204,7 +205,7 @@ SMODS.Joker {
 
         return {
           message = localize('k_upgrade_ex'),
-		  colour = G.C.GOLD,
+          colour = G.C.GOLD,
           card = card
         }
       end
@@ -212,10 +213,10 @@ SMODS.Joker {
 
 
     if context.joker_main then
-		return {
-			mult = card.ability.extra.mult,
-			asc = card.ability.extra.ascension
-		}
+      return {
+        mult = card.ability.extra.mult,
+        asc = card.ability.extra.ascension
+      }
     end
   end,
 
@@ -244,6 +245,9 @@ SMODS.Joker {
   },
 
   loc_vars = function(self, info_queue, card)
+    info_queue[#info_queue + 1] = G.P_CENTERS.m_mult
+    info_queue[#info_queue + 1] = G.P_CENTERS.m_bonus
+    info_queue[#info_queue + 1] = G.P_CENTERS.m_abn_plank
     return {
       vars = {
         card.ability.extra.mult,
@@ -270,14 +274,12 @@ SMODS.Joker {
           end
           upgraded = true
           msg_col = G.C.MULT
-
         elseif center == G.P_CENTERS.m_bonus then
           if not context.blueprint then
             card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.chipsadd
           end
           upgraded = true
           msg_col = G.C.CHIPS
-
         elseif center == G.P_CENTERS.m_abn_plank then
           if not context.blueprint then
             card.ability.extra.ascension = card.ability.extra.ascension + card.ability.extra.asc_mod
@@ -298,10 +300,10 @@ SMODS.Joker {
 
     if context.joker_main then
       return {
-		mult = card.ability.extra.mult,
-		chips = card.ability.extra.chips,
-		asc = card.ability.extra.ascension
-	  }
+        mult = card.ability.extra.mult,
+        chips = card.ability.extra.chips,
+        asc = card.ability.extra.ascension
+      }
     end
   end,
 

@@ -9708,75 +9708,101 @@ return {
           },
         }
       },
-	  
-	  j_abn_bellman_joker = {
+
+      j_abn_bellman_joker = {
         name = "Bellman Joker",
         text = {
-          "{C:chips}+#1#{} Chips {C:mult}+#2#{} Mult if {C:attention}Consumable{} slots are full",
-		  "When {C:attention}Boss Blind{} is defeated with full {C:attention}Consumable{} slots",
-		  "gain {C:chips}+#3#{} Chips {C:mult}+#4#{} Mult",
+          {
+            "{C:chips}+#1#{} Chips and {C:mult}+#2#{} Mult",
+            "if {C:attention}Consumable{} slots are full",
+          },
+          {
+            "When {C:attention}Boss Blind{} is defeated",
+            "with full {C:attention}Consumable{} slots,",
+            "gain {C:chips}+#3#{} Chips {C:mult}+#4#{} Mult",
+          }
         }
       },
-	  
-	  j_abn_plank_joker = {
+
+      j_abn_plank_joker = {
         name = "Plank Joker",
         text = {
-          "Scoring {C:abn_brown_seal}Plank{} cards gain {C:gold}+#1#{} Ascension Power",
+          "Scoring {C:attention}Plank{} cards",
+          "gain {C:gold}+#1#{} Ascension Power",
         }
       },
-	  
-	  j_abn_bark_joker = {
+
+      j_abn_bark_joker = {
         name = "Bark Joker",
         text = {
-          "Gain {X:mult,C:white}X#2#{} Mult and {C:gold}+#4#{} Ascension Power when a {C:abn_brown_seal}Plank{} card scores",
-		  "{C:inactive}Currently:{} {X:mult,C:white}X#1#{} {C:inactive}Mult{} {C:gold}+#3#{} {C:inactive}Ascension Power{}",
+          "This Joker gains {X:mult,C:white}X#2#{} Mult and",
+          "{C:gold}+#4#{} Ascension Power when",
+          "a {C:attention}Plank{} card is scored",
+          "{C:inactive}(Currently{} {X:mult,C:white}X#1#{} {C:inactive}Mult,{} {C:gold}+#3#{} {C:inactive}Asc. Power){}",
         }
       },
-	  
-	  j_abn_old_growth_joker = {
+
+      j_abn_old_growth_joker = {
         name = "Old Growth Joker",
         text = {
-          "Gain {C:mult}Mult{} equal to {C:attention}triple{} of the {C:attention}Rank{}",
-		  "of Scoring {C:attention}Numbered{} {C:abn_brown_seal}Plank{} cards and {C:gold}+#3#{} Ascension Power",
-		  "{C:inactive}Currently:{} {C:mult}+#1#{} {C:inactive}Mult{} {C:gold}+#2#{} {C:inactive}Ascension Power{}",
+          "This Joker gains {C:mult}Mult{} equal to",
+          "{C:attention}triple{} the {C:attention}rank{} of scoring",
+          "{C:attention}numbered{} {C:attention}Plank{} cards",
+          "and {C:gold}+#3#{} Ascension Power",
+          "{C:inactive}(Currently{} {C:mult}+#1#{} {C:inactive}Mult,{} {C:gold}+#2#{} {C:inactive}Asc. Power){}",
         }
       },
-	  
-	  j_abn_plug_in_joker = {
+
+      j_abn_plug_in_joker = {
         name = "Plug In Joker",
         text = {
-          "Gain {C:mult}+#4#{} Mult when a {C:mult}Mult{} card scores",
-		  "Gain {C:chips}+#5#{} Chips when a {C:chips}Bonus{} card scores",
-		  "Gain {C:gold}+#6#{} Ascension Power when a {C:abn_brown_seal}Plank{} card scores",
-		  "{C:inactive}Currently:{} {C:mult}+#1#{} {C:inactive}Mult{} {C:chips}+#2#{} {C:inactive}Chips{} {C:gold}+#3#{} {C:inactive}Ascension Power{}",
+          "Gain {C:mult}+#4#{} Mult when a {C:attention}Mult{} card scores",
+          "Gain {C:chips}+#5#{} Chips when a {C:attention}Bonus{} card scores",
+          "Gain {C:gold}+#6#{} Ascension Power when a {C:attention}Plank{} card scores",
+          "{C:inactive}(Currently{} {C:mult}+#1#{} {C:inactive}Mult,{} {C:chips}+#2#{} {C:inactive}Chips,{} {C:gold}+#3#{} {C:inactive}Asc. Power){}",
         }
       },
-	  
-	  j_abn_geiger_joker = {
+
+      j_abn_geiger_joker = {
         name = "Geiger Joker",
         text = {
-          "Each scored {C:attention}numbered{} {C:abn_hazard}Hazard{} card gives",
-		  "{C:gold}+#1#{} Ascension Power for each time its {C:attention}rank{} has scored this hand",
+          "Each scored {C:attention}numbered{} {C:attention}Hazard{} card",
+          "gives {C:gold}+#1#{} Ascension Power for each time",
+          "its {C:attention}rank{} has scored this hand",
         }
       },
-	  
-	  j_abn_bouba_joker = {
+
+      j_abn_bouba_joker = {
         name = "Bouba Joker",
         text = {
-          "Gain {C:chips}+#2#{} Chips per scoring {C:attention}Odd{} card",
-		  "Increase this by {C:chips}+#3#{} Chips per {C:lexica}Lexica{} card held when {C:attention}Boss Blind{} is beaten",
-		  "{C:inactive}Currently:{} {C:chips}+#1#{} {C:inactive}Chips",
+          {
+            "This Joker gains {C:chips}+#2#{} Chips",
+            "per scoring {C:attention}Odd{} card",
+          },
+          {
+            "Increase this by {C:chips}+#3#{} Chips",
+            "per {C:lexica}Lexica{} card held",
+            "when {C:attention}Boss Blind{} is defeated",
+            "{C:inactive}(Currently{} {C:chips}+#1#{} {C:inactive}Chips)",
+          }
         }
       },
-	  
-	  j_abn_kiki_joker = {
-		name = "Kiki Joker",
-		text = {
-			"Gain {C:mult}+#2#{} Mult per scoring {C:attention}Even{} card",
-			"Increase this by {C:mult}+#3#{} Mult per {C:lexica}Lexica{} card held when {C:attention}Boss Blind{} is beaten",
-			"{C:inactive}Currently:{} {C:mult}+#1#{} {C:inactive}Mult",
-		}
-	  },
+
+      j_abn_kiki_joker = {
+        name = "Kiki Joker",
+        text = {
+          {
+            "This Joker gains {C:mult}+#2#{} Mult",
+            "per scoring {C:attention}Even{} card",
+          },
+          {
+            "Increase this by {C:mult}+#3#{} Mult",
+            "per {C:lexica}Lexica{} card held",
+            "when {C:attention}Boss Blind{} is defeated",
+            "{C:inactive}(Currently{} {C:mult}+#1#{} {C:inactive}Mult)",
+          }
+        }
+      },
 
       j_abn_device_joker = {
         name = "#1#",
@@ -12797,8 +12823,8 @@ return {
           "{C:inactive}(Currently{} {C:mult}+#2#{} {C:inactive}Mult,{} {C:chips}+#1#{} {C:inactive}Chips){}",
         },
       },
-	  
-	  m_abn_plank = {
+
+      m_abn_plank = {
         name = "Plank",
         text = {
           "Gives {C:gold}+#1#{} Ascension Power{}",
@@ -13384,10 +13410,10 @@ return {
       abn_Bell = "Bell",
       abn_Leaf = "Leaf",
       abn_Megido = "Megido",
-	  abn_Talon = "Talon",
-	  abn_Crown = "Crown",
-	  abn_Moon = "Moon",
-	  abn_Star = "Star",
+      abn_Talon = "Talon",
+      abn_Crown = "Crown",
+      abn_Moon = "Moon",
+      abn_Star = "Star",
     },
 
     suits_plural = {
@@ -13409,10 +13435,10 @@ return {
       abn_Bell = "Bells",
       abn_Leaf = "Leaves",
       abn_Megido = "Megidos",
-	  abn_Talon = "Talons",
-	  abn_Crown = "Crowns",
-	  abn_Moon = "Moons",
-	  abn_Star = "Stars",
+      abn_Talon = "Talons",
+      abn_Crown = "Crowns",
+      abn_Moon = "Moons",
+      abn_Star = "Stars",
     },
     poker_hands = {
       ['abn_Spectrum'] = "Spectrum",
