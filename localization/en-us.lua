@@ -13383,6 +13383,10 @@ return {
       abn_Bell = "Bell",
       abn_Leaf = "Leaf",
       abn_Megido = "Megido",
+	  abn_Talon = "Talon",
+	  abn_Crown = "Crown",
+	  abn_Moon = "Moon",
+	  abn_Star = "Star",
     },
 
     suits_plural = {
@@ -13404,6 +13408,10 @@ return {
       abn_Bell = "Bells",
       abn_Leaf = "Leaves",
       abn_Megido = "Megidos",
+	  abn_Talon = "Talons",
+	  abn_Crown = "Crowns",
+	  abn_Moon = "Moons",
+	  abn_Star = "Stars",
     },
     poker_hands = {
       ['abn_Spectrum'] = "Spectrum",
