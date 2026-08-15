@@ -8044,6 +8044,7 @@ return {
             "{C:attention}#3#{} additional times"
           },
         }
+
       },
       j_abn_planetarian_joker = {
         name = "Planetarian Joker",
@@ -8071,6 +8072,49 @@ return {
             "associated with any",
             "held {C:planet}Planet{} card",
             "{C:inactive}(Currently {C:blue}+#1#{C:inactive} Chips and {C:red}+#2#{C:inactive} Mult)",
+          },
+        }
+
+      },
+      j_abn_facial_recognition = {
+        name = "Facial Recognition",
+        text = {
+          {
+
+            "Gain {X:red,C:white}X#1#{} Mult",
+            "for each {C:attention}unique rank{}",
+            "of scored {C:attention}flipped{} cards",
+          },
+          {
+            "If this {C:attention}Joker{} is {C:attention}flipped{},",
+            "gain {C:blue}Chips{} equal to the",
+            "{C:blue}nominal chip{} value of {C:attention}scored",
+            "{C:attention}flipped{} cards instead",
+            "{C:inactive}(Currently {X:red,C:white}X#2#{C:inactive} Mult {C:blue}+#3#{C:inactive} Chips)",
+          },
+        }
+
+      },
+      j_abn_moirologist_joker = {
+        name = "Moirologist Joker",
+        text = {
+          {
+
+            "When a {C:blind}Blind{} is selected,",
+            "turn a random Joker {C:enhanced}Fragile{}"
+          },
+          {
+            "When a Joker is destroyed, earn {C:gold}$#1#",
+            "and a bonus relative to the Joker's rarity:",
+            "{C:common}Common{}: {C:blue}+#9#{C:inactive}[+#2#]{} Chips",
+            "{C:uncommon}Uncommon{}: {C:red}+#10#{C:inactive}[+#3#]{} Mult",
+            "{C:rare}Rare{}: {X:chips,C:white}X#11#{C:inactive}[X#4#]{} Chips",
+            "{C:abn_superrare}Super Rare{}: {X:red,C:white}X#12#{C:inactive}[X#5#]{} Mult",
+            "{C:legendary}Legendary{}: {C:gold}+#13#{C:inactive}[+#6#]{} Ascension Power",
+            "{C:abn_parallelrare}Parallel Rare{}: {C:attention}+#14#{C:inactive}[+#7#]{} retrigger",
+            "{s:0.8}Dollars earned after destruction increase by {C:gold,s:0.8}+$#8#{s:0.8}",
+            "{s:0.8}after beating a {C:attention,s:0.8}boss blind"
+
           },
         }
 
