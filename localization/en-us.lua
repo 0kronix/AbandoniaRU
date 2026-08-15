@@ -9825,6 +9825,15 @@ return {
         }
       },
 
+      j_abn_cloud_screamer = {
+        name = "Cloud Screamer",
+        text = {
+          "First played card",
+          "permanently gains",
+          "{C:mult}+#1#{} Mult when scored",
+        }
+      },
+
     },
     Spectral = {
       c_abn_promotion = { -- TO CODE
