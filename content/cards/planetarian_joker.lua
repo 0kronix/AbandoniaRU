@@ -12,7 +12,7 @@ SMODS.Joker {
     discovered = false,
     blueprint_compat = true,
     eternal_compat = true,
-    perishable_compat = true,
+    perishable_compat = false,
 
     config = {
         extra = {
@@ -40,7 +40,7 @@ SMODS.Joker {
     end,
 
     calculate = function(self, card, context)
-        if context.using_consumeable then
+        if context.using_consumeable and not context.blueprint then
             if context.consumeable.ability 
             and context.consumeable.ability.set == "Planet" then
                 if context.consumeable.ability.hand_type then
@@ -50,7 +50,8 @@ SMODS.Joker {
                             ref_table = card.ability.extra,
                             ref_value = "chips",
                             scalar_value = "l_chips",
-                            scalar_table = G.GAME.hands[hand_type]
+                            scalar_table = G.GAME.hands[hand_type],
+                            no_message = true,
                         })
                         SMODS.scale_card(card, {
                             ref_table = card.ability.extra,
@@ -92,6 +93,12 @@ SMODS.Joker {
                     end
                 end
             end
+        end
+        if context.joker_main then
+            return {
+                chips = card.ability.extra.chips,
+                mult = card.ability.extra.mult
+            }
         end
     end,
 

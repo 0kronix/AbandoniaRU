@@ -8039,12 +8039,11 @@ return {
         name = "Bloke Joker",
         text = {
           {
-            "Retrigger {C:enhanced}#1#",
-            "and {C:enhanced}#2#",
-            "{C:attention}#3# additional times"
+            "Retrigger {C:enhanced}#1#s",
+            "and {C:enhanced}#2#s",
+            "{C:attention}#3#{} additional times"
           },
         }
-
       },
       j_abn_planetarian_joker = {
         name = "Planetarian Joker",
@@ -8060,6 +8059,45 @@ return {
             "create a {C:spectral}Black Hole{}",
             "{C:inactive}(Must have room)",
           }
+        }
+
+      },
+      j_abn_lunar_conspiracy = {
+        name = "Lunar Conspiracy",
+        text = {
+          {
+            "Gain {C:chips}+#3#{} Chips and {C:red}+#4#{} Mult",
+            "whenever you play a {C:attention}hand",
+            "associated with any",
+            "held {C:planet}Planet{} card",
+            "{C:inactive}(Currently {C:blue}+#1#{C:inactive} Chips and {C:red}+#2#{C:inactive} Mult)",
+          },
+        }
+
+      },
+      j_abn_rage_baiter = {
+        name = "Rage Baiter",
+        text = {
+          {
+            "Decrease level of played {C:attention}poker hand{}",
+            "then gain {C:chips}+#3#{} Chips and {C:red}+#4#{} Mult",
+            "{C:inactive}(Currently {C:blue}+#1#{C:inactive} Chips and {C:red}+#2#{C:inactive} Mult)",
+          },
+        }
+
+      },
+      j_abn_buccaneer_joker = {
+        name = "Buccaneer Joker",
+        text = {
+          {
+            "Scoring {C:abn_Anchor}Anchors{} have a",
+            "{C:green}#1# in #2#{} chance to give {C:gold}$#3#{},",
+            "{C:green}#4# in #5#{} chance to give {C:red}+#6#{} Mult",
+          },
+          {
+            "Selected {C:abn_Anchor}Anchors{} can't be",
+            "unselected until {C:red}discarded{} or {C:blue}played"
+          },
         }
 
       },
