@@ -11858,7 +11858,7 @@ return {
           }
         }
       },
-      c_abn_tornado = {
+      c_abn_tornado_calamity = {
         name = "Tornado",
         text = {
           {
