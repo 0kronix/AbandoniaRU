@@ -9695,15 +9695,16 @@ return {
       j_abn_double_king = {
         name = "Double King",
         text = {
-		  {
-            "No {C:chips}chip{} gain on {C:attention}Kings{}",
-            "When a {C:attention}King{} scores {C:mult}destroy{} it and gains {C:attention}double{} it's {C:attention}rank{} as {C:chips}chips{}",
+          {
+            "No {C:chips}chip{} gain on {C:attention}Kings{},",
+            "When a {C:attention}King{} is scored, {C:mult}destroy{} it",
+            "and gain {C:attention}double{} it's {C:attention}rank{} as {C:chips}Chips{}",
+            "{C:inactive}(Currently {C:chips}+#1#{} {C:inactive}Chips)",
           },
           {
-            "If you own a Mister Bones",
-            "It becomes {C:dark_edition}Negative{} at {C:attention}end of round{}",
-            "and gives {C:mult}+#2#{} Mult per scoring card",
-			"{C:inactive}Currently: {C:chips}+#1#{} {C:inactive}Chips",
+            "If {C:attention}Mr. Bones{} is owned, it becomes",
+            "{C:dark_edition}Negative{} at end of round and",
+            "gives {C:mult}+#2#{} Mult per scoring card",
           },
         }
       },

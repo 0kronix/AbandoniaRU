@@ -9,6 +9,8 @@ SMODS.Joker {
   config = { extra = { chips = 0, mult = 2 } },
 
   loc_vars = function(self, info_queue, card)
+    info_queue[#info_queue + 1] = G.P_CENTERS.e_negative
+    info_queue[#info_queue + 1] = G.P_CENTERS.j_mr_bones
     return {
       vars = {
         card.ability.extra.chips,
