@@ -7698,8 +7698,8 @@ return {
       j_abn_illegal_ante = {
         name = "Illegal Ante",
         text = {
-          "During {C:attention}Even{} Antes {C:attention}double{} all {C:green}probabilities",
-          "During {C:attention}Odd{} Antes {C:attention}double{} all {C:money}money{} obtained",
+          "During {C:attention}Even{} Antes, {C:attention}double{} all {C:green,E:1}probabilities",
+          "During {C:attention}Odd{} Antes, {C:attention}double{} all {C:money}money{} earned",
         }
       },
       j_abn_enigma_comedian = {
