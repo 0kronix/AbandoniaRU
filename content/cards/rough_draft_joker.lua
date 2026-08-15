@@ -19,9 +19,9 @@ SMODS.Joker {
 
   loc_vars = function(self, info_queue, card)
     info_queue[#info_queue + 1] = G.P_CENTERS.m_lucky
-    local numerator, d_10 = SMODS.get_probability_vars(card, 1, card.ability.extra.odds)
-    local _, d_50 = SMODS.get_probability_vars(card, 1, card.ability.extra.odds)
-    local _, d_double = SMODS.get_probability_vars(card, 1, card.ability.extra.odds)
+    local numerator, d_10 = SMODS.get_probability_vars(card, 1, card.ability.extra.odds_10)
+    local _, d_50 = SMODS.get_probability_vars(card, 1, card.ability.extra.odds_50)
+    local _, d_double = SMODS.get_probability_vars(card, 1, card.ability.extra.odds_double)
 
     return {
       vars = {
