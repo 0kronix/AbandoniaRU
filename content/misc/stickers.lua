@@ -248,12 +248,13 @@ SMODS.Sticker {
       card.glass_trigger = true
       return { remove = true }
     end
-    if context.pre_joker or (context.main_scoring and context.cardarea == G.play) and SMODS.pseudorandom_probability(card, 'abn_fragile', card.ability[self.key].base, card.ability[self.key].odds) then
+    if (context.pre_joker or (context.main_scoring and context.cardarea == G.play)) and SMODS.pseudorandom_probability(card, 'abn_fragile', card.ability[self.key].base, card.ability[self.key].odds) then
       G.E_MANAGER:add_event(Event({
         trigger = 'before',
         delay = 0.0,
         func = function()
           card:shatter()
+          SMODS.calculate_context({joker_type_destroyed = true, card = card, shatters = true})
           return true
         end
       }))
