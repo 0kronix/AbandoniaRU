@@ -23,7 +23,7 @@ SMODS.Joker {
   config = { extra = {} },
 
   calculate = function(self, card, context)
-    if context.mod_probability and not context.blueprint and G.GAME.round_resets.blind_ante % 2 == 0 then
+    if context.mod_probability and not context.blueprint and G.GAME.round_resets.ante % 2 == 0 then
       return {
         numerator = context.numerator * 2
       }
