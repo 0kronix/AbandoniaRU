@@ -19,12 +19,16 @@ SMODS.Joker {
 
   loc_vars = function(self, info_queue, card)
     info_queue[#info_queue + 1] = G.P_CENTERS.m_lucky
+    local numerator, d_10 = SMODS.get_probability_vars(card, 1, card.ability.extra.odds)
+    local _, d_50 = SMODS.get_probability_vars(card, 1, card.ability.extra.odds)
+    local _, d_double = SMODS.get_probability_vars(card, 1, card.ability.extra.odds)
+
     return {
       vars = {
-        '' .. (G.GAME and G.GAME.probabilities.normal or 1),
-        card.ability.extra.odds_10,
-        card.ability.extra.odds_50,
-        card.ability.extra.odds_double,
+        numerator,
+        d_10,
+        d_50,
+        d_double,
         card.ability.extra.chips_10,
         card.ability.extra.chips_50
       }
@@ -52,15 +56,15 @@ SMODS.Joker {
 
         scoring_card.ability.perma_bonus = scoring_card.ability.perma_bonus or 0
 
-        if pseudorandom('rough_draft_10') < G.GAME.probabilities.normal / card.ability.extra.odds_10 then
+        if SMODS.pseudorandom_probability(card, 'rough_draft_10', 1, card.ability.extra.odds_10) then
           added_chips = added_chips + card.ability.extra.chips_10
         end
 
-        if pseudorandom('rough_draft_50') < G.GAME.probabilities.normal / card.ability.extra.odds_50 then
+        if SMODS.pseudorandom_probability(card, 'rough_draft_50', 1, card.ability.extra.odds_50) then
           added_chips = added_chips + card.ability.extra.chips_50
         end
 
-        if pseudorandom('rough_draft_double') < G.GAME.probabilities.normal / card.ability.extra.odds_double then
+        if SMODS.pseudorandom_probability(card, 'rough_draft_double', 1, card.ability.extra.odds_double) then
           double_all = true
         end
 

@@ -16,10 +16,12 @@ SMODS.Joker {
   loc_vars = function(self, info_queue, card)
     info_queue[#info_queue + 1] = G.P_CENTERS.m_abn_contagion_bonus
     info_queue[#info_queue + 1] = G.P_CENTERS.m_abn_contagion_mult
+    local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds)
+
     return {
       vars = {
-        G.GAME and G.GAME.probabilities.normal or 1,
-        card.ability.extra.odds
+        numerator,
+        denominator
       }
     }
   end,
@@ -38,9 +40,9 @@ SMODS.Joker {
           local current_key = scoring_card.config.center.key
           local target_enhancement = nil
 
-          if current_key == 'm_mult' and pseudorandom('malicious_mult') < G.GAME.probabilities.normal / card.ability.extra.odds then
+          if current_key == 'm_mult' and SMODS.pseudorandom_probability(card, 'malicious_mult', 1, card.ability.extra.odds) then
             target_enhancement = 'm_abn_contagion_mult'
-          elseif current_key == 'm_bonus' and pseudorandom('malicious_bonus') < G.GAME.probabilities.normal / card.ability.extra.odds then
+          elseif current_key == 'm_bonus' and SMODS.pseudorandom_probability(card, 'malicious_bonus', 1, card.ability.extra.odds) then
             target_enhancement = 'm_abn_contagion_bonus'
           end
 

@@ -17,12 +17,14 @@ SMODS.Joker {
 
   loc_vars = function(self, info_queue, card)
     info_queue[#info_queue + 1] = G.P_TAGS.tag_double
+    local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds)
+
     return {
       vars = {
         card.ability.extra.xmult,
         card.ability.extra.xmultadd,
-        G.GAME.probabilities.normal,
-        card.ability.extra.odds
+        numerator,
+        denominator
       }
     }
   end,
@@ -78,7 +80,7 @@ SMODS.Joker {
 
     -- give tag
     if context.individual and context.cardarea == G.play and card.edition then
-      if pseudorandom('rainbow_tag') < G.GAME.probabilities.normal / card.ability.extra.odds then
+      if SMODS.pseudorandom_probability(card, 'abn_beyond_the_rainbow', 1, card.ability.extra.odds) then
         add_tag(Tag('tag_double'))
         card_eval_status_text(card, 'extra', nil, nil, nil, { message = "Double Tag!", colour = G.C.ATTENTION })
         card:juice_up()
