@@ -281,7 +281,7 @@ G.FUNCS.abn_aij = function(e)
 end
 
 G.FUNCS.abn_fortlatro = function(e)
-  love.system.openURL("https://github.com/larswijn/CardSleeves")
+  love.system.openURL("https://github.com/EricTheToon/Fortlatro")
 end
 
 G.FUNCS.abn_ortalab = function(e)
