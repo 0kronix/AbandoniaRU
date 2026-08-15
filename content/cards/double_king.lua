@@ -27,8 +27,8 @@ SMODS.Joker {
 
         return {
           remove = true,
-          message = localize('k_upgrade_ex'),
-          colour = G.C.CHIPS,
+		  message = localize('k_upgrade_ex'),
+		  colour = G.C.CHIPS,
         }
       end
     end

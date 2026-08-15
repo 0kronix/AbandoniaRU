@@ -328,43 +328,15 @@ SMODS.Suit {
 
 SMODS.Suit {
   key = 'Anchor',
-  card_key = 'ANCH',
+  card_key = 'AN',
   shade = "dark",
   lc_atlas = "AbandoniaMoreSuits",
   hc_atlas = "AbandoniaMoreSuits",
   lc_ui_atlas = "AbandoniaSuitIcons",
   hc_ui_atlas = "AbandoniaSuitIcons",
-  pos = { y = 2 },
-  ui_pos = { x = 3, y = 4 },
-  lc_colour = HEX("2d4959"),
-  in_pool = function(self, args)
-    if args and args.initial_deck then
-      -- When creating a deck
-      local back = G.GAME.selected_back
-      local back_config = back and back.effect.center.abandonia
-
-      local sleeve = G.GAME.selected_sleeve
-      local sleeve_config = (G.P_CENTERS[sleeve] or {}).abandonia
-
-      return (back_config and back_config.create_anchors)
-          or (sleeve_config and sleeve_config.create_anchors)
-    else
-      return false
-    end
-  end,
-}
-
-SMODS.Suit {
-  key = 'Arrow',
-  card_key = 'ARR',
-  shade = "light",
-  lc_atlas = "AbandoniaMoreSuits",
-  hc_atlas = "AbandoniaMoreSuits",
-  lc_ui_atlas = "AbandoniaSuitIcons",
-  hc_ui_atlas = "AbandoniaSuitIcons",
   pos = { y = 3 },
-  ui_pos = { x = 1, y = 3 },
-  lc_colour = HEX("764a76"),
+  ui_pos = { x = 3, y = 3 },
+  lc_colour = HEX("5edb61"),
   in_pool = function(self, args)
     if args and args.initial_deck then
       -- When creating a deck
@@ -374,8 +346,8 @@ SMODS.Suit {
       local sleeve = G.GAME.selected_sleeve
       local sleeve_config = (G.P_CENTERS[sleeve] or {}).abandonia
 
-      return (back_config and back_config.create_arrows)
-          or (sleeve_config and sleeve_config.create_arrows)
+      return (back_config and back_config.create_Anchors)
+          or (sleeve_config and sleeve_config.create_Anchors)
     else
       return false
     end
@@ -499,17 +471,18 @@ SMODS.Suit {
   end,
 }
 
+
 SMODS.Suit {
-  key = 'Megido',
-  card_key = 'MEG',
-  shade = "dark",
-  lc_atlas = "AbandoniaSuitsAgain",
-  hc_atlas = "AbandoniaSuitsAgain",
-  lc_ui_atlas = "AbandoniaSuitIcons",
-  hc_ui_atlas = "AbandoniaSuitIcons",
+  key = 'Talon',
+  card_key = 'TA',
+  shade = "light",
+  lc_atlas = "AbandoniaOtherSuits",
+  hc_atlas = "AbandoniaOtherSuits",
+  lc_ui_atlas = "AbandoniaExtraSuitIcons",
+  hc_ui_atlas = "AbandoniaExtraSuitIcons",
   pos = { y = 0 },
-  ui_pos = { x = 0, y = 5 },
-  lc_colour = HEX("3c4368"),
+  ui_pos = { x = 4, y = 0 },
+  lc_colour = HEX("b0ce3d"),
   in_pool = function(self, args)
     if args and args.initial_deck then
       -- When creating a deck
@@ -519,8 +492,93 @@ SMODS.Suit {
       local sleeve = G.GAME.selected_sleeve
       local sleeve_config = (G.P_CENTERS[sleeve] or {}).abandonia
 
-      return (back_config and back_config.create_megidos)
-          or (sleeve_config and sleeve_config.create_megidos)
+      return (back_config and back_config.create_talons)
+          or (sleeve_config and sleeve_config.create_talons)
+    else
+      return false
+    end
+  end,
+}
+
+
+SMODS.Suit {
+  key = 'Crown',
+  card_key = 'CR',
+  shade = "light",
+  lc_atlas = "AbandoniaOtherSuits",
+  hc_atlas = "AbandoniaOtherSuits",
+  lc_ui_atlas = "AbandoniaExtraSuitIcons",
+  hc_ui_atlas = "AbandoniaExtraSuitIcons",
+  pos = { y = 1 },
+  ui_pos = { x = 5, y = 0 },
+  lc_colour = HEX("e4d03d"),
+  in_pool = function(self, args)
+    if args and args.initial_deck then
+      -- When creating a deck
+      local back = G.GAME.selected_back
+      local back_config = back and back.effect.center.abandonia
+
+      local sleeve = G.GAME.selected_sleeve
+      local sleeve_config = (G.P_CENTERS[sleeve] or {}).abandonia
+
+      return (back_config and back_config.create_crowns)
+          or (sleeve_config and sleeve_config.create_crowns)
+    else
+      return false
+    end
+  end,
+}
+
+SMODS.Suit {
+  key = 'Moon',
+  card_key = 'MO',
+  shade = "dark",
+  lc_atlas = "AbandoniaOtherSuits",
+  hc_atlas = "AbandoniaOtherSuits",
+  lc_ui_atlas = "AbandoniaExtraSuitIcons",
+  hc_ui_atlas = "AbandoniaExtraSuitIcons",
+  pos = { y = 2 },
+  ui_pos = { x = 6, y = 0 },
+  lc_colour = HEX("6763c4"),
+  in_pool = function(self, args)
+    if args and args.initial_deck then
+      -- When creating a deck
+      local back = G.GAME.selected_back
+      local back_config = back and back.effect.center.abandonia
+
+      local sleeve = G.GAME.selected_sleeve
+      local sleeve_config = (G.P_CENTERS[sleeve] or {}).abandonia
+
+      return (back_config and back_config.create_moons)
+          or (sleeve_config and sleeve_config.create_moons)
+    else
+      return false
+    end
+  end,
+}
+
+SMODS.Suit {
+  key = 'Star',
+  card_key = 'ST',
+  shade = "dark",
+  lc_atlas = "AbandoniaOtherSuits",
+  hc_atlas = "AbandoniaOtherSuits",
+  lc_ui_atlas = "AbandoniaExtraSuitIcons",
+  hc_ui_atlas = "AbandoniaExtraSuitIcons",
+  pos = { y = 3 },
+  ui_pos = { x = 7, y = 0 },
+  lc_colour = HEX("4978e6"),
+  in_pool = function(self, args)
+    if args and args.initial_deck then
+      -- When creating a deck
+      local back = G.GAME.selected_back
+      local back_config = back and back.effect.center.abandonia
+
+      local sleeve = G.GAME.selected_sleeve
+      local sleeve_config = (G.P_CENTERS[sleeve] or {}).abandonia
+
+      return (back_config and back_config.create_stars)
+          or (sleeve_config and sleeve_config.create_stars)
     else
       return false
     end

@@ -7698,8 +7698,8 @@ return {
       j_abn_illegal_ante = {
         name = "Illegal Ante",
         text = {
-          "During {C:attention}Even{} Antes {C:attention}double{} all {C:green}probabilities",
-          "During {C:attention}Odd{} Antes {C:attention}double{} all {C:money}money{} obtained",
+          "During {C:attention}Even{} Antes, {C:attention}double{} all {C:green,E:1}probabilities",
+          "During {C:attention}Odd{} Antes, {C:attention}double{} all {C:money}money{} earned",
         }
       },
       j_abn_enigma_comedian = {
@@ -9578,19 +9578,6 @@ return {
           "decreases {C:attention}blind requirements{} by {C:attention}#1#%",
         }
       },
-      j_abn_joker_in_a_nutshell = {
-        name = "Joker In A Nutshell",
-        text = {
-          {
-            "{C:common}Common{} Jokers without {C:dark_edition}Editions{}",
-            "cannot be {C:red}debuffed{} or {C:red}destroyed{}",
-          },
-          {
-            "{C:rare}Rare{} and {C:uncommon}Uncommon{} Jokers",
-            " cannot appear in the {C:green}shop",
-          },
-        }
-      },
       j_abn_runedelta = {
         name = "Runedelta",
         text = {
@@ -9806,7 +9793,7 @@ return {
         name = "Double King",
         text = {
           {
-            "{C:attention}Kings{} no longer give their base {C:chips}chips{},",
+            "No {C:chips}chip{} gain on {C:attention}Kings{},",
             "When a {C:attention}King{} is scored, {C:mult}destroy{} it",
             "and gain {C:attention}double{} it's {C:attention}rank{} as {C:chips}Chips{}",
             "{C:inactive}(Currently {C:chips}+#1#{} {C:inactive}Chips)",
@@ -9816,6 +9803,115 @@ return {
             "{C:dark_edition}Negative{} at end of round and",
             "gives {C:mult}+#2#{} Mult per scoring card",
           },
+        }
+      },
+
+      j_abn_bellman_joker = {
+        name = "Bellman Joker",
+        text = {
+          {
+            "{C:chips}+#1#{} Chips and {C:mult}+#2#{} Mult",
+            "if {C:attention}Consumable{} slots are full",
+          },
+          {
+            "When {C:attention}Boss Blind{} is defeated",
+            "with full {C:attention}Consumable{} slots,",
+            "gain {C:chips}+#3#{} Chips {C:mult}+#4#{} Mult",
+          }
+        }
+      },
+
+      j_abn_plank_joker = {
+        name = "Plank Joker",
+        text = {
+          "Scoring {C:attention}Plank{} cards",
+          "gain {C:gold}+#1#{} Ascension Power",
+        }
+      },
+
+      j_abn_bark_joker = {
+        name = "Bark Joker",
+        text = {
+          "This Joker gains {X:mult,C:white}X#2#{} Mult and",
+          "{C:gold}+#4#{} Ascension Power when",
+          "a {C:attention}Plank{} card is scored",
+          "{C:inactive}(Currently{} {X:mult,C:white}X#1#{} {C:inactive}Mult,{} {C:gold}+#3#{} {C:inactive}Asc. Power){}",
+        }
+      },
+
+      j_abn_old_growth_joker = {
+        name = "Old Growth Joker",
+        text = {
+          "This Joker gains {C:mult}Mult{} equal to",
+          "{C:attention}triple{} the {C:attention}rank{} of scoring",
+          "{C:attention}numbered{} {C:attention}Plank{} cards",
+          "and {C:gold}+#3#{} Ascension Power",
+          "{C:inactive}(Currently{} {C:mult}+#1#{} {C:inactive}Mult,{} {C:gold}+#2#{} {C:inactive}Asc. Power){}",
+        }
+      },
+
+      j_abn_plug_in_joker = {
+        name = "Plug In Joker",
+        text = {
+          "Gain {C:mult}+#4#{} Mult when a {C:attention}Mult{} card scores",
+          "Gain {C:chips}+#5#{} Chips when a {C:attention}Bonus{} card scores",
+          "Gain {C:gold}+#6#{} Ascension Power when a {C:attention}Plank{} card scores",
+          "{C:inactive}(Currently{} {C:mult}+#1#{} {C:inactive}Mult,{} {C:chips}+#2#{} {C:inactive}Chips,{} {C:gold}+#3#{} {C:inactive}Asc. Power){}",
+        }
+      },
+
+      j_abn_geiger_joker = {
+        name = "Geiger Joker",
+        text = {
+          "Each scored {C:attention}numbered{} {C:attention}Hazard{} card",
+          "gives {C:gold}+#1#{} Ascension Power for each time",
+          "its {C:attention}rank{} has scored this hand",
+        }
+      },
+
+      j_abn_bouba_joker = {
+        name = "Bouba Joker",
+        text = {
+          {
+            "This Joker gains {C:chips}+#2#{} Chips",
+            "per scoring {C:attention}Odd{} card",
+          },
+          {
+            "Increase this by {C:chips}+#3#{} Chips",
+            "per {C:lexica}Lexica{} card held",
+            "when {C:attention}Boss Blind{} is defeated",
+            "{C:inactive}(Currently{} {C:chips}+#1#{} {C:inactive}Chips)",
+          }
+        }
+      },
+
+      j_abn_kiki_joker = {
+        name = "Kiki Joker",
+        text = {
+          {
+            "This Joker gains {C:mult}+#2#{} Mult",
+            "per scoring {C:attention}Even{} card",
+          },
+          {
+            "Increase this by {C:mult}+#3#{} Mult",
+            "per {C:lexica}Lexica{} card held",
+            "when {C:attention}Boss Blind{} is defeated",
+            "{C:inactive}(Currently{} {C:mult}+#1#{} {C:inactive}Mult)",
+          }
+        }
+      },
+
+      j_abn_hd_joker = {
+        name = "HD Joker",
+        text = {
+          {
+            "{C:common}Common{} Jokers without {C:dark_edition}Editions{}",
+            "cannot be {C:red}debuffed{} or {C:red}destroyed{}",
+          },
+          {
+            "{C:uncommon}Uncommon{} and {C:rare}Rare{} Jokers",
+            "no longer appear in the {C:green}shop{}"
+          }
         }
       },
 
@@ -9839,6 +9935,22 @@ return {
         }
       },
 
+      j_abn_cloud_screamer = {
+        name = "Cloud Screamer",
+        text = {
+          "First played card",
+          "permanently gains",
+          "{C:mult}+#1#{} Mult when scored",
+        }
+      },
+
+      j_abn_child_drawing = {
+        name = "Child Drawing",
+        text = {
+          "Scored {C:attention}numbered{} cards",
+          "give {C:white,X:mult}X#1#{} Mult",
+        }
+      },
     },
     Spectral = {
       c_abn_promotion = { -- TO CODE
@@ -11856,7 +11968,7 @@ return {
           }
         }
       },
-      c_abn_tornado = {
+      c_abn_tornado_calamity = {
         name = "Tornado",
         text = {
           {
@@ -12838,6 +12950,13 @@ return {
           "{C:inactive}(Currently{} {C:mult}+#2#{} {C:inactive}Mult,{} {C:chips}+#1#{} {C:inactive}Chips){}",
         },
       },
+
+      m_abn_plank = {
+        name = "Plank",
+        text = {
+          "Gives {C:gold}+#1#{} Ascension Power{}",
+        }
+      },
     },
     Voucher = {
       v_abn_overstock_maximum = {
@@ -13418,6 +13537,10 @@ return {
       abn_Bell = "Bell",
       abn_Leaf = "Leaf",
       abn_Megido = "Megido",
+      abn_Talon = "Talon",
+      abn_Crown = "Crown",
+      abn_Moon = "Moon",
+      abn_Star = "Star",
     },
 
     suits_plural = {
@@ -13439,6 +13562,10 @@ return {
       abn_Bell = "Bells",
       abn_Leaf = "Leaves",
       abn_Megido = "Megidos",
+      abn_Talon = "Talons",
+      abn_Crown = "Crowns",
+      abn_Moon = "Moons",
+      abn_Star = "Stars",
     },
     poker_hands = {
       ['abn_Spectrum'] = "Spectrum",

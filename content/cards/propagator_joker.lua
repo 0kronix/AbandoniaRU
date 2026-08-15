@@ -16,10 +16,12 @@ SMODS.Joker {
   pools = { ["Plagued"] = true, },
 
   loc_vars = function(self, info_queue, card)
+    local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds)
+
     return {
       vars = {
-        G.GAME.probabilities.normal,
-        card.ability.extra.odds,
+        numerator,
+        denominator,
         card.ability.extra.emult
       }
     }

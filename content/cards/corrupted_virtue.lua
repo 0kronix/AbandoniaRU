@@ -4,7 +4,7 @@ SMODS.Joker {
 
   rarity = 2,
   atlas = 'ABNJokerSheet14',
-  pos = { x = 9, y = 1 },
+  pos = { x = 5, y = 3 },
   cost = 6,
   discovered = false,
   blueprint_compat = false,
