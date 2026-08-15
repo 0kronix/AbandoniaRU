@@ -9834,6 +9834,13 @@ return {
         }
       },
 
+      j_abn_child_drawing = {
+        name = "Child Drawing",
+        text = {
+          "Scored {C:attention}numbered{} cards",
+          "give {C:white,X:mult}X#1#{} Mult",
+        }
+      },
     },
     Spectral = {
       c_abn_promotion = { -- TO CODE
