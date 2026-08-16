@@ -836,25 +836,44 @@ SMODS.Back {
     name = 'New Epoch',
     atlas = 'AbandoniaDecks',
     pos = { x = 1, y = 6 },
+	
+	apply = function(self)
+        G.E_MANAGER:add_event(Event({
+            func = function()
+				local initial_cards = {}
+                for _, card in ipairs(G.playing_cards) do
+                    table.insert(initial_cards, card)
+                end
 
-    config = {
-        vouchers = { "v_abn_satellite", "v_abn_chaos" }
-    },
+                for _, playing_card in ipairs(initial_cards) do
+                    local new_card = copy_card(playing_card)
+                    
+                    if playing_card.base.suit == 'Hearts' then
+                        new_card:change_suit('abn_Talon')
+                    elseif playing_card.base.suit == 'Diamonds' then
+                        new_card:change_suit('abn_Crown')
+                    elseif playing_card.base.suit == 'Clubs' then
+                        new_card:change_suit('abn_Moon')
+                    elseif playing_card.base.suit == 'Spades' then
+                        new_card:change_suit('abn_Star')
+                    end
 
+                    new_card:add_to_deck()
+                    G.deck:emplace(new_card)
+                    table.insert(G.playing_cards, new_card)
+                end
 
-    loc_vars = function(self, info_queue, back)
-        return {
-            vars = {
-                localize { type = 'name_text', key = self.config.vouchers[1], set = 'Voucher' },
-                localize { type = 'name_text', key = self.config.vouchers[2], set = 'Voucher' },
-            }
-        }
-    end,
+                G.deck.config.card_limit = #G.playing_cards
+                return true
+			end
+		}))
+	end,
+			
 
     calculate = function(self, card, context)
-        if G.GAME.round_resets.blind_choices.Small then
-            G.GAME.round_resets.blind_choices.Small = 'bl_big'
-        end
+		if context.skip_blind then
+			G.GAME.starting_params.ante_scaling = G.GAME.starting_params.ante_scaling + 1
+		end
     end,
 }
 
@@ -887,62 +906,6 @@ SMODS.Back {
         }))
     end
 }
-
---[[
-SMODS.Back {
-    key = 'poneglyph',
-    name = "Poneglyph",
-    atlas = 'AbandoniaDecks',
-    pos = { x = 3, y = 4 },
-    config = {
-        hand_size = 0,
-    },
-
-    apply = function(self)
-        G.E_MANAGER:add_event(Event({
-            func = function()
-                -- 1. Snapshot the initial deck before we push any duplicates into it
-                local original_cards = {}
-                for _, card in ipairs(G.playing_cards) do
-                    table.insert(original_cards, card)
-                end
-
-                -- 2. Loop through and instantly clone/modify every card in a single frame
-                for _, original_card in ipairs(original_cards) do
-                    local copy = copy_card(original_card)
-                    local current_suit = copy.base.suit
-
-                    -- Assigning completely different suits and enhancements all at once
-                    if current_suit == 'Clubs' then
-                        copy:change_suit('abn_suitless')
-                    elseif current_suit == 'Hearts' then
-                        copy:change_suit('Diamonds')                             -- Changes suit
-                        copy:set_ability(G.P_CENTERS.m_abn_petroleum, nil, true)  -- Appends Petroleum
-                    elseif current_suit == 'Diamonds' then
-                        copy:change_suit('Spades')                               -- Changes suit
-                        copy:set_ability(G.P_CENTERS.m_abn_polkadot, nil, true)   -- Appends Polkadot
-                    elseif current_suit == 'Spades' then
-                        copy:change_suit('Hearts')                               -- Changes suit
-                        copy:set_ability(G.P_CENTERS.m_stone, nil, true)          -- Appends Stone
-                    end
-
-                    -- Add the card data and physical reference directly into the engine
-                    copy:add_to_deck()
-                    G.deck:emplace(copy)
-                    table.insert(G.playing_cards, copy)
-                end
-
-                -- 3. Instantly recalculate the card limit
-                G.deck.config.card_limit = #G.playing_cards
-
-                -- Briefly play a single screen-wide visual deck update instead of 52 tiny ones
-                G.deck:shuffle()
-                return true
-            end
-        }))
-    end
-}
---]]
 
 SMODS.Back {
     key = "cyber",
@@ -1008,7 +971,6 @@ SMODS.Back {
         vouchers = { "v_abn_tarot_master" }
     },
 
-
     loc_vars = function(self, info_queue, back)
         return {
             vars = {
@@ -1020,34 +982,42 @@ SMODS.Back {
     apply = function(self, back)
         G.E_MANAGER:add_event(Event({
             func = function()
-                for _, playing_card in ipairs(G.playing_cards) do
-                    if playing_card.base.suit == 'Hearts' then
-                        playing_card:change_suit('abn_Chalice')
-                    end
-                    if playing_card.base.suit == 'Diamonds' then
-                        playing_card:change_suit('abn_Baton')
-                    end
-                    if playing_card.base.suit == 'Clubs' then
-                        playing_card:change_suit('abn_Coin')
-                    end
-                    if playing_card.base.suit == 'Spades' then
-                        playing_card:change_suit('abn_Sword')
-                    end
+                G.GAME.modifiers.no_interest = true
+                
+                local initial_cards = {}
+                for _, card in ipairs(G.playing_cards) do
+                    table.insert(initial_cards, card)
                 end
+
+                for _, playing_card in ipairs(initial_cards) do
+                    local new_card = copy_card(playing_card)
+                    
+                    if playing_card.base.suit == 'Hearts' then
+                        new_card:change_suit('abn_Chalice')
+                    elseif playing_card.base.suit == 'Diamonds' then
+                        new_card:change_suit('abn_Baton')
+                    elseif playing_card.base.suit == 'Clubs' then
+                        new_card:change_suit('abn_Coin')
+                    elseif playing_card.base.suit == 'Spades' then
+                        new_card:change_suit('abn_Sword')
+                    end
+
+                    new_card:add_to_deck()
+                    G.deck:emplace(new_card)
+                    table.insert(G.playing_cards, new_card)
+                end
+
+                G.deck.config.card_limit = #G.playing_cards
                 return true
             end
         }))
     end,
-    calculate = function(self, card, context)
-        if context.pre_discard then
-            G.E_MANAGER:add_event(Event({
-                trigger = 'after',
-                delay = 0.2,
-                func = function()
-                    ease_dollars(-1)
-                    return true
-                end
-            }))
+	
+	calculate = function(self, card, context)
+        if context.pre_discard and context.full_hand and #context.full_hand == 5 then
+            return {
+                dollars = 2,
+            }
         end
     end,
 }
@@ -1116,5 +1086,32 @@ SMODS.Back {
         }))
     end,
     calculate = function(self, card, context)
+    end,
+}
+
+SMODS.Back {
+    key = 'untamed',
+    name = 'Untamed Deck',
+    atlas = 'AbandoniaDecks',
+    pos = { x = 1, y = 3 },
+
+    config = {
+        vouchers = { "v_abn_satellite", "v_abn_chaos" }
+    },
+
+
+    loc_vars = function(self, info_queue, back)
+        return {
+            vars = {
+                localize { type = 'name_text', key = self.config.vouchers[1], set = 'Voucher' },
+                localize { type = 'name_text', key = self.config.vouchers[2], set = 'Voucher' },
+            }
+        }
+    end,
+
+    calculate = function(self, card, context)
+        if G.GAME.round_resets.blind_choices.Small then
+            G.GAME.round_resets.blind_choices.Small = 'bl_big'
+        end
     end,
 }

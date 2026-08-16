@@ -1424,3 +1424,36 @@ SMODS.Enhancement({
     artist = "Gud",
   },
 })
+
+SMODS.Enhancement({
+  key = "flux",
+  pos = { x = 4, y = 4 },
+  atlas = "AbandoniaEnhancements",
+  config = { extra = { score = 100, scoreadd = 100 } },
+  loc_vars = function(self, info_queue, card)
+    local cae = card.ability.extra
+    return { vars = { cae.score, cae.scoreadd } }
+  end,
+  calculate = function(self, card, context)
+	local cae = card.ability.extra
+    if context.main_scoring and context.cardarea == G.play then
+		return {
+          score = cae.score,
+        }
+    end
+	
+    if context.final_scoring_step and card.area == G.play then
+      if SMODS.calculate_round_score() + G.GAME.chips >= G.GAME.blind.chips then
+		cae.score = cae.score + cae.scoreadd
+		return {
+			message = localize('k_upgrade_ex'),
+            colour = G.C.PURPLE,
+            card = card
+		}
+	  end
+    end
+  end,
+  abn_artist_credits = {
+    artist = "Super Thing",
+  },
+})
