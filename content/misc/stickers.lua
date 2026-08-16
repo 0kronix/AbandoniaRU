@@ -244,7 +244,7 @@ SMODS.Sticker {
   },
   calculate = function(self, card, context)
     if context.destroy_card and context.cardarea == G.play and context.destroy_card == card and
-        SMODS.pseudorandom_probability(card, 'abn_fragile', card.ability[self.key].base, card.ability[self.key].odds) then
+    SMODS.pseudorandom_probability(card, 'abn_fragile', card.ability[self.key].base, card.ability[self.key].odds) then
       card.glass_trigger = true
       return { remove = true }
     end
@@ -254,7 +254,7 @@ SMODS.Sticker {
         delay = 0.0,
         func = function()
           card:shatter()
-          SMODS.calculate_context({joker_type_destroyed = true, card = card, shatters = true})
+          SMODS.calculate_context({ joker_type_destroyed = true, card = card, shatters = true })
           return true
         end
       }))
@@ -484,7 +484,7 @@ SMODS.Sticker {
   },
   calculate = function(self, card, context)
     if context.individual and context.cardarea == G.play and
-        SMODS.pseudorandom_probability(card, 'abn_fragile', card.ability[self.key].base, card.ability[self.key].odds) then
+    SMODS.pseudorandom_probability(card, 'abn_fragile', card.ability[self.key].base, card.ability[self.key].odds) then
       return {
         mult = card.ability[self.key].dollars
       }
@@ -949,7 +949,7 @@ SMODS.Sticker {
 SMODS.Sticker {
   key = 'aim',
   atlas = "AbandoniaStickers",
-  pos = { x = 0, y = 9 },
+  pos = { x = 2, y = 8 },
   badge_colour = HEX("ee7270"),
   loc_vars = function(self, info_queue, card)
   end,
@@ -1013,7 +1013,7 @@ SMODS.Sticker {
 SMODS.Sticker {
   key = 'stinker',
   atlas = "AbandoniaStickers",
-  pos = { x = 1, y = 9 },
+  pos = { x = 3, y = 8 },
   badge_colour = HEX("86e631"),
   loc_vars = function(self, info_queue, card)
   end,
