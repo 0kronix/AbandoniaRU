@@ -1669,10 +1669,10 @@ return {
       b_abn_synesthic = {
         name = "Synesthetic Circle",
         text = {
-          "Start with a full set of",
+          "Start with",
           "{C:abn_chalice}Chalices{}, {C:abn_baton}Batons{}, {C:abn_coin}Coins{}, {C:abn_sword}Swords{}",
-          "{C:abn_bow}Bows{}, {C:abn_ties}Ties{}, {C:abn_penumbra}Penumbras{} and {C:abn_snow}Snows",
-          "No {C:attention}Face{} cards",
+          "{C:abn_bow}Bows{}, {C:abn_tie}Ties{}, {C:abn_penumbra}Penumbras{} and {C:abn_snow}Snows",
+          "Without {C:attention}Face{} cards",
           "{C:attention}+1{} hand selection",
           "Increase {C:attention}blind requirements{} by {C:white,X:mult}X1.3{}",
           "when {C:attention}Boss Blind{} is defeated"
@@ -1681,9 +1681,12 @@ return {
       b_abn_epoch = {
         name = "New Epoch",
         text = {
-          "Start with {C:planet,T:v_abn_satellite}#1#{}",
-          "and {C:sigils,T:v_abn_chaos}#2#{}",
-          "{C:chips}Small Blinds{} are now {C:attention}Big Blinds{}",
+          "Start with a full set of",
+          "{C:attention}Vanilla{}, {C:abn_talon}Talons{},",
+		  "{C:abn_crown}Crowns{}, {C:abn_moon}Moons,",
+		  "and {C:abn_star}Stars{}",
+		  "{C:white,X:mult}+X1{} to all {C:attention}Blind requirements{}",
+		  "for each blind {C:attention}skipped{} this run",
         }
       },
       b_abn_shackle = {
@@ -1699,6 +1702,14 @@ return {
           "Start with a full set of",
           "{C:attention}Stone{}, {C:attention}Petroleum,",
           "{C:attention}Polkadot{} and {C:inactive}Null{} cards ",
+        }
+      },
+	  b_abn_untamed = {
+        name = "Untamed Deck",
+        text = {
+          "Start with {C:planet,T:v_abn_satellite}#1#{}",
+          "and {C:sigils,T:v_abn_chaos}#2#{}",
+          "{C:chips}Small Blinds{} are now {C:attention}Big Blinds{}",
         }
       },
     },
@@ -12954,11 +12965,24 @@ return {
           "{C:inactive}(Currently{} {C:mult}+#2#{} {C:inactive}Mult,{} {C:chips}+#1#{} {C:inactive}Chips){}",
         },
       },
-
-      m_abn_plank = {
+	  m_abn_plank = {
         name = "Plank",
         text = {
           "Gives {C:gold}+#1#{} Ascension Power{}",
+        }
+      },
+	  m_abn_flux = {
+        name = "Flux",
+        text = {
+          "{C:purple}+#1#{} Score when played",
+		  "Gain {C:purple}+#2#{} Score if part of the winning hand",
+        }
+      },
+	  m_abn_discontinued = {
+        name = "Discontinued",
+        text = {
+          "{C:gold}+#3#{} Ascension Power and {C:chips}+#4#{} Chips per {C:attention}unique tag{} obtained this run",
+		  "{C:inactive}Currently: {C:gold}+#1#{} {C:inactive}Ascension Power{} {C:chips}+#2#{} {C:inactive}Chips",
         }
       },
     },
