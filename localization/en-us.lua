@@ -10199,7 +10199,7 @@ return {
         name = "",
         text = {
           "Added some {C:attention}Jokers{}",
-          "Check out {C:attention}Feli's Jokeria{}!"
+          "Check out {C:attention}Feli's Additions Gallery{}!"
         }
       },
       credit_abn_j8bit = {
@@ -11022,7 +11022,21 @@ return {
         name = "Stinker",
         text = {
           "While this sticker is applied,",
-          "all {C:spectral}Spectral{} are {C:red}disabled",
+          "all {C:spectral}Spectrals{} are {C:red}disabled",
+        }
+      },
+      abn_bug = {
+        name = "Bug",
+        text = {
+          "While this sticker is applied,",
+          "all {C:tarot}Tarots{} are {C:red}disabled",
+        }
+      },
+      abn_martini = {
+        name = "Martini",
+        text = {
+          "While this sticker is applied,",
+          "all {C:planet}Planets{} are {C:red}disabled",
         }
       },
       abn_honor_sticker = {
@@ -13540,6 +13554,8 @@ return {
       abn_chain = "Chain",
       abn_aim = "Aim",
       abn_stinker = "Stinker",
+      abn_bug = "Bug",
+      abn_martini = "Martini",
 
       -- Seals
       abn_orange_seal = "Orange Seal",

@@ -18,7 +18,7 @@ SMODS.Sticker {
       SMODS.calculate_effect({ mult = card.ability[self.key].mult }, card)
     end
   end,
-
+  
 }
 
 --#region Immortal
@@ -40,7 +40,7 @@ SMODS.Sticker {
 local set_debuff_ref = Card.set_debuff
 function Card:set_debuff(should_debuff)
   set_debuff_ref(self, should_debuff)
-
+  
   if self.ability.abn_immortal then
     self.debuff = false
     self.perma_debuff = false
@@ -154,7 +154,7 @@ SMODS.Sticker {
   pos = { x = 1, y = 4 },
   badge_colour = HEX("676388"),
   sets = { Joker = true },
-
+  
   loc_vars = function(self, info_queue, card)
     return {
       vars = {
@@ -212,7 +212,7 @@ SMODS.Sticker {
   atlas = "AbandoniaStickers",
   pos = { x = 0, y = 2 },
   badge_colour = HEX("1f4a8f"),
-
+  
   config = {},
   calculate = function(self, card, context)
     if context.after then
@@ -227,10 +227,10 @@ SMODS.Sticker {
   pos = { x = 3, y = 3 },
   badge_colour = HEX("e6d5c3"),
   sets = { Default = true },
-
+  
   loc_vars = function(self, info_queue, card)
     local numerator, denominator = SMODS.get_probability_vars(card, card.ability[self.key].base,
-      card.ability[self.key].odds, 'abn_fragile')
+    card.ability[self.key].odds, 'abn_fragile')
     return {
       vars = {
         numerator,
@@ -281,7 +281,7 @@ SMODS.Sticker({
   pos = { x = 2, y = 0 },
   badge_colour = HEX("e5e4e2"),
   config = {},
-
+  
   calculate = function(self, card, context)
     if context.before then
       for i = 1, #context.scoring_hand do
@@ -306,7 +306,7 @@ SMODS.Sticker({
   config = {
     x_chips = 4
   },
-
+  
   calculate = function(self, card, context)
     if context.individual and context.cardarea == G.play then
       if context.scoring_hand[1] == context.other_card then
@@ -333,7 +333,7 @@ SMODS.Sticker({
   config = {
     repetitions = 1
   },
-
+  
   calculate = function(self, card, context)
     if context.repetition and context.cardarea == G.play then
       local first_number = nil
@@ -343,7 +343,7 @@ SMODS.Sticker({
           break
         end
       end
-
+      
       if context.other_card == first_number then
         return {
           message = localize('k_again_ex'),
@@ -370,7 +370,7 @@ SMODS.Sticker({
   config = {
     repetitions = 1
   },
-
+  
   calculate = function(self, card, context)
     if context.repetition and context.cardarea == G.play then
       local first_enhanced = nil
@@ -380,7 +380,7 @@ SMODS.Sticker({
           break
         end
       end
-
+      
       if context.other_card == first_enhanced then
         return {
           message = localize('k_again_ex'),
@@ -402,7 +402,7 @@ SMODS.Sticker({
   config = {
     repetitions = 1
   },
-
+  
   calculate = function(self, card, context)
     if context.repetition and context.cardarea == G.play then
       -- Find the first Ace in the scoring hand
@@ -413,7 +413,7 @@ SMODS.Sticker({
           break
         end
       end
-
+      
       -- If the current card being evaluated is that specific first Ace
       if context.other_card == first_ace then
         return {
@@ -432,7 +432,7 @@ SMODS.Sticker({
   pos = { x = 1, y = 0 },
   badge_colour = HEX("454e4d"),
   config = {},
-
+  
   calculate = function(self, card, context)
     if context.after and G.GAME.current_round.hands_left == 0 then
       local target = pseudorandom_element(context.scoring_hand, "abn_negative_plus")
@@ -448,7 +448,7 @@ SMODS.Sticker({
   pos = { x = 3, y = 0 },
   badge_colour = HEX("ffffff"),
   config = {},
-
+  
   calculate = function(self, card, context)
     if context.before then
       local left = context.scoring_hand[1]
@@ -465,10 +465,10 @@ SMODS.Sticker {
   atlas = "AbandoniaStickers",
   pos = { x = 4, y = 0 },
   badge_colour = HEX("75ce84"),
-
+  
   loc_vars = function(self, info_queue, card)
     local numerator, denominator = SMODS.get_probability_vars(card, card.ability[self.key].base,
-      card.ability[self.key].odds, 'abn_lucky')
+    card.ability[self.key].odds, 'abn_lucky')
     return {
       vars = {
         numerator,
@@ -519,23 +519,23 @@ SMODS.Sticker {
   atlas = "AbandoniaStickers",
   pos = { x = 3, y = 5 },
   badge_colour = HEX("eb6b43"),
-
+  
   calculate = function(self, card, context)
     -- Trigger at the end of scoring if the round is won
     if context.final_scoring_step then
       local current_score = SMODS.calculate_round_score()
       local target_score = G.GAME.blind.chips
-
+      
       if current_score > target_score then
         -- Define the specific keys we are allowed to double
         local valid_keys = {
           chips = true,
           mult = true,
         }
-
+        
         local doubled = false
-
-
+        
+        
         if type(card.ability.extra) == "table" then
           for k, v in pairs(card.ability.extra) do
             if valid_keys[k] and type(v) == "number" then
@@ -544,16 +544,16 @@ SMODS.Sticker {
             end
           end
         elseif type(card.ability.extra) == "number" then
-
+          
         end
-
+        
         for k, v in pairs(card.ability) do
           if valid_keys[k] and type(v) == "number" then
             card.ability[k] = v * 2
             doubled = true
           end
         end
-
+        
         if doubled then
           return {
             message = 'Spicy!',
@@ -575,7 +575,7 @@ SMODS.Sticker {
   loc_vars = function(self, info_queue, card)
     return { vars = { (card.ability[self.key] and card.ability[self.key].xmult) or self.config.xmult } }
   end,
-
+  
   calculate = function(self, card, context)
     -- If we found debuffed cards, return the XMult
     if context.pre_joker or (context.main_scoring and context.cardarea == G.play) then
@@ -595,7 +595,7 @@ SMODS.Sticker {
   atlas = "AbandoniaStickers",
   pos = { x = 1, y = 2 },
   badge_colour = HEX("3c4368"),
-
+  
   calculate = function(self, card, context)
     for _, _card in ipairs(G.playing_cards or {}) do
       if not _card:is_suit("Spades") then
@@ -617,7 +617,7 @@ SMODS.Sticker {
   atlas = "AbandoniaStickers",
   pos = { x = 2, y = 2 },
   badge_colour = HEX("f03464"),
-
+  
   calculate = function(self, card, context)
     for _, _card in ipairs(G.playing_cards or {}) do
       if not _card:is_suit("Hearts") then
@@ -639,7 +639,7 @@ SMODS.Sticker {
   atlas = "AbandoniaStickers",
   pos = { x = 3, y = 2 },
   badge_colour = HEX("235955"),
-
+  
   calculate = function(self, card, context)
     for _, _card in ipairs(G.playing_cards or {}) do
       if not _card:is_suit("Clubs") then
@@ -661,7 +661,7 @@ SMODS.Sticker {
   atlas = "AbandoniaStickers",
   pos = { x = 4, y = 2 },
   badge_colour = HEX("f06b3f"),
-
+  
   calculate = function(self, card, context)
     for _, _card in ipairs(G.playing_cards or {}) do
       if not _card:is_suit("Diamonds") then
@@ -684,7 +684,7 @@ SMODS.Sticker {
   atlas = "AbandoniaStickers",
   pos = { x = 0, y = 3 },
   badge_colour = HEX("eba61c"),
-
+  
   calculate = function(self, card, context)
     for _, _card in ipairs(G.playing_cards or {}) do
       if ABN.is_dark(_card) then
@@ -706,7 +706,7 @@ SMODS.Sticker {
   atlas = "AbandoniaStickers",
   pos = { x = 1, y = 3 },
   badge_colour = HEX("435b8c"),
-
+  
   calculate = function(self, card, context)
     for _, _card in ipairs(G.playing_cards or {}) do
       if ABN.is_light(_card) then
@@ -728,7 +728,7 @@ SMODS.Sticker {
   atlas = "AbandoniaStickers",
   pos = { x = 0, y = 8 },
   badge_colour = HEX("fd5f55"),
-
+  
   calculate = function(self, card, context)
     if context.individual and context.cardarea == G.play then
       if ABN.is_even(context.other_card) then
@@ -749,7 +749,7 @@ SMODS.Sticker {
   atlas = "AbandoniaStickers",
   pos = { x = 0, y = 12 },
   badge_colour = HEX("009cfd"),
-
+  
   calculate = function(self, card, context)
     if context.individual and context.cardarea == G.play then
       if ABN.is_odd(context.other_card) then
@@ -770,7 +770,7 @@ SMODS.Sticker {
   atlas = "AbandoniaStickers",
   pos = { x = 1, y = 12 },
   badge_colour = HEX("009cfd"),
-
+  
   loc_vars = function(self, info_queue, card)
     return {
       vars = {
@@ -781,7 +781,7 @@ SMODS.Sticker {
   config = {
     chips = 50
   },
-
+  
   calculate = function(self, card, context)
     if context.joker_main then
       local triggered = false
@@ -789,15 +789,15 @@ SMODS.Sticker {
         if v:is_rarity("Common") then
           triggered = true
           SMODS.calculate_effect(
-            { chips = self.config.chips, juice_card = v, message_card = v },
-            card
-          )
-          break
-        end
+          { chips = self.config.chips, juice_card = v, message_card = v },
+          card
+        )
+        break
       end
-      if triggered then return nil, true end
     end
-  end,
+    if triggered then return nil, true end
+  end
+end,
 }
 
 SMODS.Sticker {
@@ -805,7 +805,7 @@ SMODS.Sticker {
   atlas = "AbandoniaStickers",
   pos = { x = 2, y = 12 },
   badge_colour = HEX("fda200"),
-
+  
   loc_vars = function(self, info_queue, card)
     return {
       vars = {
@@ -816,7 +816,7 @@ SMODS.Sticker {
   config = {
     chips = 100
   },
-
+  
   calculate = function(self, card, context)
     if context.joker_main then
       local triggered = false
@@ -824,15 +824,15 @@ SMODS.Sticker {
         if v:is_rarity("Uncommon") then
           triggered = true
           SMODS.calculate_effect(
-            { chips = self.config.chips, juice_card = v, message_card = v },
-            card
-          )
-          break
-        end
+          { chips = self.config.chips, juice_card = v, message_card = v },
+          card
+        )
+        break
       end
-      if triggered then return nil, true end
     end
-  end,
+    if triggered then return nil, true end
+  end
+end,
 }
 
 SMODS.Sticker {
@@ -840,7 +840,7 @@ SMODS.Sticker {
   atlas = "AbandoniaStickers",
   pos = { x = 3, y = 12 },
   badge_colour = HEX("fd5f55"),
-
+  
   loc_vars = function(self, info_queue, card)
     return {
       vars = {
@@ -851,7 +851,7 @@ SMODS.Sticker {
   config = {
     mult = 20
   },
-
+  
   calculate = function(self, card, context)
     if context.joker_main then
       local triggered = false
@@ -859,15 +859,15 @@ SMODS.Sticker {
         if v:is_rarity("Rare") then
           triggered = true
           SMODS.calculate_effect(
-            { mult = self.config.mult, juice_card = v, message_card = v },
-            card
-          )
-          break
-        end
+          { mult = self.config.mult, juice_card = v, message_card = v },
+          card
+        )
+        break
       end
-      if triggered then return nil, true end
     end
-  end,
+    if triggered then return nil, true end
+  end
+end,
 }
 
 SMODS.Sticker {
@@ -875,7 +875,7 @@ SMODS.Sticker {
   atlas = "AbandoniaStickers",
   pos = { x = 4, y = 12 },
   badge_colour = HEX("009cfd"),
-
+  
   loc_vars = function(self, info_queue, card)
     return {
       vars = {
@@ -886,7 +886,7 @@ SMODS.Sticker {
   config = {
     mult = 40
   },
-
+  
   calculate = function(self, card, context)
     if context.joker_main then
       local triggered = false
@@ -894,15 +894,15 @@ SMODS.Sticker {
         if v:is_rarity("abn_SuperRare") then
           triggered = true
           SMODS.calculate_effect(
-            { mult = self.config.mult, juice_card = v, message_card = v },
-            card
-          )
-          break
-        end
+          { mult = self.config.mult, juice_card = v, message_card = v },
+          card
+        )
+        break
       end
-      if triggered then return nil, true end
     end
-  end,
+    if triggered then return nil, true end
+  end
+end,
 }
 
 SMODS.Sticker {
@@ -955,7 +955,7 @@ SMODS.Sticker {
   end,
   config = {
   },
-
+  
   set_ability = function(self, card)
     if card.config.center.set == 'Joker' then
       card.states.drag.can = false
@@ -1029,12 +1029,12 @@ SMODS.Sticker {
       end
     end
   end,
-
+  
   calculate = function(self, card, context)
     if context.card_added and context.card.ability and context.card.ability.set and context.card.ability.set == "Spectral" then
       SMODS.debuff_card(context.card, true, "spectraldebuff")
     end
-
+    
     if context.selling_self or ((context.selling_card or context.joker_type_destroyed) and context.card == card) and G.consumeables then
       for _, v in ipairs(G.consumeables.cards) do
         if v.ability and v.ability.set and v.ability.set == "Spectral" then
@@ -1043,5 +1043,79 @@ SMODS.Sticker {
       end
     end
   end,
+  
+}
 
+
+SMODS.Sticker {
+  key = 'bug',
+  atlas = "AbandoniaStickers",
+  pos = { x = 3, y = 11 },
+  badge_colour = HEX("6462EC"),
+  
+  loc_vars = function(self, info_queue, card)
+  end,
+  config = {
+  },
+  apply = function(self, card, val)
+    card.ability[self.key] = val
+    if G.consumeables then
+      for _, v in ipairs(G.consumeables.cards) do
+        if v.ability and v.ability.set and v.ability.set == "Tarot" then
+          SMODS.debuff_card(v, val, "tarotdebuff")
+        end
+      end
+    end
+  end,
+  
+  calculate = function(self, card, context)
+    if context.card_added and context.card.ability and context.card.ability.set and context.card.ability.set == "Tarot" then
+      SMODS.debuff_card(context.card, true, "tarotdebuff")
+    end
+    
+    if context.selling_self or ((context.selling_card or context.joker_type_destroyed) and context.card == card) and G.consumeables then
+      for _, v in ipairs(G.consumeables.cards) do
+        if v.ability and v.ability.set and v.ability.set == "Tarot" then
+          SMODS.debuff_card(v, false, "tarotdebuff")
+        end
+      end
+    end
+  end,
+  
+}
+SMODS.Sticker {
+  key = 'martini',
+  atlas = "AbandoniaStickers",
+  pos = { x = 1, y = 11 },
+  badge_colour = HEX("DB8B93"),
+  
+  loc_vars = function(self, info_queue, card)
+  end,
+  config = {
+  },
+  apply = function(self, card, val)
+    card.ability[self.key] = val
+    if G.consumeables then
+      for _, v in ipairs(G.consumeables.cards) do
+        if v.ability and v.ability.set and v.ability.set == "Planet" then
+          SMODS.debuff_card(v, val, "planetdebuff")
+        end
+      end
+    end
+  end,
+  
+  calculate = function(self, card, context)
+    if context.card_added and context.card.ability and context.card.ability.set and context.card.ability.set == "Planet" then
+      SMODS.debuff_card(context.card, true, "planetdebuff")
+    end
+    
+    if context.selling_self or ((context.selling_card or context.joker_type_destroyed) and context.card == card) and G.consumeables then
+      for _, v in ipairs(G.consumeables.cards) do
+        if v.ability and v.ability.set and v.ability.set == "Planet" then
+          SMODS.debuff_card(v, false, "planetdebuff")
+        end
+      end
+    end
+  end,
+  
 }
