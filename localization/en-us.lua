@@ -8139,7 +8139,6 @@ return {
                 "for each scoring {C:hearts}Hearts{}"
               },
             }
-            
           },
           j_abn_witness_protection = {
             name = "Witness Protection",
