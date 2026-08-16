@@ -1681,9 +1681,6 @@ return {
       b_abn_epoch = {
         name = "New Epoch",
         text = {
-          "Start with {C:planet,T:v_abn_satellite}#1#{}",
-          "and {C:sigils,T:v_abn_chaos}#2#{}",
-          "{C:chips}Small Blinds{} are now {C:attention}Big Blinds{}",
           "Start with a full set of",
           "{C:attention}Vanilla{}, {C:abn_talon}Talons{},",
           "{C:abn_crown}Crowns{}, {C:abn_moon}Moons,",
