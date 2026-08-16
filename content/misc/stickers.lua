@@ -726,7 +726,7 @@ SMODS.Sticker {
 SMODS.Sticker {
   key = 'even_legacy',
   atlas = "AbandoniaStickers",
-  pos = { x = 4, y = 7 },
+  pos = { x = 0, y = 8 },
   badge_colour = HEX("fd5f55"),
 
   calculate = function(self, card, context)
@@ -747,7 +747,7 @@ SMODS.Sticker {
 SMODS.Sticker {
   key = 'odd_legacy',
   atlas = "AbandoniaStickers",
-  pos = { x = 0, y = 8 },
+  pos = { x = 0, y = 12 },
   badge_colour = HEX("009cfd"),
 
   calculate = function(self, card, context)
@@ -768,7 +768,7 @@ SMODS.Sticker {
 SMODS.Sticker {
   key = 'jimbo_legacy',
   atlas = "AbandoniaStickers",
-  pos = { x = 1, y = 8 },
+  pos = { x = 1, y = 12 },
   badge_colour = HEX("009cfd"),
 
   loc_vars = function(self, info_queue, card)
@@ -803,7 +803,7 @@ SMODS.Sticker {
 SMODS.Sticker {
   key = 'rejok_legacy',
   atlas = "AbandoniaStickers",
-  pos = { x = 2, y = 8 },
+  pos = { x = 2, y = 12 },
   badge_colour = HEX("fda200"),
 
   loc_vars = function(self, info_queue, card)
@@ -838,7 +838,7 @@ SMODS.Sticker {
 SMODS.Sticker {
   key = 'obmij_legacy',
   atlas = "AbandoniaStickers",
-  pos = { x = 3, y = 8 },
+  pos = { x = 3, y = 12 },
   badge_colour = HEX("fd5f55"),
 
   loc_vars = function(self, info_queue, card)
@@ -873,7 +873,7 @@ SMODS.Sticker {
 SMODS.Sticker {
   key = 'jester_legacy',
   atlas = "AbandoniaStickers",
-  pos = { x = 4, y = 8 },
+  pos = { x = 4, y = 12 },
   badge_colour = HEX("009cfd"),
 
   loc_vars = function(self, info_queue, card)
@@ -949,7 +949,7 @@ SMODS.Sticker {
 SMODS.Sticker {
   key = 'aim',
   atlas = "AbandoniaStickers",
-  pos = { x = 0, y = 9 },
+  pos = { x = 2, y = 8 },
   badge_colour = HEX("ee7270"),
   loc_vars = function(self, info_queue, card)
   end,
@@ -1013,7 +1013,7 @@ SMODS.Sticker {
 SMODS.Sticker {
   key = 'stinker',
   atlas = "AbandoniaStickers",
-  pos = { x = 1, y = 9 },
+  pos = { x = 3, y = 8 },
   badge_colour = HEX("86e631"),
   loc_vars = function(self, info_queue, card)
   end,
