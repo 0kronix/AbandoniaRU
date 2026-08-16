@@ -181,7 +181,7 @@ end
 
 ABN.crossmod_tab = function()
   local title_text = DynaText({
-    string = "Crossmod",
+    string = localize("k_abn_crossmod"),
     colours = { G.C.DARK_EDITION },
     shadow = true,
     float = true,

@@ -6547,11 +6547,15 @@ return {
       j_abn_contract_from_below = {
         name = "Contract From Below",
         text = {
-          "{C:nightshift_cards}Nightshift{} cards always appear in {C:spectral}Spectral{} packs",
-          "When {C:attention}Blind{} is selected,",
-          "Apply {C:purple}Vessel{}, {C:abn_perishable}Perishable{} and {C:dark_edition}Chthonian{}",
-          "to the {C:attention}leftmost{} Joker",
-
+          {
+            "{C:nightshift_cards}Nightshift{} cards always",
+            "appear in {C:spectral}Spectral{} packs",
+          },
+          {
+            "When {C:attention}Blind{} is selected, apply",
+            "{C:purple}Vessel{}, {C:abn_perishable}Perishable{} and {C:dark_edition}Chthonian{}",
+            "to the {C:attention}leftmost{} Joker",
+          }
         }
       },
       j_abn_chip_stone = {
@@ -8100,7 +8104,7 @@ return {
         text = {
           {
 
-            "When a {C:blind}Blind{} is selected,",
+            "When {C:attention}Blind{} is selected,",
             "turn a random Joker {C:enhanced}Fragile{}"
           },
           {
@@ -8111,7 +8115,7 @@ return {
             "{C:rare}Rare{}: {X:chips,C:white}X#11#{C:inactive}[X#4#]{} Chips",
             "{C:abn_superrare}Super Rare{}: {X:red,C:white}X#12#{C:inactive}[X#5#]{} Mult",
             "{C:legendary}Legendary{}: {C:gold}+#13#{C:inactive}[+#6#]{} Ascension Power",
-            "{C:abn_parallelrare}Parallel Rare{}: {C:attention}+#14#{C:inactive}[+#7#]{} retrigger",
+            "{C:abn_parallelrare}Parallel Rare{}: {C:attention}+#14#{C:inactive}[+#7#]{} Retrigger",
             "{s:0.8}Dollars earned after destruction increase by {C:gold,s:0.8}+$#8#{s:0.8}",
             "{s:0.8}after beating a {C:attention,s:0.8}boss blind"
 
@@ -8134,12 +8138,12 @@ return {
         name = "Buccaneer Joker",
         text = {
           {
-            "Scoring {C:abn_Anchor}Anchors{} have a",
+            "Scoring {C:abn_anchor}Anchors{} have a",
             "{C:green}#1# in #2#{} chance to give {C:gold}$#3#{},",
             "{C:green}#4# in #5#{} chance to give {C:red}+#6#{} Mult",
           },
           {
-            "Selected {C:abn_Anchor}Anchors{} can't be",
+            "Selected {C:abn_anchor}Anchors{} can't be",
             "unselected until {C:red}discarded{} or {C:blue}played"
           },
         }

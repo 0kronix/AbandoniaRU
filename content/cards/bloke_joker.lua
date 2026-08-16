@@ -17,11 +17,14 @@ SMODS.Joker {
   config = { extra = { repetitions = 2 } },
 
   loc_vars = function(self, info_queue, card)
-    return { 
-        vars = { 
-            localize({ type = 'name_text', key = "m_abn_teastain", set = "Enhanced" }),
-            localize({ type = 'name_text', key = "m_abn_teatag", set = "Enhanced" }),
-            card.ability.extra.repetitions } }
+    info_queue[#info_queue + 1] = G.P_CENTERS.m_abn_teastain
+    info_queue[#info_queue + 1] = G.P_CENTERS.m_abn_teatag
+    return {
+      vars = {
+        localize({ type = 'name_text', key = "m_abn_teastain", set = "Enhanced" }),
+        localize({ type = 'name_text', key = "m_abn_teatag", set = "Enhanced" }),
+        card.ability.extra.repetitions }
+    }
   end,
 
   calculate = function(self, card, context)
