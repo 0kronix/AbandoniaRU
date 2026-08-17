@@ -11039,6 +11039,90 @@ return {
           "all {C:planet}Planets{} are {C:red}disabled",
         }
       },
+      abn_road_block = {
+        name = "Road Block",
+        text = {
+          "While this sticker is applied,",
+          "{C:attention}first played hand{} scores {C:purple}0",
+        }
+      },
+      abn_pawn = {
+        name = "Pawn",
+        text = {
+          "While this sticker is applied,",
+          "all {C:abn_sigil}Sigil Cards{} and",
+          "{C:abn_astro}Astro Cards{} are {C:red}disabled",
+        }
+      },
+      abn_lightbulb= {
+        name = "Lightbulb",
+        text = {
+          "While this sticker is applied,",
+          "all {C:abn_solidstate}Solid State Cards{} and",
+          "{C:abn_program}Program Cards{} are {C:red}disabled",
+        }
+      },
+      abn_matchstick= {
+        name = "Matchstick",
+        text = {
+          "{C:red,E:2}Self-destructs{} if the",
+          "score {C:attention}catches fire{}"
+        }
+      },
+      abn_tnt= {
+        name = "TNT",
+        text = {
+          "{X:mult,C:white}X#1#{} Mult and",
+          "{C:red,E:2}destroy{} a random card",
+          "{C:attention}held in hand{} after scoring"
+        }
+      },
+      abn_cigarettes= {
+        name = "Cigarettes",
+        text = {
+          "{C:red,E:2}Destroy{} a random card",
+          "from your {C:attention}entire deck"
+        }
+      },
+      abn_platano= {
+        name = "Platano",
+        text = {
+          "{X:mult,C:white}^#1#{} Mult and",
+          "{C:green}#2# in #3#{} chance to",
+          "{C:red,E:2}destroy{} all owned {C:attention}Jokers{}",
+        }
+      },
+      abn_cowboy_hat= {
+        name = "Cowboy Hat",
+        text = {
+          "While this sticker is applied,",
+          "all {C:abn_weather_report}Weather Report Cards{} and",
+          "{C:abn_lexica}Lexica Cards{} are {C:red}disabled",
+        }
+      },
+      abn_unholy_relic= {
+        name = "Unholy Relic",
+        text = {
+          "While this sticker is applied,",
+          "all {C:abn_ruinous}Ruinous Power Cards{} and",
+          "{C:abn_nightshift}Nightshift Cards{} are {C:red}disabled",
+        }
+      },
+      abn_cactus= {
+        name = "Cactus",
+        text = {
+          "While this sticker is applied,",
+          "all {C:abn_artistry}Artistry Cards{} and",
+          "{C:abn_calligraphy}Calligraphy Cards{} are {C:red}disabled",
+        }
+      },
+      abn_bomb = {
+        name = "Bomb",
+        text = {
+          "{C:red,E:2}Destroy{} last played hand if",
+          "the score {C:attention}catches fire{}"
+        }
+      },
       abn_honor_sticker = {
         name = "Honor Jimbo",
         text = {
@@ -13556,6 +13640,17 @@ return {
       abn_stinker = "Stinker",
       abn_bug = "Bug",
       abn_martini = "Martini",
+      abn_road_block = "Road Block",
+      abn_lightbulb = "Lightbulb",
+      abn_pawn = "Pawn",
+      abn_matchstick = "Matchstick",
+      abn_bomb = "Bomb",
+      abn_tnt = "TNT",
+      abn_cigarettes = "Cigarettes",
+      abn_cowboy_hat = "Cowboy Hat",
+      abn_unholy_relic = "Unholy Relic",
+      abn_platano = "Platano",
+      abn_cactus = "Cactus",
 
       -- Seals
       abn_orange_seal = "Orange Seal",

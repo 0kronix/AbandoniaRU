@@ -1119,3 +1119,370 @@ SMODS.Sticker {
   end,
   
 }
+
+SMODS.Sticker {
+  key = 'lightbulb',
+  atlas = "AbandoniaStickers",
+  pos = { x = 3, y = 4 },
+  badge_colour = HEX("34C9EA"),
+  
+  loc_vars = function(self, info_queue, card)
+  end,
+  config = {
+  },
+  apply = function(self, card, val)
+    card.ability[self.key] = val
+    if G.consumeables then
+      for _, v in ipairs(G.consumeables.cards) do
+        if v.ability and v.ability.set and (v.ability.set == "program_pack" or v.ability.set == "solid_state" )then
+          SMODS.debuff_card(v, val, "lightbulbdebuff")
+        end
+      end
+    end
+  end,
+  
+  calculate = function(self, card, context)
+    if context.card_added and context.card.ability and context.card.ability.set and (context.card.ability.set == "program_pack" or context.card.ability.set == "solid_state" ) then
+      SMODS.debuff_card(context.card, true, "lightbulbdebuff")
+    end
+    
+    if context.selling_self or ((context.selling_card or context.joker_type_destroyed) and context.card == card) and G.consumeables then
+      for _, v in ipairs(G.consumeables.cards) do
+        if v.ability and v.ability.set and (v.ability.set == "program_pack" or v.ability.set == "solid_state" ) then
+          SMODS.debuff_card(v, false, "lightbulbdebuff")
+        end
+      end
+    end
+  end,
+  
+}
+
+SMODS.Sticker {
+  key = 'pawn',
+  atlas = "AbandoniaStickers",
+  pos = { x = 1, y = 10 },
+  badge_colour = HEX("C59873"),
+  
+  loc_vars = function(self, info_queue, card)
+  end,
+  config = {
+  },
+  apply = function(self, card, val)
+    card.ability[self.key] = val
+    if G.consumeables then
+      for _, v in ipairs(G.consumeables.cards) do
+        if v.ability and v.ability.set and (v.ability.set == "astro_cards" or v.ability.set == "sigils" )then
+          SMODS.debuff_card(v, val, "pawndebuff")
+        end
+      end
+    end
+  end,
+  
+  calculate = function(self, card, context)
+    if context.card_added and context.card.ability and context.card.ability.set and (context.card.ability.set == "astro_cards" or context.card.ability.set == "sigils" ) then
+      SMODS.debuff_card(context.card, true, "pawndebuff")
+    end
+    
+    if context.selling_self or ((context.selling_card or context.joker_type_destroyed) and context.card == card) and G.consumeables then
+      for _, v in ipairs(G.consumeables.cards) do
+        if v.ability and v.ability.set and (v.ability.set == "astro_cards" or v.ability.set == "sigils" ) then
+          SMODS.debuff_card(v, false, "pawndebuff")
+        end
+      end
+    end
+  end,
+  
+}
+
+SMODS.Sticker {
+  key = 'road_block',
+  atlas = "AbandoniaStickers",
+  pos = { x = 0, y = 4 },
+  badge_colour = HEX("4F6367"),
+  
+  loc_vars = function(self, info_queue, card)
+  end,
+  config = {
+  },
+  apply = function(self, card, val)
+    card.ability[self.key] = val
+  end,
+  
+  calculate = function(self, card, context)
+    if context.first_hand_drawn and not context.blueprint then
+      local eval = function() return G.GAME.current_round.hands_played == 0 and not G.RESET_JIGGLES end
+      juice_card_until(card, eval, true)
+    end
+    if context.final_scoring_step and G.GAME.current_round.hands_played == 0 then
+      return {
+        xchips = 0,
+        xmult = 0,
+        xscore = 0,
+      }
+    end
+  end,
+  
+}
+
+SMODS.Sticker {
+  key = 'matchstick',
+  atlas = "AbandoniaStickers",
+  pos = { x = 3, y = 9 },
+  badge_colour = HEX("E09C60"),
+  loc_vars = function(self, info_queue, card)
+  end,
+  config = {
+  },
+  apply = function(self, card, val)
+    card.ability[self.key] = val
+  end,
+  
+  calculate = function(self, card, context)
+    if context.after and context.main_eval and not context.game_over and not context.blueprint then
+      if SMODS.last_hand_oneshot then
+        SMODS.destroy_cards(card)     
+      end
+    end
+  end,
+  
+}
+
+SMODS.Sticker {
+  key = 'tnt',
+  atlas = "AbandoniaStickers",
+  pos = { x = 1, y = 9 },
+  badge_colour = HEX("F71D1D"),
+  loc_vars = function(self, info_queue, card)
+    return { vars = {self.config.extra.xmult}}
+  end,
+  config = {
+    extra = { 
+      xmult = 2, 
+    }
+  },
+  apply = function(self, card, val)
+    card.ability[self.key] = val
+  end,
+  
+  calculate = function(self, card, context)
+    if context.joker_main then
+      return { xmult = self.config.extra.xmult }
+    end
+    if context.after then
+      local die = pseudorandom_element(G.hand.cards,pseudoseed("abn_tnt"))
+      if die then
+        G.E_MANAGER:add_event(Event({
+            func = function()
+              SMODS.destroy_cards(die)
+              return true
+            end
+        }))
+      end
+			
+		end
+  end,
+  
+}
+
+SMODS.Sticker {
+  key = 'bomb',
+  atlas = "AbandoniaStickers",
+  pos = { x = 4, y = 8 },
+  badge_colour = HEX("506765"),
+  loc_vars = function(self, info_queue, card)
+  end,
+  config = {
+  },
+  apply = function(self, card, val)
+    card.ability[self.key] = val
+  end,
+  
+  calculate = function(self, card, context)
+    if context.after and context.main_eval and not context.game_over and not context.blueprint then
+      if SMODS.last_hand_oneshot then
+        G.E_MANAGER:add_event(Event({
+					func = function()
+            SMODS.destroy_cards(G.play.cards)
+            return true
+          end
+        }))
+      end
+    end
+  end,
+  
+}
+
+SMODS.Sticker {
+  key = 'cigarettes',
+  atlas = "AbandoniaStickers",
+  pos = { x = 2, y = 9 },
+  badge_colour = HEX("A62222"),
+  apply = function(self, card, val)
+    card.ability[self.key] = val
+  end,
+  
+  calculate = function(self, card, context)
+    if context.after then
+      local die = pseudorandom_element(G.playing_cards,pseudoseed("abn_tnt"))
+      if die then
+        G.E_MANAGER:add_event(Event({
+            func = function()
+              SMODS.destroy_cards(die)
+              return true
+            end
+        }))
+      end
+			
+		end
+  end,
+  
+}
+SMODS.Sticker {
+  key = 'platano',
+  atlas = "AbandoniaStickers",
+  pos = { x = 3, y = 10 },
+  badge_colour = HEX("97DB54"),
+  loc_vars = function(self, info_queue, card)
+    local n, d = SMODS.get_probability_vars(card,self.config.extra.n,self.config.extra.d,"abn_platano",pseudoseed("abn_platano"))
+    return { vars = {self.config.extra.emult, n, d}}
+  end,
+  config = {
+    extra = { 
+      emult = 2,
+      n = 1,
+      d = 4,
+    }
+  },
+  apply = function(self, card, val)
+    card.ability[self.key] = val
+  end,
+  
+  calculate = function(self, card, context)
+    if context.joker_main then
+      return { emult = self.config.extra.emult }
+    end
+    if context.after and SMODS.pseudorandom_probability(card,pseudoseed("abn_platano"),self.config.extra.n,self.config.extra.d,"abn_platano") then
+      if G.jokers and G.jokers.cards then
+        G.E_MANAGER:add_event(Event({
+            func = function()
+              SMODS.destroy_cards(G.jokers.cards)
+              return true
+            end
+        }))
+      end
+			
+		end
+  end,
+  
+}
+
+SMODS.Sticker {
+  key = 'unholy_relic',
+  atlas = "AbandoniaStickers",
+  pos = { x = 4, y = 10 },
+  badge_colour = HEX("5E5E5E"),
+  
+  loc_vars = function(self, info_queue, card)
+  end,
+  config = {
+  },
+  apply = function(self, card, val)
+    card.ability[self.key] = val
+    if G.consumeables then
+      for _, v in ipairs(G.consumeables.cards) do
+        if v.ability and v.ability.set and (v.ability.set == "ruinous_power" or v.ability.set == "nightshift_cards" )then
+          SMODS.debuff_card(v, val, "unholy_relicdebuff")
+        end
+      end
+    end
+  end,
+  
+  calculate = function(self, card, context)
+    if context.card_added and context.card.ability and context.card.ability.set and (context.card.ability.set == "ruinous_power" or context.card.ability.set == "nightshift_cards" ) then
+      SMODS.debuff_card(context.card, true, "unholy_relicdebuff")
+    end
+    
+    if context.selling_self or ((context.selling_card or context.joker_type_destroyed) and context.card == card) and G.consumeables then
+      for _, v in ipairs(G.consumeables.cards) do
+        if v.ability and v.ability.set and (v.ability.set == "ruinous_power" or v.ability.set == "nightshift_cards" ) then
+          SMODS.debuff_card(v, false, "unholy_relicdebuff")
+        end
+      end
+    end
+  end,
+  
+}
+
+SMODS.Sticker {
+  key = 'cowboy_hat',
+  atlas = "AbandoniaStickers",
+  pos = { x = 0, y = 9 },
+  badge_colour = HEX("4B3B3B"),
+  
+  loc_vars = function(self, info_queue, card)
+  end,
+  config = {
+  },
+  apply = function(self, card, val)
+    card.ability[self.key] = val
+    if G.consumeables then
+      for _, v in ipairs(G.consumeables.cards) do
+        if v.ability and v.ability.set and (v.ability.set == "weather_report" or v.ability.set == "lexica" )then
+          SMODS.debuff_card(v, val, "cowboy_hatdebuff")
+        end
+      end
+    end
+  end,
+  
+  calculate = function(self, card, context)
+    if context.card_added and context.card.ability and context.card.ability.set and (context.card.ability.set == "weather_report" or context.card.ability.set == "lexica" ) then
+      SMODS.debuff_card(context.card, true, "cowboy_hatdebuff")
+    end
+    
+    if context.selling_self or ((context.selling_card or context.joker_type_destroyed) and context.card == card) and G.consumeables then
+      for _, v in ipairs(G.consumeables.cards) do
+        if v.ability and v.ability.set and (v.ability.set == "weather_report" or v.ability.set == "lexica" ) then
+          SMODS.debuff_card(v, false, "cowboy_hatdebuff")
+        end
+      end
+    end
+  end,
+  
+}
+
+SMODS.Sticker {
+  key = 'cactus',
+  atlas = "AbandoniaStickers",
+  pos = { x = 0, y = 11 },
+  badge_colour = HEX("FFEAA6"),
+  
+  loc_vars = function(self, info_queue, card)
+  end,
+  config = {
+  },
+  apply = function(self, card, val)
+    card.ability[self.key] = val
+    if G.consumeables then
+      for _, v in ipairs(G.consumeables.cards) do
+        if v.ability and v.ability.set and (v.ability.set == "artistry_cards" or v.ability.set == "calligraphy" )then
+          SMODS.debuff_card(v, val, "cactusdebuff")
+        end
+      end
+    end
+  end,
+  
+  calculate = function(self, card, context)
+    if context.card_added and context.card.ability and context.card.ability.set and (context.card.ability.set == "artistry_cards" or context.card.ability.set == "calligraphy" ) then
+      SMODS.debuff_card(context.card, true, "cactusdebuff")
+    end
+    
+    if context.selling_self or ((context.selling_card or context.joker_type_destroyed) and context.card == card) and G.consumeables then
+      for _, v in ipairs(G.consumeables.cards) do
+        if v.ability and v.ability.set and (v.ability.set == "artistry_cards" or v.ability.set == "calligraphy" ) then
+          SMODS.debuff_card(v, false, "cactusdebuff")
+        end
+      end
+    end
+  end,
+  
+}
