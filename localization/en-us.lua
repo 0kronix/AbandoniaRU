@@ -1497,9 +1497,9 @@ return {
         text = {
           "Start with {C:tarot,T:v_abn_tarot_master}#1#{}",
           "and a full set of",
-          "{C:abn_chalice}Chalices{}, {C:abn_sword}Swords{},",
-          "{C:abn_baton}Batons{} and {C:abn_coin}Coins{}",
-          "Lose {C:red}$1{} per discard"
+          "{C:attention}Vanillia{} and {C:attention}Spanish{} suits",
+          "Earn no {C:attention}interest{}",
+          "Earn {C:money}$2{} when {C:mult}Discarding {C:attention}5{} Cards"
         }
       },
       b_abn_calamity = {
@@ -1669,10 +1669,10 @@ return {
       b_abn_synesthic = {
         name = "Synesthetic Circle",
         text = {
-          "Start with a full set of",
+          "Start with",
           "{C:abn_chalice}Chalices{}, {C:abn_baton}Batons{}, {C:abn_coin}Coins{}, {C:abn_sword}Swords{}",
-          "{C:abn_bow}Bows{}, {C:abn_ties}Ties{}, {C:abn_penumbra}Penumbras{} and {C:abn_snow}Snows",
-          "No {C:attention}Face{} cards",
+          "{C:abn_bow}Bows{}, {C:abn_tie}Ties{}, {C:abn_penumbra}Penumbras{} and {C:abn_snow}Snows",
+          "Without {C:attention}Face{} cards",
           "{C:attention}+1{} hand selection",
           "Increase {C:attention}blind requirements{} by {C:white,X:mult}X1.3{}",
           "when {C:attention}Boss Blind{} is defeated"
@@ -9988,6 +9988,16 @@ return {
         text = {
           "Scored {C:attention}numbered{} cards",
           "give {C:white,X:mult}X#1#{} Mult",
+        }
+      },
+	  
+	  j_abn_oopsy_daisy = {
+        name = "Oopsy Daisy",
+        text = {
+          "{C:attention}+#1#{} Consumable Slots",
+		  "This and all future Jokers are placed into {C:attention}Consumables{}",
+		  "If this Joker is {C:mult}sold or destroyed",
+		  "{C:mult}destroy{} all {C:attention}Jokers{} in {C:attention}Consumables{}",
         }
       },
     },
