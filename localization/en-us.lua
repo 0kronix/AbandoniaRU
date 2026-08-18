@@ -6107,7 +6107,7 @@ return {
         }
       },
       j_abn_forsake_joker = {
-        name = "Forsake Joker",
+        name = "Forsaken Joker",
         text = {
           "Earn {C:money}$#1#{} when {C:dark_edition}Abandoned{} edition triggers,",
           "If triggered on a {C:attention}Playing Card{},",
@@ -6868,7 +6868,7 @@ return {
         }
       },
       j_abn_forsaken_joker = {
-        name = "Forsaken Joker",
+        name = "Forsaken Joker?",
         text = {
           "{C:green}#1# in #2#{} chance to give",
           "{C:dark_edition}Overexposed{} to played {C:attention}Bent{} cards,",
@@ -10030,14 +10030,14 @@ return {
           "give {C:white,X:mult}X#1#{} Mult",
         }
       },
-	  
-	  j_abn_oopsy_daisy = {
+
+      j_abn_oopsy_daisy = {
         name = "Oopsy Daisy",
         text = {
           "{C:attention}+#1#{} Consumable Slots",
-		  "This and all future Jokers are placed into {C:attention}Consumables{}",
-		  "If this Joker is {C:mult}sold or destroyed",
-		  "{C:mult}destroy{} all {C:attention}Jokers{} in {C:attention}Consumables{}",
+          "This and all future Jokers are placed into {C:attention}Consumables{}",
+          "If this Joker is {C:mult}sold or destroyed",
+          "{C:mult}destroy{} all {C:attention}Jokers{} in {C:attention}Consumables{}",
         }
       },
     },
@@ -11693,11 +11693,38 @@ return {
           "{C:chips}+#4#{} chips",
         },
       },
+      c_abn_coissa = {
+        name = "Coissa",
+        text = {
+          "({V:1}lvl.#1#{}) Level up",
+          "{C:attention}#2#",
+          "{C:mult}+#3#{} Mult and",
+          "{C:chips}+#4#{} chips",
+        },
+      },
+      c_abn_proxima_c = {
+        name = "Proxima C",
+        text = {
+          "({V:1}lvl.#1#{}) Level up",
+          "{C:attention}#2#",
+          "{C:mult}+#3#{} Mult and",
+          "{C:chips}+#4#{} chips",
+        },
+      },
+      c_abn_proxima_b = {
+        name = "Proxima B",
+        text = {
+          "({V:1}lvl.#1#{}) Level up",
+          "{C:attention}#2#",
+          "{C:mult}+#3#{} Mult and",
+          "{C:chips}+#4#{} chips",
+        },
+      },
       -- Rank Planets
       c_abn_lauto = {
         name = "Lauto",
         text = {
-          "{S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){} Level up",
+          "({V:1}lvl.#1#{}) Level up",
           "{C:attention}#2#s",
           "{C:mult}+#3#{} Mult and",
           "{C:chips}+#4#{} chips"
@@ -11707,7 +11734,7 @@ return {
       c_abn_urcurme = {
         name = "Urcurme",
         text = {
-          "{S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){} Level up",
+          "({V:1}lvl.#1#{}) Level up",
           "{C:attention}#2#s",
           "{C:mult}+#3#{} Mult and",
           "{C:chips}+#4#{} chips"
@@ -11717,7 +11744,7 @@ return {
       c_abn_nevus = {
         name = "Nevus",
         text = {
-          "{S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){} Level up",
+          "({V:1}lvl.#1#{}) Level up",
           "{C:attention}#2#s",
           "{C:mult}+#3#{} Mult and",
           "{C:chips}+#4#{} chips"
@@ -11727,7 +11754,7 @@ return {
       c_abn_aerth = {
         name = "Aerth",
         text = {
-          "{S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){} Level up",
+          "({V:1}lvl.#1#{}) Level up",
           "{C:attention}#2#s",
           "{C:mult}+#3#{} Mult and",
           "{C:chips}+#4#{} chips"
@@ -11737,7 +11764,7 @@ return {
       c_abn_sarh = {
         name = "Sarh",
         text = {
-          "{S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){} Level up",
+          "({V:1}lvl.#1#{}) Level up",
           "{C:attention}#2#s",
           "{C:mult}+#3#{} Mult and",
           "{C:chips}+#4#{} chips"
@@ -11747,7 +11774,7 @@ return {
       c_abn_unpter = {
         name = "Unpter",
         text = {
-          "{S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){} Level up",
+          "({V:1}lvl.#1#{}) Level up",
           "{C:attention}#2#s",
           "{C:mult}+#3#{} Mult and",
           "{C:chips}+#4#{} chips"
@@ -11757,7 +11784,7 @@ return {
       c_abn_urno = {
         name = "Urno",
         text = {
-          "{S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){} Level up",
+          "({V:1}lvl.#1#{}) Level up",
           "{C:attention}#2#s",
           "{C:mult}+#3#{} Mult and",
           "{C:chips}+#4#{} chips"
@@ -11767,7 +11794,7 @@ return {
       c_abn_ranu = {
         name = "Ranu",
         text = {
-          "{S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){} Level up",
+          "({V:1}lvl.#1#{}) Level up",
           "{C:attention}#2#s",
           "{C:mult}+#3#{} Mult and",
           "{C:chips}+#4#{} chips"
@@ -11777,7 +11804,7 @@ return {
       c_abn_etnup = {
         name = "Etnup",
         text = {
-          "{S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){} Level up",
+          "({V:1}lvl.#1#{}) Level up",
           "{C:attention}#2#s",
           "{C:mult}+#3#{} Mult and",
           "{C:chips}+#4#{} chips"
@@ -11787,7 +11814,7 @@ return {
       c_abn_zabures = {
         name = "Zabures",
         text = {
-          "{S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){} Level up",
+          "({V:1}lvl.#1#{}) Level up",
           "{C:attention}#2#s",
           "{C:mult}+#3#{} Mult and",
           "{C:chips}+#4#{} chips"
@@ -11797,7 +11824,7 @@ return {
       c_abn_pergus = {
         name = "Pergus",
         text = {
-          "{S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){} Level up",
+          "({V:1}lvl.#1#{}) Level up",
           "{C:attention}#2#s",
           "{C:mult}+#3#{} Mult and",
           "{C:chips}+#4#{} chips"
@@ -11807,7 +11834,7 @@ return {
       c_abn_vugmado = {
         name = "Vugmado",
         text = {
-          "{S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){} Level up",
+          "({V:1}lvl.#1#{}) Level up",
           "{C:attention}#2#s",
           "{C:mult}+#3#{} Mult and",
           "{C:chips}+#4#{} chips"
@@ -11817,7 +11844,7 @@ return {
       c_abn_abandia = {
         name = "Abandia",
         text = {
-          "{S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){} Level up",
+          "({V:1}lvl.#1#{}) Level up",
           "{C:attention}#2#s",
           "{C:mult}+#3#{} Mult and",
           "{C:chips}+#4#{} chips"
@@ -11826,7 +11853,7 @@ return {
       c_abn_clun_va = {
         name = "Clun Va",
         text = {
-          "{S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){} Level up",
+          "({V:1}lvl.#1#{}) Level up",
           "{C:attention}#2#s",
           "{C:mult}+#3#{} Mult and",
           "{C:chips}+#4#{} chips"
@@ -11835,7 +11862,7 @@ return {
       c_abn_reart = {
         name = "Reart",
         text = {
-          "{S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){} Level up",
+          "({V:1}lvl.#1#{}) Level up",
           "{C:attention}#2#s",
           "{C:mult}+#3#{} Mult and",
           "{C:chips}+#4#{} chips"
@@ -11844,7 +11871,7 @@ return {
       c_abn_oshprue = {
         name = "Oshprue",
         text = {
-          "{S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){} Level up",
+          "({V:1}lvl.#1#{}) Level up",
           "{C:attention}#2#s",
           "{C:mult}+#3#{} Mult and",
           "{C:chips}+#4#{} chips"
@@ -11853,7 +11880,7 @@ return {
       c_abn_meisness = {
         name = "Meisness",
         text = {
-          "{S:0.8}({S:0.8,V:1}lvl.#1#{S:0.8}){} Level up",
+          "({V:1}lvl.#1#{}) Level up",
           "{C:attention}#2#s",
           "{C:mult}+#3#{} Mult and",
           "{C:chips}+#4#{} chips"
@@ -11861,6 +11888,15 @@ return {
       },
       c_abn_queaor = {
         name = "Queaor",
+        text = {
+          "({V:1}lvl.#1#{}) Level up",
+          "{C:attention}#2#",
+          "{C:mult}+#3#{} Mult and",
+          "{C:chips}+#4#{} chips",
+        },
+      },
+      c_abn_poltergeist = {
+        name = "Poltergeist",
         text = {
           "({V:1}lvl.#1#{}) Level up",
           "{C:attention}#2#",
@@ -13721,6 +13757,10 @@ return {
       ['abn_Flush Mansion'] = "Flush Mansion",
       ['abn_Emperium Flush'] = "Emperium Flush",
 
+      -- Paperback Crossmod
+      ['abn_Rapture'] = 'Rapture',
+      ['abn_Rapture Spectrum'] = 'Rapture Spectrum',
+      ['abn_Inverse Rapture'] = 'Inverse Rapture',
     },
     poker_hand_descriptions = {
       ['abn_Spectrum'] = {
@@ -13810,7 +13850,25 @@ return {
       ['abn_Emperium Flush'] = {
         "14, 13, 12, 11, and Ace",
         "all sharing the same suit",
-      }
+      },
+
+      -- Paperback Crossmod
+      ['abn_Rapture'] = {
+        '5 cards in a row with all',
+        'cards sharing the same suit made',
+        'of only Apostles, Aces, and face cards'
+      },
+      ['abn_Rapture Spectrum'] = {
+        '5 cards in a row, each with a',
+        "different suit made of only",
+        'Apostles, Aces, and face cards'
+      },
+      ['abn_Inverse Rapture'] = {
+        '6 cards in a row, each with a',
+        'different suit and 1 suitless card,',
+        'made of only Apostles,',
+        'Aces, tens, and face cards'
+      },
     },
   }
 }

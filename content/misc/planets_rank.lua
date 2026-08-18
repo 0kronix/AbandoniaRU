@@ -28,32 +28,43 @@ function Game:init_game_object(...)
     ["abn_12"] = { name = "12", mult = 0, chips = 0, level = 1, s_mult = 0, s_chips = 0, l_mult = 1, l_chips = 3 },
     ["abn_13"] = { name = "13", mult = 0, chips = 0, level = 1, s_mult = 0, s_chips = 0, l_mult = 1, l_chips = 3 },
     ["abn_14"] = { name = "14", mult = 0, chips = 0, level = 1, s_mult = 0, s_chips = 0, l_mult = 1, l_chips = 3 },
+    ["paperback_Apostle"] = { name = "Apostle", mult = 0, chips = 0, level = 1, s_mult = 0, s_chips = 0, l_mult = 1, l_chips = 3 },
   }
   return ret
 end
 
-local rank_planets = {
-  { key = "lauto",    rank = "2",      pos = { x = 2, y = 0 }, artist = "Bunnet" },
-  { key = "urcurme",  rank = "3",      pos = { x = 3, y = 0 }, artist = "Bunnet" },
-  { key = "nevus",    rank = "4",      pos = { x = 4, y = 0 }, artist = "Bunnet" },
-  { key = "aerth",    rank = "5",      pos = { x = 5, y = 0 }, artist = "Bunnet" },
-  { key = "sarh",     rank = "6",      pos = { x = 0, y = 1 }, artist = "Bunnet" },
-  { key = "unpter",   rank = "7",      pos = { x = 1, y = 1 }, artist = "Bunnet" },
-  { key = "urno",     rank = "8",      pos = { x = 2, y = 1 }, artist = "Bunnet" },
-  { key = "ranu",     rank = "9",      pos = { x = 3, y = 1 }, artist = "Bunnet" },
-  { key = "etnup",    rank = "10",     pos = { x = 4, y = 1 }, artist = "Bunnet" },
-  { key = "zabures",  rank = "Jack",   pos = { x = 5, y = 1 }, artist = "Bunnet" },
-  { key = "pergus",   rank = "Queen",  pos = { x = 0, y = 2 }, artist = "Bunnet" },
-  { key = "vugmado",  rank = "King",   pos = { x = 1, y = 2 }, artist = "Bunnet" },
-  { key = "abandia",  rank = "Ace",    pos = { x = 2, y = 2 }, artist = "Bunnet" },
-  { key = "clun_va",  rank = "abn_11", pos = { x = 3, y = 2 }, artist = "Astellar" },
-  { key = "reart",    rank = "abn_12", pos = { x = 0, y = 0 }, artist = "Astellar" },
-  { key = "oshprue",  rank = "abn_13", pos = { x = 4, y = 2 }, artist = "Astellar" },
+ABN.rank_planets = {
+  { key = "lauto", rank = "2", pos = { x = 2, y = 0 }, artist = "Bunnet" },
+  { key = "urcurme", rank = "3", pos = { x = 3, y = 0 }, artist = "Bunnet" },
+  { key = "nevus", rank = "4", pos = { x = 4, y = 0 }, artist = "Bunnet" },
+  { key = "aerth", rank = "5", pos = { x = 5, y = 0 }, artist = "Bunnet" },
+  { key = "sarh", rank = "6", pos = { x = 0, y = 1 }, artist = "Bunnet" },
+  { key = "unpter", rank = "7", pos = { x = 1, y = 1 }, artist = "Bunnet" },
+  { key = "urno", rank = "8", pos = { x = 2, y = 1 }, artist = "Bunnet" },
+  { key = "ranu", rank = "9", pos = { x = 3, y = 1 }, artist = "Bunnet" },
+  { key = "etnup", rank = "10", pos = { x = 4, y = 1 }, artist = "Bunnet" },
+  { key = "zabures", rank = "Jack", pos = { x = 5, y = 1 }, artist = "Bunnet" },
+  { key = "pergus", rank = "Queen", pos = { x = 0, y = 2 }, artist = "Bunnet" },
+  { key = "vugmado", rank = "King", pos = { x = 1, y = 2 }, artist = "Bunnet" },
+  { key = "abandia", rank = "Ace", pos = { x = 2, y = 2 }, artist = "Bunnet" },
+  { key = "clun_va", rank = "abn_11", pos = { x = 3, y = 2 }, artist = "Astellar" },
+  { key = "reart", rank = "abn_12", pos = { x = 0, y = 0 }, artist = "Astellar" },
+  { key = "oshprue", rank = "abn_13", pos = { x = 4, y = 2 }, artist = "Astellar" },
   { key = "meisness", rank = "abn_14", pos = { x = 1, y = 0 }, artist = "Astellar" },
 }
 SMODS.Attribute { key = "rank_planet" }
 
-for _, def in ipairs(rank_planets) do
+if next(SMODS.find_mod("paperback")) then
+  ABN.rank_planets[#ABN.rank_planets + 1] = {
+    key = "poltergeist",
+    rank = "paperback_Apostle",
+    pos = { x = 1, y = 7 },
+    artist = "Astellar",
+    crossmod = "paperback"
+  }
+end
+
+for _, def in ipairs(ABN.rank_planets) do
   local rank = def.rank
   SMODS.Consumable {
     attributes = { "rank_planet" },
@@ -101,7 +112,10 @@ for _, def in ipairs(rank_planets) do
       if pseudorandom("seed") > rate then
         return true
       end
-    end
+    end,
+    dependencies = def.crossmod and {
+      def.crossmod
+    } or nil,
   }
 end
 
