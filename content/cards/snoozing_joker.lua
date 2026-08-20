@@ -11,7 +11,10 @@ SMODS.Joker({
 	config = {
 		extra = {
 			percentage = 30,
-            added = {},
+            added = {
+				hand = {},
+				rank = {}
+			},
 
 		},
 	},
@@ -24,12 +27,19 @@ SMODS.Joker({
 	end,
     remove_from_deck = function(self, card, from_debuff)
         for k, v in pairs(G.GAME.hands) do
-            v.l_mult = v.l_mult-card.ability.extra.added[k]
+            v.l_mult = v.l_mult-card.ability.extra.added.hand[k]
+        end
+		for k, v in pairs(G.GAME.abn_rank_upgrades) do
+            v.l_mult = v.l_mult-card.ability.extra.added.rank[k]
         end
     end,
     add_to_deck = function(self, card, from_debuff)
         for k, v in pairs(G.GAME.hands) do
-            card.ability.extra.added[k] = (v.l_mult+(v.l_mult*(card.ability.extra.percentage/100))) - v.l_mult
+            card.ability.extra.added.hand[k] = (v.l_mult+(v.l_mult*(card.ability.extra.percentage/100))) - v.l_mult
+            v.l_mult = v.l_mult+(v.l_mult*(card.ability.extra.percentage/100))
+        end
+		for k, v in pairs(G.GAME.abn_rank_upgrades) do
+            card.ability.extra.added.rank[k] = (v.l_mult+(v.l_mult*(card.ability.extra.percentage/100))) - v.l_mult
             v.l_mult = v.l_mult+(v.l_mult*(card.ability.extra.percentage/100))
         end
     end,

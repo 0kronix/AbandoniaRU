@@ -11,7 +11,10 @@ SMODS.Joker({
 	config = {
 		extra = {
 			percentage = 50,
-            added = {},
+            added = {
+                hand = {},
+                rank = {}
+            },
             used_planets = 0
 
 		},
@@ -26,13 +29,21 @@ SMODS.Joker({
 
     remove_from_deck = function(self, card, from_debuff)
         for k, v in pairs(G.GAME.hands) do
-            v.l_chips = v.l_chips-card.ability.extra.added[k]
+            v.l_chips = v.l_chips-card.ability.extra.added.hand[k]
+        end
+         for k, v in pairs(G.GAME.abn_rank_upgrades) do
+            v.l_chips = v.l_chips-card.ability.extra.added.rank[k]
         end
     end,
 
     add_to_deck = function(self, card, from_debuff)
         for k, v in pairs(G.GAME.hands) do
-            card.ability.extra.added[k] = (v.l_chips+(v.l_chips*(card.ability.extra.percentage/100))) - v.l_chips
+            card.ability.extra.added.hand[k] = (v.l_chips+(v.l_chips*(card.ability.extra.percentage/100))) - v.l_chips
+            v.l_chips = v.l_chips+(v.l_chips*(card.ability.extra.percentage/100))
+        end
+
+        for k, v in pairs(G.GAME.abn_rank_upgrades) do
+            card.ability.extra.added.rank[k] = (v.l_chips+(v.l_chips*(card.ability.extra.percentage/100))) - v.l_chips
             v.l_chips = v.l_chips+(v.l_chips*(card.ability.extra.percentage/100))
         end
     end,
