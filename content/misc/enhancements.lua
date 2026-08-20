@@ -1457,3 +1457,71 @@ SMODS.Enhancement({
     artist = "Super Thing",
   },
 })
+
+SMODS.Enhancement({
+    key = "tile",
+    pos = { x = 2, y = 4 },
+    atlas = "AbandoniaEnhancements",
+    config = {},
+    loc_vars = function(self, info_queue, card)
+        return { vars = {} }
+    end,
+    calculate = function(self, card, context)
+        if context.before and context.cardarea == G.play then
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.1,
+                func = function()
+                    local copy = copy_card(card)
+                    if not copy then return true end
+
+                    G.deck:emplace(copy)
+                    copy:add_to_deck()
+                    G.deck.config.card_limit = G.deck.config.card_limit + 1
+                    table.insert(G.playing_cards, copy)
+                    copy:start_materialize(nil, nil)
+
+                    return true
+                end
+            }))
+        end
+
+        if context.destroying_card and context.cardarea == G.play then
+            return { remove = true }
+        end
+    end,
+    abn_artist_credits = {
+        artist = "Gud",
+    },
+})
+
+SMODS.Enhancement({
+  key = "papermache",
+  pos = { x = 3, y = 4 },
+  atlas = "AbandoniaEnhancements",
+  config = { extra = { x_chips = 1.5, x_mult = 1.5 } },
+  loc_vars = function(self, info_queue, card)
+    local cae = card.ability.extra
+    return { vars = { cae.x_chips, cae.x_mult } }
+  end,
+  calculate = function(self, card, context)
+    local cae = card.ability.extra
+    
+    if context.cardarea == "unscored" and context.main_scoring then
+      if ABN.is_odd(card) then
+        return {
+          x_chips = cae.x_chips,
+          card = card
+        }
+      elseif ABN.is_even(card) then
+        return {
+          x_mult = cae.x_mult,
+          card = card
+        }
+      end
+    end
+  end,
+  abn_artist_credits = {
+    artist = "Gud",
+  },
+})
