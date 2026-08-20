@@ -10096,6 +10096,24 @@ return {
           "{C:mult}destroy{} all {C:attention}Jokers{} in {C:attention}Consumables{}",
         }
       },
+      j_abn_napping_joker = {
+        name = "Napping Joker",
+        text = {
+          "{C:planet}Planet{} Cards provide",
+          "{C:chips}%#1#{} more Chips",
+          "Transforms into {C:attention}Snoozing Joker{}",
+          "after {C:attention}9{C:inactive} (#2#){} {C:planet}Planet{} Cards",
+          "used"
+        }
+      },
+      j_abn_snoozing_joker = {
+        name = "Snoozing Joker",
+        text = {
+          "{C:planet}Planet{} Cards provide",
+          "{C:red}%#1#{} more Mult",
+        }
+      }
+      -- quick joker
     },
     Spectral = {
       c_abn_promotion = { -- TO CODE
