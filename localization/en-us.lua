@@ -381,7 +381,7 @@ return {
           "{C:purple}Flux{} {C:abn_star}Star{} card"
         }
       },
-      c_abn_tje = {
+	  c_abn_tje = {
         name = "Tje",
         text = {
           "Converts the {C:attention}Rightmost{}",
@@ -389,7 +389,7 @@ return {
           "{C:attention}Discontinued{} {C:attention}Ace{} card"
         }
       },
-      c_abn_u_cal = { -- its u_cal cause theres already c_abn_u for lexica cards
+	  c_abn_u_cal = {  -- its u_cal cause theres already c_abn_u for lexica cards
         name = "U",
         text = {
           "Converts the {C:attention}Leftmost{}",
@@ -397,7 +397,7 @@ return {
           "{C:attention}Plank{} {C:abn_star}Star{} card"
         }
       },
-      c_abn_ef = {
+	  c_abn_ef = {
         name = "Ef",
         text = {
           "Converts the {C:attention}Rightmost{}",
@@ -405,7 +405,7 @@ return {
           "{C:attention}14{} of {C:spades}Spades{} {C:spades}Darkner{} card"
         }
       },
-      c_abn_xe = {
+	  c_abn_xe = {
         name = "Xe",
         text = {
           "Converts the {C:attention}Leftmost{}",
@@ -413,6 +413,62 @@ return {
           "{C:attention}14{} of {C:hearts}Hearts{} {C:diamonds}Lightner{} card"
         }
       },
+	  c_abn_ce = {
+        name = "Ce",
+        text = {
+          "Converts the {C:attention}Rightmost{}",
+          "card in hand into a",
+          "{C:attention}Ace{} of {C:abn_crown}Crowns{} {C:blue}Tile{} card"
+        }
+      },
+	  c_abn_che = {
+        name = "Che",
+        text = {
+          "Converts the {C:attention}Leftmost{}",
+          "card in hand into a",
+          "{C:attention}10{} of {C:abn_star}Stars{} {C:attention}Papermache{} card"
+        }
+      },
+	  c_abn_sha = {
+		name = "Sha",
+		text = {
+			"Converts the {C:attention}Rightmost{}",
+			"card in hand into a",
+			"{C:attention}9{} of {C:abn_moon}Moons{} {C:attention}Papermache{} card"
+		}
+	  }, 
+	  c_abn_sa = {
+		name = "Sa",
+		text = {
+			"Converts the {C:attention}Leftmost{}",
+			"card in hand into a",
+			"{C:abn_suitless}Null{} {C:money}Lucky{} card"
+		}
+	  },
+	  c_abn_be = {
+		name = "Be",
+		text = {
+			"Converts the {C:attention}Rightmost{}",
+			"card in hand into an",
+			"{C:attention}Oilfire{} card"
+		}
+	  },
+	  c_abn_yer = {
+		name = "Yer",
+		text = {
+			"Converts the {C:attention}Leftmost{}",
+			"card in hand into a",
+			"{C:abn_talon}Talon{} {C:attention}Tea Stain{} card"
+		}
+	  },
+	  c_abn_soft_sign = {
+		name = "Soft Sign",
+		text = {
+			"Converts the {C:attention}Rightmost{}",
+			"card in hand into a",
+			"{C:attention}13{} {C:attention}Sew{} card"
+		}
+	  },
 
 
 
@@ -13192,6 +13248,19 @@ return {
         text = {
           "{C:gold}+#3#{} Ascension Power and {C:chips}+#4#{} Chips per {C:attention}unique tag{} obtained this run",
           "{C:inactive}Currently: {C:gold}+#1#{} {C:inactive}Ascension Power{} {C:chips}+#2#{} {C:inactive}Chips",
+        }
+      },
+	  m_abn_tile = {
+        name = "Tile",
+        text = {
+          "Returns to {C:attention}Deck{} when {C:attention}played{}",
+        }
+      },
+	  m_abn_papermache = {
+        name = "Papermache",
+        text = {
+          "{X:chips,C:white}X#1#{} Chips if unscoring on an {C:attention}Odd{} card",
+		  "{X:mult,C:white}X#2#{} Mult if unscoring on an {C:attention}Even{} card",
         }
       },
     },
